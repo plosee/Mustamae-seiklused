@@ -1,9 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Qdbettercomicsans-jEEeG.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ComicSans.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://640px-Mustamae_Sopruse_pst_Busstop.jpeg" type="Texture" id=2]
 [ext_resource path="res://SEIKLEME.png" type="Texture" id=3]
 [ext_resource path="res://kojukohilasse.png" type="Texture" id=4]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 175

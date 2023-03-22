@@ -15,7 +15,7 @@ uv1_triplanar = true
 [node name="Spatial" type="Spatial"]
 
 [node name="StaticBody" type="StaticBody" parent="."]
-transform = Transform( 256, 0, 0, 0, 1, 0, 0, 0, 256, 0, 0, 0 )
+transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -32,5 +32,7 @@ material/0 = SubResource( 3 )
 transform = Transform( 0.957461, 0.288564, 0, -0.0210988, 0.0700061, 0.997323, 0.287792, -0.954898, 0.0731164, -0.424252, 217.398, 0.0717163 )
 shadow_enabled = true
 
-[node name="Spatial" parent="." instance=ExtResource( 2 )]
+[node name="Character" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.06129, 0 )
+
+[editable path="Character"]
