@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SEIKLEME.png-11dbfa79c2d17bc8b533cb32f5be0cba.stex"
+path="res://.import/SEIKLEME.png-caf84a7e762842b04bb22880b90fb13d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SEIKLEME.png"
-dest_files=[ "res://.import/SEIKLEME.png-11dbfa79c2d17bc8b533cb32f5be0cba.stex" ]
+source_file="res://Images/SEIKLEME.png"
+dest_files=[ "res://.import/SEIKLEME.png-caf84a7e762842b04bb22880b90fb13d.stex" ]
 
 [params]
 

@@ -11,8 +11,8 @@ config_version=4
 [application]
 
 config/name="mustamae seiklused"
-run/main_scene="res://gamearea.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://Scenes/gamearea.tscn"
+config/icon="res://Images/icon.png"
 
 [display]
 
@@ -82,4 +82,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://Misc/default_env.tres"
