@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://KinematicBody.gd" type="Script" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.785707
+
+[node name="Spatial" type="Spatial"]
+
+[node name="KinematicBody" type="KinematicBody" parent="."]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Position3D" type="Position3D" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0142562, 2.90112, -0.172879 )
+
+[node name="Camera" type="Camera" parent="KinematicBody/Position3D"]
+fov = 85.0
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 0.0180632, 0.999837, 0, -0.999837, 0.0180632, 0, 1.27168, 0 )
+shape = SubResource( 1 )
