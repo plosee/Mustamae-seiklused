@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 3.4.1 commit date:2022-12-19, commit time:17:00, hash:55485cb379f7</authoring_tool>
+    </contributor>
+    <created>2023-03-28T15:37:18</created>
+    <modified>2023-03-28T15:37:18</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="_8-effect">
+      <profile_COMMON>
+        <newparam sid="_8_jpg-surface">
+          <surface type="2D">
+            <init_from>_8_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="_8_jpg-sampler">
+          <sampler2D>
+            <source>_8_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="_8_jpg-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_3-effect">
+      <profile_COMMON>
+        <newparam sid="_3_jpg-surface">
+          <surface type="2D">
+            <init_from>_3_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="_3_jpg-sampler">
+          <sampler2D>
+            <source>_3_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="_3_jpg-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_7-effect">
+      <profile_COMMON>
+        <newparam sid="_7_jpg-surface">
+          <surface type="2D">
+            <init_from>_7_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="_7_jpg-sampler">
+          <sampler2D>
+            <source>_7_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="_7_jpg-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_5-effect">
+      <profile_COMMON>
+        <newparam sid="_5_jpg-surface">
+          <surface type="2D">
+            <init_from>_5_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="_5_jpg-sampler">
+          <sampler2D>
+            <source>_5_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="_5_jpg-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_6-effect">
+      <profile_COMMON>
+        <newparam sid="_6_jpg-surface">
+          <surface type="2D">
+            <init_from>_6_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="_6_jpg-sampler">
+          <sampler2D>
+            <source>_6_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="_6_jpg-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_4-effect">
+      <profile_COMMON>
+        <newparam sid="_4_jpg-surface">
+          <surface type="2D">
+            <init_from>_4_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="_4_jpg-sampler">
+          <sampler2D>
+            <source>_4_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="_4_jpg-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_1-effect">
+      <profile_COMMON>
+        <newparam sid="_1_jpg-surface">
+          <surface type="2D">
+            <init_from>_1_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="_1_jpg-sampler">
+          <sampler2D>
+            <source>_1_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="_1_jpg-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_2-effect">
+      <profile_COMMON>
+        <newparam sid="_2_jpg-surface">
+          <surface type="2D">
+            <init_from>_2_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="_2_jpg-sampler">
+          <sampler2D>
+            <source>_2_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="_2_jpg-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="_1_jpg" name="_1_jpg">
+      <init_from>01.jpg</init_from>
+    </image>
+    <image id="_2_jpg" name="_2_jpg">
+      <init_from>02.jpg</init_from>
+    </image>
+    <image id="_3_jpg" name="_3_jpg">
+      <init_from>03.jpg</init_from>
+    </image>
+    <image id="_4_jpg" name="_4_jpg">
+      <init_from>04.jpg</init_from>
+    </image>
+    <image id="_5_jpg" name="_5_jpg">
+      <init_from>05.jpg</init_from>
+    </image>
+    <image id="_6_jpg" name="_6_jpg">
+      <init_from>06.jpg</init_from>
+    </image>
+    <image id="_7_jpg" name="_7_jpg">
+      <init_from>07.jpg</init_from>
+    </image>
+    <image id="_8_jpg" name="_8_jpg">
+      <init_from>08.jpg</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="_8-material" name="08">
+      <instance_effect url="#_8-effect"/>
+    </material>
+    <material id="_3-material" name="03">
+      <instance_effect url="#_3-effect"/>
+    </material>
+    <material id="_7-material" name="07">
+      <instance_effect url="#_7-effect"/>
+    </material>
+    <material id="_5-material" name="05">
+      <instance_effect url="#_5-effect"/>
+    </material>
+    <material id="_6-material" name="06">
+      <instance_effect url="#_6-effect"/>
+    </material>
+    <material id="_4-material" name="04">
+      <instance_effect url="#_4-effect"/>
+    </material>
+    <material id="_1-material" name="01">
+      <instance_effect url="#_1-effect"/>
+    </material>
+    <material id="_2-material" name="02">
+      <instance_effect url="#_2-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Sõpruse_241__Tallinn-mesh" name="Sõpruse 241, Tallinn">
+      <mesh>
+        <source id="Sõpruse_241__Tallinn-mesh-positions">
+          <float_array id="Sõpruse_241__Tallinn-mesh-positions-array" count="174">-23.8442 16.09658 15.36698 -15.71661 24.95235 15.36698 -25.52568 18.76025 15.36698 -21.01505 11.61485 15.36698 -19.33358 8.951179 15.36698 -17.919 6.710313 15.36698 -16.23753 4.046642 15.36698 -13.40838 -0.4350882 15.36698 -14.03513 22.28868 15.36698 -9.791408 15.56608 15.36698 -11.7269 -3.098758 15.36698 -8.897751 -7.580489 15.36698 -8.109932 12.90242 15.36698 -7.216274 -10.24416 15.36698 -6.428455 10.23874 15.36698 -4.387125 -14.72589 15.36698 -2.184731 3.516149 15.36698 -2.705648 -17.38956 15.36698 -1.291073 -19.63043 15.36698 -0.5032544 0.8524785 15.36698 0.3904023 -22.29409 15.36698 1.178221 -1.811192 15.36698 3.219552 -26.77583 15.36698 5.421946 -8.533788 15.36698 4.901028 -29.4395 15.36698 7.103423 -11.19746 15.36698 13.02862 -20.58373 15.36698 14.7101 -23.2474 15.36698 8.784899 -13.86113 15.36698 -15.71661 24.95235 -0.06302285 -14.03513 22.28868 -0.06302285 4.901028 -29.4395 -0.06302285 14.7101 -23.2474 -0.06302285 3.219552 -26.77583 -0.06302285 -25.52568 18.76025 -0.06302285 1.178221 -1.811192 -0.06302285 -0.5032544 0.8524785 -0.06302285 7.103423 -11.19746 -0.06302285 8.784899 -13.86113 -0.06302285 -8.109932 12.90242 -0.06302285 -6.428455 10.23874 -0.06302285 13.02862 -20.58373 -0.06302285 5.421946 -8.533788 -0.06302285 -2.184731 3.516149 -0.06302285 -9.791408 15.56608 -0.06302285 -23.8442 16.09658 -0.06302285 -21.01505 11.61485 -0.06302285 -19.33358 8.951179 -0.06302285 -17.919 6.710313 -0.06302285 -16.23753 4.046642 -0.06302285 -13.40838 -0.4350882 -0.06302285 -11.7269 -3.098758 -0.06302285 -8.897751 -7.580489 -0.06302285 -7.216274 -10.24416 -0.06302285 -4.387125 -14.72589 -0.06302285 -2.705648 -17.38956 -0.06302285 -1.291073 -19.63043 -0.06302285 0.3904023 -22.29409 -0.06302285</float_array>
+          <technique_common>
+            <accessor source="#Sõpruse_241__Tallinn-mesh-positions-array" count="58" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Sõpruse_241__Tallinn-mesh-normals">
+          <float_array id="Sõpruse_241__Tallinn-mesh-normals-array" count="150">0 0 1 1.46157e-6 0 1 -2.97829e-6 0 1 6.26387e-7 0 1 -4.96382e-7 0 1 6.61843e-7 0 1 -6.26387e-7 0 1 -4.96382e-7 0 1 2.08796e-7 0 1 -4.96382e-7 0 1 1.25277e-6 0 1 -2.08796e-7 0 1 -2.08796e-7 0 1 1.67037e-6 0 1 0 0 -1 0.84561 0.5338013 0 0.8456097 0.5338017 0 0.5338018 -0.8456097 0 0.5338019 -0.8456097 0 -0.8456097 -0.5338019 0 -0.8456097 -0.5338019 0 -0.5338016 0.8456098 0 -0.5338019 0.8456097 0 0.8456097 0.5338019 0 0.8456094 0.5338022 0 0.8456096 0.533802 0 0.8456097 0.5338017 0 0.8456096 0.533802 0 0.8456096 0.5338019 0 0.8456098 0.5338017 0 0.8456095 0.533802 0 0.8456097 0.5338019 0 0.8456096 0.5338019 0 0.8456096 0.533802 0 0.8456095 0.5338021 0 -0.8456094 -0.5338022 0 -0.8456096 -0.533802 0 -0.8456096 -0.5338019 0 -0.84561 -0.5338013 0 -0.8456096 -0.5338021 0 -0.8456096 -0.533802 0 -0.8456098 -0.5338016 0 -0.8456097 -0.5338019 0 -0.8456094 -0.5338021 0 -0.8456097 -0.5338017 0 -0.8456096 -0.5338019 0 -0.8456097 -0.5338017 0 -0.8456093 -0.5338023 0 -0.8456094 -0.5338022 0 -0.8456096 -0.5338019 0</float_array>
+          <technique_common>
+            <accessor source="#Sõpruse_241__Tallinn-mesh-normals-array" count="50" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Sõpruse_241__Tallinn-mesh-map-0">
+          <float_array id="Sõpruse_241__Tallinn-mesh-map-0-array" count="510">-1 0.9447368 0 1 -1 1 0 1 -1 0.9447368 -1 0.8517544 0 1 -1 0.8517544 -1 0.7964912 0 1 -1 0.7964912 -1 0.75 0 1 -1 0.75 -1 0.6947368 0 1 -1 0.6947368 -1 0.6017544 0 1 -1 0.6017544 0 0.9447368 0 0.9447368 -1 0.6017544 0 0.8052632 0 0.8052632 -1 0.6017544 -1 0.5464912 0 0.8052632 -1 0.5464912 -1 0.4535087 0 0.8052632 -1 0.4535087 0 0.75 0 0.75 -1 0.4535087 -1 0.3982456 0 0.75 -1 0.3982456 0 0.6947368 0 0.6947368 -1 0.3982456 -1 0.3052632 0 0.6947368 -1 0.3052632 0 0.5552632 0 0.5552632 -1 0.3052632 -1 0.25 0 0.5552632 -1 0.25 -1 0.2035087 0 0.5552632 -1 0.2035087 0 0.5 0 0.5 -1 0.2035087 -1 0.1482456 0 0.5 -1 0.1482456 0 0.4447368 0 0.4447368 -1 0.1482456 -1 0.05526316 0 0.4447368 -1 0.05526316 0 0.3052632 0 0.3052632 -1 0.05526316 -1 0 0 0.3052632 -1 0 0 0.25 0 0.25 -1 0 0 0.05526316 0 0.05526316 -1 0 0 0 0 0.25 0 0.05526316 0 0.1947368 1 0 0 1 0 0 0 1 1 0 1 1 1 0.9923984 0 0 1 0 0 0 1 0.9923984 0 0.9923984 1 1 0 0 0 1 0 0 1 1 1 0 1 0.992301 0 0 1 0 0 0 1 0.992301 0 0.992301 0 0 -1 1 0 1 -1 1 0 0 -1 0 0 0 1 1 1 0 1 1 0 0 0 1 0 0 1 1 1 0 1 1 0 0 0 1 1 0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 0 0 0 1 1 0 1 1 1 1 0 1 1 0 1 0 0 1 0 0 -1 1 1 0 1 1 1 0 -1 1 -1 0 1 1 0 0 0 1 0 0 1 1 1 0 0 1 1 0 1 1 1 0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 0 0 -1 1 1 0 1 1 1 0 -1 1 -1 0 0 1 1 0 1 1 1 0 0 1 0 0 1 1 -1 0 1 0 -1 0 1 1 -1 1 1 1 0 0 0 1 0 0 1 1 1 0 -1 1 1 0 1 1 1 0 -1 1 -1 0 0 1 1 0 1 1 1 0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 0 0 0 1 1 0 1 1 1 0 0 1 0 0 -1 1 1 0 1 1 1 0 -1 1 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Sõpruse_241__Tallinn-mesh-map-0-array" count="255" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Sõpruse_241__Tallinn-mesh-vertices">
+          <input semantic="POSITION" source="#Sõpruse_241__Tallinn-mesh-positions"/>
+        </vertices>
+        <triangles material="_8-material" count="27">
+          <input semantic="VERTEX" source="#Sõpruse_241__Tallinn-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Sõpruse_241__Tallinn-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Sõpruse_241__Tallinn-mesh-map-0" offset="2" set="0"/>
+          <p>0 0 0 1 0 1 2 0 2 1 0 3 0 0 4 3 0 5 1 1 6 3 1 7 4 1 8 1 2 9 4 2 10 5 2 11 1 3 12 5 3 13 6 3 14 1 4 15 6 4 16 7 4 17 1 0 18 7 0 19 8 0 20 8 5 21 7 5 22 9 5 23 9 6 24 7 6 25 10 6 26 9 7 27 10 7 28 11 7 29 9 0 30 11 0 31 12 0 32 12 8 33 11 8 34 13 8 35 12 0 36 13 0 37 14 0 38 14 9 39 13 9 40 15 9 41 14 0 42 15 0 43 16 0 44 16 10 45 15 10 46 17 10 47 16 0 48 17 0 49 18 0 50 16 0 51 18 0 52 19 0 53 19 11 54 18 11 55 20 11 56 19 0 57 20 0 58 21 0 59 21 0 60 20 0 61 22 0 62 21 0 63 22 0 64 23 0 65 23 12 66 22 12 67 24 12 68 23 13 69 24 13 70 25 13 71 25 0 72 24 0 73 26 0 74 26 0 75 24 0 76 27 0 77 25 14 78 26 14 79 28 14 80</p>
+        </triangles>
+        <triangles material="_3-material" count="8">
+          <input semantic="VERTEX" source="#Sõpruse_241__Tallinn-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Sõpruse_241__Tallinn-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Sõpruse_241__Tallinn-mesh-map-0" offset="2" set="0"/>
+          <p>29 15 81 8 15 82 30 15 83 8 16 84 29 16 85 1 16 86 41 16 123 27 16 124 32 16 125 27 16 126 41 16 127 26 16 128 5 41 195 49 41 196 6 41 197 49 39 198 5 39 199 48 39 200 15 46 231 55 46 232 17 46 233 55 19 234 15 19 235 54 19 236</p>
+        </triangles>
+        <triangles material="_7-material" count="2">
+          <input semantic="VERTEX" source="#Sõpruse_241__Tallinn-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Sõpruse_241__Tallinn-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Sõpruse_241__Tallinn-mesh-map-0" offset="2" set="0"/>
+          <p>27 17 87 31 17 88 32 17 89 31 18 90 27 18 91 24 18 92</p>
+        </triangles>
+        <triangles material="_5-material" count="12">
+          <input semantic="VERTEX" source="#Sõpruse_241__Tallinn-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Sõpruse_241__Tallinn-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Sõpruse_241__Tallinn-mesh-map-0" offset="2" set="0"/>
+          <p>22 19 93 31 19 94 24 19 95 31 20 96 22 20 97 33 20 98 0 35 171 2 35 172 45 35 173 45 35 174 2 35 175 34 35 176 3 35 183 47 35 184 4 35 185 47 38 186 3 38 187 46 38 188 7 43 207 51 43 208 10 43 209 51 44 210 7 44 211 50 44 212 11 43 219 53 43 220 13 43 221 53 45 222 11 45 223 52 45 224 18 49 243 57 49 244 20 49 245 57 20 246 18 20 247 56 20 248</p>
+        </triangles>
+        <triangles material="_6-material" count="2">
+          <input semantic="VERTEX" source="#Sõpruse_241__Tallinn-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Sõpruse_241__Tallinn-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Sõpruse_241__Tallinn-mesh-map-0" offset="2" set="0"/>
+          <p>2 21 99 29 21 100 34 21 101 29 22 102 2 22 103 1 22 104</p>
+        </triangles>
+        <triangles material="_4-material" count="12">
+          <input semantic="VERTEX" source="#Sõpruse_241__Tallinn-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Sõpruse_241__Tallinn-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Sõpruse_241__Tallinn-mesh-map-0" offset="2" set="0"/>
+          <p>35 23 105 19 23 106 21 23 107 19 23 108 35 23 109 36 23 110 37 24 111 28 24 112 38 24 113 28 25 114 37 25 115 25 25 116 39 26 117 14 26 118 40 26 119 14 27 120 39 27 121 12 27 122 42 23 135 25 23 136 37 23 137 25 30 138 42 30 139 23 30 140 43 25 147 19 25 148 36 25 149 19 31 150 43 31 151 16 31 152 44 33 159 12 33 160 39 33 161 12 16 162 44 16 163 9 16 164</p>
+        </triangles>
+        <triangles material="_1-material" count="8">
+          <input semantic="VERTEX" source="#Sõpruse_241__Tallinn-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Sõpruse_241__Tallinn-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Sõpruse_241__Tallinn-mesh-map-0" offset="2" set="0"/>
+          <p>38 28 129 26 28 130 41 28 131 26 29 132 38 29 133 28 29 134 35 31 141 23 31 142 42 31 143 23 31 144 35 31 145 21 31 146 40 32 153 16 32 154 43 32 155 16 25 156 40 25 157 14 25 158 30 34 165 9 34 166 44 34 167 9 32 168 30 32 169 8 32 170</p>
+        </triangles>
+        <triangles material="_2-material" count="14">
+          <input semantic="VERTEX" source="#Sõpruse_241__Tallinn-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Sõpruse_241__Tallinn-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Sõpruse_241__Tallinn-mesh-map-0" offset="2" set="0"/>
+          <p>0 36 177 46 36 178 3 36 179 46 37 180 0 37 181 45 37 182 4 39 189 48 39 190 5 39 191 48 40 192 4 40 193 47 40 194 6 20 201 50 20 202 7 20 203 50 42 204 6 42 205 49 42 206 11 42 213 51 42 214 52 42 215 51 20 216 11 20 217 10 20 218 13 20 225 54 20 226 15 20 227 54 42 228 13 42 229 53 42 230 17 47 237 56 47 238 18 47 239 56 48 240 17 48 241 55 48 242 20 20 249 33 20 250 22 20 251 33 19 252 20 19 253 57 19 254</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Sõpruse_241__Tallinn" name="Sõpruse 241, Tallinn" type="NODE">
+        <matrix sid="transform">0.8452618 0.5343524 0 -9.53674e-7 -0.5343524 0.8452618 0 -4.76837e-7 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#Sõpruse_241__Tallinn-mesh" name="Sõpruse 241, Tallinn">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="_8-material" target="#_8-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_3-material" target="#_3-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_7-material" target="#_7-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_5-material" target="#_5-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_6-material" target="#_6-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_4-material" target="#_4-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_1-material" target="#_1-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_2-material" target="#_2-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

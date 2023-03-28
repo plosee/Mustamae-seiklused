@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Buildings/maja4/maja4.dae" type="PackedScene" id=1]
+
+[node name="maja4" instance=ExtResource( 1 )]

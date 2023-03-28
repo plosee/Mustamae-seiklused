@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Scenes/main.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://Images/SEIKLEME.png" type="Texture" id=2]
 [ext_resource path="res://Images/640px-Mustamae_Sopruse_pst_Busstop.jpeg" type="Texture" id=3]
 [ext_resource path="res://Images/kojukohilasse.png" type="Texture" id=4]
