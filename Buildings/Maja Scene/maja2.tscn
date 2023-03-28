@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Buildings/Maja2/katus2.material" type="Material" id=1]
 [ext_resource path="res://Buildings/Maja2/Material.material" type="Material" id=2]
@@ -74,8 +74,19 @@ surfaces/4 = {
 "vertex_count": 4
 }
 
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1.02083, 1, 0.771161 )
+
 [node name="maja2" type="Spatial"]
 
-[node name="Sketchup" type="MeshInstance" parent="."]
+[node name="KinematicBody" type="KinematicBody" parent="."]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
+
+[node name="Sketchup" type="MeshInstance" parent="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.0444, 0 )
 mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( -7.68226e-07, -44.8413, 0, 13.4106, -1.49564e-06, 0, 0, 0, 9.15531, 0.488301, 12.1764, 0.670132 )
+shape = SubResource( 2 )

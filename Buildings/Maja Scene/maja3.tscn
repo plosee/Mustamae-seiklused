@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Buildings/Maja3/katus2.material" type="Material" id=1]
 [ext_resource path="res://Buildings/Maja3/taga1.material" type="Material" id=2]
 [ext_resource path="res://Buildings/Maja3/ees1.material" type="Material" id=3]
 [ext_resource path="res://Buildings/Maja3/parem.material" type="Material" id=4]
 [ext_resource path="res://Buildings/Maja3/Material.material" type="Material" id=5]
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1, 1.34231, 1.01657 )
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Sketchup.001"
@@ -76,9 +79,14 @@ surfaces/4 = {
 
 [node name="maja3" type="Spatial"]
 
-[node name="Sketchup001" type="MeshInstance" parent="."]
-transform = Transform( 0.848728, 0, -0.528829, 0, 1, 0, 0.528829, 0, 0.848728, 0, 0, 0 )
-mesh = SubResource( 1 )
+[node name="KinematicBody" type="KinematicBody" parent="."]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
 
-[node name="CollisionPolygon" type="CollisionPolygon" parent="."]
-transform = Transform( 22.337, 0, 0, 0, 1, 0, 0, 0, 6.23528, 1.03741, 0, 0 )
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( -2.89161e-07, -16.8783, 0, 8.79824, -9.81242e-07, 0, 0, 0, 6.00651, 0.91829, 8.65177, -0.29696 )
+shape = SubResource( 2 )
+
+[node name="Sketchup001" type="MeshInstance" parent="KinematicBody"]
+transform = Transform( 0.843391, 0, -0.537299, 0, 1, 0, 0.537299, 0, 0.843391, 0, 0, -0.0451508 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
