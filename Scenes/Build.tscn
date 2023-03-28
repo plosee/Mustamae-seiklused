@@ -9,19 +9,20 @@
 [ext_resource path="res://Buildings/Maja Scene/maja5.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Buildings/Maja Scene/maja3.tscn" type="PackedScene" id=8]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="BoxShape" id=6]
 
 [sub_resource type="CubeMesh" id=2]
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.333333, 0.329412, 0.239216, 1 )
 albedo_texture = ExtResource( 2 )
+metallic = 0.28
 metallic_specular = 0.0
-uv1_scale = Vector3( 100, 2, 100 )
+uv1_scale = Vector3( 150, 1, 150 )
 uv1_offset = Vector3( 0, 2, 0 )
 uv1_triplanar = true
-uv1_triplanar_sharpness = 0.482968
-uv2_scale = Vector3( 2, 1, 2 )
+proximity_fade_enable = true
+proximity_fade_distance = 249.24
 
 [sub_resource type="PanoramaSky" id=5]
 panorama = ExtResource( 3 )
@@ -29,9 +30,10 @@ panorama = ExtResource( 3 )
 [sub_resource type="Environment" id=4]
 background_mode = 2
 background_sky = SubResource( 5 )
+background_energy = 1.46
 fog_enabled = true
 fog_color = Color( 0, 0, 0, 1 )
-fog_sun_color = Color( 1, 0.415686, 0.235294, 1 )
+fog_sun_color = Color( 0.494118, 0.152941, 0.0470588, 1 )
 fog_sun_amount = 1.0
 fog_depth_end = 328.6
 auto_exposure_enabled = true
@@ -45,8 +47,8 @@ __meta__ = {
 }
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0.00457788, -0.0205934, 0.028244 )
-shape = SubResource( 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0870457, 0 )
+shape = SubResource( 6 )
 
 [node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0168359, -1.01223, 0.0261333 )
@@ -65,7 +67,7 @@ shadow_color = Color( 1, 1, 1, 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.06129, 15.9536 )
 
 [node name="KinematicBody" parent="Character" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.297679, -2.92558, -0.263027 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.297679, -0.481602, -0.263027 )
 
 [node name="Camera" parent="Character/KinematicBody/Position3D" index="0"]
 far = 8192.0
