@@ -1,30 +1,30 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Fonts/ComicSans.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Images/640px-Mustamae_Sopruse_pst_Busstop.jpeg" type="Texture" id=2]
-[ext_resource path="res://Images/SEIKLEME.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/main.gd" type="Script" id=1]
+[ext_resource path="res://Images/SEIKLEME.png" type="Texture" id=2]
+[ext_resource path="res://Images/640px-Mustamae_Sopruse_pst_Busstop.jpeg" type="Texture" id=3]
 [ext_resource path="res://Images/kojukohilasse.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/main.gd" type="Script" id=5]
+[ext_resource path="res://Fonts/ComicSans.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 175
 outline_size = 1
 outline_color = Color( 0.737255, 0.635294, 0.635294, 1 )
-font_data = ExtResource( 1 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 118
-font_data = ExtResource( 1 )
+font_data = ExtResource( 5 )
 
-[node name="Control" type="Control"]
+[node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 5 )
+script = ExtResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 1918.0
 margin_bottom = 1074.0
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 expand = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -42,7 +42,7 @@ margin_top = 443.0
 margin_right = 1260.0
 margin_bottom = 586.0
 custom_fonts/font = SubResource( 2 )
-icon = ExtResource( 3 )
+icon = ExtResource( 2 )
 flat = true
 
 [node name="Button2" type="Button" parent="."]

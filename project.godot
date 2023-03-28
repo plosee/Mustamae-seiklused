@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="mustamae seiklused"
-run/main_scene="res://Scenes/Control.tscn"
+run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://Images/icon.png"
 
 [display]
