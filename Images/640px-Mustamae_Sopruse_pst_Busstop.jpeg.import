@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/kojukohilasse.png-39c02c15cf652c882c929a4543c094b1.stex"
+path="res://.import/640px-Mustamae_Sopruse_pst_Busstop.jpeg-68e9ba69b52d6f53764ef4d2744a3feb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://kojukohilasse.png"
-dest_files=[ "res://.import/kojukohilasse.png-39c02c15cf652c882c929a4543c094b1.stex" ]
+source_file="res://Images/640px-Mustamae_Sopruse_pst_Busstop.jpeg"
+dest_files=[ "res://.import/640px-Mustamae_Sopruse_pst_Busstop.jpeg-68e9ba69b52d6f53764ef4d2744a3feb.stex" ]
 
 [params]
 

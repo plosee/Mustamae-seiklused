@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/640px-Mustamae_Sopruse_pst_Busstop.jpeg-c8dc23050a0e216d4dffbd69e1043acc.stex"
+path="res://.import/icon.png-5c54608cdf98940b04ad240121483c81.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://640px-Mustamae_Sopruse_pst_Busstop.jpeg"
-dest_files=[ "res://.import/640px-Mustamae_Sopruse_pst_Busstop.jpeg-c8dc23050a0e216d4dffbd69e1043acc.stex" ]
+source_file="res://Images/icon.png"
+dest_files=[ "res://.import/icon.png-5c54608cdf98940b04ad240121483c81.stex" ]
 
 [params]
 
