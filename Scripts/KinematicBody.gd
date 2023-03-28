@@ -4,7 +4,7 @@ extends KinematicBody
 var speed = 14
 var fall_acceleration = 75
 var velocity = Vector3.ZERO
-var gravity = Vector3.DOWN * 15  # strength of gravity
+var gravity = Vector3.DOWN * 1  # strength of gravity
 
 #camera var
 var mouseDelta : Vector2 = Vector2()
@@ -34,7 +34,7 @@ func _physics_process(delta):
 	rotation_degrees.y -= mouseDelta.x * lookSensitivity * delta
 	mouseDelta = Vector2()
 	
-	velocity += gravity * delta
+	velocity += gravity
 	get_input()
 	velocity = move_and_slide(velocity, Vector3.UP)
 

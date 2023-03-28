@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Images/grass.jpg" type="Texture" id=2]
@@ -9,22 +9,34 @@
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 2 )
-uv1_scale = Vector3( 1, 10, 1 )
+uv1_scale = Vector3( 100, 2, 100 )
+uv1_offset = Vector3( 0, 2, 0 )
 uv1_triplanar = true
+uv1_triplanar_sharpness = 0.482968
+uv2_scale = Vector3( 2, 1, 2 )
+
+[sub_resource type="Environment" id=4]
+background_mode = 2
+ambient_light_color = Color( 0.72549, 0.592157, 0.592157, 1 )
+fog_enabled = true
+fog_color = Color( 0.337255, 0.403922, 0.47451, 1 )
+fog_sun_color = Color( 0.956863, 0.572549, 0.0627451, 1 )
+auto_exposure_enabled = true
 
 [node name="Spatial" type="Spatial"]
 
 [node name="StaticBody" type="StaticBody" parent="."]
-transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0 )
+transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 1000, 0, 0, 0 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00457788, -0.0205934, 0.028244 )
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0.00457788, -0.0205934, 0.028244 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0168359, -1.01223, 0.0261333 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
@@ -34,5 +46,11 @@ shadow_enabled = true
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.06129, 0 )
+
+[node name="KinematicBody" parent="Character" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.87243, 0 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 4 )
 
 [editable path="Character"]
