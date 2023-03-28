@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/katus.png-f38d4a462fa5485bce9db0dd83b3a5dd.s3tc.stex"
-path.etc2="res://.import/katus.png-f38d4a462fa5485bce9db0dd83b3a5dd.etc2.stex"
+path.s3tc="res://.import/taga s.JPG-d8ee280e09702c150e98debbd8837a1f.s3tc.stex"
+path.etc2="res://.import/taga s.JPG-d8ee280e09702c150e98debbd8837a1f.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Buildings/Maja/katus.png"
-dest_files=[ "res://.import/katus.png-f38d4a462fa5485bce9db0dd83b3a5dd.s3tc.stex", "res://.import/katus.png-f38d4a462fa5485bce9db0dd83b3a5dd.etc2.stex" ]
+source_file="res://Buildings/Maja1/taga s.JPG"
+dest_files=[ "res://.import/taga s.JPG-d8ee280e09702c150e98debbd8837a1f.s3tc.stex", "res://.import/taga s.JPG-d8ee280e09702c150e98debbd8837a1f.etc2.stex" ]
 
 [params]
 

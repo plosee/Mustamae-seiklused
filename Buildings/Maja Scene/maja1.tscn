@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Buildings/Maja/Material.material" type="Material" id=1]
-[ext_resource path="res://Buildings/Maja/p.material" type="Material" id=2]
-[ext_resource path="res://Buildings/Maja/ees.material" type="Material" id=3]
-[ext_resource path="res://Buildings/Maja/katus.material" type="Material" id=4]
-[ext_resource path="res://Buildings/Maja/rõdu 2.material" type="Material" id=5]
-[ext_resource path="res://Buildings/Maja/taga v1.material" type="Material" id=6]
-[ext_resource path="res://Buildings/Maja/taga s1.material" type="Material" id=7]
+[ext_resource path="res://Buildings/Maja1/Material.material" type="Material" id=1]
+[ext_resource path="res://Buildings/Maja1/p.material" type="Material" id=2]
+[ext_resource path="res://Buildings/Maja1/ees.material" type="Material" id=3]
+[ext_resource path="res://Buildings/Maja1/katus.material" type="Material" id=4]
+[ext_resource path="res://Buildings/Maja1/rõdu 2.material" type="Material" id=5]
+[ext_resource path="res://Buildings/Maja1/taga v1.material" type="Material" id=6]
+[ext_resource path="res://Buildings/Maja1/taga s1.material" type="Material" id=7]
 
 [sub_resource type="BoxShape" id=2]
 

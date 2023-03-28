@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/taga v.JPG-a20e2b18c3ff63a97c10893f45291567.s3tc.stex"
-path.etc2="res://.import/taga v.JPG-a20e2b18c3ff63a97c10893f45291567.etc2.stex"
+path.s3tc="res://.import/p.JPG-7d32ab8fe04cb01e3f9477c6237796ab.s3tc.stex"
+path.etc2="res://.import/p.JPG-7d32ab8fe04cb01e3f9477c6237796ab.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Buildings/Maja/taga v.JPG"
-dest_files=[ "res://.import/taga v.JPG-a20e2b18c3ff63a97c10893f45291567.s3tc.stex", "res://.import/taga v.JPG-a20e2b18c3ff63a97c10893f45291567.etc2.stex" ]
+source_file="res://Buildings/Maja1/p.JPG"
+dest_files=[ "res://.import/p.JPG-7d32ab8fe04cb01e3f9477c6237796ab.s3tc.stex", "res://.import/p.JPG-7d32ab8fe04cb01e3f9477c6237796ab.etc2.stex" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/maja.dae-cd0d8165863849521f2e073a1ccf6299.scn"
+path="res://.import/maja.dae-52d5107c2496dc335dea61c44391afc9.scn"
 
 [deps]
 
-source_file="res://Buildings/Maja/maja.dae"
-dest_files=[ "res://.import/maja.dae-cd0d8165863849521f2e073a1ccf6299.scn" ]
+source_file="res://Buildings/Maja1/maja.dae"
+dest_files=[ "res://.import/maja.dae-52d5107c2496dc335dea61c44391afc9.scn" ]
 
 [params]
 
