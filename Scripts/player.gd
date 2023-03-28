@@ -2,7 +2,7 @@ extends KinematicBody
 
 #physic var
 var speed = 14
-var fall_acceleration = 75
+#var fall_acceleration = 75
 var velocity = Vector3.ZERO
 var gravity = Vector3.DOWN * 1  # strength of gravity
 
@@ -24,9 +24,7 @@ func _physics_process(delta):
 	print(Vector3.UP)
 
 	velocity.x = direction.x * speed
-	velocity.z = direction.z * speed
-	velocity.y -= fall_acceleration * delta
-	velocity = move_and_slide(velocity, Vector3.UP)
+	velocity.z = direction.z * speed	
 	
 	# camera, works half
 	camera.rotation_degrees.x -= mouseDelta.y * lookSensitivity * delta
@@ -34,23 +32,24 @@ func _physics_process(delta):
 	rotation_degrees.y -= mouseDelta.x * lookSensitivity * delta
 	mouseDelta = Vector2()
 	
-	velocity += gravity
 	get_input()
-	velocity = move_and_slide(velocity, Vector3.UP)
+
+
+	
 
 func _ready():
 	#locks mouse
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  
 
 func _input(event):
-	#no clue what this does
+	#no clue what this does - Plose
+	#we should probably comment this code out instead of adding comments ~ A-1
 	if event is InputEventMouseMotion:
 		mouseDelta = event.relative
 
 func get_input():
 	velocity.x = 0
 	velocity.z = 0
-	var vy = velocity.y
 	velocity = Vector3()
 	if Input.is_action_pressed("move_up"):
 		velocity += -transform.basis.z * speed
@@ -60,4 +59,5 @@ func get_input():
 		velocity += transform.basis.x * speed
 	if Input.is_action_pressed("strafe_left"):
 		velocity += -transform.basis.x * speed
-
+	#if Input.is_action_pressed("jump"):
+		#velocity.y += 10

@@ -65,7 +65,7 @@ shadow_color = Color( 1, 1, 1, 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.06129, 15.9536 )
 
 [node name="KinematicBody" parent="Character" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.297679, -3.0298, -0.263027 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.297679, -2.92558, -0.263027 )
 
 [node name="Camera" parent="Character/KinematicBody/Position3D" index="0"]
 far = 8192.0
