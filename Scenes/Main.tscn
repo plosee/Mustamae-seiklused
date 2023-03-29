@@ -34,7 +34,7 @@ margin_right = 1874.0
 margin_bottom = 621.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 1 )
-text = "MUSTAMÄE SEIKLUSED"
+text = "MUSTAME SEIKLUSED"
 
 [node name="Button" type="Button" parent="."]
 margin_left = 681.0

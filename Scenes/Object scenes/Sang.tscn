@@ -113,10 +113,14 @@ script = ExtResource( 1 )
 [node name="Sang" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
 
-[node name="SangArea" type="Area" parent="."]
-transform = Transform( 7.2779, 0, 0, 0, 4.93041, 0, 0, 0, 7.46115, 0, 0.999824, 0 )
+[node name="SangArea" type="Area" parent="." groups=["NPC"]]
+transform = Transform( 1.50261, 0, 0, 0, 4.93041, 0, 0, 0, 1.63538, 0, 0.999824, 0 )
 
 [node name="SangColl" type="CollisionShape" parent="SangArea"]
 shape = SubResource( 2 )
+
+[node name="SangCam" type="Camera" parent="SangArea"]
+transform = Transform( 0.221836, 0, 0, 0, 0.0532755, -0.125488, 0, 0.0416234, 0.160617, 0.105, 0, 1.313 )
+fov = 10.9
 
 [connection signal="body_entered" from="SangArea" to="." method="_on_SangArea_body_entered"]

@@ -1,9 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/InteractRay.gd" type="Script" id=2]
+[ext_resource path="res://Misc/Sang/_LightGray_.material" type="Material" id=3]
+[ext_resource path="res://Fonts/ComicSans.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Images/diabox.png" type="Texture" id=5]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.785707
+
+[sub_resource type="DynamicFont" id=3]
+size = 26
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="CapsuleMesh" id=2]
+rings = 17
 
 [node name="Character" type="Spatial" groups=["Player"]]
 
@@ -18,7 +31,36 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0142562, 2.90112, -0.172879 
 
 [node name="Camera" type="Camera" parent="KinematicBody/Position3D"]
 fov = 85.0
+far = 8192.0
 
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 0.0180632, 0.999837, 0, -0.999837, 0.0180632, 0, 1.27168, 0 )
+transform = Transform( 1, 0, 0, 0, 0.0180632, 0.999837, 0, -0.999837, 0.0180632, 0, 1.27168, 0.211934 )
 shape = SubResource( 1 )
+
+[node name="InteractRay" type="RayCast" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.90329, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -4 )
+collide_with_areas = true
+script = ExtResource( 2 )
+
+[node name="InteractPrompt" type="Label" parent="KinematicBody/InteractRay"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -7.0
+margin_bottom = 7.0
+custom_fonts/font = SubResource( 3 )
+text = "PeePeePooPoo"
+align = 1
+valign = 1
+
+[node name="Diabox" type="Sprite" parent="KinematicBody/InteractRay"]
+position = Vector2( 960.25, 1224.25 )
+scale = Vector2( 2.66458, 1.5 )
+texture = ExtResource( 5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="KinematicBody"]
+transform = Transform( 0.801081, 0, 0, 0, -4.16389e-08, 0.952587, 0, -0.818837, -3.57925e-08, 0, 1.42729, 0.197942 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 3 )

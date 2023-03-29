@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Images/dead-grass.jpg" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Buildings/Maja Scene/maja5.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Buildings/Maja Scene/maja3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Object scenes/Sang.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scripts/Global.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/Build.gd" type="Script" id=11]
 
 [sub_resource type="BoxShape" id=6]
 
@@ -31,7 +33,6 @@ panorama = ExtResource( 3 )
 [sub_resource type="Environment" id=4]
 background_mode = 2
 background_sky = SubResource( 5 )
-background_energy = 1.46
 fog_enabled = true
 fog_color = Color( 0, 0, 0, 1 )
 fog_sun_color = Color( 0.494118, 0.152941, 0.0470588, 1 )
@@ -40,6 +41,7 @@ fog_depth_end = 328.6
 auto_exposure_enabled = true
 
 [node name="Spatial" type="Spatial"]
+script = ExtResource( 11 )
 
 [node name="ground" type="StaticBody" parent="."]
 transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 1000, 0, 0, 0 )
@@ -64,15 +66,6 @@ light_bake_mode = 2
 shadow_enabled = true
 shadow_color = Color( 1, 1, 1, 1 )
 
-[node name="Character" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.06129, 15.9536 )
-
-[node name="KinematicBody" parent="Character" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.297679, -0.481602, -0.263027 )
-
-[node name="Camera" parent="Character/KinematicBody/Position3D" index="0"]
-far = 8192.0
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 4 )
 
@@ -95,4 +88,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -87.1636 )
 
 [node name="Sang" parent="." instance=ExtResource( 9 )]
 
+[node name="Character" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.65915, 14.6964 )
+
+[node name="Camera" parent="Character/KinematicBody/Position3D" index="0"]
+current = true
+
+[node name="Global" type="Node" parent="."]
+script = ExtResource( 10 )
+
+[connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="Sang" method="_on_InteractRay_SangCut"]
+[connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="Global" method="_on_InteractRay_SangCut"]
+
+[editable path="Sang"]
 [editable path="Character"]

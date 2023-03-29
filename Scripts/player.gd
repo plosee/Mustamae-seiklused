@@ -56,9 +56,3 @@ func _physics_process(delta):
 		speed = 30
 	else:
 		speed = 14
-
-
-
-
-
-
