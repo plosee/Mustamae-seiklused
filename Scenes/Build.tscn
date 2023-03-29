@@ -40,17 +40,17 @@ auto_exposure_enabled = true
 
 [node name="Spatial" type="Spatial"]
 
-[node name="StaticBody" type="StaticBody" parent="."]
+[node name="ground" type="StaticBody" parent="."]
 transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 1000, 0, 0, 0 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+[node name="CollisionShape" type="CollisionShape" parent="ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0870457, 0 )
 shape = SubResource( 6 )
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+[node name="MeshInstance" type="MeshInstance" parent="ground"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0168359, -1.01223, 0.0261333 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
@@ -87,7 +87,7 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 116.04,
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -121.13, 0, 0 )
 
 [node name="maja4" parent="Majad" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 55.4228 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.959, 0, 59.596 )
 
 [node name="maja5" parent="Majad" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -87.1636 )
