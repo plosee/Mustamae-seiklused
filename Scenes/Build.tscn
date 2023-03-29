@@ -17,15 +17,14 @@
 [sub_resource type="CubeMesh" id=2]
 
 [sub_resource type="SpatialMaterial" id=3]
+flags_world_triplanar = true
 albedo_color = Color( 0.333333, 0.329412, 0.239216, 1 )
 albedo_texture = ExtResource( 2 )
 metallic = 0.28
 metallic_specular = 0.0
-uv1_scale = Vector3( 150, 1, 150 )
-uv1_offset = Vector3( 0, 2, 0 )
+uv1_scale = Vector3( 0.107, 1, 0.105 )
 uv1_triplanar = true
-proximity_fade_enable = true
-proximity_fade_distance = 249.24
+uv1_triplanar_sharpness = 0.535887
 
 [sub_resource type="PanoramaSky" id=5]
 panorama = ExtResource( 3 )
@@ -37,8 +36,14 @@ fog_enabled = true
 fog_color = Color( 0, 0, 0, 1 )
 fog_sun_color = Color( 0.494118, 0.152941, 0.0470588, 1 )
 fog_sun_amount = 1.0
+fog_depth_begin = 0.0
 fog_depth_end = 328.6
-auto_exposure_enabled = true
+fog_depth_curve = 0.378927
+fog_transmit_curve = 1.1487
+fog_height_min = 2295.7
+fog_height_max = 914.3
+fog_height_curve = 1.41421
+dof_blur_far_distance = 721.93
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 11 )
