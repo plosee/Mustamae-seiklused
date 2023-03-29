@@ -5,7 +5,7 @@
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.785707
 
-[node name="Character" type="Spatial"]
+[node name="Character" type="Spatial" groups=["Player"]]
 
 [node name="KinematicBody" type="KinematicBody" parent="."]
 script = ExtResource( 1 )
