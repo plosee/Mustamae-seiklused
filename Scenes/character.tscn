@@ -5,18 +5,15 @@
 [ext_resource path="res://Misc/Sang/_LightGray_.material" type="Material" id=3]
 [ext_resource path="res://Fonts/ComicSans.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Images/diabox.png" type="Texture" id=5]
+[ext_resource path="res://Misc/jakepaul/PaulJaagup.obj" type="ArrayMesh" id=6]
 
-[sub_resource type="CapsuleShape" id=1]
-radius = 0.785707
+[sub_resource type="BoxShape" id=4]
 
 [sub_resource type="DynamicFont" id=3]
 size = 26
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
-
-[sub_resource type="CapsuleMesh" id=2]
-rings = 17
 
 [node name="Character" type="Spatial" groups=["Player"]]
 
@@ -34,9 +31,8 @@ fov = 85.0
 far = 8192.0
 
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 0.0180632, 0.999837, 0, -0.999837, 0.0180632, 0, 1.27168, 0.211934 )
-visible = false
-shape = SubResource( 1 )
+transform = Transform( 0.532079, 0, 0, 0, -7.39427e-08, -1.69161, 0, 0.291701, -1.27507e-08, 0, 1.64471, 0.0833673 )
+shape = SubResource( 4 )
 
 [node name="InteractRay" type="RayCast" parent="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.90329, 0 )
@@ -62,6 +58,6 @@ scale = Vector2( 2.66458, 1.5 )
 texture = ExtResource( 5 )
 
 [node name="MeshInstance" type="MeshInstance" parent="KinematicBody"]
-transform = Transform( 0.801081, 0, 0, 0, -4.16389e-08, 0.952587, 0, -0.818837, -3.57925e-08, 0, 1.42729, 0.197942 )
-mesh = SubResource( 2 )
+transform = Transform( -0.9, 0, -7.86805e-08, 0, 0.9, 0, 7.86805e-08, 0, -0.9, -0.532721, 0, -2.17825 )
+mesh = ExtResource( 6 )
 material/0 = ExtResource( 3 )
