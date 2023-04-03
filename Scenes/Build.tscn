@@ -96,6 +96,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -87.1636 )
 [node name="Character" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.65915, 14.6964 )
 
+[node name="KinematicBody" parent="Character" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.44945, 0 )
+
 [node name="Camera" parent="Character/KinematicBody/Position3D" index="0"]
 current = true
 

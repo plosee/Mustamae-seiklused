@@ -16,7 +16,7 @@ func _process(delta):
 	if is_colliding():
 		var collider = get_collider()
 		if  collider.is_in_group("NPC"):
-			$InteractPrompt.text = "Vajuta [E] tegelemiseks"
+			$InteractPrompt.text = "Vajuta [E]"
 		if  collider.is_in_group("NPC") and Input.is_action_just_pressed("interact"):
 			if ("SangArea:" in str(collider)):
 				emit_signal("SangCut")
