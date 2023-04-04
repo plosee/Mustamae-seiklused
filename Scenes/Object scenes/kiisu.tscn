@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Temp Fold For object import/Material_001.material" type="Material" id=1]
-[ext_resource path="res://Temp Fold For object import/_face_001.material" type="Material" id=2]
-[ext_resource path="res://Temp Fold For object import/_face.material" type="Material" id=3]
-[ext_resource path="res://Temp Fold For object import/FR.obj" type="ArrayMesh" id=5]
+[ext_resource path="res://Temp Fold For object import/Kass/Material_001.material" type="Material" id=1]
+[ext_resource path="res://Temp Fold For object import/Kass/_face_001.material" type="Material" id=2]
+[ext_resource path="res://Temp Fold For object import/Kass/_face.material" type="Material" id=3]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cone"
@@ -153,32 +152,16 @@ mesh = SubResource( 4 )
 
 [node name="legRL" type="MeshInstance" parent="."]
 transform = Transform( 0.0319695, 0, 0, 0, 0.253674, 0, 0, 0, 0.0283783, -0.510819, 0.39427, -0.439065 )
-visible = false
 mesh = SubResource( 5 )
 
 [node name="legRR" type="MeshInstance" parent="."]
 transform = Transform( 0.0319695, 0, 0, 0, 0.253674, 0, 0, 0, 0.0283783, -0.510871, 0.39427, -0.157135 )
-visible = false
 mesh = SubResource( 6 )
 
 [node name="legFL" type="MeshInstance" parent="."]
 transform = Transform( 0.0319695, 0, 0, 0, 0.253674, 0, 0, 0, 0.0283783, 0.415855, 0.39427, -0.433037 )
-visible = false
 mesh = SubResource( 7 )
 
 [node name="legFR" type="MeshInstance" parent="."]
 transform = Transform( 0.0319695, 0, 0, 0, 0.253674, 0, 0, 0, 0.0298297, 0.413623, 0.39427, -0.128214 )
-visible = false
 mesh = SubResource( 8 )
-
-[node name="SoftBody" type="SoftBody" parent="."]
-mesh = ExtResource( 5 )
-material/0 = ExtResource( 2 )
-material/1 = ExtResource( 2 )
-material/2 = ExtResource( 2 )
-material/3 = ExtResource( 2 )
-parent_collision_ignore = NodePath("../body")
-pinned_points = [ 58 ]
-attachments/0/point_index = 58
-attachments/0/spatial_attachment_path = NodePath("")
-attachments/0/offset = Vector3( 0, 0, 0 )

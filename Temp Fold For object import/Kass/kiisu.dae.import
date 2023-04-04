@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/kiisu.dae-0424e615865fb583bd1d1a012a67f548.scn"
+path="res://.import/kiisu.dae-209b43482117af5ea5d987bc8f6cc2e1.scn"
 
 [deps]
 
-source_file="res://Temp Fold For object import/kiisu.dae"
-dest_files=[ "res://.import/kiisu.dae-0424e615865fb583bd1d1a012a67f548.scn" ]
+source_file="res://Temp Fold For object import/Kass/kiisu.dae"
+dest_files=[ "res://.import/kiisu.dae-209b43482117af5ea5d987bc8f6cc2e1.scn" ]
 
 [params]
 

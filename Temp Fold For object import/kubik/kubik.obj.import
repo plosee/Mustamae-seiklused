@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/kubik.obj-78effea5715d5ace36ed4a19f6754eeb.mesh"
+
+[deps]
+
+files=[ "res://.import/kubik.obj-78effea5715d5ace36ed4a19f6754eeb.mesh" ]
+
+source_file="res://Temp Fold For object import/kubik/kubik.obj"
+dest_files=[ "res://.import/kubik.obj-78effea5715d5ace36ed4a19f6754eeb.mesh", "res://.import/kubik.obj-78effea5715d5ace36ed4a19f6754eeb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/RL.obj-81283d683b70588aad9dee5432bf49d4.mesh"
+
+[deps]
+
+files=[ "res://.import/RL.obj-81283d683b70588aad9dee5432bf49d4.mesh" ]
+
+source_file="res://Temp Fold For object import/Kass/RL.obj"
+dest_files=[ "res://.import/RL.obj-81283d683b70588aad9dee5432bf49d4.mesh", "res://.import/RL.obj-81283d683b70588aad9dee5432bf49d4.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
