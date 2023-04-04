@@ -22,7 +22,11 @@ func _process(delta):
 			#SANG CUTSCENE START
 			if ("SangArea:" in str(collider)):
 				emit_signal("SangCut")
+				
+		#EVERYTHING KUBIK RELATED IS BROKEN
 		if collider.is_in_group("Kubik"):
+			print("Kubik spotted")
 			$InteractPrompt.text = "Vajuta [E]"
 		if collider.is_in_group("Kubik") and Input.is_action_just_pressed("interact"):
+			print("Kubik Pickup")
 			$InteractPrompt.text = "Sa korjasid üles kubiku"
