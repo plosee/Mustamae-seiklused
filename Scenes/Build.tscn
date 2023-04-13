@@ -113,8 +113,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.00244, 2.93986, 0 )
 [node name="kubik" parent="." instance=ExtResource( 13 )]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 3.61286, 4.5841 )
 
+[node name="SourArea" parent="kubik/Kubik" index="2" groups=["Kubik"]]
+collision_layer = 9
+collision_mask = 9
+
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="Sang" method="_on_InteractRay_SangCut"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="Global" method="_on_InteractRay_SangCut"]
 
 [editable path="Sang"]
 [editable path="Character"]
+[editable path="kubik"]
