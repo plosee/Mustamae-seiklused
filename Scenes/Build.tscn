@@ -117,6 +117,7 @@ transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 3.61286, 4.5841 )
 collision_layer = 9
 collision_mask = 9
 
+[connection signal="KubikInteract" from="Character/KinematicBody/InteractRay" to="kubik/Kubik" method="_on_InteractRay_KubikInteract"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="Sang" method="_on_InteractRay_SangCut"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="Global" method="_on_InteractRay_SangCut"]
 
