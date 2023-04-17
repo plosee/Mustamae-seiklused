@@ -18,6 +18,8 @@ font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 60
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=5]
@@ -65,6 +67,7 @@ anchor_bottom = 0.5
 margin_top = -7.0
 margin_bottom = 7.0
 custom_fonts/font = SubResource( 3 )
+text = "|"
 align = 1
 valign = 1
 
@@ -100,21 +103,22 @@ margin_bottom = 1080.0
 script = ExtResource( 7 )
 
 [node name="slot1" type="ColorRect" parent="Inventory"]
+margin_left = 715.0
 margin_top = 930.0
-margin_right = 150.0
+margin_right = 865.0
 margin_bottom = 1080.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="slot2" type="ColorRect" parent="Inventory"]
-margin_left = 170.0
+margin_left = 885.0
 margin_top = 930.0
-margin_right = 320.0
+margin_right = 1035.0
 margin_bottom = 1080.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="slot3" type="ColorRect" parent="Inventory"]
-margin_left = 340.0
+margin_left = 1055.0
 margin_top = 930.0
-margin_right = 490.0
+margin_right = 1205.0
 margin_bottom = 1080.0
 color = Color( 0, 0, 0, 1 )
