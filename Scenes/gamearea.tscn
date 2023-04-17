@@ -5,15 +5,17 @@
 [ext_resource path="res://Images/hdri.jpg" type="Texture" id=3]
 
 [sub_resource type="BoxShape" id=6]
+extents = Vector3( 15.8373, 1, 20.3143 )
 
 [sub_resource type="CubeMesh" id=2]
 
 [sub_resource type="SpatialMaterial" id=3]
+render_priority = 1
 albedo_texture = ExtResource( 2 )
 uv1_scale = Vector3( 100, 2, 100 )
 uv1_offset = Vector3( 0, 2, 0 )
 uv1_triplanar = true
-uv1_triplanar_sharpness = 0.482968
+uv1_triplanar_sharpness = 1e+06
 uv2_scale = Vector3( 2, 1, 2 )
 
 [sub_resource type="PanoramaSky" id=5]
@@ -30,6 +32,7 @@ auto_exposure_enabled = true
 [node name="Spatial" type="Spatial"]
 
 [node name="StaticBody" type="StaticBody" parent="."]
+collision_layer = 17
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, -0.014251, -2.24182, 0.0246861 )
@@ -44,15 +47,10 @@ material/0 = SubResource( 3 )
 transform = Transform( 0.957461, 0.288564, 0, -0.0210988, 0.0700061, 0.997323, 0.287792, -0.954898, 0.0731164, -0.424252, 217.398, 0.0717163 )
 shadow_enabled = true
 
-[node name="Character" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.83591, 0 )
-
-[node name="KinematicBody" parent="Character" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.378028, -1.35256, -0.266965 )
+[node name="Character2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 2.009, 0, 0, 0, 1.357, 0, 0, 0, 1.75, 0, 6.18079, 0 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 4 )
 
 [node name="Majad" type="Spatial" parent="."]
-
-[editable path="Character"]

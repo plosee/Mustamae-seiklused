@@ -57,7 +57,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape" type="CollisionShape" parent="ground"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0870457, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03119, 0 )
 shape = SubResource( 6 )
 
 [node name="MeshInstance" type="MeshInstance" parent="ground"]
@@ -95,15 +95,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -87.1636 )
 
 [node name="Sang" parent="." instance=ExtResource( 9 )]
 
-[node name="Character" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.65915, 14.6964 )
-
-[node name="KinematicBody" parent="Character" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.44945, 0 )
-
-[node name="Camera" parent="Character/KinematicBody/Position3D" index="0"]
-current = true
-
 [node name="Global" type="Node" parent="."]
 script = ExtResource( 10 )
 
@@ -117,10 +108,22 @@ transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 3.61286, 4.5841 )
 collision_layer = 9
 collision_mask = 9
 
+[node name="Character" parent="." instance=ExtResource( 1 )]
+transform = Transform( 2.009, 0, 0, 0, 1.142, 0, 0, 0, 1.75, 0, 0.621, 7.827 )
+
+[node name="Head" parent="Character/KinematicBody" index="1"]
+transform = Transform( 0.913, 0, 0, 0, 0.069, 0, 0, 0, 0.548, 0.0381853, 2.86985, -0.309793 )
+
+[node name="MeshInstance" parent="Character/KinematicBody" index="2"]
+transform = Transform( -0.9, 0, -7.86805e-08, 0, 0.9, 0, 7.86805e-08, 0, -0.9, -0.532721, 0, -2.17825 )
+
+[node name="InteractRay" parent="Character/KinematicBody" index="3"]
+transform = Transform( 2.528, 0, 0, 0, 4.511, 0, 0, 0, 0.955, 0.0552179, 2.90329, 0 )
+
 [connection signal="KubikInteract" from="Character/KinematicBody/InteractRay" to="kubik/Kubik" method="_on_InteractRay_KubikInteract"]
+[connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_SangCut"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="Sang" method="_on_InteractRay_SangCut"]
-[connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="Global" method="_on_InteractRay_SangCut"]
 
 [editable path="Sang"]
-[editable path="Character"]
 [editable path="kubik"]
+[editable path="Character"]

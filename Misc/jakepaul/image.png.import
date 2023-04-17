@@ -2,16 +2,11 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/image.jpg-364b5d690163d38ec8011adc9d27462d.stex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
-source_file="res://Misc/jakepaul/image.jpg"
-dest_files=[ "res://.import/image.jpg-364b5d690163d38ec8011adc9d27462d.stex" ]
-
+source_file="res://Misc/jakepaul/image.png"
 [params]
 
 compress/mode=0
