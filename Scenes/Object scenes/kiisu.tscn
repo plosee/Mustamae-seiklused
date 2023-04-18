@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Temp Fold For object import/Kass/Material_001.material" type="Material" id=1]
 [ext_resource path="res://Temp Fold For object import/Kass/_face_001.material" type="Material" id=2]
 [ext_resource path="res://Temp Fold For object import/Kass/_face.material" type="Material" id=3]
+
+[sub_resource type="BoxShape" id=10]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cone"
@@ -136,41 +138,55 @@ surfaces/0 = {
 
 [node name="kiisu" type="Spatial"]
 
-[node name="hat" type="MeshInstance" parent="."]
+[node name="kas" type="KinematicBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="kas"]
+transform = Transform( 0.546, 0, 0, 0, 0.778, 0, 0, 0, 0.14, -0.032134, 0.728736, -0.0794468 )
+shape = SubResource( 10 )
+
+[node name="hat" type="MeshInstance" parent="kas"]
 transform = Transform( 0.0882445, 0, 0, 0, 0.0882445, 0, 0, 0, 0.0882445, 0.382672, 0.780702, 0.00634533 )
 mesh = SubResource( 1 )
+skeleton = NodePath("../..")
 
-[node name="body" type="MeshInstance" parent="."]
+[node name="body" type="MeshInstance" parent="kas"]
 transform = Transform( 0.52196, 0, 0, 0, 0.106646, 0, 0, 0, 0.202143, -0.0472299, 0.588469, 0.00819534 )
 mesh = SubResource( 2 )
+skeleton = NodePath("../..")
 
-[node name="head" type="MeshInstance" parent="."]
+[node name="head" type="MeshInstance" parent="kas"]
 transform = Transform( 0.0874506, 0, 0, 0, 1.58262e-08, 0.107084, 0, -0.209624, 8.0846e-09, 0.398176, 0.594244, 0.000943333 )
 mesh = SubResource( 3 )
+skeleton = NodePath("../..")
 
-[node name="tail" type="MeshInstance" parent="."]
+[node name="tail" type="MeshInstance" parent="kas"]
 transform = Transform( 0.0126054, -0.00331273, -0.000187033, 0.000159581, 0.262928, 0.000107078, 0.000127539, -0.00156789, 0.0183516, -0.522875, 0.991511, -0.00177875 )
 mesh = SubResource( 4 )
+skeleton = NodePath("../..")
 
-[node name="legRL" type="MeshInstance" parent="."]
+[node name="legRL" type="MeshInstance" parent="kas"]
 transform = Transform( 0.0319695, 0, 0, 0, 0.253674, 0, 0, 0, 0.0283783, -0.510819, 0.252671, -0.120467 )
 mesh = SubResource( 5 )
+skeleton = NodePath("../..")
 
-[node name="legRR" type="MeshInstance" parent="."]
+[node name="legRR" type="MeshInstance" parent="kas"]
 transform = Transform( 0.0319695, 0, 0, 0, 0.253674, 0, 0, 0, 0.0283783, -0.510871, 0.252671, 0.128423 )
 mesh = SubResource( 6 )
+skeleton = NodePath("../..")
 
-[node name="legFL" type="MeshInstance" parent="."]
+[node name="legFL" type="MeshInstance" parent="kas"]
 transform = Transform( 0.0319695, 0, 0, 0, 0.253674, 0, 0, 0, 0.0283783, 0.415855, 0.252671, -0.119159 )
 mesh = SubResource( 7 )
+skeleton = NodePath("../..")
 
-[node name="legFR" type="MeshInstance" parent="."]
+[node name="legFR" type="MeshInstance" parent="kas"]
 transform = Transform( 0.0319695, 0, 0, 0, 0.253674, 0, 0, 0, 0.0298297, 0.413623, 0.252671, 0.131384 )
 mesh = SubResource( 8 )
+skeleton = NodePath("../..")
 
-[node name="Area" type="Area" parent="."]
+[node name="Area" type="Area" parent="kas"]
 transform = Transform( 1, 0, 0, 0, 3.55355, 0, 0, 0, 1.29231, 0, 0.693836, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
-transform = Transform( 0.52785, 0, 0, 0, 0.199465, 0, 0, 0, 0.159, -0.0377598, 0.00597706, 0 )
+[node name="CollisionShape2" type="CollisionShape" parent="kas/Area"]
+transform = Transform( 0.52785, 0, 0, 0, 0.199465, 0, 0, 0, 0.159, -0.0377598, 0.00597705, 0 )
 shape = SubResource( 9 )

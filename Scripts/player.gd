@@ -43,6 +43,14 @@ func _process(delta):
 		camera.global_transform = head.global_transform
 		
 func _physics_process(delta):
+	#raycast uses camera rotation
+#	$InteractRay.rotation.y = camera.rotation.y
+
+	$InteractRay.global_translation = camera.global_translation
+	$InteractRay.global_rotation = camera.global_rotation
+	$InteractRay.global_scale(Vector3(1,1,1))
+	
+	
 	#get keyboard input
 	direction = Vector3.ZERO
 	var h_rot = global_transform.basis.get_euler().y
