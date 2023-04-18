@@ -99,7 +99,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -87.1636 )
 script = ExtResource( 10 )
 
 [node name="kiisu" parent="." instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.00244, 2.93986, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.44729, 0, 0 )
 
 [node name="kubik" parent="." instance=ExtResource( 13 )]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 3.61286, 4.5841 )
@@ -109,13 +109,10 @@ collision_layer = 9
 collision_mask = 9
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
-transform = Transform( 2.009, 0, 0, 0, 1.142, 0, 0, 0, 1.75, 0, 0.621, 7.827 )
+transform = Transform( 2.009, 0, 0, 0, 1.142, 0, 0, 0, 1.75, 0, 0.0360723, 7.827 )
 
 [node name="Head" parent="Character/KinematicBody" index="1"]
 transform = Transform( 0.913, 0, 0, 0, 0.069, 0, 0, 0, 0.548, 0.0381853, 2.86985, -0.309793 )
-
-[node name="MeshInstance" parent="Character/KinematicBody" index="2"]
-transform = Transform( -0.9, 0, -7.86805e-08, 0, 0.9, 0, 7.86805e-08, 0, -0.9, -0.532721, 0, -2.17825 )
 
 [node name="InteractRay" parent="Character/KinematicBody" index="3"]
 transform = Transform( 2.528, 0, 0, 0, 4.511, 0, 0, 0, 0.955, 0.0552179, 2.90329, 0 )
@@ -127,3 +124,4 @@ transform = Transform( 2.528, 0, 0, 0, 4.511, 0, 0, 0, 0.955, 0.0552179, 2.90329
 [editable path="Sang"]
 [editable path="kubik"]
 [editable path="Character"]
+[editable path="Character/KinematicBody/paulbod"]

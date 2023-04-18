@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/InteractRay.gd" type="Script" id=2]
-[ext_resource path="res://Misc/Sang/_LightGray_.material" type="Material" id=3]
+[ext_resource path="res://Misc/jakepaul/Paulbod.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Fonts/ComicSans.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Images/diabox.png" type="Texture" id=5]
-[ext_resource path="res://Misc/jakepaul/PaulJaagup.obj" type="ArrayMesh" id=6]
 [ext_resource path="res://Scripts/Inventory.gd" type="Script" id=7]
 
 [sub_resource type="BoxShape" id=7]
@@ -43,17 +42,18 @@ shape = SubResource( 7 )
 transform = Transform( 0.913, 0, 0, 0, 0.069, 0, 0, 0, 0.548, 0.0381853, 3.1031, -0.309794 )
 
 [node name="Camera" type="Camera" parent="KinematicBody/Head"]
-transform = Transform( 1.09529, 0, 0, 0, 14.4928, 0, 0, 0, 1.82482, 0.0979819, 2.8572, -0.44007 )
+transform = Transform( 0.545192, 0, 0, 0, 11.9775, 0, 0, 0, 1.04275, -0.0409144, 4.52132, -0.0700329 )
 fov = 85.0
 far = 8192.0
 
-[node name="MeshInstance" type="MeshInstance" parent="KinematicBody"]
-transform = Transform( -0.9, 0, -7.86805e-08, 0, 0.9, 0, 7.86805e-08, 0, -0.9, -0.532721, 0, -2.17825 )
-mesh = ExtResource( 6 )
-material/0 = ExtResource( 3 )
+[node name="paulbod" parent="KinematicBody" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.258074 )
+
+[node name="vasak" parent="KinematicBody/paulbod" index="0"]
+transform = Transform( -0.517633, -4.52448e-08, -3.4165e-15, 0, 3.90732e-08, -0.517633, 4.52529e-08, -0.51754, -3.90802e-08, -0.415614, 1.92503, -0.203388 )
 
 [node name="InteractRay" type="RayCast" parent="KinematicBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0505304, 2.90329, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0.0101815, 3.3999, 0 )
 enabled = true
 cast_to = Vector3( 0, 0, -4 )
 collision_mask = 8
@@ -122,3 +122,5 @@ margin_top = 930.0
 margin_right = 1205.0
 margin_bottom = 1080.0
 color = Color( 0, 0, 0, 1 )
+
+[editable path="KinematicBody/paulbod"]

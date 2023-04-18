@@ -28,7 +28,7 @@ func _physics_process(delta):
 		#kubik
 		
 		if collider.is_in_group("Kubik"):
-			print("Kubik spotted")
+			#print("Kubik spotted")
 			$InteractPrompt.text = "Vajuta [E]"
 
 		if collider.is_in_group("Kubik") and Input.is_action_just_pressed("interactt"):
@@ -39,3 +39,5 @@ func _physics_process(delta):
 			#timer
 			yield(get_tree().create_timer(time_in_seconds), "timeout")
 			$Achievemtn.text = " "
+	else:
+		$InteractPrompt.text = "·"

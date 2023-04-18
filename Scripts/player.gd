@@ -6,6 +6,7 @@ const ACCEL_AIR = 1
 onready var accel = ACCEL_DEFAULT
 var gravity = 9.8
 var jump = 5
+var itemheld = false
 
 var cam_accel = 40
 var mouse_sense = 0.1
@@ -28,7 +29,7 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg2rad(-event.relative.x * mouse_sense))
 		head.rotate_x(deg2rad(-event.relative.y * mouse_sense))
-		head.rotation.x = clamp(head.rotation.x, deg2rad(-89), deg2rad(89))
+		head.rotation.x = clamp(head.rotation.x, deg2rad(-89), deg2rad(50))
 
 func _process(delta):
 	#camera physics interpolation to reduce physics jitter on high refresh-rate monitors
@@ -74,5 +75,13 @@ func _physics_process(delta):
 	else:
 		speed = 14
 	
+	if Input.is_action_just_pressed("inv1") || Input.is_action_just_pressed("inv3") || Input.is_action_just_pressed("inv2"):
+		itemheld = true
+	if Input.is_action_just_pressed("stow"):
+		itemheld = false
+	if itemheld:
+		$paulbod/parem.rotation_degrees.x = -14
+	if !itemheld:
+		$paulbod/parem.rotation_degrees.x = 90
 	
 	
