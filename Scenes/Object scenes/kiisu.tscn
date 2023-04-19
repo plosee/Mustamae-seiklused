@@ -38,7 +38,7 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[sub_resource type="ArrayMesh" id=3]
+[sub_resource type="ArrayMesh" id=9]
 resource_name = "Cube.007"
 surfaces/0 = {
 "aabb": AABB( -1.39255, -0.830395, -0.944769, 2.39255, 1.66708, 1.87971 ),
@@ -70,7 +70,7 @@ surfaces/0 = {
 "vertex_count": 34
 }
 
-[sub_resource type="ArrayMesh" id=5]
+[sub_resource type="ArrayMesh" id=13]
 resource_name = "Cube.004"
 surfaces/0 = {
 "aabb": AABB( -1, -1, -1, 2, 2.00001, 2.00001 ),
@@ -86,7 +86,7 @@ surfaces/0 = {
 "vertex_count": 51
 }
 
-[sub_resource type="ArrayMesh" id=6]
+[sub_resource type="ArrayMesh" id=11]
 resource_name = "Cube.003"
 surfaces/0 = {
 "aabb": AABB( -1, -1, -1, 2, 2.00001, 2.00001 ),
@@ -102,7 +102,7 @@ surfaces/0 = {
 "vertex_count": 66
 }
 
-[sub_resource type="ArrayMesh" id=7]
+[sub_resource type="ArrayMesh" id=12]
 resource_name = "Cube.002"
 surfaces/0 = {
 "aabb": AABB( -1, -1, -1, 2, 2.00001, 2.00001 ),
@@ -134,7 +134,7 @@ surfaces/0 = {
 "vertex_count": 62
 }
 
-[sub_resource type="BoxShape" id=9]
+[sub_resource type="BoxShape" id=14]
 
 [node name="kiisu" type="Spatial"]
 
@@ -156,7 +156,7 @@ skeleton = NodePath("../..")
 
 [node name="head" type="MeshInstance" parent="kas"]
 transform = Transform( 0.0874506, 0, 0, 0, 1.58262e-08, 0.107084, 0, -0.209624, 8.0846e-09, 0.398176, 0.594244, 0.000943333 )
-mesh = SubResource( 3 )
+mesh = SubResource( 9 )
 skeleton = NodePath("../..")
 
 [node name="tail" type="MeshInstance" parent="kas"]
@@ -166,17 +166,17 @@ skeleton = NodePath("../..")
 
 [node name="legRL" type="MeshInstance" parent="kas"]
 transform = Transform( 0.0319695, 0, 0, 0, 0.253674, 0, 0, 0, 0.0283783, -0.510819, 0.252671, -0.120467 )
-mesh = SubResource( 5 )
+mesh = SubResource( 13 )
 skeleton = NodePath("../..")
 
 [node name="legRR" type="MeshInstance" parent="kas"]
 transform = Transform( 0.0319695, 0, 0, 0, 0.253674, 0, 0, 0, 0.0283783, -0.510871, 0.252671, 0.128423 )
-mesh = SubResource( 6 )
+mesh = SubResource( 11 )
 skeleton = NodePath("../..")
 
 [node name="legFL" type="MeshInstance" parent="kas"]
 transform = Transform( 0.0319695, 0, 0, 0, 0.253674, 0, 0, 0, 0.0283783, 0.415855, 0.252671, -0.119159 )
-mesh = SubResource( 7 )
+mesh = SubResource( 12 )
 skeleton = NodePath("../..")
 
 [node name="legFR" type="MeshInstance" parent="kas"]
@@ -189,4 +189,4 @@ transform = Transform( 1, 0, 0, 0, 3.55355, 0, 0, 0, 1.29231, 0, 0.693836, 0 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="kas/Area"]
 transform = Transform( 0.52785, 0, 0, 0, 0.199465, 0, 0, 0, 0.159, -0.0377598, 0.00597705, 0 )
-shape = SubResource( 9 )
+shape = SubResource( 14 )
