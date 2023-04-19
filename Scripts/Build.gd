@@ -83,6 +83,7 @@ func _physics_process(delta):
 		$kiisu/kas/CollisionShape.set_deferred("disabled", true)
 		$kiisu/kas/Area/CollisionShape2.set_deferred("disabled", true)
 		cat_cutscene = 0
+		$Character/KinematicBody/dickcat.show()
 #done ////////////////////////////////////////////////////////////////////////
 		
 func _input(event):
