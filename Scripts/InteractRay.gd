@@ -40,7 +40,6 @@ func _physics_process(delta):
 				print("Kubik Pickup")
 			#kubikinteract on queue_freemas said kubikut
 				emit_signal("KubikInteract")
-			
 				$Achievemtn.text = "Korjasid ules kubiku"
 				yield(get_tree().create_timer(time_in_seconds), "timeout")
 				$Achievemtn.text = " "
