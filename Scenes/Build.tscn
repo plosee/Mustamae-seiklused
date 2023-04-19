@@ -138,6 +138,12 @@ cull_mask = 1048559
 [node name="InteractRay" parent="Character/KinematicBody" index="3"]
 transform = Transform( 2.528, 0, 0, 0, 4.609, 0, 0, 0, 1.75, -0.00258436, 2.62857, -0.337574 )
 
+[node name="RichTextLabel" parent="Character/KinematicBody/InteractRay/Diabox" index="0"]
+margin_left = -349.0
+margin_top = -71.0
+margin_right = 361.0
+margin_bottom = 79.0
+
 [connection signal="CatScene" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_CatScene"]
 [connection signal="KubikInteract" from="Character/KinematicBody/InteractRay" to="kubik/Kubik" method="_on_InteractRay_KubikInteract"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_SangCut"]
