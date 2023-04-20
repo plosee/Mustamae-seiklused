@@ -133,14 +133,17 @@ collision_mask = 9
 [node name="Character" parent="." instance=ExtResource( 1 )]
 transform = Transform( 2.009, 0, 0, 0, 1.087, 0, 0, 0, 1.75, 0, -0.01, 7.827 )
 
-[node name="Head" parent="Character/KinematicBody" index="1"]
+[node name="Head" parent="Character/KinematicBody" index="2"]
 transform = Transform( 0.913, 0, 0, 0, 0.076, 0, 0, 0, 0.548, 0.0381853, 2.86985, -0.309793 )
 
 [node name="Camera" parent="Character/KinematicBody/Head" index="0"]
 transform = Transform( 0.545192, 0, 0, 0, 12.1048, 0, 0, 0, 1.04275, -0.0409144, 4.52132, -0.0700321 )
 cull_mask = 1048559
 
-[node name="InteractRay" parent="Character/KinematicBody" index="3"]
+[node name="vasak2" parent="Character/KinematicBody/paulbod" index="4"]
+transform = Transform( 0.517633, 0.000981174, 5.30142e-08, 0.000623062, -0.728677, 0.120925, 0.000214673, -0.250971, -0.351097, 0.306656, 1.92503, -0.771634 )
+
+[node name="InteractRay" parent="Character/KinematicBody" index="4"]
 transform = Transform( 2.528, 0, 0, 0, 4.609, 0, 0, 0, 1.75, -0.00258436, 2.62857, -0.337574 )
 
 [node name="RichTextLabel" parent="Character/KinematicBody/InteractRay/Diabox" index="0"]
@@ -148,6 +151,9 @@ margin_left = -349.0
 margin_top = -71.0
 margin_right = 361.0
 margin_bottom = 79.0
+
+[node name="kubikinhand" parent="Character/KinematicBody" index="6"]
+transform = Transform( 0.009, 0, 0, 0, 0.0714465, -0.0136642, 0, 0.0248857, 0.0187546, 0.318459, 2.20397, -1.20614 )
 
 [node name="Enviroment" type="Spatial" parent="."]
 
@@ -157,8 +163,6 @@ transform = Transform( 0.000872687, 0, 1, 0, 1, 0, -1, 0, 0.000872687, -6.93726,
 [node name="Camera" parent="Enviroment/truck" index="1"]
 transform = Transform( 0.685921, -0.324014, 0.651558, 0, 0.895396, 0.445271, -0.727676, -0.305421, 0.61417, 7.35889, 4.95831, 6.92579 )
 visible = false
-fov = 22.2737
-near = 0.1
 
 [node name="Light" parent="Enviroment/truck" index="2"]
 transform = Transform( -0.290865, -0.771101, 0.566393, -0.0551891, 0.604525, 0.794672, -0.955171, 0.199883, -0.218391, 4.07624, 5.90386, -1.00545 )

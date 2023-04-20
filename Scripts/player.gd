@@ -43,6 +43,23 @@ func _process(delta):
 		camera.global_transform = head.global_transform
 		
 func _physics_process(delta):
+	
+	if Input.is_action_just_pressed("inv1") || Input.is_action_just_pressed("inv3") || Input.is_action_just_pressed("inv2"):
+		itemheld = true
+		
+	if Input.is_action_just_pressed("stow"):
+		itemheld = false
+		$kubikinhand.visible = false
+		$kubikinhand.visible = false
+		
+	if itemheld:
+		$paulbod/vasak2.rotation_degrees.x = -15
+		$paulbod/vasak2.translation.z = -0.7
+		
+	if !itemheld:
+		$paulbod/vasak2.rotation_degrees.x = 90
+		$paulbod/vasak2.translation.z = -0.203
+	
 	#raycast uses camera rotation
 #	$InteractRay.rotation.y = camera.rotation.y
 
@@ -68,9 +85,9 @@ func _physics_process(delta):
 		accel = ACCEL_AIR
 		gravity_vec += Vector3.DOWN * gravity * delta
 		
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		snap = Vector3.ZERO
-		gravity_vec = Vector3.UP * jump
+#	if Input.is_action_just_pressed("jump") and is_on_floor():
+#		snap = Vector3.ZERO
+#		gravity_vec = Vector3.UP * jump
 	
 	#make it move
 	velocity = velocity.linear_interpolate(direction * speed, accel * delta)
@@ -83,13 +100,8 @@ func _physics_process(delta):
 	else:
 		speed = 14
 	
-	if Input.is_action_just_pressed("inv1") || Input.is_action_just_pressed("inv3") || Input.is_action_just_pressed("inv2"):
-		itemheld = true
-	if Input.is_action_just_pressed("stow"):
-		itemheld = false
-	if itemheld:
-		$paulbod/parem.rotation_degrees.x = -14
-	if !itemheld:
-		$paulbod/parem.rotation_degrees.x = 90
+
 	
-	
+func _on_Inventory_inv1():
+	if $Inventory/slot1/kubik.visible == true:
+		$kubikinhand.show()
