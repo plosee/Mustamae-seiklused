@@ -30,3 +30,9 @@ func _physics_process(delta):
 		$slot1.color = Color(0,0,0,0.5)
 		$slot2.color = Color(0,0,0,0.5)
 		$slot3.color = Color(1,1,1,0.5)
+
+
+func _on_KinematicBody_inv0():
+		$slot1.color = Color(0,0,0,0.5)
+		$slot2.color = Color(0,0,0,0.5)
+		$slot3.color = Color(0,0,0,0.5)

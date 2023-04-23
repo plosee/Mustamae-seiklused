@@ -364,7 +364,10 @@ skeleton = NodePath("../..")
 transform = Transform( 0.009, 0, 0, 0, 0.0714465, -0.0136642, 0, 0.0248857, 0.0187546, 0.43678, 2.49679, -1.46105 )
 visible = false
 
+[connection signal="inv0" from="KinematicBody" to="KinematicBody/Inventory" method="_on_KinematicBody_inv0"]
 [connection signal="inv1" from="KinematicBody/Inventory" to="KinematicBody" method="_on_Inventory_inv1"]
+[connection signal="inv2" from="KinematicBody/Inventory" to="KinematicBody" method="_on_Inventory_inv2"]
+[connection signal="inv3" from="KinematicBody/Inventory" to="KinematicBody" method="_on_Inventory_inv3"]
 [connection signal="KubikInteract" from="KinematicBody/InteractRay" to="KinematicBody/Inventory" method="_on_InteractRay_KubikInteract"]
 
 [editable path="KinematicBody/paulbod"]
