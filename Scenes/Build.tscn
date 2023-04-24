@@ -152,9 +152,6 @@ margin_top = -71.0
 margin_right = 361.0
 margin_bottom = 79.0
 
-[node name="kubikinhand" parent="Character/KinematicBody" index="6"]
-transform = Transform( 0.009, 0, 0, 0, 0.0714465, -0.0136642, 0, 0.0248857, 0.0187546, 0.318459, 2.20397, -1.20614 )
-
 [node name="Enviroment" type="Spatial" parent="."]
 
 [node name="truck" parent="Enviroment" instance=ExtResource( 14 )]

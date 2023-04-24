@@ -321,6 +321,21 @@ mesh = SubResource( 1 )
 [node name="kubikpuff" parent="KinematicBody/paulbod/vasak3" instance=ExtResource( 11 )]
 transform = Transform( 0.047926, -0.00457706, 0.0508148, -0.00278917, -0.0698485, -0.00366089, 0.0509443, 0.000481722, -0.0480047, -0.0488122, 0.0968982, 2.11115 )
 
+[node name="kimubar" type="ColorRect" parent="KinematicBody/paulbod/vasak3"]
+visible = false
+margin_left = 3.0
+margin_top = 880.0
+margin_right = 28.0
+margin_bottom = 1080.0
+
+[node name="bar" type="ColorRect" parent="KinematicBody/paulbod/vasak3/kimubar"]
+margin_left = 25.0
+margin_top = 200.0
+margin_right = 50.0
+margin_bottom = 201.0
+rect_rotation = 180.0
+color = Color( 1, 0, 0, 1 )
+
 [node name="InteractRay" type="RayCast" parent="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0.0101815, 3.3999, 0 )
 enabled = true

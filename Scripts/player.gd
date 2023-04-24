@@ -7,6 +7,8 @@ onready var accel = ACCEL_DEFAULT
 var gravity = 9.8
 var jump = 5
 var itemheld = false
+var kimuheld = false
+var kimu = 0
 
 var cam_accel = 40
 var mouse_sense = 0.1
@@ -35,6 +37,8 @@ func _input(event):
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-89), deg2rad(50))
 
 func _process(delta):
+
+	
 	#camera physics interpolation to reduce physics jitter on high refresh-rate monitors
 	if Engine.get_frames_per_second() > Engine.iterations_per_second:
 		camera.set_as_toplevel(true)
@@ -114,19 +118,37 @@ func _physics_process(delta):
 		speed = 20
 	else:
 		speed = 14
-	#KIMUMINE FIRST TEST
-	if Input.is_action_pressed("mouseinteract") && $Inventory/slot1.color == Color(1,1,1,0.5) && itemheld:
-		$Head/Particles.emitting = true
+	
+	if Input.is_action_pressed("mouseinteract") && $Inventory/slot1.color == Color(1,1,1,0.5) && itemheld && kimu < 101:
+		#$Head/Particles.emitting = true
 		$paulbod/vasak2.hide()
 		$paulbod/vasak2/kubikinhand.hide()
 		$paulbod/vasak3.show()
-	if Input.is_action_just_released("mouseinteract"):
+		$paulbod/vasak3/kimubar.show()
+		kimu = kimu + 1
+		$paulbod/vasak3/kimubar/bar.rect_size.y += 2
+		print(kimu)
+		kimuheld = true
+		
+	if kimu > 0 && kimuheld == false:
+		$Head/Particles.emitting = true
+		kimu -= 1
+		print(kimu)
+		if $paulbod/vasak3/kimubar/bar.rect_size.y > 0:
+			$paulbod/vasak3/kimubar/bar.rect_size.y -= 2
+	if kimu == 0:
 		$Head/Particles.emitting = false
+		$paulbod/vasak3/kimubar.hide()	
+		
+	if Input.is_action_just_released("mouseinteract"):
+		#$Head/Particles.emitting = false
 		if itemheld:
 			$paulbod/vasak2.show()
 			$paulbod/vasak2/kubikinhand.show()
 			$paulbod/vasak3.hide()
-
+#			$paulbod/vasak3/kimubar.hide()
+			kimuheld = false
+	
 func _on_Inventory_inv1():
 	if $Inventory/slot1/kubik.visible == true:
 		$paulbod/vasak2/kubikinhand.show()
