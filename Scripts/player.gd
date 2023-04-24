@@ -47,12 +47,24 @@ func _process(delta):
 		
 func _physics_process(delta):
 	
-	if Input.is_action_just_pressed("inv1") || Input.is_action_just_pressed("inv3") || Input.is_action_just_pressed("inv2"):
-		itemheld = true
-		
+	if Input.is_action_just_pressed("inv1"):
+		if $Inventory/slot1/kubik.visible:
+			itemheld = true
+		if $Inventory/slot1/kubik.visible == false:
+			itemheld = false
+	if Input.is_action_just_pressed("inv2"):
+		if $Inventory/slot2/placeholder.visible:
+			itemheld = true
+		if $Inventory/slot2/placeholder.visible == false:
+			itemheld = false
+	if Input.is_action_just_pressed("inv3"):
+		if $Inventory/slot3/kohahoidja.visible:
+			itemheld = true
+		if $Inventory/slot3/kohahoidja.visible == false:
+			itemheld = false
 	if Input.is_action_just_pressed("stow"):
 		itemheld = false
-		$kubikinhand.visible = false
+		$paulbod/vasak2/kubikinhand.visible = false
 		emit_signal("inv0")
 		
 	if itemheld:
@@ -102,24 +114,29 @@ func _physics_process(delta):
 		speed = 20
 	else:
 		speed = 14
-	
-
-#Test code for kimu implement
-#Will probably delete later ~ A-1   4.23 (delete if old)
-#	if Input.is_action_pressed("mouseinteract"):
-#		var handloc = $kubikinhand.global_rotation
-#		var handy = $kubikinhand.global_rotation.y
-#		var handx = $kubikinhand.global_rotation.x
-#		var handz = $kubikinhand.global_rotation.z
-#		print(handloc)
-#		if handloc.y > 100:
-#			handloc.y + 1
+	#KIMUMINE FIRST TEST
+	if Input.is_action_pressed("mouseinteract") && $Inventory/slot1.color == Color(1,1,1,0.5) && itemheld:
+		$Head/Particles.emitting = true
+		$paulbod/vasak2.hide()
+		$paulbod/vasak2/kubikinhand.hide()
+		$paulbod/vasak3.show()
+	if Input.is_action_just_released("mouseinteract"):
+		$Head/Particles.emitting = false
+		if itemheld:
+			$paulbod/vasak2.show()
+			$paulbod/vasak2/kubikinhand.show()
+			$paulbod/vasak3.hide()
 
 func _on_Inventory_inv1():
 	if $Inventory/slot1/kubik.visible == true:
-		$kubikinhand.show()
+		$paulbod/vasak2/kubikinhand.show()
 func _on_Inventory_inv2():
-	$kubikinhand.hide()
+	$paulbod/vasak2/kubikinhand.hide()
 func _on_Inventory_inv3():
-	$kubikinhand.hide()	
-
+	$paulbod/vasak2/kubikinhand.hide()	
+#used for when slot1 is selected and kubik is added to inventory
+func _on_Inventory_shkub():
+	$paulbod/vasak2/kubikinhand.show()
+	$paulbod/vasak2.show()
+	
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/InteractRay.gd" type="Script" id=2]
@@ -16,6 +16,30 @@
 [ext_resource path="res://Temp Fold For object import/paul/Material_006.material" type="Material" id=14]
 
 [sub_resource type="BoxShape" id=7]
+
+[sub_resource type="SpatialMaterial" id=18]
+flags_transparent = true
+flags_world_triplanar = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+distance_fade_mode = 2
+distance_fade_min_distance = 0.0
+distance_fade_max_distance = 0.0
+
+[sub_resource type="ParticlesMaterial" id=15]
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 3.59
+initial_velocity_random = 1.0
+scale_random = 0.33
+
+[sub_resource type="CubeMesh" id=19]
+size = Vector3( 0.5, 0.5, 0.5 )
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube.025"
@@ -237,12 +261,18 @@ margin_right = 1035.0
 margin_bottom = 1080.0
 color = Color( 0, 0, 0, 1 )
 
+[node name="placeholder" type="Sprite" parent="KinematicBody/Inventory/slot2"]
+visible = false
+
 [node name="slot3" type="ColorRect" parent="KinematicBody/Inventory"]
 margin_left = 1055.0
 margin_top = 930.0
 margin_right = 1205.0
 margin_bottom = 1080.0
 color = Color( 0, 0, 0, 1 )
+
+[node name="kohahoidja" type="Sprite" parent="KinematicBody/Inventory/slot3"]
+visible = false
 
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
 transform = Transform( 0.532079, 0, 0, 0, -7.39427e-08, -1.69161, 0, 0.291701, -1.27507e-08, 0.0131305, 1.63577, 0.0746166 )
@@ -255,6 +285,16 @@ transform = Transform( 0.913, 0, 0, 0, 0.069, 0, 0, 0, 0.548, 0.0381853, 3.1031,
 transform = Transform( 0.545192, 0, 0, 0, 11.9775, 0, 0, 0, 1.04275, -0.0409144, 4.52132, -0.0700329 )
 fov = 85.0
 far = 8192.0
+
+[node name="Particles" type="Particles" parent="KinematicBody/Head"]
+transform = Transform( 0.280434, 0, 0, 0, 2.09534, 0, 0, 0, 0.54242, 0, 0, 0 )
+material_override = SubResource( 18 )
+emitting = false
+amount = 1000
+lifetime = 3.0
+local_coords = false
+process_material = SubResource( 15 )
+draw_pass_1 = SubResource( 19 )
 
 [node name="paulbod" parent="KinematicBody" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.258074 )
@@ -269,6 +309,17 @@ visible = false
 [node name="vasak2" type="MeshInstance" parent="KinematicBody/paulbod"]
 transform = Transform( 0.517633, 0, 0, 0, -0.65083, 0.255673, 0, -0.255627, -0.311201, 0.434593, 1.92503, -1.06385 )
 mesh = SubResource( 1 )
+
+[node name="kubikinhand" parent="KinematicBody/paulbod/vasak2" instance=ExtResource( 11 )]
+transform = Transform( -2.53334e-09, 0, -0.0579561, -0.0286312, -0.0580825, 1.25151e-09, -0.0728824, 0.0477101, 3.18579e-09, -0.06416, 0.00895977, 1.98584 )
+
+[node name="vasak3" type="MeshInstance" parent="KinematicBody/paulbod"]
+transform = Transform( 0.409442, 0.0103819, -0.190611, 0.524733, -0.0705251, 0.407041, -0.0234702, -0.515099, -0.031706, 0.423897, 1.8261, -0.569674 )
+visible = false
+mesh = SubResource( 1 )
+
+[node name="kubikpuff" parent="KinematicBody/paulbod/vasak3" instance=ExtResource( 11 )]
+transform = Transform( 0.047926, -0.00457706, 0.0508148, -0.00278917, -0.0698485, -0.00366089, 0.0509443, 0.000481722, -0.0480047, -0.0488122, 0.0968982, 2.11115 )
 
 [node name="InteractRay" type="RayCast" parent="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0.0101815, 3.3999, 0 )
@@ -360,14 +411,11 @@ transform = Transform( 0.0319695, 0, 0, 0, 0.253674, 0, 0, 0, 0.0298297, 0.41362
 mesh = SubResource( 8 )
 skeleton = NodePath("../..")
 
-[node name="kubikinhand" parent="KinematicBody" instance=ExtResource( 11 )]
-transform = Transform( 0.009, 0, 0, 0, 0.0714465, -0.0136642, 0, 0.0248857, 0.0187546, 0.43678, 2.49679, -1.46105 )
-visible = false
-
 [connection signal="inv0" from="KinematicBody" to="KinematicBody/Inventory" method="_on_KinematicBody_inv0"]
 [connection signal="inv1" from="KinematicBody/Inventory" to="KinematicBody" method="_on_Inventory_inv1"]
 [connection signal="inv2" from="KinematicBody/Inventory" to="KinematicBody" method="_on_Inventory_inv2"]
 [connection signal="inv3" from="KinematicBody/Inventory" to="KinematicBody" method="_on_Inventory_inv3"]
+[connection signal="shkub" from="KinematicBody/Inventory" to="KinematicBody" method="_on_Inventory_shkub"]
 [connection signal="KubikInteract" from="KinematicBody/InteractRay" to="KinematicBody/Inventory" method="_on_InteractRay_KubikInteract"]
 
 [editable path="KinematicBody/paulbod"]
