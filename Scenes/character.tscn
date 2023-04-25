@@ -30,13 +30,13 @@ distance_fade_min_distance = 0.0
 distance_fade_max_distance = 0.0
 
 [sub_resource type="ParticlesMaterial" id=15]
-emission_shape = 1
-emission_sphere_radius = 1.0
+lifetime_randomness = 0.69
 spread = 180.0
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 3.59
+initial_velocity = 5.0
 initial_velocity_random = 1.0
 scale_random = 0.33
+color = Color( 1, 1, 1, 0.121569 )
 
 [sub_resource type="CubeMesh" id=19]
 size = Vector3( 0.5, 0.5, 0.5 )
@@ -290,7 +290,7 @@ far = 8192.0
 transform = Transform( 0.280434, 0, 0, 0, 2.09534, 0, 0, 0, 0.54242, -0.110806, 0, -1.68952 )
 material_override = SubResource( 18 )
 emitting = false
-amount = 1000
+amount = 500
 lifetime = 3.0
 local_coords = false
 process_material = SubResource( 15 )
@@ -322,10 +322,9 @@ mesh = SubResource( 1 )
 transform = Transform( 0.047926, -0.00457706, 0.0508148, -0.00278917, -0.0698485, -0.00366089, 0.0509443, 0.000481722, -0.0480047, -0.0488122, 0.0968982, 2.11115 )
 
 [node name="kimubar" type="ColorRect" parent="KinematicBody/paulbod/vasak3"]
-visible = false
-margin_left = 3.0
+margin_left = 30.0
 margin_top = 880.0
-margin_right = 28.0
+margin_right = 55.0
 margin_bottom = 1080.0
 
 [node name="bar" type="ColorRect" parent="KinematicBody/paulbod/vasak3/kimubar"]
@@ -335,6 +334,19 @@ margin_right = 50.0
 margin_bottom = 201.0
 rect_rotation = 180.0
 color = Color( 1, 0, 0, 1 )
+
+[node name="vedlabar" type="ColorRect" parent="KinematicBody/paulbod/vasak3"]
+visible = false
+margin_left = 25.0
+margin_top = 1080.0
+margin_right = 50.0
+margin_bottom = 1280.0
+rect_rotation = 180.0
+
+[node name="vedla" type="ColorRect" parent="KinematicBody/paulbod/vasak3/vedlabar"]
+margin_right = 25.0
+margin_bottom = 200.0
+color = Color( 0.172549, 1, 0, 1 )
 
 [node name="InteractRay" type="RayCast" parent="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0.0101815, 3.3999, 0 )

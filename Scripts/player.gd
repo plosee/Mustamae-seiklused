@@ -119,50 +119,54 @@ func _physics_process(delta):
 	else:
 		speed = 14
 	
-	if Input.is_action_pressed("mouseinteract") && $Inventory/slot1.color == Color(1,1,1,0.5) && itemheld && kimu < 101:
+	#KIMU KOOD
+	if Input.is_action_pressed("mouseinteract") && $Inventory/slot1.color == Color(1,1,1,0.5) && itemheld && kimu < 101 && $paulbod/vasak3/vedlabar/vedla.rect_size.y > 0:
 		#$Head/Particles.emitting = true
+#Showib kõik vajalikud asjad
 		$paulbod/vasak2.hide()
 		$paulbod/vasak2/kubikinhand.hide()
 		$paulbod/vasak3.show()
 		$paulbod/vasak3/kimubar.show()
 		kimu = kimu + 1
 		$paulbod/vasak3/kimubar/bar.rect_size.y += 2
-		print(kimu)
+		#print(kimu)
 		kimuheld = true
-		
+		$paulbod/vasak3/vedlabar/vedla.rect_size.y -= 0.1
 	if kimu > 0 && kimuheld == false:
 		$Head/Particles.emitting = true
 		kimu -= 1
-		print(kimu)
+		#print(kimu)
 		if $paulbod/vasak3/kimubar/bar.rect_size.y > 0:
 			$paulbod/vasak3/kimubar/bar.rect_size.y -= 2
+#Failsafe kui väljahingamise ajal kimud uuesti, et ei cloudiks edasi
+	if kimuheld == true:
+		$Head/Particles.emitting = false
 	if kimu == 0:
 		$Head/Particles.emitting = false
 		$paulbod/vasak3/kimubar.hide()	
-		
 	if Input.is_action_just_released("mouseinteract"):
 		#$Head/Particles.emitting = false
 		if itemheld:
 			$paulbod/vasak2.show()
 			$paulbod/vasak2/kubikinhand.show()
 			$paulbod/vasak3.hide()
-#			$paulbod/vasak3/kimubar.hide()
 			kimuheld = false
 	
 func _on_Inventory_inv1():
 	if $Inventory/slot1/kubik.visible == true:
 		$paulbod/vasak2/kubikinhand.show()
-		
+		$paulbod/vasak3/vedlabar.show()
 func _on_Inventory_inv2():
 	$paulbod/vasak2/kubikinhand.hide()
 	
 func _on_Inventory_inv3():
 	$paulbod/vasak2/kubikinhand.hide()	
 	if $Inventory/slot3/nuga.visible == true:
-		$
-
+		pass
+		
+	if $Inventory/slot3/nuga.visible == true:
+		pass
+#used for when slot1 is selected and kubik is added to inventory
 func _on_Inventory_shkub():
 	$paulbod/vasak2/kubikinhand.show()
 	$paulbod/vasak2.show()
-	
-	
