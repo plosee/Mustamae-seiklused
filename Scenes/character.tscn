@@ -287,7 +287,7 @@ fov = 85.0
 far = 8192.0
 
 [node name="Particles" type="Particles" parent="KinematicBody/Head"]
-transform = Transform( 0.280434, 0, 0, 0, 2.09534, 0, 0, 0, 0.54242, 0, 0, 0 )
+transform = Transform( 0.280434, 0, 0, 0, 2.09534, 0, 0, 0, 0.54242, -0.110806, 0, -1.68952 )
 material_override = SubResource( 18 )
 emitting = false
 amount = 1000

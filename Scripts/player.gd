@@ -152,11 +152,15 @@ func _physics_process(delta):
 func _on_Inventory_inv1():
 	if $Inventory/slot1/kubik.visible == true:
 		$paulbod/vasak2/kubikinhand.show()
+		
 func _on_Inventory_inv2():
 	$paulbod/vasak2/kubikinhand.hide()
+	
 func _on_Inventory_inv3():
 	$paulbod/vasak2/kubikinhand.hide()	
-#used for when slot1 is selected and kubik is added to inventory
+	if $Inventory/slot3/nuga.visible == true:
+		$
+
 func _on_Inventory_shkub():
 	$paulbod/vasak2/kubikinhand.show()
 	$paulbod/vasak2.show()
