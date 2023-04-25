@@ -31,7 +31,9 @@ distance_fade_max_distance = 0.0
 
 [sub_resource type="ParticlesMaterial" id=15]
 lifetime_randomness = 0.69
-spread = 180.0
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 100.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 5.0
 initial_velocity_random = 1.0
