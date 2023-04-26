@@ -118,7 +118,7 @@ fov = 61.3
 near = 0.01
 far = 193.7
 
-[node name="kiisu" parent="." instance=ExtResource( 12 )]
+[node name="kiisu" parent="." groups=["Kass"] instance=ExtResource( 12 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.00790215, 0 )
 
 [node name="Area" parent="kiisu/kas" index="9" groups=["Kass"]]
@@ -202,6 +202,7 @@ transform = Transform( -0.193584, 0, 0.981084, 0, 1, 0, -0.981084, 0, -0.193584,
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.21183, 2.80453, -13.4586 )
 
 [connection signal="CatScene" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_CatScene"]
+[connection signal="KnifeInteract" from="Character/KinematicBody/InteractRay" to="knife" method="_on_InteractRay_KnifeInteract"]
 [connection signal="KubikInteract" from="Character/KinematicBody/InteractRay" to="kubik/Kubik" method="_on_InteractRay_KubikInteract"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_SangCut"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="Sang" method="_on_InteractRay_SangCut"]
@@ -212,3 +213,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.21183, 2.80453, -13.4586 )
 [editable path="Character"]
 [editable path="Character/KinematicBody/paulbod"]
 [editable path="Enviroment/truck"]
+[editable path="knife"]

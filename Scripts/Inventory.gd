@@ -18,6 +18,8 @@ func _on_InteractRay_KubikInteract():
 	if $slot1.color == Color(1,1,1,0.5):
 		emit_signal("shkub")
 		
+func _on_InteractRay_KnifeInteract():
+		pass
 func _physics_process(delta):
 	if Input.is_action_just_pressed("inv1"):
 		emit_signal("inv1")

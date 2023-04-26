@@ -1,10 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Temp Fold For object import/tool.material" type="Material" id=1]
-
-[sub_resource type="PhysicsMaterial" id=4]
-friction = 0.95
-bounce = 0.07
+[ext_resource path="res://Scripts/knife.gd" type="Script" id=2]
 
 [sub_resource type="ArrayMesh" id=2]
 resource_name = "Cube"
@@ -23,31 +20,27 @@ surfaces/0 = {
 }
 
 [sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.967838, 1, 1 )
 
-[node name="knife" type="Spatial"]
+[sub_resource type="BoxShape" id=5]
 
-[node name="RigidBody" type="RigidBody" parent="."]
-mass = 0.01
-physics_material_override = SubResource( 4 )
-continuous_cd = true
+[node name="knife" type="Spatial" groups=["Knife"]]
+script = ExtResource( 2 )
 
-[node name="knifemodel" type="MeshInstance" parent="RigidBody"]
+[node name="knifekin" type="KinematicBody" parent="." groups=["Knife"]]
+
+[node name="knifemodel" type="MeshInstance" parent="knifekin" groups=["Knife"]]
 transform = Transform( 1.222, 0, 0, 0, 0.25, 0, 0, 0, 0.035, 0, -0.0815976, 0 )
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
 
-[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
-transform = Transform( 6.05241, 0, 0, 0, 1.04593, 0, 0, 0, 0.184914, 0, -0.0990893, 0 )
+[node name="knifecollision" type="CollisionShape" parent="knifekin" groups=["Knife"]]
+transform = Transform( 1.30277, 0, 0, 0, 0.224871, 0, 0, 0, 0.184914, 0, -0.0990893, 0 )
 shape = SubResource( 3 )
 
-[node name="knifekin" type="KinematicBody" parent="."]
-visible = false
+[node name="knifearea" type="Area" parent="knifekin" groups=["Knife"]]
+transform = Transform( 1.14874, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="knifemodel" type="MeshInstance" parent="knifekin"]
-transform = Transform( 1.222, 0, 0, 0, 0.25, 0, 0, 0, 0.035, 0, -0.0815976, 0 )
-mesh = SubResource( 2 )
-skeleton = NodePath("../..")
-
-[node name="CollisionShape" type="CollisionShape" parent="knifekin"]
-transform = Transform( 6.05241, 0, 0, 0, 1.04593, 0, 0, 0, 0.184914, 0, -0.0990893, 0 )
-shape = SubResource( 3 )
+[node name="knifeareabox" type="CollisionShape" parent="knifekin/knifearea" groups=["Knife"]]
+transform = Transform( 1.25731, 0, 0, 0, 0.234596, 0, 0, 0, 0.281016, 0, -0.0854157, 0 )
+shape = SubResource( 5 )
