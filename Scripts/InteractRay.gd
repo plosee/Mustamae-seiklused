@@ -44,14 +44,12 @@ func _physics_process(delta):
 			print("Kubik Pickup")
 			#kubikinteract on queue_freemas said kubikut
 			emit_signal("KubikInteract")
-			
-			$Achievemtn.text = "Korjasid ules kubiku"
+			$Achievemtn.text = "Korjasid ules noa"
 			yield(get_tree().create_timer(time_in_seconds), "timeout")
 			$Achievemtn.text = " "
 			
-		if is_instance_valid(get_node("/root/Spatial/kubik")) == true and collider.is_in_group("Knife") and Input.is_action_just_pressed("interact"):
+		if is_instance_valid(get_node("/root/Spatial/knife")) == true and collider.is_in_group("Knife") and Input.is_action_just_pressed("interact"):
 			emit_signal("KnifeInteract")
-			
 			$Achievemtn.text = "Korjasid ules noa"
 			yield(get_tree().create_timer(time_in_seconds), "timeout")
 			$Achievemtn.text = " "

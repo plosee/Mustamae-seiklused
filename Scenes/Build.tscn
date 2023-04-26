@@ -211,6 +211,7 @@ collision_layer = 8
 collision_mask = 0
 
 [connection signal="CatScene" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_CatScene"]
+[connection signal="KnifeInteract" from="Character/KinematicBody/InteractRay" to="knife" method="_on_InteractRay_KnifeInteract"]
 [connection signal="KubikInteract" from="Character/KinematicBody/InteractRay" to="kubik/Kubik" method="_on_InteractRay_KubikInteract"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_SangCut"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="Sang" method="_on_InteractRay_SangCut"]
@@ -220,5 +221,6 @@ collision_mask = 0
 [editable path="kubik"]
 [editable path="Character"]
 [editable path="Character/KinematicBody/paulbod"]
+[editable path="Character/KinematicBody/paulbod/vasak2/knifeheld"]
 [editable path="Enviroment/truck"]
 [editable path="knife"]
