@@ -58,6 +58,7 @@ script = ExtResource( 11 )
 
 [node name="ground" type="StaticBody" parent="."]
 transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 1000, 0, 0, 0 )
+collision_layer = 0
 __meta__ = {
 "_edit_group_": true
 }
@@ -122,17 +123,21 @@ far = 193.7
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.00790215, 0 )
 
 [node name="Area" parent="kiisu/kas" index="9" groups=["Kass"]]
-collision_layer = 9
+collision_layer = 8
+collision_mask = 0
 
 [node name="kubik" parent="." instance=ExtResource( 13 )]
 transform = Transform( 0.0999842, 0.000687118, 0.00164044, -0.000705065, 0.0999916, 0.00109081, -0.0016328, -0.0011022, 0.0999806, 0, 2.21791, 4.66561 )
 
 [node name="SourArea" parent="kubik/Kubik" index="2" groups=["Kubik"]]
-collision_layer = 9
-collision_mask = 9
+collision_layer = 8
+collision_mask = 0
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
 transform = Transform( 2.009, 0, 0, 0, 1.087, 0, 0, 0, 1.75, 0, -0.01, 7.827 )
+
+[node name="KinematicBody" parent="Character" index="0"]
+collision_mask = 0
 
 [node name="Head" parent="Character/KinematicBody" index="2"]
 transform = Transform( 0.913, 0, 0, 0, 0.076, 0, 0, 0, 0.548, 0.0381853, 2.86985, -0.309793 )
@@ -199,10 +204,13 @@ transform = Transform( 1, 0, 0, 0, 0.826, 0, 0, 0, 0.967, 0, 0, 4.668 )
 transform = Transform( -0.193584, 0, 0.981084, 0, 1, 0, -0.981084, 0, -0.193584, -5.38522, 0.687128, 3.92921 )
 
 [node name="knife" parent="." instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.21183, 2.80453, -13.4586 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0314455, 3.14268, -7.45391 )
+
+[node name="knifearea" parent="knife/knifekin" index="2"]
+collision_layer = 8
+collision_mask = 0
 
 [connection signal="CatScene" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_CatScene"]
-[connection signal="KnifeInteract" from="Character/KinematicBody/InteractRay" to="knife" method="_on_InteractRay_KnifeInteract"]
 [connection signal="KubikInteract" from="Character/KinematicBody/InteractRay" to="kubik/Kubik" method="_on_InteractRay_KubikInteract"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_SangCut"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="Sang" method="_on_InteractRay_SangCut"]
