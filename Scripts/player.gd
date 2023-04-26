@@ -25,6 +25,7 @@ var movement = Vector3()
 
 #inv0 used for stowing
 signal inv0
+signal stab # you can guess what this one is for
 
 onready var head = $Head
 onready var camera = $Head/Camera
@@ -145,13 +146,10 @@ func _physics_process(delta):
 #NOA STABB KOOD
 	if Input.is_action_just_pressed("mouseinteract") && $paulbod/vasak2/knifeheld.visible:
 		$paulbod/vasak2.translate(Vector3.BACK)
-		$paulbod/vasak2/knifeheld/knifekin/knifehitbox/hitboxshape.disabled = false
 		#code here for when colliding with a group called enemy
-		
-		
+		emit_signal("stab")
 		yield(get_tree().create_timer(timeout), "timeout")				#sleep for 0.3
 		$paulbod/vasak2.translate(Vector3.FORWARD)
-		$paulbod/vasak2/knifeheld/knifekin/knifehitbox/hitboxshape.disabled = false
 		
 func _on_Inventory_inv1():
 	if $Inventory/slot1/kubik.visible:

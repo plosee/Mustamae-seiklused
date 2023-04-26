@@ -324,9 +324,6 @@ transform = Transform( -4.22224e-08, 0, 0.965935, 0.477187, -0.580825, 2.08585e-
 [node name="knifecollision" parent="KinematicBody/paulbod/vasak2/knifeheld/knifekin" index="0"]
 disabled = true
 
-[node name="hitboxshape" parent="KinematicBody/paulbod/vasak2/knifeheld/knifekin/knifehitbox" index="0"]
-disabled = true
-
 [node name="vasak3" type="MeshInstance" parent="KinematicBody/paulbod"]
 transform = Transform( 0.409442, 0.0103819, -0.190611, 0.524733, -0.0705251, 0.407041, -0.0234702, -0.515099, -0.031706, 0.423897, 1.8261, -0.569674 )
 visible = false

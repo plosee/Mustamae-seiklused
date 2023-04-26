@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Images/dead-grass.jpg" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Scenes/Object scenes/PaulJaagup.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Object scenes/knife.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Object scenes/vape_particle.tres" type="CubeMesh" id=20]
+[ext_resource path="res://Scenes/Object scenes/vanamees.tscn" type="PackedScene" id=21]
 
 [sub_resource type="SpatialMaterial" id=7]
 flags_transparent = true
@@ -252,11 +253,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0314455, 3.14268, -7.45391 
 collision_layer = 8
 collision_mask = 0
 
+[node name="vanamees" parent="." instance=ExtResource( 21 )]
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 16.6815, 0, 13.8645 )
+
+[connection signal="stab" from="Character/KinematicBody" to="Character/KinematicBody/InteractRay" method="_on_KinematicBody_stab"]
 [connection signal="CatScene" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_CatScene"]
 [connection signal="KnifeInteract" from="Character/KinematicBody/InteractRay" to="knife" method="_on_InteractRay_KnifeInteract"]
 [connection signal="KubikInteract" from="Character/KinematicBody/InteractRay" to="kubik/Kubik" method="_on_InteractRay_KubikInteract"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_SangCut"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="Sang" method="_on_InteractRay_SangCut"]
+[connection signal="hurtvanamees" from="Character/KinematicBody/InteractRay" to="vanamees" method="_on_InteractRay_hurtvanamees"]
 
 [editable path="Sang"]
 [editable path="kiisu"]
