@@ -15,6 +15,7 @@ var t = 0.0
 func _ready():
 	#eyes reapplied incase it doesnt DO IT ITSELF
 	$Character/KinematicBody/Head/Camera.current = true
+	$particle_cache.emitting = true
 	
 func _physics_process(delta):
 	#diagbox animatsioonid
@@ -45,10 +46,11 @@ func _input(event):
 	if Input.is_action_just_pressed("secondary_interact"):
 		#kui cutscene katkestatakse saab ss ta saab enda invaliidsusest yle
 		sang_cutscene = 0
-		$Character.show()
-		$Character/KinematicBody.set_physics_process(true)
-		$Character/KinematicBody.set_process_input(true)
-		$Character/KinematicBody/Head/Camera.current = true
+		if cat_cutscene == 0:
+			$Character.show()
+			$Character/KinematicBody.set_physics_process(true)
+			$Character/KinematicBody.set_process_input(true)
+			$Character/KinematicBody/Head/Camera.current = true
 		
 func _on_InteractRay_SangCut():
 	#char hakkab sangcuti parast invaliidiks ja kummituseks

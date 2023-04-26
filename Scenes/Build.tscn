@@ -21,20 +21,6 @@
 [ext_resource path="res://Scenes/Object scenes/knife.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Object scenes/vape_particle.tres" type="CubeMesh" id=20]
 
-[sub_resource type="BoxShape" id=6]
-
-[sub_resource type="CubeMesh" id=2]
-
-[sub_resource type="SpatialMaterial" id=3]
-flags_world_triplanar = true
-albedo_color = Color( 0.333333, 0.329412, 0.239216, 1 )
-albedo_texture = ExtResource( 2 )
-metallic = 0.28
-metallic_specular = 0.0
-uv1_scale = Vector3( 0.107, 1, 0.105 )
-uv1_triplanar = true
-uv1_triplanar_sharpness = 0.535887
-
 [sub_resource type="SpatialMaterial" id=7]
 flags_transparent = true
 flags_world_triplanar = true
@@ -58,6 +44,20 @@ initial_velocity_random = 1.0
 scale_random = 0.33
 color = Color( 1, 1, 1, 0.121569 )
 
+[sub_resource type="BoxShape" id=6]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_world_triplanar = true
+albedo_color = Color( 0.333333, 0.329412, 0.239216, 1 )
+albedo_texture = ExtResource( 2 )
+metallic = 0.28
+metallic_specular = 0.0
+uv1_scale = Vector3( 0.107, 1, 0.105 )
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.535887
+
 [sub_resource type="PanoramaSky" id=5]
 panorama = ExtResource( 3 )
 
@@ -80,6 +80,18 @@ dof_blur_far_distance = 721.93
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 11 )
 
+[node name="particle_cache" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.4465, -0.158 )
+material_override = SubResource( 7 )
+emitting = false
+amount = 1
+lifetime = 0.01
+one_shot = true
+visibility_aabb = AABB( -4, -5.2285, -4, 8, 10.457, 8 )
+local_coords = false
+process_material = SubResource( 8 )
+draw_pass_1 = ExtResource( 20 )
+
 [node name="ground" type="StaticBody" parent="."]
 transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 1000, 0, 0, 0 )
 collision_layer = 0
@@ -95,16 +107,6 @@ shape = SubResource( 6 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0168359, -1.01223, 0.0261333 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
-
-[node name="Particles2" type="Particles" parent="ground"]
-transform = Transform( 0.0786432, 0, 0, 0, 4.39045, 0, 0, 0, 0.294219, -0.14188, -214.835, -2.60595 )
-material_override = SubResource( 7 )
-amount = 500
-lifetime = 3.0
-visibility_aabb = AABB( -4, -5.2285, -4, 8, 10.457, 8 )
-local_coords = false
-process_material = SubResource( 8 )
-draw_pass_1 = ExtResource( 20 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.957461, 0.288564, 0, -0.0210988, 0.0700061, 0.997323, 0.287792, -0.954898, 0.0731164, -0.424252, 217.398, 0.0717163 )
@@ -180,11 +182,17 @@ transform = Transform( 0.913, 0, 0, 0, 0.076, 0, 0, 0, 0.548, 0.0381853, 2.86985
 transform = Transform( 0.545192, 0, 0, 0, 12.1048, 0, 0, 0, 1.04275, -0.0409144, 4.52132, -0.0700321 )
 cull_mask = 1048559
 
+[node name="parem" parent="Character/KinematicBody/paulbod" index="2"]
+visible = true
+
 [node name="vasak2" parent="Character/KinematicBody/paulbod" index="4"]
 transform = Transform( 0.517633, 0.000981174, 5.30142e-08, 0.000623062, -0.728677, 0.120925, 0.000214673, -0.250971, -0.351097, 0.306656, 1.92503, -0.771634 )
 
-[node name="kubikinhand" parent="Character/KinematicBody/paulbod/vasak2" index="0"]
+[node name="knifeheld" parent="Character/KinematicBody/paulbod/vasak2" index="1"]
 visible = false
+
+[node name="vedlabar" parent="Character/KinematicBody/paulbod/vasak3" index="2"]
+visible = true
 
 [node name="InteractRay" parent="Character/KinematicBody" index="4"]
 transform = Transform( 2.528, 0, 0, 0, 4.609, 0, 0, 0, 1.75, -0.00258436, 2.62857, -0.337574 )

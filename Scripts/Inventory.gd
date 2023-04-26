@@ -8,6 +8,9 @@ signal inv2
 signal inv3
 signal shkub
 
+var selectedslot = Color(1,1,1,0.5)
+var notselected = Color(0,0,0,0.5)
+
 func _ready():
 		$slot1.color = Color(0,0,0,0.5)
 		$slot2.color = Color(0,0,0,0.5)
@@ -15,7 +18,7 @@ func _ready():
 
 func _on_InteractRay_KubikInteract():
 	$slot1/kubik.visible = true
-	if $slot1.color == Color(1,1,1,0.5):
+	if $slot1.color == selectedslot:
 		emit_signal("shkub")
 		
 func _on_InteractRay_KnifeInteract():

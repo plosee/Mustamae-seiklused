@@ -6,9 +6,13 @@ const ACCEL_AIR = 1
 onready var accel = ACCEL_DEFAULT
 var gravity = 9.8
 var jump = 5
-var itemheld = false
+
 var kimuheld = false
-var kimu = 0
+var kimupuffed = 0
+var kimu_in_puffing = false
+
+var knifeheld = false
+var inv3 = false
 
 var cam_accel = 40
 var mouse_sense = 0.1
@@ -40,8 +44,7 @@ func _input(event):
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-89), deg2rad(50))
 
 func _process(delta):
-
-	
+	print(kimuheld)
 	#camera physics interpolation to reduce physics jitter on high refresh-rate monitors
 	if Engine.get_frames_per_second() > Engine.iterations_per_second:
 		camera.set_as_toplevel(true)
@@ -54,34 +57,11 @@ func _process(delta):
 		
 func _physics_process(delta):
 	
-	if Input.is_action_just_pressed("inv1"):
-		if $Inventory/slot1/kubik.visible:
-			itemheld = true
-		if $Inventory/slot1/kubik.visible == false:
-			itemheld = false
-	if Input.is_action_just_pressed("inv2"):
-		if $Inventory/slot2/knife.visible:
-			itemheld = true
-		if $Inventory/slot2/knife.visible == false:
-			itemheld = false
-	if Input.is_action_just_pressed("inv3"):
-		if $Inventory/slot3/kohahoidja.visible:
-			itemheld = true
-		if $Inventory/slot3/kohahoidja.visible == false:
-			itemheld = false
 	if Input.is_action_just_pressed("stow"):
-		itemheld = false
-		$paulbod/vasak2/kubikinhand.visible = false
+		$paulbod/vasak2.hide()
+		$paulbod/parem.show()
 		emit_signal("inv0")
 		
-	if itemheld:
-		$paulbod/vasak2.rotation_degrees.x = -15
-		$paulbod/vasak2.translation.z = -0.7
-		
-	if !itemheld:
-		$paulbod/vasak2.rotation_degrees.x = 90
-		$paulbod/vasak2.translation.z = -0.203
-	
 	#raycast uses camera rotation
 #	$InteractRay.rotation.y = camera.rotation.y
 
@@ -123,52 +103,84 @@ func _physics_process(delta):
 		speed = 14
 	
 	#KIMU KOOD
-	if Input.is_action_pressed("mouseinteract") && $Inventory/slot1.color == Color(1,1,1,0.5) && itemheld && kimu < 101 && $paulbod/vasak3/vedlabar/vedla.rect_size.y > 0:
-		#$Head/Particles.emitting = true
-#Showib kõik vajalikud asjad
+	#Showib kõik vajalikud asjad
+	if Input.is_action_pressed("mouseinteract") && $Inventory/slot1.color == Color(1,1,1,0.5) && kimuheld && kimupuffed < 101 && $paulbod/vasak3/vedlabar/vedla.rect_size.y > 0:
+		kimu_in_puffing = true
+		kimupuffed += 1
+		$Head/Particles.emitting = false
+		
 		$paulbod/vasak2.hide()
-		$paulbod/vasak2/kubikinhand.hide()
 		$paulbod/vasak3.show()
+		$paulbod/vasak3/kubikpuff.show()
 		$paulbod/vasak3/kimubar.show()
-		kimu = kimu + 1
+		$paulbod/vasak3/vedlabar.show()
+		
 		$paulbod/vasak3/kimubar/bar.rect_size.y += 2
-		#print(kimu)
-		kimuheld = true
 		$paulbod/vasak3/vedlabar/vedla.rect_size.y -= 0.1
-	if kimu > 0 && kimuheld == false:
-		$Head/Particles.emitting = true
-		kimu -= 1
-		#print(kimu)
-		if $paulbod/vasak3/kimubar/bar.rect_size.y > 0:
-			$paulbod/vasak3/kimubar/bar.rect_size.y -= 2
-#Failsafe kui väljahingamise ajal kimud uuesti, et ei cloudiks edasi
-	if kimuheld == true:
-		$Head/Particles.emitting = false
-	if kimu == 0:
-		$Head/Particles.emitting = false
-		$paulbod/vasak3/kimubar.hide()	
-	if Input.is_action_just_released("mouseinteract"):
-		#$Head/Particles.emitting = false
-		if itemheld && $Inventory/slot1.color == Color(1,1,1,0.5):
+		
+	if kimuheld == false:
+		$paulbod/vasak3.hide()
+		$paulbod/vasak3/kubikpuff.hide()
+		$paulbod/vasak3/kimubar.hide()
+		$paulbod/vasak3/vedlabar.hide()
+			
+	if Input.is_action_just_released("mouseinteract") && kimu_in_puffing:
+		kimu_in_puffing = false
+		$paulbod/vasak3.hide()
+		if kimuheld:
 			$paulbod/vasak2.show()
 			$paulbod/vasak2/kubikinhand.show()
-			$paulbod/vasak3.hide()
-			kimuheld = false
-	
+			
+	if kimupuffed > 0 && kimu_in_puffing == false:
+		$Head/Particles.emitting = true
+		kimupuffed -= 1
+		if $paulbod/vasak3/kimubar/bar.rect_size.y > 0:
+			$paulbod/vasak3/kimubar/bar.rect_size.y -= 2
+			
+#Failsafe kui väljahingamise ajal kimud uuesti, et ei cloudiks edasi
+	if kimupuffed == 0:
+		$Head/Particles.emitting = false
+		$paulbod/vasak3/kimubar.hide()	
+		
 func _on_Inventory_inv1():
 	if $Inventory/slot1/kubik.visible:
+		$paulbod/vasak2.show()
 		$paulbod/vasak2/kubikinhand.show()
 		$paulbod/vasak3/vedlabar.show()
+		kimuheld = true
+	else:
+		$paulbod/parem.show()
+			
+		
 	$paulbod/vasak2/knifeheld.hide()
+		
 func _on_Inventory_inv2():
+	kimuheld = false
 	if $Inventory/slot2/knife.visible:
-		$paulbod/vasak2/kubikinhand.hide()
-		$Inventory/slot2/knife.show()
+		$paulbod/vasak2.show()
 		$paulbod/vasak2/knifeheld.show()
+		
+	else:
+		$paulbod/parem.show()
+		
+	$paulbod/vasak2/kubikinhand.hide()
+	$paulbod/vasak3.hide()
+	
 func _on_Inventory_inv3():
-	$paulbod/vasak2/kubikinhand.hide()	
+	kimuheld = false
+	if $Inventory/slot3/kohahoidja.visible:
+		$paulbod/vasak2.show()
+	else:
+		$paulbod/parem.show()
+		
+	$paulbod/vasak2/kubikinhand.hide()
 	$paulbod/vasak2/knifeheld.hide()
+	$paulbod/vasak3.hide()
 #used for when slot1 is selected and kubik is added to inventory
 func _on_Inventory_shkub():
-	$paulbod/vasak2/kubikinhand.show()
+	print("shkub")
 	$paulbod/vasak2.show()
+	$paulbod/vasak2/kubikinhand.show()
+	$paulbod/parem.hide()
+	kimuheld = true
+	
