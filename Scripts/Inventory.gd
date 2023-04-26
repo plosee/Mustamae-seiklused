@@ -19,7 +19,8 @@ func _on_InteractRay_KubikInteract():
 		emit_signal("shkub")
 		
 func _on_InteractRay_KnifeInteract():
-		pass
+		$slot2/knife.visible = true
+		
 func _physics_process(delta):
 	if Input.is_action_just_pressed("inv1"):
 		emit_signal("inv1")

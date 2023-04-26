@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/InteractRay.gd" type="Script" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://Temp Fold For object import/paul/SKIN.material" type="Material" id=12]
 [ext_resource path="res://Temp Fold For object import/paul/ENTR_UIRE.material" type="Material" id=13]
 [ext_resource path="res://Temp Fold For object import/paul/Material_006.material" type="Material" id=14]
+[ext_resource path="res://Images/knife.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Object scenes/knife.tscn" type="PackedScene" id=16]
 
 [sub_resource type="BoxShape" id=7]
 
@@ -263,8 +265,11 @@ margin_right = 1035.0
 margin_bottom = 1080.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="placeholder" type="Sprite" parent="KinematicBody/Inventory/slot2"]
+[node name="knife" type="Sprite" parent="KinematicBody/Inventory/slot2"]
 visible = false
+position = Vector2( 74, 75 )
+scale = Vector2( 0.220365, 0.220365 )
+texture = ExtResource( 15 )
 
 [node name="slot3" type="ColorRect" parent="KinematicBody/Inventory"]
 margin_left = 1055.0
@@ -314,6 +319,12 @@ mesh = SubResource( 1 )
 
 [node name="kubikinhand" parent="KinematicBody/paulbod/vasak2" instance=ExtResource( 11 )]
 transform = Transform( -2.53334e-09, 0, -0.0579561, -0.0286312, -0.0580825, 1.25151e-09, -0.0728824, 0.0477101, 3.18579e-09, -0.06416, 0.00895977, 1.98584 )
+
+[node name="knifeheld" parent="KinematicBody/paulbod/vasak2" instance=ExtResource( 16 )]
+transform = Transform( -4.22224e-08, 0, 0.965935, 0.477187, -0.580825, 2.08585e-08, 1.21471, 0.477101, 5.30965e-08, -0.0298836, 0.337393, 2.89293 )
+
+[node name="knifecollision" parent="KinematicBody/paulbod/vasak2/knifeheld/knifekin" index="0"]
+disabled = true
 
 [node name="vasak3" type="MeshInstance" parent="KinematicBody/paulbod"]
 transform = Transform( 0.409442, 0.0103819, -0.190611, 0.524733, -0.0705251, 0.407041, -0.0234702, -0.515099, -0.031706, 0.423897, 1.8261, -0.569674 )
@@ -445,6 +456,8 @@ skeleton = NodePath("../..")
 [connection signal="inv2" from="KinematicBody/Inventory" to="KinematicBody" method="_on_Inventory_inv2"]
 [connection signal="inv3" from="KinematicBody/Inventory" to="KinematicBody" method="_on_Inventory_inv3"]
 [connection signal="shkub" from="KinematicBody/Inventory" to="KinematicBody" method="_on_Inventory_shkub"]
+[connection signal="KnifeInteract" from="KinematicBody/InteractRay" to="KinematicBody/Inventory" method="_on_InteractRay_KnifeInteract"]
 [connection signal="KubikInteract" from="KinematicBody/InteractRay" to="KinematicBody/Inventory" method="_on_InteractRay_KubikInteract"]
 
 [editable path="KinematicBody/paulbod"]
+[editable path="KinematicBody/paulbod/vasak2/knifeheld"]

@@ -28,7 +28,9 @@ onready var camera = $Head/Camera
 func _ready():
 	#hides the cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
+	
+	$paulbod/vasak2/kubikinhand.hide()
+	$paulbod/vasak2/knifeheld.hide()
 func _input(event):
 	#get mouse input for camera rotation
 	if event is InputEventMouseMotion:
@@ -57,9 +59,9 @@ func _physics_process(delta):
 		if $Inventory/slot1/kubik.visible == false:
 			itemheld = false
 	if Input.is_action_just_pressed("inv2"):
-		if $Inventory/slot2/placeholder.visible:
+		if $Inventory/slot2/knife.visible:
 			itemheld = true
-		if $Inventory/slot2/placeholder.visible == false:
+		if $Inventory/slot2/knife.visible == false:
 			itemheld = false
 	if Input.is_action_just_pressed("inv3"):
 		if $Inventory/slot3/kohahoidja.visible:
@@ -146,26 +148,25 @@ func _physics_process(delta):
 		$paulbod/vasak3/kimubar.hide()	
 	if Input.is_action_just_released("mouseinteract"):
 		#$Head/Particles.emitting = false
-		if itemheld:
+		if itemheld && $Inventory/slot1.color == Color(1,1,1,0.5):
 			$paulbod/vasak2.show()
 			$paulbod/vasak2/kubikinhand.show()
 			$paulbod/vasak3.hide()
 			kimuheld = false
 	
 func _on_Inventory_inv1():
-	if $Inventory/slot1/kubik.visible == true:
+	if $Inventory/slot1/kubik.visible:
 		$paulbod/vasak2/kubikinhand.show()
 		$paulbod/vasak3/vedlabar.show()
+	$paulbod/vasak2/knifeheld.hide()
 func _on_Inventory_inv2():
-	$paulbod/vasak2/kubikinhand.hide()
-	
+	if $Inventory/slot2/knife.visible:
+		$paulbod/vasak2/kubikinhand.hide()
+		$Inventory/slot2/knife.show()
+		$paulbod/vasak2/knifeheld.show()
 func _on_Inventory_inv3():
 	$paulbod/vasak2/kubikinhand.hide()	
-	if $Inventory/slot3/nuga.visible == true:
-		pass
-		
-	if $Inventory/slot3/nuga.visible == true:
-		pass
+	$paulbod/vasak2/knifeheld.hide()
 #used for when slot1 is selected and kubik is added to inventory
 func _on_Inventory_shkub():
 	$paulbod/vasak2/kubikinhand.show()
