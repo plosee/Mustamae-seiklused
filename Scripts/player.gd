@@ -26,6 +26,7 @@ onready var head = $Head
 onready var camera = $Head/Camera
 
 func _ready():
+	
 	#hides the cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	

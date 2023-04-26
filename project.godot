@@ -20,6 +20,7 @@ config/icon="res://Images/icon.png"
 [autoload]
 
 Global="*res://Scripts/Global.gd"
+Cacheparticles="*res://Scripts/cacheparticles.gd"
 
 [debug]
 
@@ -31,6 +32,10 @@ settings/stdout/print_fps=true
 window/size/width=1920
 window/size/height=1080
 window/size/resizable=false
+
+[global]
+
+preload=true
 
 [gui]
 

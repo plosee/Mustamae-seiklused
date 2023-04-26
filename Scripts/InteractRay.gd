@@ -16,13 +16,16 @@ func _physics_process(delta):
 #		print("interacted")
 	var collider = get_collider()
 	
+	$InteractPrompt.text = "·"
 	#NPC INTERACTION
 	
+	
 	if collider != null:
+		#Kui teed uue interactable objecti lisa siia if statementi, saveb ruumi. ~ A-1
 		
-		#Kui teed uue interactable objecti lisa siia if statementi, saveb ruumi. ~ A-1		
 		#Iga kord kui uue inter_objecti lisad siis tee kindlaks, et selle 'Area' nodei collision layer on 4 peal //
 		#Kui kustutad objekti siis pane selle signal emit if statementi, et see teeks kindlaks, et node eksisteerib //
+		#ja kindlasti pane see 'elif' statementi, muidu mang crashib proovides molemat checkida //
 		
 		#Layer annab Maskile infot ning vastupidi, aga layer ei saa layerile infot anda //
 		#aka kui object layer on 2 ja interactray mask on 2, siis sa saad interactida sellega //
@@ -31,28 +34,26 @@ func _physics_process(delta):
 		#rn Ground Mask = 1, kinematicbody layer = 1 //
 		#object layer = 4, interactray mask = 4 ~ p
 		
-		if  collider.is_in_group("NPC") || collider.is_in_group("Kubik") || collider.is_in_group("Knife") || collider.is_in_group("Kass"):
+		if collider.is_in_group("NPC") || collider.is_in_group("Kubik") || collider.is_in_group("knife") || collider.is_in_group("Kass"):
 			$InteractPrompt.text = "Vajuta [E]"
-
+			
 		if collider.is_in_group("NPC") and Input.is_action_just_pressed("interact"):
 			emit_signal("SangCut")
 			
-		if collider.is_in_group("Kass") and Input.is_action_just_pressed("interact"):
+		elif collider.is_in_group("Kass") and Input.is_action_just_pressed("interact"):
 			emit_signal("CatScene")
 			
 		if is_instance_valid(get_node("/root/Spatial/kubik")) == true and collider.is_in_group("Kubik") and Input.is_action_just_pressed("interact"):
-			print("Kubik Pickup")
 			#kubikinteract on queue_freemas said kubikut
 			emit_signal("KubikInteract")
-			$Achievemtn.text = "Korjasid ules noa"
+			
+			$Achievemtn.text = "Korjasid ules kubiku"
 			yield(get_tree().create_timer(time_in_seconds), "timeout")
 			$Achievemtn.text = " "
 			
-		if is_instance_valid(get_node("/root/Spatial/knife")) == true and collider.is_in_group("Knife") and Input.is_action_just_pressed("interact"):
+		elif is_instance_valid(get_node("/root/Spatial/knife")) == true and collider.is_in_group("knife") and Input.is_action_just_pressed("interact"):
 			emit_signal("KnifeInteract")
+			
 			$Achievemtn.text = "Korjasid ules noa"
 			yield(get_tree().create_timer(time_in_seconds), "timeout")
 			$Achievemtn.text = " "
-			
-	else:
-		$InteractPrompt.text = "·"

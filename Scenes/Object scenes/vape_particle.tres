@@ -1,0 +1,14 @@
+[gd_resource type="CubeMesh" load_steps=2 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+depth_enabled = true
+depth_scale = 0.05
+depth_deep_parallax = true
+depth_min_layers = 8
+depth_max_layers = 32
+depth_flip_tangent = false
+depth_flip_binormal = false
+
+[resource]
+material = SubResource( 1 )
+size = Vector3( 0.5, 0.5, 0.5 )

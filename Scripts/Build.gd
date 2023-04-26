@@ -28,7 +28,7 @@ func _physics_process(delta):
 		$Character/KinematicBody/InteractRay/InteractPrompt.text = " "
 		if $Character/KinematicBody/InteractRay/Diabox.position.y > 940:
 			$Character/KinematicBody/InteractRay/Diabox.position.y -= 8
-		if Input.is_action_just_pressed("shank"):
+		if Input.is_action_just_pressed("mouseinteract"):
 			$Character/KinematicBody/InteractRay/Diabox/RichTextLabel.text = "Kui sa tahad minu eest palvetada siis mine maja taha, annan sulle paar kommi kui lahed ka"
 			
 	#cat cutscene lerp for animation
