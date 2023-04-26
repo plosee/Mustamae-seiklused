@@ -6,7 +6,7 @@ const ACCEL_AIR = 1
 onready var accel = ACCEL_DEFAULT
 var gravity = 9.8
 var jump = 5
-
+var timeout = 0.3 #Used for stab timer
 var kimuheld = false
 var kimupuffed = 0
 var kimu_in_puffing = false
@@ -30,7 +30,8 @@ onready var head = $Head
 onready var camera = $Head/Camera
 
 func _ready():
-	
+	#kasutasin seda kuna animationite jaoks vaja kätt näha ja kergem
+	$paulbod/vasak2.hide()
 	#hides the cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -44,7 +45,7 @@ func _input(event):
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-89), deg2rad(50))
 
 func _process(delta):
-	print(kimuheld)
+	#print(kimuheld)
 	#camera physics interpolation to reduce physics jitter on high refresh-rate monitors
 	if Engine.get_frames_per_second() > Engine.iterations_per_second:
 		camera.set_as_toplevel(true)
@@ -141,6 +142,16 @@ func _physics_process(delta):
 	if kimupuffed == 0:
 		$Head/Particles.emitting = false
 		$paulbod/vasak3/kimubar.hide()	
+#NOA STABB KOOD
+	if Input.is_action_just_pressed("mouseinteract") && $paulbod/vasak2/knifeheld.visible:
+		$paulbod/vasak2.translate(Vector3.BACK)
+		$paulbod/vasak2/knifeheld/knifekin/knifehitbox/hitboxshape.disabled = false
+		#code here for when colliding with a group called enemy
+		
+		
+		yield(get_tree().create_timer(timeout), "timeout")				#sleep for 0.3
+		$paulbod/vasak2.translate(Vector3.FORWARD)
+		$paulbod/vasak2/knifeheld/knifekin/knifehitbox/hitboxshape.disabled = false
 		
 func _on_Inventory_inv1():
 	if $Inventory/slot1/kubik.visible:
@@ -148,6 +159,7 @@ func _on_Inventory_inv1():
 		$paulbod/vasak2/kubikinhand.show()
 		$paulbod/vasak3/vedlabar.show()
 		kimuheld = true
+		$paulbod/parem.hide()
 	else:
 		$paulbod/parem.show()
 			
@@ -159,9 +171,10 @@ func _on_Inventory_inv2():
 	if $Inventory/slot2/knife.visible:
 		$paulbod/vasak2.show()
 		$paulbod/vasak2/knifeheld.show()
-		
+		$paulbod/parem.hide()
 	else:
 		$paulbod/parem.show()
+		$paulbod/vasak2.hide()
 		
 	$paulbod/vasak2/kubikinhand.hide()
 	$paulbod/vasak3.hide()
@@ -172,6 +185,7 @@ func _on_Inventory_inv3():
 		$paulbod/vasak2.show()
 	else:
 		$paulbod/parem.show()
+		$paulbod/vasak2.hide()
 		
 	$paulbod/vasak2/kubikinhand.hide()
 	$paulbod/vasak2/knifeheld.hide()
@@ -183,4 +197,5 @@ func _on_Inventory_shkub():
 	$paulbod/vasak2/kubikinhand.show()
 	$paulbod/parem.hide()
 	kimuheld = true
+
 	

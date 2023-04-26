@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Temp Fold For object import/tool.material" type="Material" id=1]
 [ext_resource path="res://Scripts/knife.gd" type="Script" id=2]
@@ -24,6 +24,9 @@ surfaces/0 = {
 
 [sub_resource type="BoxShape" id=5]
 
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 1.25704, 1, 1 )
+
 [node name="knife" type="Spatial"]
 script = ExtResource( 2 )
 
@@ -46,3 +49,10 @@ collision_mask = 9
 [node name="knifeareabox" type="CollisionShape" parent="knifekin/knifearea"]
 transform = Transform( 1.25731, 0, 0, 0, 0.234596, 0, 0, 0, 0.281016, 0, -0.0854157, 0 )
 shape = SubResource( 5 )
+
+[node name="knifehitbox" type="Area" parent="knifekin"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22596, 0, 0 )
+
+[node name="hitboxshape" type="CollisionShape" parent="knifekin/knifehitbox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.127613, 0, 0 )
+shape = SubResource( 6 )

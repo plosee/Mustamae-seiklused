@@ -313,7 +313,6 @@ visible = false
 
 [node name="vasak2" type="MeshInstance" parent="KinematicBody/paulbod"]
 transform = Transform( 0.517633, 0, 0, 0, -0.65083, 0.255673, 0, -0.255627, -0.311201, 0.434593, 1.92503, -1.06385 )
-visible = false
 mesh = SubResource( 1 )
 
 [node name="kubikinhand" parent="KinematicBody/paulbod/vasak2" instance=ExtResource( 11 )]
@@ -323,6 +322,9 @@ transform = Transform( -2.53334e-09, 0, -0.0579561, -0.0286312, -0.0580825, 1.25
 transform = Transform( -4.22224e-08, 0, 0.965935, 0.477187, -0.580825, 2.08585e-08, 1.21471, 0.477101, 5.30965e-08, -0.0298836, 0.337393, 2.89293 )
 
 [node name="knifecollision" parent="KinematicBody/paulbod/vasak2/knifeheld/knifekin" index="0"]
+disabled = true
+
+[node name="hitboxshape" parent="KinematicBody/paulbod/vasak2/knifeheld/knifekin/knifehitbox" index="0"]
 disabled = true
 
 [node name="vasak3" type="MeshInstance" parent="KinematicBody/paulbod"]
