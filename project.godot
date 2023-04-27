@@ -17,10 +17,6 @@ run/main_scene="res://Scenes/Main.tscn"
 boot_splash/image="res://Images/lubikprod.png"
 config/icon="res://Images/icon.png"
 
-[autoload]
-
-Global="*res://Scripts/Global.gd"
-
 [debug]
 
 settings/fps/force_fps=60
