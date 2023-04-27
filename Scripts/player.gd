@@ -196,3 +196,4 @@ func _on_Inventory_shkub():
 	$paulbod/parem.hide()
 	kimuheld = true
 
+	
