@@ -197,6 +197,9 @@ transform = Transform( 1.14874, 0, 0, 0, 1.94669, 0, 0, 0, 1.34853, 0, 0.0920856
 collision_layer = 8
 collision_mask = 0
 
+[node name="knifeareabox" parent="knife/knifekin/knifearea" index="0"]
+transform = Transform( 1.25731, 0, 0, 0, 0.234596, 0, 0, 0, 0.281016, 0, -0.0854156, 0 )
+
 [node name="vanamees" parent="." instance=ExtResource( 21 )]
 transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 16.6815, 0.570813, 13.8645 )
 

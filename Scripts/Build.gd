@@ -101,3 +101,4 @@ func _on_InteractRay_CatScene():
 		yield(get_tree().create_timer(5), "timeout")
 		$Character/KinematicBody/InteractRay/Achievemtn.text = ""
 		$Character/KinematicBody/InteractRay.collision_mask = 4			#interact prompt enable
+
