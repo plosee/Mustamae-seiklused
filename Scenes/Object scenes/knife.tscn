@@ -39,7 +39,7 @@ mesh = SubResource( 2 )
 skeleton = NodePath("../..")
 
 [node name="knifearea" type="Area" parent="knifekin"]
-transform = Transform( 1.14874, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1.24265, 0, 0, 0, 4.37049, 0, 0, 0, 3.47049, -0.0729048, 0.0225217, 0 )
 collision_layer = 9
 collision_mask = 9
 

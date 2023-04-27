@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=28 format=2]
+=======
+[gd_scene load_steps=30 format=2]
+>>>>>>> Stashed changes
 
 [ext_resource path="res://Scenes/character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Images/dead-grass.jpg" type="Texture" id=2]
@@ -77,6 +81,16 @@ fog_height_max = 914.3
 fog_height_curve = 1.41421
 dof_blur_far_distance = 721.93
 
+[sub_resource type="NavigationMesh" id=9]
+vertices = PoolVector3Array( -14.2601, 2.40909, -27.1013, -11.2601, 2.40909, -28.1013, -11.2601, 2.40909, -29.1013, -20.2601, 2.40909, -29.1013, -28.2601, 2.40909, -17.1013, -26.2601, 2.40909, -17.1013, -25.2601, 2.40909, -20.1013, -28.2601, 2.40909, -29.1013, -14.2601, 2.40909, -25.1013, -14.2601, 2.40909, -27.1013, -20.2601, 2.40909, -29.1013, -28.2601, 2.40909, -29.1013, -25.2601, 2.40909, -20.1013, -20.2601, 2.40909, -19.1013, -11.2601, 2.40909, -29.1013, -11.2601, 2.40909, -28.1013, -8.2601, 2.40909, -27.1013, -2.2601, 2.40909, -29.1013, -25.2601, 2.40909, -15.1013, -26.2601, 2.40909, -17.1013, -28.2601, 2.40909, -17.1013, -28.2601, 2.40909, -9.1013, -11.2601, 2.40909, -3.1013, -12.2601, 2.40909, -8.1013, -15.2601, 2.40909, -0.101299, -11.2601, 2.40909, -3.1013, -15.2601, 2.40909, -0.101299, -9.2601, 2.40909, -0.101299, -6.2601, 2.40909, -4.1013, -12.2601, 2.40909, -8.1013, -7.2601, 2.40909, -9.1013, -2.2601, 2.40909, -15.1013, -9.2601, 2.40909, -22.1013, -13.2601, 2.40909, -22.1013, -21.2601, 2.40909, -15.1013, -6.2601, 2.40909, -4.1013, -9.2601, 2.40909, -0.101299, -2.2601, 2.40909, -0.101299, -2.2601, 2.40909, -8.1013, -28.2601, 2.40909, -9.1013, -28.2601, 2.40909, -0.101299, -22.2601, 2.40909, -0.101299, -7.2601, 2.40909, -9.1013, -6.2601, 2.40909, -4.1013, -2.2601, 2.40909, -8.1013, -2.2601, 2.40909, -15.1013, -21.2601, 2.40909, -15.1013, -25.2601, 2.40909, -15.1013, -28.2601, 2.40909, -9.1013, -22.2601, 2.40909, -0.101299, -15.2601, 2.40909, -0.101299, -12.2601, 2.40909, -8.1013, -2.2601, 2.40909, -15.1013, -2.2601, 2.40909, -22.1013, -9.2601, 2.40909, -22.1013, -13.2601, 2.40909, -22.1013, -14.2601, 2.40909, -25.1013, -20.2601, 2.40909, -19.1013, -21.2601, 2.40909, -15.1013, -2.2601, 2.40909, -22.1013, -2.2601, 2.40909, -29.1013, -8.2601, 2.40909, -27.1013, -9.2601, 2.40909, -22.1013 )
+polygons = [ PoolIntArray( 1, 0, 2 ), PoolIntArray( 2, 0, 3 ), PoolIntArray( 5, 4, 6 ), PoolIntArray( 6, 4, 7 ), PoolIntArray( 9, 8, 10 ), PoolIntArray( 10, 8, 13 ), PoolIntArray( 10, 13, 12 ), PoolIntArray( 10, 12, 11 ), PoolIntArray( 15, 14, 16 ), PoolIntArray( 16, 14, 17 ), PoolIntArray( 19, 18, 20 ), PoolIntArray( 20, 18, 21 ), PoolIntArray( 24, 23, 22 ), PoolIntArray( 28, 27, 25 ), PoolIntArray( 25, 27, 26 ), PoolIntArray( 30, 29, 31 ), PoolIntArray( 31, 29, 32 ), PoolIntArray( 32, 29, 33 ), PoolIntArray( 33, 29, 34 ), PoolIntArray( 36, 35, 37 ), PoolIntArray( 37, 35, 38 ), PoolIntArray( 41, 40, 39 ), PoolIntArray( 43, 42, 44 ), PoolIntArray( 44, 42, 45 ), PoolIntArray( 47, 46, 48 ), PoolIntArray( 48, 46, 49 ), PoolIntArray( 49, 46, 50 ), PoolIntArray( 50, 46, 51 ), PoolIntArray( 54, 53, 52 ), PoolIntArray( 56, 55, 57 ), PoolIntArray( 57, 55, 58 ), PoolIntArray( 62, 61, 59 ), PoolIntArray( 59, 61, 60 ) ]
+cell_size = 1.0
+cell_height = 1.5
+agent_radius = 1.3
+agent_max_slope = 13.0
+
+[sub_resource type="CubeMesh" id=10]
+
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 11 )
 
@@ -125,7 +139,10 @@ transform = Transform( 2.009, 0, 0, 0, 1.087, 0, 0, 0, 1.75, 0, -0.01, 7.827 )
 [node name="KinematicBody" parent="Character" index="0"]
 collision_mask = 0
 
-[node name="Head" parent="Character/KinematicBody" index="2"]
+[node name="Area" parent="Character/KinematicBody" index="0"]
+collision_layer = 5
+
+[node name="Head" parent="Character/KinematicBody" index="3"]
 transform = Transform( 0.913, 0, 0, 0, 0.076, 0, 0, 0, 0.548, 0.0381853, 2.86985, -0.309793 )
 
 [node name="Camera" parent="Character/KinematicBody/Head" index="0"]
@@ -144,7 +161,7 @@ visible = false
 [node name="vedlabar" parent="Character/KinematicBody/paulbod/vasak3" index="2"]
 visible = true
 
-[node name="InteractRay" parent="Character/KinematicBody" index="4"]
+[node name="InteractRay" parent="Character/KinematicBody" index="5"]
 transform = Transform( 2.528, 0, 0, 0, 4.609, 0, 0, 0, 1.75, -0.00258436, 2.62857, -0.337574 )
 
 [node name="RichTextLabel" parent="Character/KinematicBody/InteractRay/Diabox" index="0"]
@@ -200,9 +217,12 @@ collision_mask = 0
 [node name="vanamees" parent="." instance=ExtResource( 21 )]
 transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 16.6815, 0.570813, 13.8645 )
 
+<<<<<<< Updated upstream
 [node name="JAKEPAUL" parent="." instance=ExtResource( 18 )]
 transform = Transform( -0.193584, 0, 0.981084, 0, 1, 0, -0.981084, 0, -0.193584, -5.38522, 0.687128, 3.92921 )
 
+=======
+>>>>>>> Stashed changes
 [node name="Enviroment" type="Spatial" parent="."]
 
 [node name="truck" parent="Enviroment" instance=ExtResource( 14 )]
@@ -257,15 +277,57 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.959, 0, 59.596 )
 
 [node name="maja5" parent="Majad" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -87.1636 )
+<<<<<<< Updated upstream
+=======
+
+[node name="Navigation" type="Navigation" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.355019, 0, 0 )
+
+[node name="JAKEPAUL" parent="Navigation" instance=ExtResource( 18 )]
+transform = Transform( -0.193584, 0, 0.981084, 0, 1, 0, -0.981084, 0, -0.193584, -33.2112, 0.687128, -10.0853 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Jaak" parent="Navigation/JAKEPAUL" index="1"]
+transform = Transform( 1, 0, 4.47035e-08, 0, 1, 0, -4.47035e-08, 0, 1, 22.0839, 4.76837e-07, 25.7038 )
+collision_mask = 5
+
+[node name="AreaView" parent="Navigation/JAKEPAUL/Jaak" index="6"]
+collision_mask = 5
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+transform = Transform( 0.978193, 0, 0, 0, 1, 0, 0, 0, 1, 0.661091, 0, -22.6558 )
+navmesh = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 14.8434, 0, 0, 0, -0.0102747, 0, 0, 0, 16.6315, -15.4167, 0, -14.4698 )
+mesh = SubResource( 10 )
+
+[node name="kusepu" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3426, -0.55512, -17.5362 )
+
+[node name="kusepu2" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.492, -0.55512, -25.2292 )
+
+[node name="kusepu3" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.24621, -0.55512, -5.64154 )
+>>>>>>> Stashed changes
 
 [connection signal="stab" from="Character/KinematicBody" to="Character/KinematicBody/InteractRay" method="_on_KinematicBody_stab"]
+[connection signal="body_entered" from="Character/KinematicBody/Area" to="Navigation/JAKEPAUL/Jaak" method="_on_Area_body_entered"]
 [connection signal="CatScene" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_CatScene"]
 [connection signal="KnifeInteract" from="Character/KinematicBody/InteractRay" to="knife" method="_on_InteractRay_KnifeInteract"]
 [connection signal="KubikInteract" from="Character/KinematicBody/InteractRay" to="kubik/Kubik" method="_on_InteractRay_KubikInteract"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_SangCut"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="Sang" method="_on_InteractRay_SangCut"]
+<<<<<<< Updated upstream
 [connection signal="hurtdummy" from="Character/KinematicBody/InteractRay" to="JAKEPAUL" method="_on_InteractRay_hurtdummy"]
+=======
+[connection signal="hurtdummy" from="Character/KinematicBody/InteractRay" to="Navigation/JAKEPAUL" method="_on_InteractRay_hurtdummy"]
+>>>>>>> Stashed changes
 [connection signal="hurtvanamees" from="Character/KinematicBody/InteractRay" to="vanamees" method="_on_InteractRay_hurtvanamees"]
+[connection signal="timeout" from="Navigation/JAKEPAUL/Timer" to="Navigation/JAKEPAUL/Jaak" method="_on_Timer_timeout"]
 
 [editable path="Character"]
 [editable path="Character/KinematicBody/paulbod"]
@@ -275,5 +337,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -87.1636 )
 [editable path="kubik"]
 [editable path="knife"]
 [editable path="vanamees"]
+<<<<<<< Updated upstream
 [editable path="JAKEPAUL"]
 [editable path="Enviroment/truck"]
+=======
+[editable path="Enviroment/truck"]
+[editable path="Navigation/JAKEPAUL"]
+>>>>>>> Stashed changes

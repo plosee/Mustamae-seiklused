@@ -185,7 +185,7 @@ mesh = SubResource( 8 )
 skeleton = NodePath("../..")
 
 [node name="Area" type="Area" parent="kas"]
-transform = Transform( 1, 0, 0, 0, 3.55355, 0, 0, 0, 1.29231, 0, 0.693836, 0 )
+transform = Transform( 1.88166, 0, 0, 0, 5.39195, 0, 0, 0, 3.44818, 0, 0.693836, 0 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="kas/Area"]
 transform = Transform( 0.52785, 0, 0, 0, 0.199465, 0, 0, 0, 0.159, -0.0377598, 0.00597705, 0 )

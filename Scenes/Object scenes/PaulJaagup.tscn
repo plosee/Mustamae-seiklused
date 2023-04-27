@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=22 format=2]
+=======
+[gd_scene load_steps=25 format=2]
+>>>>>>> Stashed changes
 
 [ext_resource path="res://Misc/jakepaul/Material_006.material" type="Material" id=1]
 [ext_resource path="res://Misc/jakepaul/ENTR_UIRE.material" type="Material" id=2]
@@ -13,6 +17,7 @@
 [ext_resource path="res://Scripts/Hbar3d.gd" type="Script" id=11]
 [ext_resource path="res://Images/HbarBase.png" type="Texture" id=12]
 [ext_resource path="res://Images/HbarHealth.png" type="Texture" id=13]
+<<<<<<< Updated upstream
 
 [sub_resource type="BoxShape" id=5]
 extents = Vector3( 1.57009, 0.389827, 1.02693 )
@@ -41,6 +46,12 @@ initial_velocity = 5.0
 initial_velocity_random = 1.0
 scale_random = 0.33
 color = Color( 1, 1, 1, 0.121569 )
+=======
+[ext_resource path="res://Scripts/Jaak.gd" type="Script" id=14]
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 0.678049, 0.622175, 0.602337 )
+>>>>>>> Stashed changes
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube.025"
@@ -197,6 +208,7 @@ surfaces/2 = {
 "vertex_count": 224
 }
 
+<<<<<<< Updated upstream
 [node name="JAKEPAUL" type="Spatial"]
 script = ExtResource( 10 )
 
@@ -273,3 +285,124 @@ skeleton = NodePath("../..")
 transform = Transform( -0.125837, 4.56105e-07, 1.12271e-08, -1.1001e-08, 3.57868e-09, -0.128422, -7.01044e-07, -0.0818706, -5.61345e-09, 0.12233, 1.48681, -0.34787 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
+=======
+[sub_resource type="SpatialMaterial" id=7]
+flags_transparent = true
+flags_world_triplanar = true
+params_blend_mode = 1
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+distance_fade_mode = 2
+distance_fade_min_distance = 0.0
+distance_fade_max_distance = 0.0
+
+[sub_resource type="ParticlesMaterial" id=8]
+lifetime_randomness = 0.69
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 100.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 5.0
+initial_velocity_random = 1.0
+scale_random = 0.33
+color = Color( 1, 1, 1, 0.121569 )
+
+[sub_resource type="BoxShape" id=6]
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 1.57009, 0.389827, 1.02693 )
+
+[sub_resource type="CylinderShape" id=9]
+
+[node name="JAKEPAUL" type="Spatial"]
+script = ExtResource( 10 )
+
+[node name="Timer" type="Timer" parent="."]
+process_mode = 0
+wait_time = 2.0
+autostart = true
+
+[node name="Jaak" type="KinematicBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, 4.76837e-07, 0 )
+script = ExtResource( 14 )
+
+[node name="PhysicalBone" type="PhysicalBone" parent="Jaak"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-08, -4.76837e-07, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Jaak/PhysicalBone"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45072, 0 )
+shape = SubResource( 10 )
+
+[node name="Model" type="Spatial" parent="Jaak"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-08, -4.76837e-07, 0 )
+
+[node name="vasak" type="MeshInstance" parent="Jaak/Model"]
+transform = Transform( 0.517633, 0, 0, 0, 3.90732e-08, -0.517633, 0, 0.517541, 3.90802e-08, 0.449868, 1.92503, -0.236937 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+
+[node name="pea" type="MeshInstance" parent="Jaak/Model"]
+transform = Transform( -0.0270521, 0, 0, 0, 1.27947e-09, -0.188095, 0, 0.0169472, 1.42008e-08, 0.0125282, 3.04644, -0.236275 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../../..")
+
+[node name="parem" type="MeshInstance" parent="Jaak/Model"]
+transform = Transform( 0.0405158, -0.00388961, -0.0226536, -0.0157097, -0.00319247, -0.0588294, 0.00157414, 0.0682519, -0.00404275, -0.398575, 1.42975, -0.239629 )
+mesh = SubResource( 3 )
+skeleton = NodePath("../../..")
+
+[node name="keha" type="MeshInstance" parent="Jaak/Model"]
+transform = Transform( -0.125837, 4.56105e-07, 1.12271e-08, -1.1001e-08, 3.57868e-09, -0.128422, -7.01044e-07, -0.0818706, -5.61345e-09, 0.12233, 1.48681, -0.34787 )
+mesh = SubResource( 4 )
+skeleton = NodePath("../../..")
+
+[node name="Particles" type="Particles" parent="Jaak"]
+transform = Transform( 1.50711, 0, 0, 0, 2.09534, 0, 0, 0, 1.33587, 0.84268, -0.144186, -3.2405 )
+material_override = SubResource( 7 )
+emitting = false
+amount = 1000
+one_shot = true
+preprocess = 0.15
+explosiveness = 0.91
+visibility_aabb = AABB( -2.68105, -3.30273, -2.79874, 5.3621, 8, 5.59748 )
+process_material = SubResource( 8 )
+draw_pass_1 = ExtResource( 9 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Jaak"]
+transform = Transform( 0.521574, 0, 0, 0, 2.18996, 0, 0, 0, 0.433478, 0, 1.6482, -0.170909 )
+shape = SubResource( 6 )
+
+[node name="Area4Shank" type="Area" parent="Jaak" groups=["Dummy"]]
+transform = Transform( 1.647, 0, 0, 0, 1.278, 0, 0, 0, 1.657, 0.664532, 5.32379, 0.893513 )
+collision_layer = 8
+collision_mask = 0
+
+[node name="X" type="CollisionShape" parent="Jaak/Area4Shank"]
+transform = Transform( 0.419, 0, 0, 0, 4.361, 0, 0, 0, 0.611, -0.403618, -2.70746, -0.655349 )
+shape = SubResource( 5 )
+
+[node name="Hbar3d" type="Sprite3D" parent="Jaak"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.100421, 4.17517, -0.0882653 )
+billboard = 1
+script = ExtResource( 11 )
+
+[node name="Viewport" type="Viewport" parent="Jaak/Hbar3d"]
+size = Vector2( 200, 35 )
+transparent_bg = true
+
+[node name="Hbar2d" type="TextureProgress" parent="Jaak/Hbar3d/Viewport"]
+margin_right = 200.0
+margin_bottom = 40.0
+value = 100.0
+texture_under = ExtResource( 12 )
+texture_progress = ExtResource( 13 )
+texture_progress_offset = Vector2( 5, 5 )
+
+[node name="AreaView" type="Area" parent="Jaak"]
+
+[node name="Radius" type="CollisionShape" parent="Jaak/AreaView"]
+transform = Transform( 16.1536, 0, 0, 0, 1, 0, 0, 0, 16.2281, 0, 0, 0 )
+shape = SubResource( 9 )
+>>>>>>> Stashed changes
