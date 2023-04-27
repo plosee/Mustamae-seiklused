@@ -6,9 +6,6 @@ var timer = 0
 var health = 100
 
 
-func _ready():
-	pass
-
 func _process(delta):
 	#print(timer)
 	if health > 0:
@@ -17,7 +14,7 @@ func _process(delta):
 		elif timer >= 1:
 			_think()
 			timer = 0
-			emit_signal("stab")
+			
 func _think():
 	rng.randomize()
 	moveamount.randomize()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Temp Fold For object import/tree/kusepu tuvi.material" type="Material" id=1]
 [ext_resource path="res://Temp Fold For object import/tree/kusepu idfk osa_.material" type="Material" id=2]
@@ -32,8 +32,17 @@ surfaces/1 = {
 "vertex_count": 640
 }
 
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.600356, 5.02061, 0.746047 )
+
 [node name="kusepu" type="Spatial"]
 
 [node name="Cube" type="MeshInstance" parent="."]
 transform = Transform( 0.494231, 0, 0, 0, 3.46217, 0, 0, 0, 0.452272, -0.0472243, 3.42638, -0.0556386 )
 mesh = SubResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.15834, 0 )
+shape = SubResource( 2 )

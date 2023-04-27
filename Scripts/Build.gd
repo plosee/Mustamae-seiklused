@@ -66,9 +66,10 @@ func _on_InteractRay_CatScene():
 	if cat_cutscene == 1:
 #cut 1 ////////////////////////////////////////////////////////////////////////
 		print("cut1")
+		
 		$KiisuCutscene/Camera.current = true 									#cutscene cam 1
 		$Character/KinematicBody.global_translation = Vector3(1.8,0,0)			#character TP
-		$Character/KinematicBody/InteractRay.set_physics_process(false)			#interact prompt disabled
+		$Character/KinematicBody/InteractRay.collision_mask = 1		#interact prompt disabled
 		$Character/KinematicBody/InteractRay/InteractPrompt.text = " "
 		$Character/KinematicBody.set_physics_process(false)						#character movement disable
 		$Character/KinematicBody.set_process_input(false)
@@ -99,4 +100,4 @@ func _on_InteractRay_CatScene():
 		$Character/KinematicBody/InteractRay/Achievemtn.text = "obTained C A T C O C K (patent pending)"
 		yield(get_tree().create_timer(5), "timeout")
 		$Character/KinematicBody/InteractRay/Achievemtn.text = ""
-		$Character/KinematicBody/InteractRay.set_physics_process(true)			#interact prompt enable
+		$Character/KinematicBody/InteractRay.collision_mask = 4			#interact prompt enable

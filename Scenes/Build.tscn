@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scenes/character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Images/dead-grass.jpg" type="Texture" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://Buildings/Maja Scene/maja5.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Buildings/Maja Scene/maja3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Object scenes/Sang.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scripts/Global.gd" type="Script" id=10]
 [ext_resource path="res://Scripts/Build.gd" type="Script" id=11]
 [ext_resource path="res://Scenes/Object scenes/kiisu.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Object scenes/kubik.tscn" type="PackedScene" id=13]
@@ -120,56 +119,6 @@ shadow_color = Color( 1, 1, 1, 1 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 4 )
 
-[node name="Majad" type="Spatial" parent="."]
-
-[node name="maja" parent="Majad" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -120.732, 0, -70.6106 )
-
-[node name="maja2" parent="Majad" instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 116.04, 0, -35.7882 )
-
-[node name="maja3" parent="Majad" instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -121.13, 0, 0 )
-
-[node name="maja4" parent="Majad" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.959, 0, 59.596 )
-
-[node name="maja5" parent="Majad" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -87.1636 )
-
-[node name="Sang" parent="." instance=ExtResource( 9 )]
-
-[node name="Global" type="Node" parent="."]
-script = ExtResource( 10 )
-
-[node name="KiisuCutscene" type="Spatial" parent="."]
-
-[node name="Camera" type="Camera" parent="KiisuCutscene"]
-transform = Transform( 0.0269447, 0, 0.999637, 0, 1, 0, -0.999637, 0, 0.0269447, 10.915, 0.67, 0 )
-
-[node name="Camera2" type="Camera" parent="KiisuCutscene"]
-transform = Transform( -3.38242e-08, -0.43814, 0.898907, 0, 0.898907, 0.43814, -1, 1.48197e-08, -3.04048e-08, 12.046, 4.22339, 0 )
-
-[node name="Camera3" type="Camera" parent="KiisuCutscene"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.60587, 3.04532, 5.39338 )
-fov = 61.3
-near = 0.01
-far = 193.7
-
-[node name="kiisu" parent="." groups=["Kass"] instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.00790215, 0 )
-
-[node name="Area" parent="kiisu/kas" index="9" groups=["Kass"]]
-collision_layer = 8
-collision_mask = 0
-
-[node name="kubik" parent="." instance=ExtResource( 13 )]
-transform = Transform( 0.0999842, 0.000687118, 0.00164044, -0.000705065, 0.0999916, 0.00109081, -0.0016328, -0.0011022, 0.0999806, 0, 2.21791, 4.66561 )
-
-[node name="SourArea" parent="kubik/Kubik" index="2" groups=["Kubik"]]
-collision_layer = 8
-collision_mask = 0
-
 [node name="Character" parent="." instance=ExtResource( 1 )]
 transform = Transform( 2.009, 0, 0, 0, 1.087, 0, 0, 0, 1.75, 0, -0.01, 7.827 )
 
@@ -204,18 +153,67 @@ margin_top = -71.0
 margin_right = 361.0
 margin_bottom = 79.0
 
+[node name="Sang" parent="." instance=ExtResource( 9 )]
+
+[node name="kiisu" parent="." groups=["Kass"] instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.00790215, 0 )
+
+[node name="CollisionShape" parent="kiisu/kas" index="0"]
+transform = Transform( 0.546, 0, 0, 0, 0.778, 0, 0, 0, 0.14, -0.0321341, 0.506121, -0.0794468 )
+
+[node name="Area" parent="kiisu/kas" index="9" groups=["Kass"]]
+collision_layer = 8
+collision_mask = 0
+
+[node name="KiisuCutscene" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="KiisuCutscene"]
+transform = Transform( 0.0269447, 0, 0.999637, 0, 1, 0, -0.999637, 0, 0.0269447, 10.915, 0.67, 0 )
+
+[node name="Camera2" type="Camera" parent="KiisuCutscene"]
+transform = Transform( -3.38242e-08, -0.43814, 0.898907, 0, 0.898907, 0.43814, -1, 1.48197e-08, -3.04048e-08, 12.046, 4.22339, 0 )
+
+[node name="Camera3" type="Camera" parent="KiisuCutscene"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.60587, 3.04532, 5.39338 )
+fov = 61.3
+near = 0.01
+far = 193.7
+
+[node name="kubik" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.0999842, 0.000687118, 0.00164044, -0.000705065, 0.0999916, 0.00109081, -0.0016328, -0.0011022, 0.0999806, 0, 2.21791, 4.66561 )
+
+[node name="CollisionShape" parent="kubik/Kubik" index="0"]
+disabled = false
+
+[node name="SourArea" parent="kubik/Kubik" index="2" groups=["Kubik"]]
+collision_layer = 8
+collision_mask = 0
+
+[node name="knife" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0314455, 3.14268, -7.45391 )
+
+[node name="knifearea" parent="knife/knifekin" index="2" groups=["knife"]]
+transform = Transform( 1.14874, 0, 0, 0, 1.94669, 0, 0, 0, 1.34853, 0, 0.0920856, 0 )
+collision_layer = 8
+collision_mask = 0
+
+[node name="vanamees" parent="." instance=ExtResource( 21 )]
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 16.6815, 0.570813, 13.8645 )
+
+[node name="JAKEPAUL" parent="." instance=ExtResource( 18 )]
+transform = Transform( -0.193584, 0, 0.981084, 0, 1, 0, -0.981084, 0, -0.193584, -5.38522, 0.687128, 3.92921 )
+
 [node name="Enviroment" type="Spatial" parent="."]
 
 [node name="truck" parent="Enviroment" instance=ExtResource( 14 )]
 transform = Transform( 0.000872687, 0, 1, 0, 1, 0, -1, 0, 0.000872687, -6.93726, 0, 28.7638 )
 
-[node name="Camera" parent="Enviroment/truck" index="1"]
+[node name="Camera" parent="Enviroment/truck" index="2"]
 transform = Transform( 0.685921, -0.324014, 0.651558, 0, 0.895396, 0.445271, -0.727676, -0.305421, 0.61417, 7.35889, 4.95831, 6.92579 )
 visible = false
 
-[node name="Light" parent="Enviroment/truck" index="2"]
+[node name="Light" parent="Enviroment/truck" index="3"]
 transform = Transform( -0.290865, -0.771101, 0.566393, -0.0551891, 0.604525, 0.794672, -0.955171, 0.199883, -0.218391, 4.07624, 5.90386, -1.00545 )
-visible = false
 
 [node name="Kusepu" type="Spatial" parent="Enviroment"]
 
@@ -243,18 +241,22 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.1025 )
 [node name="prugikast" parent="Enviroment" instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 0.826, 0, 0, 0, 0.967, 0, 0, 4.668 )
 
-[node name="JAKEPAUL" parent="Enviroment" instance=ExtResource( 18 )]
-transform = Transform( -0.193584, 0, 0.981084, 0, 1, 0, -0.981084, 0, -0.193584, -5.38522, 0.687128, 3.92921 )
+[node name="Majad" type="Spatial" parent="."]
 
-[node name="knife" parent="." instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0314455, 3.14268, -7.45391 )
+[node name="maja" parent="Majad" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -120.732, 0, -70.6106 )
 
-[node name="knifearea" parent="knife/knifekin" index="2" groups=["knife"]]
-collision_layer = 8
-collision_mask = 0
+[node name="maja2" parent="Majad" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 116.04, 0, -35.7882 )
 
-[node name="vanamees" parent="." instance=ExtResource( 21 )]
-transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 16.6815, 0, 13.8645 )
+[node name="maja3" parent="Majad" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -121.13, 0, 0 )
+
+[node name="maja4" parent="Majad" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.959, 0, 59.596 )
+
+[node name="maja5" parent="Majad" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -87.1636 )
 
 [connection signal="stab" from="Character/KinematicBody" to="Character/KinematicBody/InteractRay" method="_on_KinematicBody_stab"]
 [connection signal="CatScene" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_CatScene"]
@@ -262,13 +264,16 @@ transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 16.6815, 0, 13.8645 )
 [connection signal="KubikInteract" from="Character/KinematicBody/InteractRay" to="kubik/Kubik" method="_on_InteractRay_KubikInteract"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_SangCut"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="Sang" method="_on_InteractRay_SangCut"]
+[connection signal="hurtdummy" from="Character/KinematicBody/InteractRay" to="JAKEPAUL" method="_on_InteractRay_hurtdummy"]
 [connection signal="hurtvanamees" from="Character/KinematicBody/InteractRay" to="vanamees" method="_on_InteractRay_hurtvanamees"]
 
-[editable path="Sang"]
-[editable path="kiisu"]
-[editable path="kubik"]
 [editable path="Character"]
 [editable path="Character/KinematicBody/paulbod"]
 [editable path="Character/KinematicBody/paulbod/vasak2/knifeheld"]
-[editable path="Enviroment/truck"]
+[editable path="Sang"]
+[editable path="kiisu"]
+[editable path="kubik"]
 [editable path="knife"]
+[editable path="vanamees"]
+[editable path="JAKEPAUL"]
+[editable path="Enviroment/truck"]

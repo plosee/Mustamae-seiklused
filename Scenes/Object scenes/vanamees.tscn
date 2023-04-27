@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Temp Fold For object import/vanamees/Material_032.material" type="Material" id=1]
 [ext_resource path="res://Temp Fold For object import/vanamees/Material_034.material" type="Material" id=2]
@@ -23,6 +23,9 @@
 [ext_resource path="res://Images/HbarBase.png" type="Texture" id=21]
 [ext_resource path="res://Images/HbarHealth.png" type="Texture" id=22]
 [ext_resource path="res://Scenes/Object scenes/vape_particle.tres" type="CubeMesh" id=23]
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 0.763547, 3.7328, 1.1886 )
 
 [sub_resource type="ArrayMesh" id=2]
 resource_name = "Cube.007"
@@ -277,7 +280,7 @@ surfaces/0 = {
 }
 
 [sub_resource type="BoxShape" id=7]
-extents = Vector3( 1.39753, 1, 1.46367 )
+extents = Vector3( 4.53837, 1, 3.25184 )
 
 [sub_resource type="SpatialMaterial" id=8]
 flags_transparent = true
@@ -302,12 +305,19 @@ initial_velocity_random = 1.0
 scale_random = 0.33
 color = Color( 1, 1, 1, 0.121569 )
 
-[node name="vanamees" type="Spatial" groups=["Enemy"]]
+[node name="vanamees" type="Spatial"]
 transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.451906, 0, -0.677862 )
 script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="vanamees" type="KinematicBody" parent="."]
 collision_layer = 9
+
+[node name="CollisionShape" type="CollisionShape" parent="vanamees"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.355688, 3.86424, 0.889648 )
+shape = SubResource( 10 )
 
 [node name="Pants" type="MeshInstance" parent="vanamees"]
 transform = Transform( -0.232458, 0, 0, 0, -0.232458, 0, 0, 0, -0.232458, -0.663335, 7.72301, 0.767563 )
@@ -339,12 +349,13 @@ transform = Transform( -0.603623, 0, 0, 0, -4.30185, 0, 0, 0, -0.670538, -0.4626
 mesh = SubResource( 6 )
 skeleton = NodePath("../../..")
 
-[node name="colission" type="Area" parent="vanamees" groups=["Enemy"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.32379, 0.893513 )
-collision_layer = 9
+[node name="colission" type="Area" parent="vanamees" groups=["Vanamees"]]
+transform = Transform( 1.647, 0, 0, 0, 1.278, 0, 0, 0, 1.657, -0.0110562, 5.32379, 0.893513 )
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="vanamees/colission"]
-transform = Transform( 1, 0, 0, 0, 4.21464, 0, 0, 0, 1, -0.536642, -1.12977, -0.169464 )
+transform = Transform( 0.419, 0, 0, 0, 4.361, 0, 0, 0, 0.611, -0.536642, -1.12977, -0.169464 )
 shape = SubResource( 7 )
 
 [node name="AIraycast" type="RayCast" parent="vanamees"]
@@ -353,10 +364,6 @@ visible = false
 enabled = true
 collision_mask = 17
 collide_with_areas = true
-
-[node name="vanashape" type="CollisionShape" parent="vanamees"]
-transform = Transform( 1, 0, 0, 0, 4.21464, 0, 0, 0, 1, -0.536642, 4.19751, 0.726488 )
-shape = SubResource( 7 )
 
 [node name="Hbar3d" type="Sprite3D" parent="vanamees"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.398849, 9.54431, -0.0775284 )

@@ -3,10 +3,13 @@ extends RayCast
 var time_in_seconds = 5 #timer
 var collider = null
 
-signal SangCut
-signal KubikInteract
 signal CatScene
+signal SangCut
+
+signal KubikInteract
 signal KnifeInteract
+
+signal hurtdummy
 signal hurtvanamees
 
 
@@ -39,8 +42,10 @@ func _physics_process(delta):
 		
 		if collider.is_in_group("NPC") || collider.is_in_group("Kubik") || collider.is_in_group("knife") || collider.is_in_group("Kass"):
 			$InteractPrompt.text = "Vajuta [E]"
-		if collider.is_in_group("Enemy"):
+			
+		elif collider.is_in_group("Vanamees") || collider.is_in_group("Dummy"):
 			$InteractPrompt.text = "X"
+			
 		if collider.is_in_group("NPC") and Input.is_action_just_pressed("interact"):
 			emit_signal("SangCut")
 			
@@ -64,13 +69,9 @@ func _physics_process(delta):
 
 
 func _on_KinematicBody_stab():
-	if collider == null:
-		pass
-	else:
-		if collider.is_in_group("Enemy"):
-			var target = collider.get_parent()
-			if "vanamees" in str(target):
-				emit_signal("hurtvanamees")
+	if collider != null:
+		if collider.is_in_group("Vanamees"):
+			emit_signal("hurtvanamees")
 			
-	
-		
+		elif collider.is_in_group("Dummy"):
+			emit_signal("hurtdummy")
