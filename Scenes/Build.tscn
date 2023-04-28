@@ -296,6 +296,7 @@ transform = Transform( 1.67405, 0, -1.06786e-07, 0, 1.27746, 0, -4.53933e-07, 0,
 [connection signal="KubikInteract" from="Character/KinematicBody/InteractRay" to="kubik/Kubik" method="_on_InteractRay_KubikInteract"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_SangCut"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="Sang" method="_on_InteractRay_SangCut"]
+[connection signal="SyringeInteract" from="Character/KinematicBody/InteractRay" to="Character/KinematicBody/paulbod/vasak2/syringeheld" method="_on_InteractRay_SyringeInteract"]
 [connection signal="hurtdummy" from="Character/KinematicBody/InteractRay" to="JAKEPAUL" method="_on_InteractRay_hurtdummy"]
 [connection signal="hurtvanamees" from="Character/KinematicBody/InteractRay" to="vanamees" method="_on_InteractRay_hurtvanamees"]
 

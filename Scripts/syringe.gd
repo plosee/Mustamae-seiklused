@@ -1,4 +1,5 @@
-extends KinematicBody
+extends Spatial
+
 
 func _on_InteractRay_SyringeInteract():
 	print("syringe pickup")
