@@ -71,6 +71,10 @@ func _physics_process(delta):
 			$Achievemtn.text = "Korjasid ules noa"
 			yield(get_tree().create_timer(time_in_seconds), "timeout")
 			$Achievemtn.text = " "
+			
+		elif collider.is_in_group("Syringe") and Input.is_action_just_pressed("interact"):
+			emit_signal("SyringeInteract")
+			print("emippted")
 
 
 func _on_KinematicBody_stab():

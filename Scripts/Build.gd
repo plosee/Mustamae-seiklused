@@ -98,7 +98,7 @@ func _on_InteractRay_CatScene():
 		$kiisu.queue_free()														#delete kiisu node for memory
 		cat_cutscene = 0														#disable cat cutscene finally
 		$Character/KinematicBody/InteractRay/Achievemtn.text = "obTained C A T C O C K (patent pending)"
-		yield(get_tree().create_timer(5), "timeout")
+		$Character/KinematicBody/InteractRay.collision_mask = 8
+		yield(get_tree().create_timer(5), "timeout")							#interact prompt enable
 		$Character/KinematicBody/InteractRay/Achievemtn.text = ""
-		$Character/KinematicBody/InteractRay.collision_mask = 4			#interact prompt enable
 

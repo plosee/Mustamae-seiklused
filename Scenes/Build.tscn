@@ -287,7 +287,7 @@ transform = Transform( -0.0137529, 0, -0.999905, 0, 1, 0, 0.999905, 0, -0.013752
 [node name="syringe" parent="." instance=ExtResource( 10 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.05603, 2.23219, -10.4544 )
 
-[node name="syringearea" parent="syringe/syringe" index="1" groups=["Syringe"]]
+[node name="syringearea" parent="syringe/syringe" index="1"]
 transform = Transform( 1.67405, 0, -1.06786e-07, 0, 1.27746, 0, -4.53933e-07, 0, 1.6153, -0.312459, 0, 0 )
 
 [connection signal="stab" from="Character/KinematicBody" to="Character/KinematicBody/InteractRay" method="_on_KinematicBody_stab"]
@@ -296,7 +296,7 @@ transform = Transform( 1.67405, 0, -1.06786e-07, 0, 1.27746, 0, -4.53933e-07, 0,
 [connection signal="KubikInteract" from="Character/KinematicBody/InteractRay" to="kubik/Kubik" method="_on_InteractRay_KubikInteract"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_SangCut"]
 [connection signal="SangCut" from="Character/KinematicBody/InteractRay" to="Sang" method="_on_InteractRay_SangCut"]
-[connection signal="SyringeInteract" from="Character/KinematicBody/InteractRay" to="Character/KinematicBody/paulbod/vasak2/syringeheld" method="_on_InteractRay_SyringeInteract"]
+[connection signal="SyringeInteract" from="Character/KinematicBody/InteractRay" to="syringe" method="_on_InteractRay_SyringeInteract"]
 [connection signal="hurtdummy" from="Character/KinematicBody/InteractRay" to="JAKEPAUL" method="_on_InteractRay_hurtdummy"]
 [connection signal="hurtvanamees" from="Character/KinematicBody/InteractRay" to="vanamees" method="_on_InteractRay_hurtvanamees"]
 
