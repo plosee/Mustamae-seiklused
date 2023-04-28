@@ -8,6 +8,7 @@ signal SangCut
 
 signal KubikInteract
 signal KnifeInteract
+signal SyringeInteract
 
 signal hurtdummy
 signal hurtvanamees
@@ -40,7 +41,7 @@ func _physics_process(delta):
 		#rn Ground Mask = 1, kinematicbody layer = 1 //
 		#object layer = 4, interactray mask = 4 ~ p
 		
-		if collider.is_in_group("NPC") || collider.is_in_group("Kubik") || collider.is_in_group("knife") || collider.is_in_group("Kass"):
+		if collider.is_in_group("NPC") || collider.is_in_group("Kubik") || collider.is_in_group("knife") || collider.is_in_group("Kass") || collider.is_in_group("Syringe"):
 			$InteractPrompt.text = "Vajuta [E]"
 			
 		elif collider.is_in_group("Vanamees") || collider.is_in_group("Dummy"):

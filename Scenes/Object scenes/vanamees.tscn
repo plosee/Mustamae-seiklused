@@ -295,7 +295,7 @@ distance_fade_min_distance = 0.0
 distance_fade_max_distance = 0.0
 
 [sub_resource type="ParticlesMaterial" id=9]
-lifetime_randomness = 0.69
+lifetime_randomness = 1.0
 emission_shape = 1
 emission_sphere_radius = 1.0
 spread = 100.0
@@ -387,6 +387,7 @@ transform = Transform( 1.50711, 0, 0, 0, 2.09534, 0, 0, 0, 1.33587, -3.96294, -0
 material_override = SubResource( 8 )
 emitting = false
 amount = 1000
+lifetime = 3.0
 one_shot = true
 preprocess = 0.15
 explosiveness = 0.91

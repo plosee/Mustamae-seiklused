@@ -36,6 +36,7 @@ func _ready():
 	#hides the cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
+	$paulbod/vasak2/syringeheld.hide()
 	$paulbod/vasak2/kubikinhand.hide()
 	$paulbod/vasak2/knifeheld.hide()
 func _input(event):

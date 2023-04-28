@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Images/dead-grass.jpg" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Buildings/Maja Scene/maja5.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Buildings/Maja Scene/maja3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Object scenes/Sang.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Object scenes/syringe.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scripts/Build.gd" type="Script" id=11]
 [ext_resource path="res://Scenes/Object scenes/kiisu.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Object scenes/kubik.tscn" type="PackedScene" id=13]
@@ -109,9 +110,9 @@ mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.957461, 0.288564, 0, -0.0210988, 0.0700061, 0.997323, 0.287792, -0.954898, 0.0731164, -0.424252, 217.398, 0.0717163 )
-light_energy = 16.0
-light_indirect_energy = 8.633
+transform = Transform( 0.957461, 0.288564, 9.65017e-09, -0.0210988, 0.0700061, 0.997323, 0.287792, -0.954898, 0.0731164, -0.424252, 214.863, -182.331 )
+light_energy = 10.0
+light_indirect_energy = 8.949
 light_bake_mode = 2
 shadow_enabled = true
 shadow_color = Color( 1, 1, 1, 1 )
@@ -260,6 +261,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.959, 0, 59.596 )
 
 [node name="maja5" parent="Majad" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -87.1636 )
+
+[node name="syringe" parent="." instance=ExtResource( 10 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.05603, 2.23219, -10.4544 )
 
 [connection signal="stab" from="Character/KinematicBody" to="Character/KinematicBody/InteractRay" method="_on_KinematicBody_stab"]
 [connection signal="CatScene" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_CatScene"]

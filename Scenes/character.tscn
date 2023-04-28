@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/InteractRay.gd" type="Script" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Images/knife.png" type="Texture" id=15]
 [ext_resource path="res://Scenes/Object scenes/knife.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Object scenes/vape_particle.tres" type="CubeMesh" id=17]
+[ext_resource path="res://Scenes/Object scenes/syringe.tscn" type="PackedScene" id=18]
 
 [sub_resource type="BoxShape" id=7]
 
@@ -324,6 +325,9 @@ transform = Transform( -4.22224e-08, 0, 0.965935, 0.477187, -0.580825, 2.08585e-
 [node name="knifecollision" parent="KinematicBody/paulbod/vasak2/knifeheld/knifekin" index="0"]
 disabled = true
 
+[node name="syringeheld" parent="KinematicBody/paulbod/vasak2" instance=ExtResource( 18 )]
+transform = Transform( 1.82828e-08, -0.251915, 0.210352, 0.48218, 0.0824852, 0.206628, -0.396073, 0.209971, 0.525984, -0.024156, -0.359859, 2.05742 )
+
 [node name="vasak3" type="MeshInstance" parent="KinematicBody/paulbod"]
 transform = Transform( 0.409442, 0.0103819, -0.190611, 0.524733, -0.0705251, 0.407041, -0.0234702, -0.515099, -0.031706, 0.423897, 1.8261, -0.569674 )
 visible = false
@@ -456,6 +460,8 @@ skeleton = NodePath("../..")
 [connection signal="shkub" from="KinematicBody/Inventory" to="KinematicBody" method="_on_Inventory_shkub"]
 [connection signal="KnifeInteract" from="KinematicBody/InteractRay" to="KinematicBody/Inventory" method="_on_InteractRay_KnifeInteract"]
 [connection signal="KubikInteract" from="KinematicBody/InteractRay" to="KinematicBody/Inventory" method="_on_InteractRay_KubikInteract"]
+[connection signal="SyringeInteract" from="KinematicBody/InteractRay" to="KinematicBody/paulbod/vasak2/syringeheld/syringe" method="_on_InteractRay_SyringeInteract"]
 
 [editable path="KinematicBody/paulbod"]
 [editable path="KinematicBody/paulbod/vasak2/knifeheld"]
+[editable path="KinematicBody/paulbod/vasak2/syringeheld"]
