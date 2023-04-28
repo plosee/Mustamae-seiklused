@@ -100,7 +100,7 @@ process_material = SubResource( 8 )
 draw_pass_1 = ExtResource( 20 )
 
 [node name="ground" type="StaticBody" parent="."]
-transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 1000, 0, 0, 0 )
+transform = Transform( 999.989, 0.00472982, 0, -4.72982, 0.999989, 0, 0, 0, 1000, 0, 0, 0 )
 collision_layer = 0
 __meta__ = {
 "_edit_group_": true
@@ -234,8 +234,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.8906, 0, 19.0527 )
 [node name="kusepu2" parent="Enviroment/Kusepu" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32.5881, 0, 2.3149 )
 
+[node name="kusepu9" parent="Enviroment/Kusepu" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34.9029, 0, 17.1888 )
+
 [node name="kusepu4" parent="Enviroment/Kusepu" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.8906, 0, -18.3932 )
+
+[node name="kusepu8" parent="Enviroment/Kusepu" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -60.6736, 0, -16.5197 )
+
+[node name="kusepu7" parent="Enviroment/Kusepu" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.3368, 0, 27.4083 )
 
 [node name="kusepu3" parent="Enviroment/Kusepu" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1684, 0, 19.0527 )
@@ -249,25 +258,31 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6093, 0, -11.623 )
 [node name="tool" parent="Enviroment" instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.1025 )
 
+[node name="prugikast2" parent="Enviroment" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 0.682276, 0, 0, 0, 0.935089, 5.95904, 0, -19.8469 )
+
 [node name="prugikast" parent="Enviroment" instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 0.826, 0, 0, 0, 0.967, 0, 0, 4.668 )
 
 [node name="Majad" type="Spatial" parent="."]
 
 [node name="maja" parent="Majad" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -120.732, 0, -70.6106 )
+transform = Transform( 0.89034, 0, 0.455296, 0, 1, 0, -0.455296, 0, 0.89034, -110.222, -0.409302, -34.1631 )
 
 [node name="maja2" parent="Majad" instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 116.04, 0, -35.7882 )
+transform = Transform( 0.99983, 0, 0.0184121, 0, 1, 0, -0.0184121, 0, 0.99983, 13.1934, 2.71694, -44.0021 )
 
 [node name="maja3" parent="Majad" instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -121.13, 0, 0 )
+transform = Transform( -0.999954, 0, 0.00959922, 0, 1, 0, -0.00959922, 0, -0.999954, -123.529, 0.762863, 3.88397 )
 
 [node name="maja4" parent="Majad" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.959, 0, 59.596 )
 
 [node name="maja5" parent="Majad" instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -87.1636 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -171.32, -0.0286274, 42.1894 )
+
+[node name="maja6" parent="Majad" instance=ExtResource( 5 )]
+transform = Transform( -0.0137529, 0, -0.999905, 0, 1, 0, 0.999905, 0, -0.0137529, 132.832, 1.82873, 17.4535 )
 
 [node name="syringe" parent="." instance=ExtResource( 10 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.05603, 2.23219, -10.4544 )
