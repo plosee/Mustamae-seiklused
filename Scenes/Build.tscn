@@ -67,16 +67,22 @@ background_mode = 2
 background_sky = SubResource( 5 )
 fog_enabled = true
 fog_color = Color( 0, 0, 0, 1 )
-fog_sun_color = Color( 0.494118, 0.152941, 0.0470588, 1 )
-fog_sun_amount = 1.0
-fog_depth_begin = 0.0
-fog_depth_end = 328.6
+fog_sun_color = Color( 1, 0.85098, 0.0470588, 1 )
+fog_depth_begin = 203.4
+fog_depth_end = 362.5
 fog_depth_curve = 0.378927
 fog_transmit_curve = 1.1487
-fog_height_min = 2295.7
-fog_height_max = 914.3
+fog_height_enabled = true
+fog_height_min = -4000.0
+fog_height_max = 4000.0
 fog_height_curve = 1.41421
+auto_exposure_scale = 0.01
+auto_exposure_max_luma = 16.0
+auto_exposure_speed = 11.21
 dof_blur_far_distance = 721.93
+adjustment_enabled = true
+adjustment_contrast = 1.22
+adjustment_saturation = 0.66
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 11 )
@@ -110,12 +116,13 @@ mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.957461, 0.288564, 9.65017e-09, -0.0210988, 0.0700061, 0.997323, 0.287792, -0.954898, 0.0731164, -0.424252, 214.863, -182.331 )
+transform = Transform( 1, 0, 0, 0, 0.451065, 0.892491, 0, -0.892491, 0.451065, 0, -9.7401, 0 )
 light_energy = 10.0
 light_indirect_energy = 8.949
 light_bake_mode = 2
 shadow_enabled = true
-shadow_color = Color( 1, 1, 1, 1 )
+shadow_color = Color( 0.513726, 0.498039, 0.498039, 1 )
+shadow_bias = 0.264
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 4 )
