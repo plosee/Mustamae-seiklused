@@ -30,6 +30,7 @@ func _physics_process(delta):
 	if collider != null:
 		#Kui teed uue interactable objecti lisa siia if statementi, saveb ruumi. ~ A-1
 		
+		
 		#Iga kord kui uue inter_objecti lisad siis tee kindlaks, et selle 'Area' nodei collision layer on 4 peal //
 		#Kui kustutad objekti siis pane selle signal emit if statementi, et see teeks kindlaks, et node eksisteerib //
 		#ja kindlasti pane see 'elif' statementi, muidu mang crashib proovides molemat checkida //
@@ -39,7 +40,10 @@ func _physics_process(delta):
 		#interactrayle saab ainult maski lisada, niiet jata see meelde //
 		
 		#rn Ground Mask = 1, kinematicbody layer = 1 //
-		#object layer = 4, interactray mask = 4 ~ p
+		#object layer = 4, interactray mask = 4 //
+		
+		#Kui interact siiani ei toota, siis tee kindlaks et sa panid grupi AREA mitte SPATIALNODEi peale, ara ole tard nagu mina //
+		#you would think if you group a parent node then it's children will get grouped the same, but ig mixed aint whites nor blacks ~p
 		
 		if collider.is_in_group("NPC") || collider.is_in_group("Kubik") || collider.is_in_group("knife") || collider.is_in_group("Kass") || collider.is_in_group("Syringe"):
 			$InteractPrompt.text = "Vajuta [E]"

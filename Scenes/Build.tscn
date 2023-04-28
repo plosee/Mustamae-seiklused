@@ -265,6 +265,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -87.1636 )
 [node name="syringe" parent="." instance=ExtResource( 10 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.05603, 2.23219, -10.4544 )
 
+[node name="syringearea" parent="syringe/syringe" index="1" groups=["Syringe"]]
+transform = Transform( 1.67405, 0, -1.06786e-07, 0, 1.27746, 0, -4.53933e-07, 0, 1.6153, -0.312459, 0, 0 )
+
 [connection signal="stab" from="Character/KinematicBody" to="Character/KinematicBody/InteractRay" method="_on_KinematicBody_stab"]
 [connection signal="CatScene" from="Character/KinematicBody/InteractRay" to="." method="_on_InteractRay_CatScene"]
 [connection signal="KnifeInteract" from="Character/KinematicBody/InteractRay" to="knife" method="_on_InteractRay_KnifeInteract"]
@@ -276,7 +279,6 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.05603
 
 [editable path="Character"]
 [editable path="Character/KinematicBody/paulbod"]
-[editable path="Character/KinematicBody/paulbod/vasak2/knifeheld"]
 [editable path="Sang"]
 [editable path="kiisu"]
 [editable path="kubik"]
@@ -284,3 +286,4 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.05603
 [editable path="vanamees"]
 [editable path="JAKEPAUL"]
 [editable path="Enviroment/truck"]
+[editable path="syringe"]
