@@ -161,8 +161,9 @@ func _on_Inventory_inv1():
 		$paulbod/parem.hide()
 	else:
 		$paulbod/parem.show()
+		$paulbod/vasak2.hide()
 			
-		
+	$paulbod/vasak2/syringeheld.hide()
 	$paulbod/vasak2/knifeheld.hide()
 		
 func _on_Inventory_inv2():
@@ -176,12 +177,15 @@ func _on_Inventory_inv2():
 		$paulbod/vasak2.hide()
 		
 	$paulbod/vasak2/kubikinhand.hide()
+	$paulbod/vasak2/syringeheld.hide()
 	$paulbod/vasak3.hide()
 	
 func _on_Inventory_inv3():
 	kimuheld = false
-	if $Inventory/slot3/kohahoidja.visible:
+	if $Inventory/slot3/syringe.visible:
 		$paulbod/vasak2.show()
+		$paulbod/vasak2/syringeheld.show()
+		$paulbod/parem.hide()
 	else:
 		$paulbod/parem.show()
 		$paulbod/vasak2.hide()
