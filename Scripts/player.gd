@@ -10,6 +10,7 @@ var timeout = 0.3 #Used for stab timer
 var kimuheld = false
 var kimupuffed = 0
 var kimu_in_puffing = false
+var syringeused 
 
 var knifeheld = false
 var inv3 = false
@@ -59,6 +60,7 @@ func _process(delta):
 		camera.global_transform = head.global_transform
 		
 func _physics_process(delta):
+	print(syringeused)
 	
 	if Input.is_action_just_pressed("stow"):
 		$paulbod/vasak2.hide()
@@ -152,6 +154,18 @@ func _physics_process(delta):
 		yield(get_tree().create_timer(timeout), "timeout")				#sleep for 0.3
 		$paulbod/vasak2.translate(Vector3.FORWARD)
 		
+#Syringe code
+	if Input.is_action_just_pressed("mouseinteract") && $paulbod/vasak2/syringeheld.visible && !syringeused:
+		$paulbod/vasak2.hide()
+		$paulbod/injectedhand.show()
+	elif Input.is_action_just_released("mouseinteract") && $paulbod/injectedhand.visible:
+		$Inventory/slot3/syringe.visible = false
+		syringeused = true
+		$paulbod/injectedhand.hide()
+		
+
+		
+		
 func _on_Inventory_inv1():
 	if $Inventory/slot1/kubik.visible:
 		$paulbod/vasak2.show()
@@ -183,6 +197,7 @@ func _on_Inventory_inv2():
 func _on_Inventory_inv3():
 	kimuheld = false
 	if $Inventory/slot3/syringe.visible:
+		syringeused = false
 		$paulbod/vasak2.show()
 		$paulbod/vasak2/syringeheld.show()
 		$paulbod/parem.hide()
