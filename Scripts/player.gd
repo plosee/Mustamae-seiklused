@@ -11,6 +11,7 @@ var kimuheld = false
 var kimupuffed = 0
 var kimu_in_puffing = false
 var syringeused 
+var syringeeffects = 0
 
 var knifeheld = false
 var inv3 = false
@@ -162,10 +163,17 @@ func _physics_process(delta):
 		$Inventory/slot3/syringe.visible = false
 		syringeused = true
 		$paulbod/injectedhand.hide()
-		
+		syringeeffects = 100
+	if syringeeffects > 0:
+		print(syringeeffects)
+		speed = 50
+		syringeeffects -= 0.1
+		$Inventory/slot3/syringebar/drugbar.rect_size.y = (2*syringeeffects)
 
-		
-		
+
+
+
+
 func _on_Inventory_inv1():
 	if $Inventory/slot1/kubik.visible:
 		$paulbod/vasak2.show()
