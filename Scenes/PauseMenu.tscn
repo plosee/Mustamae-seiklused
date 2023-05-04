@@ -34,11 +34,13 @@ anchor_bottom = 1.0
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.294118 )
 
 [node name="Paused" type="RichTextLabel" parent="."]
+pause_mode = 2
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -252.0
@@ -70,6 +72,7 @@ text = "Resume"
 flat = true
 
 [node name="Exit To Desktop" type="Button" parent="Buttons"]
+pause_mode = 2
 margin_left = 586.0
 margin_top = 493.0
 margin_right = 1334.0
@@ -81,6 +84,7 @@ text = "Exit to Desktop"
 flat = true
 
 [node name="Exit To Main Menu" type="Button" parent="Buttons"]
+pause_mode = 2
 margin_left = 586.0
 margin_top = 644.0
 margin_right = 1334.0

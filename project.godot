@@ -28,7 +28,7 @@ config/icon="res://Images/icon.png"
 
 [debug]
 
-settings/fps/force_fps=144
+settings/fps/force_fps=60
 settings/stdout/print_fps=true
 
 [display]
