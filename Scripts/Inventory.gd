@@ -50,3 +50,11 @@ func _on_KinematicBody_inv0():
 		$slot1.color = Color(0,0,0,0.5)
 		$slot2.color = Color(0,0,0,0.5)
 		$slot3.color = Color(0,0,0,0.5)
+
+func _on_InteractRay_Kubik2Interact():
+	$slot1/kubik.visible = true
+	if $slot1.color == selectedslot:
+		emit_signal("shkub")
+
+func _on_InteractRay_Syringe2Interact():
+	$slot3/syringe.visible = true

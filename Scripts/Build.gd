@@ -37,6 +37,7 @@ func _physics_process(delta):
 		if catcut2 == true and is_instance_valid(get_node("/root/Spatial/kiisu")) == true:
 			t += 0.002
 			$kiisu.global_translation.y = lerp($kiisu.global_translation.y, 2, t)
+			
 		if catcut3 == true and is_instance_valid(get_node("/root/Spatial/kiisu")) == true:
 			t = 0
 			t += 0.1

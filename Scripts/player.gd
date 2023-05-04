@@ -48,6 +48,7 @@ func _ready():
 	$paulbod/vasak2/syringeheld.hide()
 	$paulbod/vasak2/kubikinhand.hide()
 	$paulbod/vasak2/knifeheld.hide()
+	
 func _input(event):
 	#get mouse input for camera rotation
 	if event is InputEventMouseMotion:
@@ -232,4 +233,9 @@ func _on_Inventory_shkub():
 	$paulbod/parem.hide()
 	kimuheld = true
 
-	
+func _on_InteractRay_KubikRefill():
+	$paulbod/vasak3/vedlabar/vedla.rect_size.y = 200
+
+
+func _on_InteractRay_Syringe2Interact():
+	pass # Replace with function body.
