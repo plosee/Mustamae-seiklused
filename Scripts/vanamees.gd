@@ -102,10 +102,11 @@ func _process(delta):
 	
 func _on_InteractRay_hurtvanamees():
 	health = health - 10
-	$vanamees/Hbar3d/Viewport/Hbar2d.value = health
+	$Hbar3d/Viewport/Hbar2d.value = health
 	if health == 0:
-		$vanamees/Particles.emitting = true
-		$vanamees/Pants.hide()
-		$vanamees/Hbar3d.hide()
+		$Particles.emitting = true
+		$Pants.hide()
+		$Hbar3d.hide()
+		$Hbar3d.hide()
 		yield(get_tree().create_timer(2), "timeout")
 		call_deferred("free")
