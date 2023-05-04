@@ -41,6 +41,7 @@ window/vsync/use_vsync=false
 [global]
 
 preload=true
+physics=false
 
 [gui]
 
