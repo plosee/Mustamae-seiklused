@@ -1,15 +1,22 @@
 extends KinematicBody
+class_name Player
 
 var speed = 14
 const ACCEL_DEFAULT = 7
 const ACCEL_AIR = 1
 onready var accel = ACCEL_DEFAULT
+
+export var springArmNodePath:NodePath
+onready var springArm:SpringArm = get_node(springArmNodePath)
+
 var gravity = 9.8
 var jump = 5
+
 var timeout = 0.3 #Used for stab timer
 var kimuheld = false
 var kimupuffed = 0
 var kimu_in_puffing = false
+
 var syringeused 
 var syringeeffects = 0
 

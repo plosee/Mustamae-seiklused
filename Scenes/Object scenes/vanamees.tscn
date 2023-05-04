@@ -18,16 +18,128 @@
 [ext_resource path="res://Temp Fold For object import/vanamees/Material_012.material" type="Material" id=16]
 [ext_resource path="res://Temp Fold For object import/vanamees/Material_013.material" type="Material" id=17]
 [ext_resource path="res://Temp Fold For object import/vanamees/Material.material" type="Material" id=18]
-[ext_resource path="res://Scripts/vanamees.gd" type="Script" id=19]
 [ext_resource path="res://Scripts/Hbar3d.gd" type="Script" id=20]
 [ext_resource path="res://Images/HbarBase.png" type="Texture" id=21]
 [ext_resource path="res://Images/HbarHealth.png" type="Texture" id=22]
 [ext_resource path="res://Scenes/Object scenes/vape_particle.tres" type="CubeMesh" id=23]
 
-[sub_resource type="BoxShape" id=10]
-extents = Vector3( 0.763547, 3.7328, 1.1886 )
+[sub_resource type="GDScript" id=11]
+script/source = "extends KinematicBody
 
-[sub_resource type="ArrayMesh" id=2]
+export var navNodePath:NodePath
+onready var navNode:Navigation = get_node(navNodePath)
+
+export var targetPath:NodePath
+onready var targetNode:Spatial = get_node(targetPath)
+
+onready var area:Area = $Area
+onready var forwardRayCast:RayCast = $ForwardRayCast
+onready var floorRayCast:RayCast = $FloorRayCast
+onready var areaShape:CylinderShape = $Area/CollisionShape.shape
+
+
+var gravity = 9.8
+var speed = 2
+var vector:Vector3 = Vector3.ZERO
+var navPath = []
+var health = 100
+
+func _ready():
+	vector = self.global_transform.origin
+	
+func rotate_random():	
+	vector = Vector3.ZERO	
+	self.rotation.x = 0
+	self.rotation.z = 0
+	self.rotation.y = lerp(self.rotation.y, rand_range(-180, 180), 0.1)
+
+func normal_state():
+	areaShape.radius = 10
+	forwardRayCast.cast_to = Vector3.FORWARD * 10 
+	speed = 1	
+	
+	
+func alert_state():
+	areaShape.radius = 20
+	forwardRayCast.cast_to = Vector3.FORWARD * 20 
+	speed = 3
+	
+func navigate_to_target(target:Spatial):
+	targetNode = target
+	navPath = navNode.get_simple_path(self.global_transform.origin, target.global_transform.origin)	
+
+func _process(delta):
+	if !is_on_floor():
+		vector = Vector3.DOWN * gravity
+	else:
+		var bodies = area.get_overlapping_bodies()
+		var foundTarget = false
+		
+		if bodies.size() > 1:
+			for body in bodies:
+				if body == targetNode:
+					foundTarget = true
+			
+		if foundTarget:
+			alert_state()
+			navigate_to_target(targetNode)
+		else:
+			normal_state()
+			navPath = []
+				
+							
+		if navPath.size() > 0:
+			for child in $Holder.get_children():
+				$Holder.remove_child(child)
+								
+			for path in navPath:
+				var instance = $Sphere.duplicate()
+				instance.set_as_toplevel(true)
+				$Holder.add_child(instance)
+				instance.global_transform.origin = path
+			
+				var direction:Vector3 = path - self.global_transform.origin
+				direction = direction.normalized()
+				
+				vector = direction * speed * 5
+				
+				if is_equal_approx(self.global_transform.origin.x, path.x) and is_equal_approx(self.global_transform.origin.z, path.z):
+					if navPath.size() > 1:
+						var nextPath = navPath[1]
+						self.look_at(nextPath, Vector3.UP)
+					self.rotation.x = 0
+					navPath.remove(0)
+
+			
+		else:
+			vector = forwardRayCast.cast_to * speed
+			vector = self.global_transform.basis.xform(vector)
+			
+			if !floorRayCast.is_colliding():
+				rotate_random()
+				
+			if forwardRayCast.is_colliding():
+				rotate_random()
+	
+											
+	move_and_slide(vector, Vector3.UP)
+
+	
+func _on_InteractRay_hurtvanamees():
+	health = health - 10
+	$vanamees/Hbar3d/Viewport/Hbar2d.value = health
+	if health == 0:
+		$vanamees/Particles.emitting = true
+		$vanamees/Pants.hide()
+		$vanamees/Hbar3d.hide()
+		yield(get_tree().create_timer(2), \"timeout\")
+		call_deferred(\"free\")
+"
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 0.763547, 4.56333, 1.1886 )
+
+[sub_resource type="ArrayMesh" id=43]
 resource_name = "Cube.007"
 surfaces/0 = {
 "aabb": AABB( -2.80714, -2.1711, -5.4519, 4.66998, 24.474, 11.5244 ),
@@ -43,7 +155,7 @@ surfaces/0 = {
 "vertex_count": 1071
 }
 
-[sub_resource type="ArrayMesh" id=1]
+[sub_resource type="ArrayMesh" id=44]
 resource_name = "Cube.010"
 surfaces/0 = {
 "aabb": AABB( -0.377707, -0.234427, -0.63817, 0.755415, 0.703282, 1.27634 ),
@@ -59,7 +171,7 @@ surfaces/0 = {
 "vertex_count": 130
 }
 
-[sub_resource type="ArrayMesh" id=5]
+[sub_resource type="ArrayMesh" id=45]
 resource_name = "Cube.020"
 surfaces/0 = {
 "aabb": AABB( -1, -1, -1, 2, 2.00001, 2 ),
@@ -127,7 +239,7 @@ surfaces/4 = {
 "vertex_count": 86
 }
 
-[sub_resource type="ArrayMesh" id=3]
+[sub_resource type="ArrayMesh" id=46]
 resource_name = "Cube.042"
 surfaces/0 = {
 "aabb": AABB( -0.0725022, -1.50356, -0.113372, 0.145765, 2.50357, 0.279545 ),
@@ -195,7 +307,7 @@ surfaces/4 = {
 "vertex_count": 36
 }
 
-[sub_resource type="ArrayMesh" id=4]
+[sub_resource type="ArrayMesh" id=47]
 resource_name = "Cube.041"
 surfaces/0 = {
 "aabb": AABB( -0.0725022, -1.30498, -0.332641, 0.145765, 2.30499, 0.498814 ),
@@ -263,7 +375,7 @@ surfaces/4 = {
 "vertex_count": 32
 }
 
-[sub_resource type="ArrayMesh" id=6]
+[sub_resource type="ArrayMesh" id=48]
 resource_name = "Cube.006"
 surfaces/0 = {
 "aabb": AABB( -3.89626, -1.12163, -4.17717, 8.32489, 2.5599, 8.56688 ),
@@ -279,10 +391,10 @@ surfaces/0 = {
 "vertex_count": 504
 }
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=49]
 extents = Vector3( 4.53837, 1, 3.25184 )
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=50]
 flags_transparent = true
 flags_world_triplanar = true
 params_blend_mode = 1
@@ -294,7 +406,7 @@ distance_fade_mode = 2
 distance_fade_min_distance = 0.0
 distance_fade_max_distance = 0.0
 
-[sub_resource type="ParticlesMaterial" id=9]
+[sub_resource type="ParticlesMaterial" id=51]
 lifetime_randomness = 1.0
 emission_shape = 1
 emission_sphere_radius = 1.0
@@ -307,7 +419,7 @@ color = Color( 1, 1, 1, 0.121569 )
 
 [node name="vanamees" type="Spatial"]
 transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.451906, 0, -0.677862 )
-script = ExtResource( 19 )
+script = SubResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -321,32 +433,32 @@ shape = SubResource( 10 )
 
 [node name="Pants" type="MeshInstance" parent="vanamees"]
 transform = Transform( -0.232458, 0, 0, 0, -0.232458, 0, 0, 0, -0.232458, -0.663335, 7.72301, 0.767563 )
-mesh = SubResource( 2 )
+mesh = SubResource( 43 )
 skeleton = NodePath("../..")
 
 [node name="Hair" type="MeshInstance" parent="vanamees/Pants"]
 transform = Transform( -1.68373, 0, 0, 0, -1.68373, 0, 0, 0, -1.80645, 0.0446017, -1.44869, 0.0218537 )
-mesh = SubResource( 1 )
+mesh = SubResource( 44 )
 skeleton = NodePath("../../..")
 
 [node name="Reg" type="MeshInstance" parent="vanamees/Pants"]
 transform = Transform( -0.432044, 0, -0.0103222, 0, -0.0875621, 0, 0.0377989, 0, -0.117983, -2.69347, 33.2232, -1.92679 )
-mesh = SubResource( 5 )
+mesh = SubResource( 45 )
 skeleton = NodePath("../../..")
 
 [node name="Alm" type="MeshInstance" parent="vanamees/Pants"]
 transform = Transform( -4.30132, 0, 0.0676251, 0, -4.30185, 0, -0.0676251, 0, -4.30132, -0.268057, 5.39298, 2.96136 )
-mesh = SubResource( 3 )
+mesh = SubResource( 46 )
 skeleton = NodePath("../../..")
 
 [node name="Arm" type="MeshInstance" parent="vanamees/Pants"]
 transform = Transform( 4.30132, 0, -0.0676247, 0, -4.30185, 0, 0.0676247, 0, 4.30132, -0.300678, 5.39297, -2.89634 )
-mesh = SubResource( 4 )
+mesh = SubResource( 47 )
 skeleton = NodePath("../../..")
 
 [node name="Leg" type="MeshInstance" parent="vanamees/Pants"]
 transform = Transform( -0.603623, 0, 0, 0, -4.30185, 0, 0, 0, -0.670538, -0.4626, 28.5021, 3.30194 )
-mesh = SubResource( 6 )
+mesh = SubResource( 48 )
 skeleton = NodePath("../../..")
 
 [node name="colission" type="Area" parent="vanamees" groups=["Vanamees"]]
@@ -356,7 +468,7 @@ collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="vanamees/colission"]
 transform = Transform( 0.419, 0, 0, 0, 4.361, 0, 0, 0, 0.611, -0.536642, -1.12977, -0.169464 )
-shape = SubResource( 7 )
+shape = SubResource( 49 )
 
 [node name="AIraycast" type="RayCast" parent="vanamees"]
 transform = Transform( -8.70485e-08, -1.99144, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 7.30962, 0.654128 )
@@ -384,12 +496,12 @@ texture_progress_offset = Vector2( 5, 5 )
 
 [node name="Particles" type="Particles" parent="vanamees"]
 transform = Transform( 1.50711, 0, 0, 0, 2.09534, 0, 0, 0, 1.33587, -3.96294, -0.144186, -0.0465976 )
-material_override = SubResource( 8 )
+material_override = SubResource( 50 )
 emitting = false
 amount = 1000
 lifetime = 3.0
 one_shot = true
 preprocess = 0.15
 explosiveness = 0.91
-process_material = SubResource( 9 )
+process_material = SubResource( 51 )
 draw_pass_1 = ExtResource( 23 )
