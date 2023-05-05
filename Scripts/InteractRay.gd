@@ -103,8 +103,7 @@ func _physics_process(delta):
 			
 		
 		elif collider.is_in_group("Syringe2") and Input.is_action_just_pressed("interact"):
-			collider.get_parent_spatial().queue_free()
-			emit_signal("SyringeInteract")
+			emit_signal("Syringe2Interact")
 			
 
 func _on_KinematicBody_stab():
