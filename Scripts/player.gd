@@ -16,7 +16,9 @@ var timeout = 0.3 #Used for stab timer
 var kimuheld = false
 var kimupuffed = 0
 var kimu_in_puffing = false
+
 var health = 100
+var healthbarpos
 
 var syringeused 
 var syringeeffects = 0
@@ -43,6 +45,7 @@ onready var camera = $Head/Camera
 func _ready():
 	#kasutasin seda kuna animationite jaoks vaja kätt näha ja kergem
 	$paulbod/vasak2.hide()
+	
 	#hides the cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -59,6 +62,9 @@ func _input(event):
 
 func _process(delta):
 	#print(kimuheld)
+	healthbarpos = 5*health
+	print(healthbarpos)
+	$Inventory/HealthBar.value = health
 	#camera physics interpolation to reduce physics jitter on high refresh-rate monitors
 	if Engine.get_frames_per_second() > Engine.iterations_per_second:
 		camera.set_as_toplevel(true)
@@ -70,9 +76,6 @@ func _process(delta):
 		camera.global_transform = head.global_transform
 		
 func _physics_process(delta):
-	print(health)
-	$Inventory/HealthBar.value = health
-	
 	if Input.is_action_just_pressed("stow"):
 		$paulbod/vasak2.hide()
 		$paulbod/parem.show()
@@ -129,13 +132,12 @@ func _physics_process(delta):
 		kimu_in_puffing = true
 		kimupuffed += 1
 		$Head/Particles.emitting = false
-		
+		$Inventory/HealParticles.emitting = false
 		$paulbod/vasak2.hide()
 		$paulbod/vasak3.show()
 		$paulbod/vasak3/kubikpuff.show()
 		$paulbod/vasak3/kimubar.show()
 		$paulbod/vasak3/vedlabar.show()
-		
 		$paulbod/vasak3/kimubar/bar.rect_size.y += 2
 		$paulbod/vasak3/vedlabar/vedla.rect_size.y -= 0.1
 		
@@ -155,13 +157,16 @@ func _physics_process(delta):
 	if kimupuffed > 0 && kimu_in_puffing == false:
 		$Head/Particles.emitting = true
 		if health < 100:
-			health += 0.05
+			$Inventory/HealParticles.emitting = true
+			$Inventory/HealParticles.position.x = 725+healthbarpos
+			health += 0.1
 		kimupuffed -= 1
 		if $paulbod/vasak3/kimubar/bar.rect_size.y > 0:
 			$paulbod/vasak3/kimubar/bar.rect_size.y -= 2
 			
 #Failsafe kui väljahingamise ajal kimud uuesti, et ei cloudiks edasi
 	if kimupuffed == 0:
+		$Inventory/HealParticles.emitting = false
 		$Head/Particles.emitting = false
 		$paulbod/vasak3/kimubar.hide()	
 #NOA STABB KOOD
