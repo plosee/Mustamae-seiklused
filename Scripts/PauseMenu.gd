@@ -28,3 +28,6 @@ func _on_Exit_To_Main_Menu_pressed():
 # warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Scenes/Main.tscn")
 	self.is_paused = false
+	
+func _on_Feedback_pressed():
+	OS.shell_open("https://docs.google.com/forms/d/e/1FAIpQLSdJ2to7RImhio26rf8qd2msbGVONk16Yy1xCmZ2Pfkg7mH_Aw/viewform?usp=sharing")

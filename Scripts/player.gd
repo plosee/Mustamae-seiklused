@@ -63,7 +63,7 @@ func _input(event):
 func _process(delta):
 	#print(kimuheld)
 	healthbarpos = 5*health
-	print(healthbarpos)
+	#print(healthbarpos)
 	$Inventory/HealthBar.value = health
 	#camera physics interpolation to reduce physics jitter on high refresh-rate monitors
 	if Engine.get_frames_per_second() > Engine.iterations_per_second:
@@ -189,7 +189,7 @@ func _physics_process(delta):
 		syringeeffects = 100
 	if syringeeffects > 0:
 		health -= 0.1
-		print(syringeeffects)
+		#print(syringeeffects)
 		speed = 50
 		syringeeffects -= 0.5
 		$Inventory/slot3/syringebar/drugbar.rect_size.y = (2*syringeeffects)
