@@ -100,7 +100,7 @@ func _physics_process(delta):
 			
 		elif collider.is_in_group("Syringe") and Input.is_action_just_pressed("interact"):
 			emit_signal("SyringeInteract")
-			print("emippted")
+			
 		
 		elif collider.is_in_group("Syringe2") and Input.is_action_just_pressed("interact"):
 			emit_signal("Syringe2Interact")

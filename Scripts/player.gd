@@ -16,6 +16,7 @@ var timeout = 0.3 #Used for stab timer
 var kimuheld = false
 var kimupuffed = 0
 var kimu_in_puffing = false
+var health = 100
 
 var syringeused 
 var syringeeffects = 0
@@ -69,7 +70,8 @@ func _process(delta):
 		camera.global_transform = head.global_transform
 		
 func _physics_process(delta):
-	print(syringeused)
+	print(health)
+	$Inventory/HealthBar.value = health
 	
 	if Input.is_action_just_pressed("stow"):
 		$paulbod/vasak2.hide()
@@ -152,6 +154,8 @@ func _physics_process(delta):
 			
 	if kimupuffed > 0 && kimu_in_puffing == false:
 		$Head/Particles.emitting = true
+		if health < 100:
+			health += 0.05
 		kimupuffed -= 1
 		if $paulbod/vasak3/kimubar/bar.rect_size.y > 0:
 			$paulbod/vasak3/kimubar/bar.rect_size.y -= 2
@@ -179,9 +183,10 @@ func _physics_process(delta):
 		$paulbod/injectedhand.hide()
 		syringeeffects = 100
 	if syringeeffects > 0:
+		health -= 0.1
 		print(syringeeffects)
 		speed = 50
-		syringeeffects -= 0.1
+		syringeeffects -= 0.5
 		$Inventory/slot3/syringebar/drugbar.rect_size.y = (2*syringeeffects)
 
 
