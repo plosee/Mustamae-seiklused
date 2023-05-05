@@ -11,7 +11,7 @@ onready var springArm:SpringArm = get_node(springArmNodePath)
 
 var gravity = 9.8
 var jump = 5
-
+onready var animation_player = get_node("paulbod/AnimationPlayer")
 var timeout = 0.3 #Used for stab timer
 var kimuheld = false
 var kimupuffed = 0
@@ -91,6 +91,11 @@ func _physics_process(delta):
 	var h_input = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	direction = Vector3(h_input, 0, f_input).rotated(Vector3.UP, h_rot).normalized()
 	
+	if f_input != 0 || h_input != 0:
+		animation_player.play("legAction")
+	else:
+		animation_player.play("regAction")
+		
 	#jumping and gravity
 	if is_on_floor():
 		snap = -get_floor_normal()
