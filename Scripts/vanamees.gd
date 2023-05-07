@@ -108,5 +108,6 @@ func _on_InteractRay_hurtvanamees():
 		$Pants.hide()
 		$Hbar3d.hide()
 		$Hbar3d.hide()
+		set_process(false)
 		yield(get_tree().create_timer(2), "timeout")
 		call_deferred("free")

@@ -142,3 +142,4 @@ fit_content_height = true
 [connection signal="pressed" from="Buttons/Exit To Main Menu" to="." method="_on_Exit_To_Main_Menu_pressed"]
 [connection signal="pressed" from="Buttons/Exit To Desktop" to="." method="_on_Exit_To_Desktop_pressed"]
 [connection signal="pressed" from="Buttons/Feedback" to="." method="_on_Feedback_pressed"]
+[connection signal="pressed" from="fullscreen" to="." method="_on_fullscreen_pressed"]

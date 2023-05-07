@@ -3,8 +3,8 @@ extends Control
 var fullscreen = false
 
 func _ready():
-	pass
-	
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 func _on_Seikleme_pressed():
 	get_tree().change_scene("res://Scenes/Build.tscn")
 	

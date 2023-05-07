@@ -8,6 +8,7 @@ func _on_InteractRay_hurtdummy():
 	if health == 0:
 		$Particles.emitting = true
 		$Model.hide()
+		set_physics_process(false)
 		yield(get_tree().create_timer(2), "timeout")
 		call_deferred("free")
 
