@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/main.gd" type="Script" id=1]
+[ext_resource path="res://Images/fullscreen.png" type="Texture" id=2]
 [ext_resource path="res://Images/640px-Mustamae_Sopruse_pst_Busstop.jpeg" type="Texture" id=3]
+[ext_resource path="res://Images/unfullscreen.png" type="Texture" id=4]
 [ext_resource path="res://Fonts/ComicSans.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=4]
@@ -36,6 +38,15 @@ script = ExtResource( 1 )
 margin_right = 1918.0
 margin_bottom = 1074.0
 texture = ExtResource( 3 )
+expand = true
+
+[node name="fullscreen" type="TextureButton" parent="Background"]
+margin_top = 888.0
+margin_right = 185.0
+margin_bottom = 1073.0
+toggle_mode = true
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 4 )
 expand = true
 
 [node name="ä" type="RichTextLabel" parent="."]
@@ -89,5 +100,6 @@ custom_fonts/font = SubResource( 2 )
 text = "Seikleme"
 flat = true
 
+[connection signal="toggled" from="Background/fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="pressed" from="Kohila/Kohila" to="." method="_on_Kohila_pressed"]
 [connection signal="pressed" from="Seikleme/Seikleme" to="." method="_on_Seikleme_pressed"]

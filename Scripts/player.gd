@@ -139,7 +139,7 @@ func _physics_process(delta):
 		$paulbod/vasak3/kimubar.show()
 		$paulbod/vasak3/vedlabar.show()
 		$paulbod/vasak3/kimubar/bar.rect_size.y += 2
-		$paulbod/vasak3/vedlabar/vedla.rect_size.y -= 0.1
+		$paulbod/vasak3/vedlabar/vedla.rect_size.y -= 0.5
 		
 	if kimuheld == false:
 		$paulbod/vasak3.hide()

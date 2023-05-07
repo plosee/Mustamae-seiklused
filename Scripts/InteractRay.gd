@@ -100,7 +100,11 @@ func _physics_process(delta):
 			
 		elif collider.is_in_group("Syringe") and Input.is_action_just_pressed("interact"):
 			emit_signal("SyringeInteract")
-			
+			$Achievemtn.text = "Korjasid ules mingi suvalise sustla maast"
+			yield(get_tree().create_timer(2), "timeout")
+			$Achievemtn.text = "See on vist juba kasutatud"
+			yield(get_tree().create_timer(0.75), "timeout")
+			$Achievemtn.text = " "
 		
 		elif collider.is_in_group("Syringe2") and Input.is_action_just_pressed("interact"):
 			emit_signal("Syringe2Interact")
