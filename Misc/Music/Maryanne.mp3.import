@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Maryanne.mp3-f3c440ca7d10f64672d8e10f53e371b5.mp3str"
+
+[deps]
+
+source_file="res://Misc/Music/Maryanne.mp3"
+dest_files=[ "res://.import/Maryanne.mp3-f3c440ca7d10f64672d8e10f53e371b5.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

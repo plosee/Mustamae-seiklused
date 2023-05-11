@@ -9,7 +9,7 @@ signal SangCut
 signal KubikInteract
 signal Kubik2Interact
 signal KubikRefill
-
+signal radio
 signal KnifeInteract
 
 signal SyringeInteract
@@ -51,8 +51,7 @@ func _physics_process(delta):
 		
 		#Kui interact siiani ei toota, siis tee kindlaks et sa panid grupi AREA mitte SPATIALNODEi peale, ara ole tard nagu mina //
 		#you would think if you group a parent node then it's children will get grouped the same, but ig mixed aint whites nor blacks ~p
-		
-		if collider.is_in_group("NPC") || collider.is_in_group("Kubik") || collider.is_in_group("knife") || collider.is_in_group("Kass") || collider.is_in_group("Syringe") || collider.is_in_group("Kubik2") || collider.is_in_group("Syringe2"):
+		if collider.is_in_group("NPC") || collider.is_in_group("Kubik") || collider.is_in_group("knife") || collider.is_in_group("Kass") || collider.is_in_group("Syringe") || collider.is_in_group("Kubik2") || collider.is_in_group("Syringe2")|| collider.is_in_group("radio"):
 			$InteractPrompt.text = "Vajuta [E]"
 			
 		elif collider.is_in_group("Vanamees") || collider.is_in_group("Dummy"):
@@ -63,7 +62,8 @@ func _physics_process(delta):
 			
 		elif collider.is_in_group("Kass") and Input.is_action_just_pressed("interact"):
 			emit_signal("CatScene")
-			
+		if collider.is_in_group("radio") and Input.is_action_just_pressed("interact"):
+			emit_signal("radio")
 			
 		if collider.is_in_group("Kubik2") and Input.is_action_just_pressed("interact") and kubikinventory == true or collider.is_in_group("Kubik") and Input.is_action_just_pressed("interact") and kubikinventory == true:
 			emit_signal("KubikRefill")
