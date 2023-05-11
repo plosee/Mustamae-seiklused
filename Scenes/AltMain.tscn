@@ -1,0 +1,105 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Images/640px-Mustamae_Sopruse_pst_Busstop.jpeg" type="Texture" id=1]
+[ext_resource path="res://Images/fullscreen.png" type="Texture" id=2]
+[ext_resource path="res://Images/unfullscreen.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/main.gd" type="Script" id=4]
+[ext_resource path="res://Fonts/ComicSans.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=4]
+size = 102
+outline_size = 3
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 160
+outline_size = 4
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 90
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 118
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[node name="Main" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 1918.0
+margin_bottom = 1074.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="fullscreen" type="TextureButton" parent="Background"]
+margin_top = 888.0
+margin_right = 185.0
+margin_bottom = 1073.0
+toggle_mode = true
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+expand = true
+
+[node name="ä" type="RichTextLabel" parent="."]
+margin_left = 702.0
+margin_top = -1.0
+margin_right = 817.0
+margin_bottom = 118.0
+rect_scale = Vector2( 1.51363, 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 4 )
+text = ". ."
+fit_content_height = true
+
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = 28.0
+margin_top = 88.0
+margin_right = 1874.0
+margin_bottom = 621.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = " MUSTAMAE SEIKLUSED"
+
+[node name="Kohila" type="ColorRect" parent="."]
+margin_left = 677.0
+margin_top = 660.0
+margin_right = 1253.0
+margin_bottom = 798.0
+color = Color( 0.784314, 0.784314, 0.784314, 0.784314 )
+
+[node name="Kohila" type="Button" parent="Kohila"]
+margin_right = 579.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 3 )
+text = "Koju Kohilasse"
+flat = true
+
+[node name="Seikleme" type="ColorRect" parent="."]
+margin_left = 681.0
+margin_top = 443.0
+margin_right = 1255.0
+margin_bottom = 582.0
+color = Color( 0.784314, 0.784314, 0.784314, 0.784314 )
+
+[node name="Seikleme" type="Button" parent="Seikleme"]
+margin_right = 579.0
+margin_bottom = 143.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.752941, 0.752941, 0.752941, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Seikleme"
+flat = true
+
+[connection signal="toggled" from="Background/fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="pressed" from="Kohila/Kohila" to="." method="_on_Kohila_pressed"]
+[connection signal="pressed" from="Seikleme/Seikleme" to="." method="_on_Seikleme_pressed"]
