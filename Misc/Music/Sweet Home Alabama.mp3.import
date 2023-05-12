@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sweet Home Alabama.mp3-7eae8d1a9ecfa1c061e4bb2fe8769910.mp3str"
+
+[deps]
+
+source_file="res://Misc/Music/Sweet Home Alabama.mp3"
+dest_files=[ "res://.import/Sweet Home Alabama.mp3-7eae8d1a9ecfa1c061e4bb2fe8769910.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dreamscape.mp3-f4a44e33ae88d98a0455a12446b6797b.mp3str"
+
+[deps]
+
+source_file="res://Misc/Music/Dreamscape.mp3"
+dest_files=[ "res://.import/Dreamscape.mp3-f4a44e33ae88d98a0455a12446b6797b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

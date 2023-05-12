@@ -102,6 +102,7 @@ text = "Quit"
 flat = true
 align = 0
 
+[connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
 [connection signal="toggled" from="VideoPlayer/fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]

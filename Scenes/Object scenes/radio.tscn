@@ -1,7 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/radio.gd" type="Script" id=1]
-[ext_resource path="res://Misc/Music/Maryanne.mp3" type="AudioStream" id=2]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -9,9 +8,10 @@
 
 [sub_resource type="CubeMesh" id=3]
 
+[sub_resource type="ParticlesMaterial" id=4]
+
 [node name="radio" type="KinematicBody"]
 transform = Transform( 0.304897, 0, 0, 0, 0.429478, 0, 0, 0, 1, 0, 0, 0 )
-script = ExtResource( 1 )
 
 [node name="Area" type="Area" parent="." groups=["radio"]]
 transform = Transform( 1.54976, 0, 0, 0, 1.37348, 0, 0, 0, 1.31583, 0, 0, 0 )
@@ -26,8 +26,12 @@ shape = SubResource( 2 )
 [node name="mesh" type="MeshInstance" parent="."]
 mesh = SubResource( 3 )
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource( 2 )
+[node name="song" type="AudioStreamPlayer3D" parent="."]
 unit_size = 25.5
 max_distance = 372.36
 doppler_tracking = 2
+script = ExtResource( 1 )
+
+[node name="music" type="Particles" parent="."]
+amount = 158
+process_material = SubResource( 4 )

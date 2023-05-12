@@ -16,3 +16,7 @@ func _on_quit_pressed():
 
 func _on_fullscreen_toggled(button_pressed):
 	OS.window_fullscreen = !OS.window_fullscreen
+
+
+func _on_VideoPlayer_finished():
+	$VideoPlayer.play()
