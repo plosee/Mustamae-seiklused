@@ -20,3 +20,7 @@ func _on_fullscreen_toggled(button_pressed):
 
 func _on_VideoPlayer_finished():
 	$VideoPlayer.play()
+
+
+func _on_CheckButton_toggled(button_pressed):
+	$AudioStreamPlayer.playing = button_pressed

@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/newmain.gd" type="Script" id=1]
 [ext_resource path="res://Images/fullscreen.png" type="Texture" id=2]
 [ext_resource path="res://Misc/Mustamägi.ogv" type="VideoStream" id=3]
 [ext_resource path="res://Images/unfullscreen.png" type="Texture" id=4]
 [ext_resource path="res://Fonts/ComicSans.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Misc/Music/mustamägi.mp3" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -19,6 +20,11 @@ font_data = ExtResource( 5 )
 [sub_resource type="DynamicFont" id=5]
 size = 98
 outline_size = 3
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 61
+outline_size = 1
 font_data = ExtResource( 5 )
 
 [node name="Main" type="Control"]
@@ -102,8 +108,23 @@ text = "Quit"
 flat = true
 align = 0
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="CheckButton" type="CheckButton" parent="AudioStreamPlayer"]
+margin_left = 1674.0
+margin_top = 909.0
+margin_right = 1750.0
+margin_bottom = 1030.0
+hint_tooltip = "Warning: Buggy(?)"
+custom_fonts/font = SubResource( 6 )
+text = "Music"
+flat = true
+align = 1
+
 [connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
 [connection signal="toggled" from="VideoPlayer/fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="toggled" from="AudioStreamPlayer/CheckButton" to="." method="_on_CheckButton_toggled"]
