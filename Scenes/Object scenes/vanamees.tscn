@@ -505,3 +505,5 @@ preprocess = 0.15
 explosiveness = 0.91
 process_material = SubResource( 51 )
 draw_pass_1 = ExtResource( 23 )
+
+[node name="InteractRay" type="RayCast" parent="vanamees"]

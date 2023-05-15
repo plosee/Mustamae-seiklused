@@ -26,6 +26,10 @@ run/main_scene="res://Scenes/Main.tscn"
 boot_splash/image="res://Images/lubikprod.png"
 config/icon="res://Images/icon.png"
 
+[audio]
+
+default_bus_layout="res://Misc/default_bus_layout.tres"
+
 [autoload]
 
 Main="*res://Scripts/main.gd"
@@ -41,6 +45,10 @@ window/size/width=1920
 window/size/height=1080
 window/size/resizable=false
 window/vsync/use_vsync=false
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/SliderLabel/plugin.cfg" )
 
 [global]
 

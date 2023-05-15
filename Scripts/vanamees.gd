@@ -21,7 +21,7 @@ var health = 100
 
 func _ready():
 	vector = self.global_transform.origin
-	
+
 func rotate_random():	
 	vector = Vector3.ZERO	
 	self.rotation.x = 0
@@ -38,7 +38,7 @@ func alert_state():
 	areaShape.radius = 20
 	forwardRayCast.cast_to = Vector3.FORWARD * 20 
 	speed = 3
-	
+
 func navigate_to_target(target:Spatial):
 	targetNode = target
 	navPath = navNode.get_simple_path(self.global_transform.origin, target.global_transform.origin)	

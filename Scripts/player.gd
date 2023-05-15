@@ -254,3 +254,5 @@ func _on_InteractRay_KubikRefill():
 
 func _on_InteractRay_Syringe2Interact():
 	pass # Replace with function body.
+	
+	

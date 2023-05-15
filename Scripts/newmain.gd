@@ -1,13 +1,11 @@
 extends Control
 
-
-
 func _on_start_pressed():
 	get_tree().change_scene("res://Scenes/Build.tscn")
 
 
 func _on_settings_pressed():
-	get_tree().change_scene("res://Scenes/credits.tscn")
+	$SettingsMenu.popup()
 
 
 func _on_quit_pressed():

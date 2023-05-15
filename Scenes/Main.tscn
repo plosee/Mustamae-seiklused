@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/newmain.gd" type="Script" id=1]
 [ext_resource path="res://Images/fullscreen.png" type="Texture" id=2]
@@ -6,6 +6,9 @@
 [ext_resource path="res://Images/unfullscreen.png" type="Texture" id=4]
 [ext_resource path="res://Fonts/ComicSans.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Misc/Music/mustamägi.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Images/sad.png" type="Texture" id=7]
+[ext_resource path="res://Images/hap.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/settings.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -27,6 +30,10 @@ size = 61
 outline_size = 1
 font_data = ExtResource( 5 )
 
+[sub_resource type="DynamicFont" id=7]
+size = 44
+font_data = ExtResource( 5 )
+
 [node name="Main" type="Control"]
 pause_mode = 2
 anchor_right = 1.0
@@ -40,10 +47,12 @@ stream = ExtResource( 3 )
 autoplay = true
 
 [node name="fullscreen" type="TextureButton" parent="VideoPlayer"]
-margin_top = 888.0
+margin_top = 895.0
 margin_right = 185.0
-margin_bottom = 1073.0
+margin_bottom = 1080.0
+focus_mode = 0
 toggle_mode = true
+enabled_focus_mode = 0
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 4 )
 expand = true
@@ -78,8 +87,10 @@ margin_top = 200.0
 margin_right = 388.0
 margin_bottom = 319.0
 rect_pivot_offset = Vector2( 123, 80 )
+focus_mode = 0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 5 )
+enabled_focus_mode = 0
 text = "Start"
 flat = true
 align = 0
@@ -90,8 +101,10 @@ margin_top = 350.0
 margin_right = 388.0
 margin_bottom = 469.0
 rect_pivot_offset = Vector2( 123, 80 )
+focus_mode = 0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 5 )
+enabled_focus_mode = 0
 text = "Settings"
 flat = true
 align = 0
@@ -102,25 +115,43 @@ margin_top = 500.0
 margin_right = 388.0
 margin_bottom = 619.0
 rect_pivot_offset = Vector2( 123, 80 )
+focus_mode = 0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 5 )
+enabled_focus_mode = 0
 text = "Quit"
 flat = true
 align = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+bus = "Music"
 
 [node name="CheckButton" type="CheckButton" parent="AudioStreamPlayer"]
-margin_left = 1674.0
-margin_top = 909.0
-margin_right = 1750.0
-margin_bottom = 1030.0
-hint_tooltip = "Warning: Buggy(?)"
+margin_left = 1699.0
+margin_top = 839.0
+margin_right = 1922.0
+margin_bottom = 960.0
+focus_mode = 0
 custom_fonts/font = SubResource( 6 )
+custom_icons/off = ExtResource( 7 )
+custom_icons/on = ExtResource( 8 )
+enabled_focus_mode = 0
 text = "Music"
 flat = true
 align = 1
+
+[node name="Version" type="RichTextLabel" parent="."]
+margin_left = 1576.0
+margin_top = 1029.0
+margin_right = 2135.0
+margin_bottom = 1084.0
+custom_fonts/normal_font = SubResource( 7 )
+bbcode_enabled = true
+bbcode_text = "version Alpha 0.02"
+text = "version Alpha 0.02"
+
+[node name="SettingsMenu" parent="." instance=ExtResource( 9 )]
 
 [connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
 [connection signal="toggled" from="VideoPlayer/fullscreen" to="." method="_on_fullscreen_toggled"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Fonts/ComicSans.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/PauseMenu.gd" type="Script" id=2]
 [ext_resource path="res://Images/fullscreen.png" type="Texture" id=3]
 [ext_resource path="res://Images/unfullscreen.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/settings.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=5]
 size = 150
@@ -98,7 +99,7 @@ custom_fonts/font = SubResource( 4 )
 text = "Exit to Main Menu"
 flat = true
 
-[node name="Exit To Desktop" type="Button" parent="Buttons"]
+[node name="Settings" type="Button" parent="Buttons"]
 pause_mode = 2
 margin_left = 586.0
 margin_top = 493.0
@@ -107,7 +108,7 @@ margin_bottom = 615.0
 custom_colors/font_color_hover = Color( 1, 1, 1, 0 )
 custom_colors/font_color_pressed = Color( 0.870588, 0.870588, 0.870588, 1 )
 custom_fonts/font = SubResource( 3 )
-text = "Exit to Desktop"
+text = "Settings"
 flat = true
 
 [node name="Feedback" type="Button" parent="Buttons"]
@@ -121,6 +122,7 @@ text = "Give feedback / Suggest feature"
 flat = true
 
 [node name="fullscreen" type="TextureButton" parent="."]
+visible = false
 margin_top = 843.0
 margin_right = 230.0
 margin_bottom = 1073.0
@@ -138,8 +140,11 @@ custom_fonts/normal_font = SubResource( 7 )
 text = "Toggle Fullscreen (recommended)"
 fit_content_height = true
 
+[node name="SettingsMenu" parent="." instance=ExtResource( 5 )]
+visible = false
+
 [connection signal="pressed" from="Buttons/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="Buttons/Exit To Main Menu" to="." method="_on_Exit_To_Main_Menu_pressed"]
-[connection signal="pressed" from="Buttons/Exit To Desktop" to="." method="_on_Exit_To_Desktop_pressed"]
+[connection signal="pressed" from="Buttons/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Buttons/Feedback" to="." method="_on_Feedback_pressed"]
 [connection signal="pressed" from="fullscreen" to="." method="_on_fullscreen_pressed"]

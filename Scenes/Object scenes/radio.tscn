@@ -29,6 +29,7 @@ mesh = SubResource( 3 )
 [node name="song" type="AudioStreamPlayer3D" parent="."]
 unit_size = 25.5
 max_distance = 372.36
+bus = "Music"
 doppler_tracking = 2
 script = ExtResource( 1 )
 
