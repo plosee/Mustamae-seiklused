@@ -17,4 +17,4 @@ The development of Mustamäe Seiklused is still ongoing, and there is no set rel
 
 # Feedback
 
-If you have any feedback or suggestions for Mustamäe Seiklused, please feel free to share them with us. We are always looking for ways to improve the game and make it the best it can be.
+If you have any feedback or suggestions for Mustamäe Seiklused, please feel free to share them with [HERE](https://forms.gle/6zdg1VwvJPgrcNeS6). We are always looking for ways to improve the game and make it the best it can be.
