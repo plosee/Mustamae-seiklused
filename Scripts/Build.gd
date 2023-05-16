@@ -16,9 +16,15 @@ func _ready():
 	#eyes reapplied incase it doesnt DO IT ITSELF
 	$Character/KinematicBody/Head/Camera.current = true
 	$particle_cache.emitting = true
+
 	
 func _physics_process(delta):
 	#diagbox animatsioonid
+	if Global.showfps:
+		$CanvasLayer/FPS.text = "FPS:" + str(Engine.get_frames_per_second())
+		$CanvasLayer/FPS.visible = true
+	else:
+		$CanvasLayer/FPS.visible = false
 	if sang_cutscene == 0:
 		$Character/KinematicBody/InteractRay.set_physics_process(true)
 		if $Character/KinematicBody/InteractRay/Diabox.position.y < 1230:

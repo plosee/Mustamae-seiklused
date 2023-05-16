@@ -36,8 +36,6 @@ func _physics_process(delta):
 	
 	if collider != null:
 		#Kui teed uue interactable objecti lisa siia if statementi, saveb ruumi. ~ A-1
-		
-		
 		#Iga kord kui uue inter_objecti lisad siis tee kindlaks, et selle 'Area' nodei collision layer on 4 peal //
 		#Kui kustutad objekti siis pane selle signal emit if statementi, et see teeks kindlaks, et node eksisteerib //
 		#ja kindlasti pane see 'elif' statementi, muidu mang crashib proovides molemat checkida //
