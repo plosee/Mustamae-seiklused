@@ -1,14 +1,24 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/newmain.gd" type="Script" id=1]
 [ext_resource path="res://Images/fullscreen.png" type="Texture" id=2]
 [ext_resource path="res://Misc/Mustamägi.ogv" type="VideoStream" id=3]
-[ext_resource path="res://Images/unfullscreen.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/fullscreen.gd" type="Script" id=4]
 [ext_resource path="res://Fonts/ComicSans.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Misc/Music/mustamägi.mp3" type="AudioStream" id=6]
 [ext_resource path="res://Images/sad.png" type="Texture" id=7]
 [ext_resource path="res://Images/hap.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/settings.tscn" type="PackedScene" id=9]
+
+[sub_resource type="DynamicFont" id=8]
+size = 50
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 75
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -46,16 +56,67 @@ margin_bottom = 1080.0
 stream = ExtResource( 3 )
 autoplay = true
 
-[node name="fullscreen" type="TextureButton" parent="VideoPlayer"]
-margin_top = 895.0
-margin_right = 185.0
-margin_bottom = 1080.0
+[node name="fullscreen" type="Button" parent="VideoPlayer"]
+visible = false
+margin_left = -3.0
+margin_top = 874.0
+margin_right = 417.0
+margin_bottom = 1294.0
+rect_scale = Vector2( 0.5, 0.5 )
+icon = ExtResource( 2 )
+flat = true
+script = ExtResource( 4 )
+
+[node name="HTMLpopup" type="Popup" parent="VideoPlayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -500.0
+margin_top = -250.0
+margin_right = 500.0
+margin_bottom = 250.0
+
+[node name="bg" type="ColorRect" parent="VideoPlayer/HTMLpopup"]
+margin_right = 1000.0
+margin_bottom = 500.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VideoPlayer/HTMLpopup/bg"]
+margin_right = 1000.0
+margin_bottom = 500.0
+
+[node name="HTML" type="RichTextLabel" parent="VideoPlayer/HTMLpopup/bg/VBoxContainer"]
+margin_right = 1000.0
+margin_bottom = 295.0
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+bbcode_text = "[center]We detected you are running on the Browser build. This game is made for fullscreen 1080p displays and we do not know how to not do that. We recommend experiencing our game while in fullscreen. Set to fullscreen now?[/center]"
+text = "We detected you are running on the Browser build. This game is made for fullscreen 1080p displays and we do not know how to not do that. We recommend experiencing our game while in fullscreen. Set to fullscreen now?"
+fit_content_height = true
+
+[node name="Confirm" type="Button" parent="VideoPlayer/HTMLpopup/bg/VBoxContainer"]
+margin_top = 299.0
+margin_right = 1000.0
+margin_bottom = 392.0
 focus_mode = 0
-toggle_mode = true
+custom_fonts/font = SubResource( 9 )
 enabled_focus_mode = 0
-texture_normal = ExtResource( 2 )
-texture_pressed = ExtResource( 4 )
-expand = true
+text = "Yes"
+flat = true
+
+[node name="Nah" type="Button" parent="VideoPlayer/HTMLpopup/bg/VBoxContainer"]
+margin_top = 396.0
+margin_right = 1000.0
+margin_bottom = 489.0
+focus_mode = 0
+custom_fonts/font = SubResource( 9 )
+enabled_focus_mode = 0
+text = "No"
+flat = true
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="title" type="Control" parent="."]
 margin_right = 1878.0
@@ -159,10 +220,11 @@ margin_bottom = 81.0
 flat = true
 
 [node name="SettingsMenu" parent="." instance=ExtResource( 9 )]
-visible = false
 
 [connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
-[connection signal="toggled" from="VideoPlayer/fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="toggled" from="VideoPlayer/fullscreen" to="VideoPlayer/fullscreen" method="_on_fullscreen_toggled"]
+[connection signal="pressed" from="VideoPlayer/HTMLpopup/bg/VBoxContainer/Confirm" to="." method="_on_Confirm_pressed"]
+[connection signal="pressed" from="VideoPlayer/HTMLpopup/bg/VBoxContainer/Nah" to="." method="_on_Nah_pressed"]
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

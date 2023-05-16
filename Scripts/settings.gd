@@ -11,8 +11,8 @@ var sfx_bus = AudioServer.get_bus_index("SFX")
 
 #func _ready():
 #	popup()
-func _physics_process(delta):
-	print(Global.showfps)
+#func _physics_process(delta):
+#	print(Global.showfps)
 
 func _on_background_finished():
 	$background.play()

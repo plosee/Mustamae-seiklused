@@ -28,9 +28,5 @@ func _on_Exit_To_Main_Menu_pressed():
 func _on_Feedback_pressed():
 	OS.shell_open("https://docs.google.com/forms/d/e/1FAIpQLSdJ2to7RImhio26rf8qd2msbGVONk16Yy1xCmZ2Pfkg7mH_Aw/viewform?usp=sharing")
 
-
-func _on_fullscreen_pressed():
-	OS.window_fullscreen = !OS.window_fullscreen
-
 func _on_Settings_pressed():
 	$SettingsMenu.popup()

@@ -246,7 +246,7 @@ func _on_Inventory_inv3():
 	$paulbod/vasak3.hide()
 #used for when slot1 is selected and kubik is added to inventory
 func _on_Inventory_shkub():
-	print("shkub")
+	#print("shkub")
 	$paulbod/vasak2.show()
 	$paulbod/vasak2/kubikinhand.show()
 	$paulbod/parem.hide()
