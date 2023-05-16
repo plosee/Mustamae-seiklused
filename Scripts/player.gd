@@ -61,8 +61,12 @@ func _input(event):
 		head.rotation.x = clamp(head.rotation.x, deg2rad(-89), deg2rad(50))
 
 func _process(delta):
+#	if Input.is_action_just_pressed("debugbutton"):
+#		health -= 10
 	#print(kimuheld)
 	healthbarpos = 5*health
+	if health <= 0:
+		death()
 	#print(healthbarpos)
 	$Inventory/HealthBar.value = health
 	#camera physics interpolation to reduce physics jitter on high refresh-rate monitors
@@ -255,4 +259,5 @@ func _on_InteractRay_KubikRefill():
 func _on_InteractRay_Syringe2Interact():
 	pass # Replace with function body.
 	
-	
+func death():
+	get_tree().change_scene("res://Scenes/death.tscn")
