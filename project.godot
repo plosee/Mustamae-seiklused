@@ -23,7 +23,7 @@ _global_script_class_icons={
 
 config/name="mustamae seiklused"
 run/main_scene="res://Scenes/Main.tscn"
-boot_splash/image="res://Images/lubikprod.png"
+boot_splash/image="res://Images/bettertitle.png"
 config/icon="res://Images/icon.png"
 
 [audio]
