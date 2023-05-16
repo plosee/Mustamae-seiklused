@@ -151,7 +151,15 @@ bbcode_enabled = true
 bbcode_text = "version Alpha 0.02"
 text = "version Alpha 0.02"
 
+[node name="Button" type="Button" parent="Version"]
+margin_left = -14.0
+margin_top = -26.0
+margin_right = 344.0
+margin_bottom = 81.0
+flat = true
+
 [node name="SettingsMenu" parent="." instance=ExtResource( 9 )]
+visible = false
 
 [connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
 [connection signal="toggled" from="VideoPlayer/fullscreen" to="." method="_on_fullscreen_toggled"]
@@ -159,3 +167,5 @@ text = "version Alpha 0.02"
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
 [connection signal="toggled" from="AudioStreamPlayer/CheckButton" to="." method="_on_CheckButton_toggled"]
+[connection signal="meta_clicked" from="Version" to="." method="_on_Version_meta_clicked"]
+[connection signal="pressed" from="Version/Button" to="." method="_on_Button_pressed"]

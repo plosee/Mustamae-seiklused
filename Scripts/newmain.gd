@@ -22,3 +22,6 @@ func _on_VideoPlayer_finished():
 
 func _on_CheckButton_toggled(button_pressed):
 	$AudioStreamPlayer.playing = button_pressed
+
+func _on_Button_pressed():
+	get_tree().change_scene("res://Scenes/credits.tscn")
