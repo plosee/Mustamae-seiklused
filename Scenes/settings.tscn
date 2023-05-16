@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/settings.gd" type="Script" id=1]
 [ext_resource path="res://Misc/static.ogv" type="VideoStream" id=2]
-[ext_resource path="res://addons/SliderLabel/SliderLabel.gd" type="Script" id=3]
 [ext_resource path="res://Fonts/ComicSans.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=3]
@@ -43,6 +42,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 5 )
 
 [node name="SettingsMenu" type="Popup"]
+visible = true
 margin_right = 1920.0
 margin_bottom = 1080.0
 script = ExtResource( 1 )
@@ -121,20 +121,8 @@ margin_bottom = 180.0
 custom_styles/slider = SubResource( 5 )
 custom_styles/grabber_area_highlight = SubResource( 4 )
 custom_styles/grabber_area = SubResource( 6 )
-value = 100.0
-tick_count = 10
-
-[node name="SliderLabel" type="Label" parent="VBoxContainer/Master"]
-margin_right = 24.0
-margin_bottom = 14.0
-size_flags_horizontal = 4
-text = "100"
-align = 1
-valign = 1
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_initialized_": true
-}
+min_value = -30.0
+max_value = 0.0
 
 [node name="SFX" type="HSlider" parent="VBoxContainer"]
 margin_top = 280.0
@@ -143,20 +131,8 @@ margin_bottom = 296.0
 custom_styles/slider = SubResource( 5 )
 custom_styles/grabber_area_highlight = SubResource( 4 )
 custom_styles/grabber_area = SubResource( 7 )
-value = 100.0
-tick_count = 10
-
-[node name="SliderLabel" type="Label" parent="VBoxContainer/SFX"]
-margin_right = 24.0
-margin_bottom = 14.0
-size_flags_horizontal = 4
-text = "100"
-align = 1
-valign = 1
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_initialized_": true
-}
+min_value = -30.0
+max_value = 0.0
 
 [node name="Music" type="HSlider" parent="VBoxContainer"]
 margin_top = 396.0
@@ -165,20 +141,8 @@ margin_bottom = 412.0
 custom_styles/slider = SubResource( 5 )
 custom_styles/grabber_area_highlight = SubResource( 4 )
 custom_styles/grabber_area = SubResource( 8 )
-value = 100.0
-tick_count = 10
-
-[node name="SliderLabel" type="Label" parent="VBoxContainer/Music"]
-margin_right = 24.0
-margin_bottom = 14.0
-size_flags_horizontal = 4
-text = "100"
-align = 1
-valign = 1
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_initialized_": true
-}
+min_value = -30.0
+max_value = 0.0
 
 [node name="back" type="Button" parent="."]
 margin_left = 21.0
@@ -191,5 +155,8 @@ flat = true
 
 [connection signal="finished" from="background" to="." method="_on_background_finished"]
 [connection signal="pressed" from="VBoxContainer/fs" to="." method="_on_fs_pressed"]
+[connection signal="value_changed" from="VBoxContainer/Master" to="." method="_on_Master_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/SFX" to="." method="_on_SFX_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Music" to="." method="_on_Music_value_changed"]
 [connection signal="pressed" from="back" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]

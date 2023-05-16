@@ -141,7 +141,6 @@ text = "Toggle Fullscreen (recommended)"
 fit_content_height = true
 
 [node name="SettingsMenu" parent="." instance=ExtResource( 5 )]
-visible = false
 
 [connection signal="pressed" from="Buttons/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="Buttons/Exit To Main Menu" to="." method="_on_Exit_To_Main_Menu_pressed"]
