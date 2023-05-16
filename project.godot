@@ -24,7 +24,8 @@ _global_script_class_icons={
 config/name="mustamae seiklused"
 run/main_scene="res://Scenes/Main.tscn"
 boot_splash/image="res://Images/bettertitle.png"
-config/icon="res://Images/icon.png"
+config/icon="res://Images/mustamagivapp.png"
+config/windows_native_icon="res://Images/mustamagivapp.ico"
 
 [audio]
 
