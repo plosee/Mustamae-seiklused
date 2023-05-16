@@ -18,7 +18,8 @@ func _on_background_finished():
 	$background.play()
 
 func _on_fs_pressed():
-	OS.window_fullscreen = !OS.window_fullscreen
+	Global.fullscreen = !Global.fullscreen
+	OS.window_fullscreen = Global.fullscreen
 
 func _on_back_pressed():
 	self.hide()
