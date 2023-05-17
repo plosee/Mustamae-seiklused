@@ -186,7 +186,7 @@ func _physics_process(delta):
 		$paulbod/vasak2.hide()
 		$paulbod/injectedhand.show()
 	elif Input.is_action_just_released("mouseinteract") && $paulbod/injectedhand.visible:
-		yield(get_tree().create_timer(1), "timeout")
+		yield(get_tree().create_timer(0.3), "timeout")
 		$Inventory/slot3/syringe.visible = false
 		syringeused = true
 		$paulbod/injectedhand.hide()
