@@ -30,3 +30,4 @@ func _on_Feedback_pressed():
 
 func _on_Settings_pressed():
 	$SettingsMenu.popup()
+	$SettingsMenu/background.play()
