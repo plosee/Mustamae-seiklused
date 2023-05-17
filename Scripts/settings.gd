@@ -23,6 +23,7 @@ func _on_fs_pressed():
 
 func _on_back_pressed():
 	self.hide()
+	$background.stop()
 
 func _on_Master_value_changed(value):
 	AudioServer.set_bus_volume_db(master_bus, value)
