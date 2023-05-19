@@ -4,8 +4,8 @@ var versnr = RandomNumberGenerator.new()
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-#DELETE AFTER EXE BECOMES MAIN BUILD
-	if OS.get_name() == "HTML5":
+#DELETE AFTER EXE BECOMES MAIN BUILD or mommi fixes his crashing thing
+	if !OS.window_fullscreen:
 		$VideoPlayer/HTMLpopup.popup()
 func _physics_process(delta):
 	var ver1 = versnr.randi_range(0,9)
