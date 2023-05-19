@@ -2,11 +2,12 @@
 
 # Mustamäe Seiklused
 
-Mustamäe Seiklused is an experimental true horror genre game currently in progress.The game has limited gameplay features and is designed to be more of an atmospheric experience than a traditional game. 
+Mustamäe Seiklused is an experimental true horror genre game currently in progress.The game has limited gameplay features and is designed to be more of an atmospheric experience than a traditional game. The game's world is set in the dystopian hellscape Mustamäe, where only the font Comic Sans can be used.
 
 # Gameplay
 
 At this stage, the gameplay of Mustamäe Seiklused is very limited. The player can interact with some objects and move around an incomplete map. The main NPC in the game is Sang Sangman, who is a 2D image in a 3D world. The player can interact with Sang Sangman, but his purpose is not yet clear. 
+
 # Horror Genre
 
 Mustamäe Seiklused is designed to be a true horror experience. The game is not meant to be a jump-scare fest but rather an atmospheric journey through a dark and unsettling world. The horror elements are conveyed through the environment, sound effects, and the occasional visual cue.
