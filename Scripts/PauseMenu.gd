@@ -1,7 +1,6 @@
 extends Control
 
 var is_paused = false setget set_is_paused
-onready var main = get_node("/root/scenes/Main.gd")
 
 func _unhandled_input(event):
 	if event.is_action_pressed("menu"):	
