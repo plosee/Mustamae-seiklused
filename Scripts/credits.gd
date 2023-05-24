@@ -118,6 +118,7 @@ func _ready():
 	file.close()
 	
 	# Parse the credits file
+	print(credits)
 	var lines = credits.split("\n")
 	var line
 	for i in lines.size():

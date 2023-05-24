@@ -50,7 +50,7 @@ window/vsync/use_vsync=false
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/SliderLabel/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/SliderLabel/plugin.cfg", "res://addons/godot_icon/plugin.cfg" )
 
 [global]
 
