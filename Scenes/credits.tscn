@@ -5,7 +5,6 @@
 [ext_resource path="res://Fonts/ComicSans.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Scenes/AltMain.tscn" type="PackedScene" id=4]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 32
 font_data = ExtResource( 3 )

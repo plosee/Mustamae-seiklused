@@ -198,7 +198,9 @@ func end():
 	# otherwise if quitOnEnd is enabled, just quit
 	if nextScene != null:
 		# warning-ignore:return_value_discarded
-		get_tree().change_scene(nextScene.get_path())
+		get_tree().change_scene("res://Scenes/Main.tscn")
+		if OS.window_fullscreen:
+			Global.fullscreen = true
 	elif quitOnEnd:
 		get_tree().quit()
 	elif destroyOnEnd:
