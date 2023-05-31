@@ -115,7 +115,6 @@ __meta__ = {
 }
 
 [node name="UpdatePopup" type="Popup" parent="VideoPlayer"]
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
