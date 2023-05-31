@@ -1,3 +1,3 @@
 extends Node
-var fullscreen = false
+var fullscreen = OS.window_fullscreen
 var showfps = false
