@@ -68,10 +68,6 @@ func _process(delta):
 				$Holder.remove_child(child)
 								
 			for path in navPath:
-				var instance = $Sphere.duplicate()
-				instance.set_as_toplevel(true)
-				$Holder.add_child(instance)
-				instance.global_transform.origin = path
 			
 				var direction:Vector3 = path - self.global_transform.origin
 				direction = direction.normalized()

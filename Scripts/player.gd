@@ -6,9 +6,6 @@ const ACCEL_DEFAULT = 7
 const ACCEL_AIR = 1
 onready var accel = ACCEL_DEFAULT
 
-export var springArmNodePath:NodePath
-onready var springArm:SpringArm = get_node(springArmNodePath)
-
 var gravity = 9.8
 var jump = 5
 onready var animation_player = get_node("paulbod/AnimationPlayer")
