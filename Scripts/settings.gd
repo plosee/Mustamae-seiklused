@@ -8,7 +8,7 @@ onready var musicvol = $VBoxContainer/Music
 var master_bus = AudioServer.get_bus_index("Master")
 var music_bus = AudioServer.get_bus_index("Music")
 var sfx_bus = AudioServer.get_bus_index("SFX")
-
+var fpscap = false
 #func _ready():
 #	popup()
 #func _physics_process(delta):
@@ -53,3 +53,13 @@ func _on_FPS_pressed():
 		$VBoxContainer/FPS.text = "Hide FPS"
 	else:
 		$VBoxContainer/FPS.text = "Show FPS"
+
+
+func _on_FPScap_pressed():
+	fpscap = !fpscap
+	if fpscap:
+		Engine.set_target_fps(60)
+		$VBoxContainer/FPScap.text = "Unlimit FPS"
+	else:
+		Engine.set_target_fps(240)
+		$VBoxContainer/FPScap.text = "Limit FPS"

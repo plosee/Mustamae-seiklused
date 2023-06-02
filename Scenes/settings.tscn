@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/settings.gd" type="Script" id=1]
 [ext_resource path="res://Misc/static.ogv" type="VideoStream" id=2]
@@ -39,6 +39,10 @@ thickness = 10
 size = 50
 font_data = ExtResource( 5 )
 
+[sub_resource type="DynamicFont" id=11]
+size = 50
+font_data = ExtResource( 5 )
+
 [sub_resource type="DynamicFont" id=9]
 size = 115
 outline_size = 5
@@ -46,6 +50,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 5 )
 
 [node name="SettingsMenu" type="Popup"]
+visible = true
 margin_right = 1920.0
 margin_bottom = 1080.0
 script = ExtResource( 1 )
@@ -54,7 +59,6 @@ script = ExtResource( 1 )
 margin_right = 1920.0
 margin_bottom = 1080.0
 stream = ExtResource( 2 )
-autoplay = false
 
 [node name="LabelContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -157,6 +161,16 @@ enabled_focus_mode = 0
 text = "Show FPS"
 flat = true
 
+[node name="FPScap" type="Button" parent="VBoxContainer"]
+margin_top = 676.0
+margin_right = 1000.0
+margin_bottom = 740.0
+focus_mode = 0
+custom_fonts/font = SubResource( 11 )
+enabled_focus_mode = 0
+text = "Limit FPS"
+flat = true
+
 [node name="back" type="Button" parent="."]
 margin_left = 21.0
 margin_top = 19.0
@@ -172,5 +186,6 @@ flat = true
 [connection signal="value_changed" from="VBoxContainer/SFX" to="." method="_on_SFX_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/Music" to="." method="_on_Music_value_changed"]
 [connection signal="pressed" from="VBoxContainer/FPS" to="." method="_on_FPS_pressed"]
+[connection signal="pressed" from="VBoxContainer/FPScap" to="." method="_on_FPScap_pressed"]
 [connection signal="pressed" from="back" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
