@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/radio.gd" type="Script" id=1]
+[ext_resource path="res://Temp Fold For object import/Kass/_face.material" type="Material" id=2]
 
 [sub_resource type="BoxShape" id=1]
 
 [sub_resource type="BoxShape" id=2]
 
 [sub_resource type="CubeMesh" id=3]
+material = ExtResource( 2 )
 
 [sub_resource type="ParticlesMaterial" id=4]
 
