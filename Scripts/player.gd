@@ -1,14 +1,14 @@
-extends KinematicBody
+extends CharacterBody3D
 class_name Player
 
 var speed = 14
 const ACCEL_DEFAULT = 7
 const ACCEL_AIR = 1
-onready var accel = ACCEL_DEFAULT
+@onready var accel = ACCEL_DEFAULT
 
 var gravity = 9.8
 var jump = 5
-onready var animation_player = get_node("paulbod/AnimationPlayer")
+@onready var animation_player = get_node("paulbod/AnimationPlayer")
 var timeout = 0.3 #Used for stab timer
 var kimuheld = false
 var kimupuffed = 0
@@ -29,15 +29,15 @@ var snap
 
 var direction = Vector3()
 var velocity = Vector3()
-var gravity_vec = Vector3()
+var gravity_direction = Vector3()
 var movement = Vector3()
 
 #inv0 used for stowing
 signal inv0
 signal stab # you can guess what this one is for
 
-onready var head = $Head
-onready var camera = $Head/Camera
+@onready var head = $Head
+@onready var camera = $Head/Camera3D
 
 func _ready():
 	#kasutasin seda kuna animationite jaoks vaja kätt näha ja kergem
@@ -53,9 +53,9 @@ func _ready():
 func _input(event):
 	#get mouse input for camera rotation
 	if event is InputEventMouseMotion:
-		rotate_y(deg2rad(-event.relative.x * mouse_sense))
-		head.rotate_x(deg2rad(-event.relative.y * mouse_sense))
-		head.rotation.x = clamp(head.rotation.x, deg2rad(-89), deg2rad(50))
+		rotate_y(deg_to_rad(-event.relative.x * mouse_sense))
+		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sense))
+		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(50))
 
 func _process(delta):
 #	if Input.is_action_just_pressed("debugbutton"):
@@ -67,13 +67,13 @@ func _process(delta):
 	#print(healthbarpos)
 	$Inventory/HealthBar.value = health
 	#camera physics interpolation to reduce physics jitter on high refresh-rate monitors
-	if Engine.get_frames_per_second() > Engine.iterations_per_second:
-		camera.set_as_toplevel(true)
-		camera.global_transform.origin = camera.global_transform.origin.linear_interpolate(head.global_transform.origin, cam_accel * delta)
+	if Engine.get_frames_per_second() > Engine.physics_ticks_per_second:
+		camera.set_as_top_level(true)
+		camera.global_transform.origin = camera.global_transform.origin.lerp(head.global_transform.origin, cam_accel * delta)
 		camera.rotation.y = rotation.y
 		camera.rotation.x = head.rotation.x
 	else:
-		camera.set_as_toplevel(false)
+		camera.set_as_top_level(false)
 		camera.global_transform = head.global_transform
 		
 func _physics_process(delta):
@@ -85,7 +85,7 @@ func _physics_process(delta):
 	#raycast uses camera rotation
 #	$InteractRay.rotation.y = camera.rotation.y
 
-	$InteractRay.global_translation = camera.global_translation
+	$InteractRay.global_position = camera.global_position
 	$InteractRay.global_rotation = camera.global_rotation
 	$InteractRay.global_scale(Vector3(1,1,1))
 	
@@ -106,21 +106,24 @@ func _physics_process(delta):
 	if is_on_floor():
 		snap = -get_floor_normal()
 		accel = ACCEL_DEFAULT
-		gravity_vec = Vector3.ZERO
+		gravity_direction = Vector3.ZERO
 	else:
 		snap = Vector3.DOWN
 		accel = ACCEL_AIR
-		gravity_vec += Vector3.DOWN * gravity * delta
+		gravity_direction += Vector3.DOWN * gravity * delta
 		
 #	if Input.is_action_just_pressed("jump") and is_on_floor():
 #		snap = Vector3.ZERO
 #		gravity_vec = Vector3.UP * jump
 	
 	#make it move
-	velocity = velocity.linear_interpolate(direction * speed, accel * delta)
-	movement = velocity + gravity_vec
+	velocity = velocity.lerp(direction * speed, accel * delta)
+	movement = velocity + gravity_direction
 	
-	move_and_slide_with_snap(movement, snap, Vector3.UP)
+	set_velocity(movement)
+	# TODOConverter40 looks that snap in Godot 4.0 is float, not vector like in Godot 3 - previous value `snap`
+	set_up_direction(Vector3.UP)
+	move_and_slide()
 	
 	if Input.is_action_pressed("run"):
 		speed = 20
@@ -129,7 +132,7 @@ func _physics_process(delta):
 	
 	#KIMU KOOD
 	#Showib kõik vajalikud asjad
-	if Input.is_action_pressed("mouseinteract") && $Inventory/slot1.color == Color(1,1,1,0.5) && kimuheld && kimupuffed < 101 && $paulbod/vasak3/vedlabar/vedla.rect_size.y > 0:
+	if Input.is_action_pressed("mouseinteract") && $Inventory/slot1.color == Color(1,1,1,0.5) && kimuheld && kimupuffed < 101 && $paulbod/vasak3/vedlabar/vedla.size.y > 0:
 		kimu_in_puffing = true
 		kimupuffed += 1
 		$Head/Particles.emitting = false
@@ -139,8 +142,8 @@ func _physics_process(delta):
 		$paulbod/vasak3/kubikpuff.show()
 		$paulbod/vasak3/kimubar.show()
 		$paulbod/vasak3/vedlabar.show()
-		$paulbod/vasak3/kimubar/bar.rect_size.y += 2
-		$paulbod/vasak3/vedlabar/vedla.rect_size.y -= 0.5
+		$paulbod/vasak3/kimubar/bar.size.y += 2
+		$paulbod/vasak3/vedlabar/vedla.size.y -= 0.5
 		
 	if kimuheld == false:
 		$paulbod/vasak3.hide()
@@ -162,8 +165,8 @@ func _physics_process(delta):
 			$Inventory/HealParticles.position.x = 725+healthbarpos
 			health += 0.1
 		kimupuffed -= 1
-		if $paulbod/vasak3/kimubar/bar.rect_size.y > 0:
-			$paulbod/vasak3/kimubar/bar.rect_size.y -= 2
+		if $paulbod/vasak3/kimubar/bar.size.y > 0:
+			$paulbod/vasak3/kimubar/bar.size.y -= 2
 			
 #Failsafe kui väljahingamise ajal kimud uuesti, et ei cloudiks edasi
 	if kimupuffed == 0:
@@ -175,7 +178,7 @@ func _physics_process(delta):
 		$paulbod/vasak2.translate(Vector3.BACK)
 		#code here for when colliding with a group called enemy
 		emit_signal("stab")
-		yield(get_tree().create_timer(timeout), "timeout")				#sleep for 0.3
+		await get_tree().create_timer(timeout).timeout				#sleep for 0.3
 		$paulbod/vasak2.translate(Vector3.FORWARD)
 		
 #Syringe code
@@ -183,7 +186,7 @@ func _physics_process(delta):
 		$paulbod/vasak2.hide()
 		$paulbod/injectedhand.show()
 	elif Input.is_action_just_released("mouseinteract") && $paulbod/injectedhand.visible:
-		yield(get_tree().create_timer(0.3), "timeout")
+		await get_tree().create_timer(0.3).timeout
 		$Inventory/slot3/syringe.visible = false
 		syringeused = true
 		$paulbod/injectedhand.hide()
@@ -193,7 +196,7 @@ func _physics_process(delta):
 		#print(syringeeffects)
 		speed = 50
 		syringeeffects -= 0.5
-		$Inventory/slot3/syringebar/drugbar.rect_size.y = (2*syringeeffects)
+		$Inventory/slot3/syringebar/drugbar.size.y = (2*syringeeffects)
 
 
 
@@ -250,11 +253,11 @@ func _on_Inventory_shkub():
 	kimuheld = true
 
 func _on_InteractRay_KubikRefill():
-	$paulbod/vasak3/vedlabar/vedla.rect_size.y = 200
+	$paulbod/vasak3/vedlabar/vedla.size.y = 200
 
 
 func _on_InteractRay_Syringe2Interact():
 	pass # Replace with function body.
 	
 func death():
-	get_tree().change_scene("res://Scenes/death.tscn")
+	get_tree().change_scene_to_file("res://Scenes/death.tscn")

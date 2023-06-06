@@ -1,297 +1,310 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=14 format=3 uid="uid://b8pxd3c6ongy6"]
 
-[ext_resource path="res://Scripts/newmain.gd" type="Script" id=1]
-[ext_resource path="res://Misc/Mustamägi.ogv" type="VideoStream" id=3]
-[ext_resource path="res://Fonts/ComicSans.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://Misc/Music/mustamägi.mp3" type="AudioStream" id=6]
-[ext_resource path="res://Images/sad.png" type="Texture" id=7]
-[ext_resource path="res://Images/hap.png" type="Texture" id=8]
-[ext_resource path="res://Scenes/settings.tscn" type="PackedScene" id=9]
+[ext_resource type="Script" path="res://Scripts/newmain.gd" id="1"]
+[ext_resource type="VideoStream" path="res://Misc/Mustamägi.ogv" id="3"]
+[ext_resource type="FontFile" uid="uid://btv6xwgtdhyhe" path="res://Fonts/ComicSans.ttf" id="5"]
+[ext_resource type="AudioStream" uid="uid://ddlabu8824xks" path="res://Misc/Music/mustamägi.mp3" id="6"]
+[ext_resource type="PackedScene" path="res://Scenes/settings.tscn" id="9"]
 
-[sub_resource type="DynamicFont" id=8]
-size = 55
-font_data = ExtResource( 5 )
+[sub_resource type="FontFile" id="8"]
+fallbacks = Array[Font]([ExtResource("5")])
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="DynamicFont" id=9]
-size = 75
-outline_size = 3
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 5 )
+[sub_resource type="FontFile" id="9"]
+fallbacks = Array[Font]([ExtResource("5")])
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="DynamicFont" id=10]
-size = 77
-font_data = ExtResource( 5 )
+[sub_resource type="FontFile" id="10"]
+fallbacks = Array[Font]([ExtResource("5")])
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="DynamicFont" id=1]
-size = 100
-outline_size = 4
-font_data = ExtResource( 5 )
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("5")])
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="DynamicFont" id=4]
-size = 50
-outline_size = 3
-font_data = ExtResource( 5 )
+[sub_resource type="FontFile" id="4"]
+fallbacks = Array[Font]([ExtResource("5")])
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="DynamicFont" id=5]
-size = 98
-outline_size = 3
-font_data = ExtResource( 5 )
+[sub_resource type="FontFile" id="5"]
+fallbacks = Array[Font]([ExtResource("5")])
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="DynamicFont" id=6]
-size = 61
-outline_size = 1
-font_data = ExtResource( 5 )
+[sub_resource type="FontFile" id="6"]
+fallbacks = Array[Font]([ExtResource("5")])
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
-[sub_resource type="DynamicFont" id=7]
-size = 44
-font_data = ExtResource( 5 )
+[sub_resource type="FontFile" id="7"]
+fallbacks = Array[Font]([ExtResource("5")])
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="Main" type="Control"]
-pause_mode = 2
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+script = ExtResource("1")
 
-[node name="VideoPlayer" type="VideoPlayer" parent="."]
-margin_right = 1920.0
-margin_bottom = 1080.0
-stream = ExtResource( 3 )
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+stream = ExtResource("3")
 autoplay = true
 
-[node name="HTMLpopup" type="Popup" parent="VideoPlayer"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -574.0
-margin_top = -289.0
-margin_right = 576.0
-margin_bottom = 311.0
+[node name="HTMLpopup" type="Popup" parent="VideoStreamPlayer"]
 
-[node name="bg" type="ColorRect" parent="VideoPlayer/HTMLpopup"]
-margin_right = 1150.0
-margin_bottom = 600.0
-color = Color( 0, 0, 0, 1 )
+[node name="bg" type="ColorRect" parent="VideoStreamPlayer/HTMLpopup"]
+offset_right = 1150.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VideoPlayer/HTMLpopup/bg"]
-margin_right = 1150.0
-margin_bottom = 600.0
-custom_constants/separation = 31
+[node name="VBoxContainer" type="VBoxContainer" parent="VideoStreamPlayer/HTMLpopup/bg"]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 600.0
+theme_override_constants/separation = 31
 
-[node name="HTML" type="RichTextLabel" parent="VideoPlayer/HTMLpopup/bg/VBoxContainer"]
-margin_right = 1150.0
-margin_bottom = 195.0
-custom_fonts/normal_font = SubResource( 8 )
+[node name="HTML" type="RichTextLabel" parent="VideoStreamPlayer/HTMLpopup/bg/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = SubResource("8")
 bbcode_enabled = true
-bbcode_text = "
-[center]We recommend switching to Fullscreen
-(this can also be changed in the settings)[/center]"
 text = "
 We recommend switching to Fullscreen
 (this can also be changed in the settings)"
-fit_content_height = true
 
-[node name="Confirm" type="Button" parent="VideoPlayer/HTMLpopup/bg/VBoxContainer"]
-margin_top = 226.0
-margin_right = 1150.0
-margin_bottom = 319.0
+[node name="Confirm" type="Button" parent="VideoStreamPlayer/HTMLpopup/bg/VBoxContainer"]
+layout_mode = 2
 focus_mode = 0
-custom_fonts/font = SubResource( 9 )
-enabled_focus_mode = 0
+theme_override_fonts/font = SubResource("9")
 text = "Confirm"
 flat = true
 
-[node name="Nah" type="Button" parent="VideoPlayer/HTMLpopup/bg/VBoxContainer"]
-margin_top = 350.0
-margin_right = 1150.0
-margin_bottom = 443.0
+[node name="Nah" type="Button" parent="VideoStreamPlayer/HTMLpopup/bg/VBoxContainer"]
+layout_mode = 2
 focus_mode = 0
-custom_fonts/font = SubResource( 9 )
-enabled_focus_mode = 0
+theme_override_fonts/font = SubResource("9")
 text = "No, i think i know better than you"
 flat = true
-__meta__ = {
-"_editor_description_": ""
-}
 
-[node name="UpdatePopup" type="Popup" parent="VideoPlayer"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -574.0
-margin_top = -289.0
-margin_right = 576.0
-margin_bottom = 311.0
+[node name="UpdatePopup" type="Popup" parent="VideoStreamPlayer"]
 
-[node name="bg" type="ColorRect" parent="VideoPlayer/UpdatePopup"]
-margin_right = 1150.0
-margin_bottom = 600.0
-color = Color( 0, 0, 0, 1 )
+[node name="bg" type="ColorRect" parent="VideoStreamPlayer/UpdatePopup"]
+offset_right = 1150.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VideoPlayer/UpdatePopup/bg"]
-margin_right = 1150.0
-margin_bottom = 600.0
-custom_constants/separation = 31
+[node name="VBoxContainer" type="VBoxContainer" parent="VideoStreamPlayer/UpdatePopup/bg"]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 600.0
+theme_override_constants/separation = 31
 
-[node name="Update" type="RichTextLabel" parent="VideoPlayer/UpdatePopup/bg/VBoxContainer"]
-margin_right = 1150.0
-margin_bottom = 195.0
-custom_fonts/normal_font = SubResource( 8 )
+[node name="Update" type="RichTextLabel" parent="VideoStreamPlayer/UpdatePopup/bg/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = SubResource("8")
 bbcode_enabled = true
-bbcode_text = "
-[center]A newer Version is available! Would you like to go to the download page?[/center]"
 text = "
 A newer Version is available! Would you like to go to the download page?"
-fit_content_height = true
 
-[node name="YesUpdate" type="Button" parent="VideoPlayer/UpdatePopup/bg/VBoxContainer"]
-margin_top = 226.0
-margin_right = 1150.0
-margin_bottom = 319.0
+[node name="YesUpdate" type="Button" parent="VideoStreamPlayer/UpdatePopup/bg/VBoxContainer"]
+layout_mode = 2
 focus_mode = 0
-custom_fonts/font = SubResource( 9 )
-enabled_focus_mode = 0
+theme_override_fonts/font = SubResource("9")
 text = "Yes"
 flat = true
 
-[node name="NoUpdate" type="Button" parent="VideoPlayer/UpdatePopup/bg/VBoxContainer"]
-margin_top = 350.0
-margin_right = 1150.0
-margin_bottom = 443.0
+[node name="NoUpdate" type="Button" parent="VideoStreamPlayer/UpdatePopup/bg/VBoxContainer"]
+layout_mode = 2
 focus_mode = 0
-custom_fonts/font = SubResource( 9 )
-enabled_focus_mode = 0
+theme_override_fonts/font = SubResource("9")
 text = "No"
 flat = true
-__meta__ = {
-"_editor_description_": ""
-}
 
-[node name="Update" type="Button" parent="VideoPlayer"]
-margin_left = 11.0
-margin_top = 977.0
-margin_right = 617.0
-margin_bottom = 1072.0
+[node name="Update" type="Button" parent="VideoStreamPlayer"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 977.0
+offset_right = 617.0
+offset_bottom = 1072.0
 focus_mode = 0
-custom_fonts/font = SubResource( 10 )
-enabled_focus_mode = 0
+theme_override_fonts/font = SubResource("10")
 text = "Check For Update"
 flat = true
-align = 0
 
-[node name="HTTPRequest" type="HTTPRequest" parent="VideoPlayer/Update"]
+[node name="HTTPRequest" type="HTTPRequest" parent="VideoStreamPlayer/Update"]
 
 [node name="title" type="Control" parent="."]
-margin_right = 1878.0
-margin_bottom = 316.0
+anchors_preset = 0
+offset_right = 1878.0
+offset_bottom = 316.0
 
 [node name="Title" type="RichTextLabel" parent="title"]
-margin_left = 28.0
-margin_top = 38.0
-margin_right = 1874.0
-margin_bottom = 571.0
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+layout_mode = 0
+offset_left = 28.0
+offset_top = 38.0
+offset_right = 1874.0
+offset_bottom = 571.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("1")
 text = " MUSTAMAE SEIKLUSED"
 
 [node name="ä" type="RichTextLabel" parent="title"]
-margin_left = 422.0
-margin_top = -9.0
-margin_right = 537.0
-margin_bottom = 110.0
-rect_scale = Vector2( 1.51363, 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 4 )
+layout_mode = 0
+offset_left = 422.0
+offset_top = -9.0
+offset_right = 537.0
+offset_bottom = 110.0
+scale = Vector2(1.51363, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = SubResource("4")
 text = "  . ."
-fit_content_height = true
 
 [node name="start" type="Button" parent="."]
-margin_left = 100.0
-margin_top = 200.0
-margin_right = 388.0
-margin_bottom = 319.0
-rect_pivot_offset = Vector2( 123, 80 )
+layout_mode = 0
+offset_left = 100.0
+offset_top = 200.0
+offset_right = 388.0
+offset_bottom = 319.0
+pivot_offset = Vector2(123, 80)
 focus_mode = 0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 5 )
-enabled_focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("5")
 text = "Start"
 flat = true
-align = 0
 
 [node name="settings" type="Button" parent="."]
-margin_left = 100.0
-margin_top = 350.0
-margin_right = 388.0
-margin_bottom = 469.0
-rect_pivot_offset = Vector2( 123, 80 )
+layout_mode = 0
+offset_left = 100.0
+offset_top = 350.0
+offset_right = 388.0
+offset_bottom = 469.0
+pivot_offset = Vector2(123, 80)
 focus_mode = 0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 5 )
-enabled_focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("5")
 text = "Settings"
 flat = true
-align = 0
 
 [node name="quit" type="Button" parent="."]
-margin_left = 100.0
-margin_top = 500.0
-margin_right = 388.0
-margin_bottom = 619.0
-rect_pivot_offset = Vector2( 123, 80 )
+layout_mode = 0
+offset_left = 100.0
+offset_top = 500.0
+offset_right = 388.0
+offset_bottom = 619.0
+pivot_offset = Vector2(123, 80)
 focus_mode = 0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 5 )
-enabled_focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("5")
 text = "Quit"
 flat = true
-align = 0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
-bus = "Music"
+stream = ExtResource("6")
 
 [node name="CheckButton" type="CheckButton" parent="AudioStreamPlayer"]
-margin_left = 1699.0
-margin_top = 839.0
-margin_right = 1922.0
-margin_bottom = 960.0
+offset_left = 1699.0
+offset_top = 839.0
+offset_right = 1922.0
+offset_bottom = 960.0
 focus_mode = 0
-custom_fonts/font = SubResource( 6 )
-custom_icons/off = ExtResource( 7 )
-custom_icons/on = ExtResource( 8 )
-enabled_focus_mode = 0
+theme_override_fonts/font = SubResource("6")
 text = "Music"
 flat = true
-align = 1
 
 [node name="Version" type="RichTextLabel" parent="."]
-margin_left = 1576.0
-margin_top = 1029.0
-margin_right = 2135.0
-margin_bottom = 1084.0
-custom_fonts/normal_font = SubResource( 7 )
+layout_mode = 0
+offset_left = 1576.0
+offset_top = 1029.0
+offset_right = 2135.0
+offset_bottom = 1084.0
+theme_override_fonts/normal_font = SubResource("7")
 bbcode_enabled = true
-bbcode_text = "version Alpha 0.02"
 text = "version Alpha 0.02"
 
 [node name="Button" type="Button" parent="Version"]
-margin_left = -14.0
-margin_top = -26.0
-margin_right = 344.0
-margin_bottom = 81.0
+layout_mode = 0
+offset_left = -14.0
+offset_top = -26.0
+offset_right = 344.0
+offset_bottom = 81.0
 flat = true
 
-[node name="SettingsMenu" parent="." instance=ExtResource( 9 )]
+[node name="SettingsMenu" parent="." instance=ExtResource("9")]
+size = Vector2i(1920, 1088)
 
-[connection signal="finished" from="VideoPlayer" to="." method="_on_VideoPlayer_finished"]
-[connection signal="pressed" from="VideoPlayer/HTMLpopup/bg/VBoxContainer/Confirm" to="." method="_on_Confirm_pressed"]
-[connection signal="pressed" from="VideoPlayer/HTMLpopup/bg/VBoxContainer/Nah" to="." method="_on_Nah_pressed"]
-[connection signal="pressed" from="VideoPlayer/UpdatePopup/bg/VBoxContainer/YesUpdate" to="." method="_on_YesUpdate_pressed"]
-[connection signal="pressed" from="VideoPlayer/UpdatePopup/bg/VBoxContainer/NoUpdate" to="." method="_on_NoUpdate_pressed"]
-[connection signal="pressed" from="VideoPlayer/Update" to="." method="_on_Update_pressed"]
-[connection signal="request_completed" from="VideoPlayer/Update/HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_VideoPlayer_finished"]
+[connection signal="pressed" from="VideoStreamPlayer/HTMLpopup/bg/VBoxContainer/Confirm" to="." method="_on_Confirm_pressed"]
+[connection signal="pressed" from="VideoStreamPlayer/HTMLpopup/bg/VBoxContainer/Nah" to="." method="_on_Nah_pressed"]
+[connection signal="pressed" from="VideoStreamPlayer/UpdatePopup/bg/VBoxContainer/YesUpdate" to="." method="_on_YesUpdate_pressed"]
+[connection signal="pressed" from="VideoStreamPlayer/UpdatePopup/bg/VBoxContainer/NoUpdate" to="." method="_on_NoUpdate_pressed"]
+[connection signal="pressed" from="VideoStreamPlayer/Update" to="." method="_on_Update_pressed"]
+[connection signal="request_completed" from="VideoStreamPlayer/Update/HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

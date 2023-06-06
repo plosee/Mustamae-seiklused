@@ -2,9 +2,9 @@ extends Popup
 
 #onready var global = get_node("res://Scripts/Global.gd")
 
-onready var mastervol = $VBoxContainer/Master
-onready var sfxvol = $VBoxContainer/SFX
-onready var musicvol = $VBoxContainer/Music
+@onready var mastervol = $VBoxContainer/Master
+@onready var sfxvol = $VBoxContainer/SFX
+@onready var musicvol = $VBoxContainer/Music
 var master_bus = AudioServer.get_bus_index("Master")
 var music_bus = AudioServer.get_bus_index("Music")
 var sfx_bus = AudioServer.get_bus_index("SFX")
@@ -19,7 +19,7 @@ func _on_background_finished():
 
 func _on_fs_pressed():
 	Global.fullscreen = !Global.fullscreen
-	OS.window_fullscreen = Global.fullscreen
+	get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (Global.fullscreen) else Window.MODE_WINDOWED
 
 func _on_back_pressed():
 	self.hide()

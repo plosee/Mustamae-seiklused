@@ -1,4 +1,4 @@
-tool
+@tool
 extends ConfirmationDialog
 
 const ReplaceIconScript := preload("res://addons/godot_icon/ReplaceIcon.gd")
@@ -12,11 +12,11 @@ var error := false
 func _ready() -> void:
 	replace_icon.error_handler = self
 	replace_icon.error_callback = "print_error"
-	$Buttons/ChooseExecutable.connect("pressed", $ChooseExecutableDialog, "popup_centered")
-	$ChooseExecutableDialog.connect("file_selected", self, "on_executable_selected")
-	$Buttons/ChooseIcon.connect("pressed", $ChooseIconDialog, "popup_centered")
-	$ChooseIconDialog.connect("file_selected", self, "on_icon_path_selected")
-	connect("confirmed", self, "on_confirmed")
+	$Buttons/ChooseExecutable.connect("pressed", Callable($ChooseExecutableDialog, "popup_centered"))
+	$ChooseExecutableDialog.connect("file_selected", Callable(self, "on_executable_selected"))
+	$Buttons/ChooseIcon.connect("pressed", Callable($ChooseIconDialog, "popup_centered"))
+	$ChooseIconDialog.connect("file_selected", Callable(self, "on_icon_path_selected"))
+	connect("confirmed", Callable(self, "on_confirmed"))
 	disable_ok()
 
 
@@ -45,15 +45,15 @@ func on_icon_path_selected(_icon_path: String) -> void:
 	disable_ok()
 
 
-func validate_icon_header(bytes: PoolByteArray) -> bool:
-	var header := PoolByteArray([0, 0, 1, 0, 6, 0])
+func validate_icon_header(bytes: PackedByteArray) -> bool:
+	var header := PackedByteArray([0, 0, 1, 0, 6, 0])
 	for offset in header.size():
 		if bytes[offset] != header[offset]:
 			return false
 	return true
 
 
-func create_texture_rect(bytes: PoolByteArray) -> TextureRect:
+func create_texture_rect(bytes: PackedByteArray) -> TextureRect:
 	var image := Image.new()
 	image.load_png_from_buffer(bytes)
 	var texture := ImageTexture.new()
@@ -69,13 +69,13 @@ func on_confirmed() -> void:
 	disable_ok()
 	if not error:
 		if OS.has_feature("Windows"):
-			OS.execute("ie4uinit.exe", PoolStringArray(["-show"]))
-			OS.execute("ie4uinit.exe", PoolStringArray(["-ClearIconCache"]))
+			OS.execute("ie4uinit.exe", PackedStringArray(["-show"]))
+			OS.execute("ie4uinit.exe", PackedStringArray(["-ClearIconCache"]))
 		hide()
 
 
 func disable_ok() -> void:
-	get_ok().disabled = executable_path == "" or icon_path == "" or error
+	get_ok_button().disabled = executable_path == "" or icon_path == "" or error
 
 
 func print_error(error_message) -> void:
@@ -88,7 +88,7 @@ func remove_all_children(parent: Node) -> void:
 		parent.remove_child(parent.get_child(0))
 
 
-func read_icon(icon_path: String) -> PoolByteArray:
+func read_icon(icon_path: String) -> PackedByteArray:
 	var file := File.new()
 	var io_error := file.open(icon_path, File.READ)
 	if not io_error:
@@ -98,4 +98,4 @@ func read_icon(icon_path: String) -> PoolByteArray:
 		if not io_error:
 			return bytes
 	print_error(str("Could not open icon file! Error code: ", io_error))
-	return PoolByteArray()
+	return PackedByteArray()

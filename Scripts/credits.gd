@@ -3,19 +3,19 @@ extends Control
 signal ended
 
 ## Container of titles and names
-onready var scrollingText = get_node("scrollingText")
+@onready var scrollingText = get_node("scrollingText")
 ## Titles (the text on left side)
-onready var titles = get_node("scrollingText/margin/Titles")
+@onready var titles = get_node("scrollingText/margin/Titles")
 ## Names (the text on right side)
-onready var names = get_node("scrollingText/margin2/Names")
+@onready var names = get_node("scrollingText/margin2/Names")
 ## An image to use as Title for the credits
-onready var titleImg = get_node("titleImg")
+@onready var titleImg = get_node("titleImg")
 ## The credits file (formatted like a INI file (more info inside README.md))
-export(String, FILE) var creditsFile
+@export var creditsFile # (String, FILE)
 
 var viewSize # The size of the window
 ## Speed of scrolling
-export var speed = 50
+@export var speed = 50
 var regularSpeed # To keep track of the original speed
 var ended = false # True if all the credits have been scrolled off the screen
 				  # (don't change this value, to end just use "end" function)
@@ -24,56 +24,56 @@ var file
 var credits
 
 ## An image to use as Title for the credits
-export(Texture) var titleImage
+@export var titleImage: Texture2D
 
 ## The color of the background (covered if there is a video)
-export(Color) var backgroundColor = Color.black
+@export var backgroundColor: Color = Color.BLACK
 ## Video to play in background instead of having just a solid color
-export(VideoStream) var backgroundVideo
+@export var backgroundVideo: VideoStream
 ## Do you want the video to be restarted once finished?
-export var loopVideo = true
+@export var loopVideo = true
 
 ## Color of the text on left side
-export(Color) var titlesColor = Color.gray
+@export var titlesColor: Color = Color.GRAY
 ## Color of the text on right side
-export(Color) var namesColor = Color.white
+@export var namesColor: Color = Color.WHITE
 ## Custom font
-export(Font) var customFont
+@export var customFont: Font
 ## Space between left and right sides
-export(int) var margin = 6
+@export var margin: int = 6
 
 ## Playlist of music to play during credits scroll
-export(Array, AudioStream) var musicPlaylist
+@export var musicPlaylist # (Array, AudioStream)
 ## Do you want the playlist to be restarted once finished?
-export var loopPlaylist = false
+@export var loopPlaylist = false
 var playlistIndex = 0
 
 ## Do you want to enable go faster, go slower, pause and reverse controls with ui_actions?
-export var enableControls = true
-export var speedUpControl = "ui_up"
-export var slowDownControl = "ui_down"
+@export var enableControls = true
+@export var speedUpControl = "ui_up"
+@export var slowDownControl = "ui_down"
 ## Do you want to be able to skip all the credits by pressing ui_accept?
-export var enableSkip = true
-export var skipControl = "ui_accept"
+@export var enableSkip = true
+@export var skipControl = "ui_accept"
 
 ## The next scene to load once the scroll ended
-export(PackedScene) var nextScene
+@export var nextScene: PackedScene
 ## If true and there is no nextScene selected, once the scroll ended the program will quit
-export var quitOnEnd = false
+@export var quitOnEnd = false
 ## If true and there is no nextScene selected and quitOnEnd is false, once the scroll ended the node will be destroyed
-export var destroyOnEnd = false
+@export var destroyOnEnd = false
 
 func _ready():
 	viewSize = get_viewport().size
-	scrollingText.rect_position.y = viewSize.y
+	scrollingText.position.y = viewSize.y
 	regularSpeed = speed
 	
 	# Set title image if there is one, otherwise delete the useless node
 	if titleImage != null:
 		titleImg.texture = titleImage
 		# Obviously, move the text under the title image
-		scrollingText.rect_position.y += titleImage.get_size().y
-		titleImg.rect_position.y = viewSize.y
+		scrollingText.position.y += titleImage.get_size().y
+		titleImg.position.y = viewSize.y
 	else:
 		titleImg.queue_free()
 	
@@ -86,17 +86,17 @@ func _ready():
 	
 	# Set all the specified colors
 	$background.color = backgroundColor
-	titles.add_color_override("font_color",titlesColor)
-	names.add_color_override("font_color",namesColor)
+	titles.add_theme_color_override("font_color",titlesColor)
+	names.add_theme_color_override("font_color",namesColor)
 	
 	# Set the custom font (if there is one)
 	if customFont != null:
-		titles.add_font_override("font", customFont)
-		names.add_font_override("font", customFont)
+		titles.add_theme_font_override("font", customFont)
+		names.add_theme_font_override("font", customFont)
 	
 	# Set the margin (the space between left and right panels)
-	$scrollingText/margin.add_constant_override("margin_right", margin/2)
-	$scrollingText/margin2.add_constant_override("margin_left", margin/2)
+	$scrollingText/margin.add_theme_constant_override("offset_right", margin/2)
+	$scrollingText/margin2.add_theme_constant_override("offset_left", margin/2)
 	
 	# If the playlist has at list one track, play it
 	if musicPlaylist.size() > 0 and musicPlaylist[playlistIndex] != null:
@@ -145,11 +145,11 @@ func _ready():
 func _process(delta):
 	if not ended:
 		# If the scroll is not yet ended, keep to scroll it
-		if scrollingText.rect_position.y+scrollingText.rect_size.y > 0:
-			scrollingText.rect_position.y -= speed*delta
+		if scrollingText.position.y+scrollingText.size.y > 0:
+			scrollingText.position.y -= speed*delta
 			# If there is a title image, scroll it too
 			if titleImage != null:
-				titleImg.rect_position.y -= speed*delta
+				titleImg.position.y -= speed*delta
 		else:
 			end()
 
@@ -199,8 +199,8 @@ func end():
 	# otherwise if quitOnEnd is enabled, just quit
 	if nextScene != null:
 		# warning-ignore:return_value_discarded
-		get_tree().change_scene("res://Scenes/Main.tscn")
-		if OS.window_fullscreen:
+		get_tree().change_scene_to_file("res://Scenes/Main.tscn")
+		if ((get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN) or (get_window().mode == Window.MODE_FULLSCREEN)):
 			Global.fullscreen = true
 	elif quitOnEnd:
 		get_tree().quit()

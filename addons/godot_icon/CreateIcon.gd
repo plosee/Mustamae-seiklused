@@ -34,7 +34,7 @@ func _init() -> void:
 		images = load_images(names)
 	else:
 		images = prepare_images(arguments[3])
-	if not images.empty():
+	if not images.is_empty():
 		save_icon(arguments[2], images)
 	quit()
 
@@ -49,7 +49,7 @@ func load_images(paths: Array) -> Array:
 			return []
 		image.convert(Image.FORMAT_RGBA8)
 		images.append(image)
-	images.sort_custom(self, "sort_images_by_size")
+	images.sort_custom(Callable(self, "sort_images_by_size"))
 	var index := 0
 	for size in [16, 32, 48, 64, 128, 256]:
 		var image: Image = images[index]
@@ -99,10 +99,10 @@ static func sort_images_by_size(a: Image, b: Image) -> bool:
 
 
 class IconCreator:
-	const PNG_SIGNATURE := PoolByteArray([0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0a])
-	const IHDR_SIGNATURE := PoolByteArray([0x49, 0x48, 0x44, 0x52])
-	const IDAT_SIGNATURE := PoolByteArray([0x49, 0x44, 0x41, 0x54])
-	const IEND_SIGNATURE := PoolByteArray([0x49, 0x45, 0x4e, 0x44])
+	const PNG_SIGNATURE := PackedByteArray([0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0a])
+	const IHDR_SIGNATURE := PackedByteArray([0x49, 0x48, 0x44, 0x52])
+	const IDAT_SIGNATURE := PackedByteArray([0x49, 0x44, 0x41, 0x54])
+	const IEND_SIGNATURE := PackedByteArray([0x49, 0x45, 0x4e, 0x44])
 	const ADLER_MOD := 65521
 	const ZLIB_BLOCK_SIZE := 16384
 	const CRC_TABLE_SIZE := 256
@@ -115,8 +115,8 @@ class IconCreator:
 		crc_table = generate_crc_table()
 
 
-	func generate_icon(images: Array) -> PoolByteArray:
-		var result := PoolByteArray()
+	func generate_icon(images: Array) -> PackedByteArray:
+		var result := PackedByteArray()
 		result.append_array(generate_icon_header(images.size()))
 		var offset := result.size() + images.size() * ICON_ENTRY_SIZE
 		var pngs := []
@@ -132,16 +132,16 @@ class IconCreator:
 		return result
 
 
-	func generate_icon_header(size: int) -> PoolByteArray:
-		var result := PoolByteArray()
+	func generate_icon_header(size: int) -> PackedByteArray:
+		var result := PackedByteArray()
 		result.append_array(lsb_first(0x0, 2)) # reserved
 		result.append_array(lsb_first(0x1, 2)) # icon type
 		result.append_array(lsb_first(size, 2)) # image count
 		return result
 
 
-	func generate_icon_entry(image: Image, size: int, offset: int) -> PoolByteArray:
-		var result := PoolByteArray()
+	func generate_icon_entry(image: Image, size: int, offset: int) -> PackedByteArray:
+		var result := PackedByteArray()
 		result.append(image.get_width()) # width
 		result.append(image.get_height()) # height
 		result.append(0x0) # size of color palette
@@ -153,8 +153,8 @@ class IconCreator:
 		return result
 
 
-	func generate_png(image: Image) -> PoolByteArray:
-		var result := PoolByteArray()
+	func generate_png(image: Image) -> PackedByteArray:
+		var result := PackedByteArray()
 		var header_chunk := generate_header_chunk(image.get_width(), image.get_height())
 		var data_chunk := generate_data_chunk(image)
 		var end_chunk := generate_end_chunk()
@@ -165,16 +165,16 @@ class IconCreator:
 		return result
 
 
-	func generate_chunk(chunk: PoolByteArray) -> PoolByteArray:
-		var result := PoolByteArray()
+	func generate_chunk(chunk: PackedByteArray) -> PackedByteArray:
+		var result := PackedByteArray()
 		result.append_array(msb_first(chunk.size() - 4))
 		result.append_array(chunk)
 		result.append_array(msb_first(crc(chunk)))
 		return result
 
 
-	func generate_header_chunk(width: int, height: int) -> PoolByteArray:
-		var result = PoolByteArray()
+	func generate_header_chunk(width: int, height: int) -> PackedByteArray:
+		var result = PackedByteArray()
 		result.append_array(IHDR_SIGNATURE)
 		result.append_array(msb_first(width))
 		result.append_array(msb_first(height))
@@ -186,10 +186,10 @@ class IconCreator:
 		return result
 
 
-	func generate_data_chunk(image: Image) -> PoolByteArray:
+	func generate_data_chunk(image: Image) -> PackedByteArray:
 		var filtered_pixels := filtered_pixels(image.get_width(), image.get_height(), image.get_data())
 		var zlib_block_count := filtered_pixels.size() / ZLIB_BLOCK_SIZE + (1 if filtered_pixels.size() % ZLIB_BLOCK_SIZE else 0)
-		var result := PoolByteArray()
+		var result := PackedByteArray()
 		result.append_array(IDAT_SIGNATURE)
 		result.append(0x78) # CMF
 		result.append(0x1) # FLG
@@ -204,12 +204,12 @@ class IconCreator:
 		return result
 
 
-	func generate_end_chunk() -> PoolByteArray:
+	func generate_end_chunk() -> PackedByteArray:
 		return IEND_SIGNATURE
 
 
-	func filtered_pixels(width: int, height: int, pixels: PoolByteArray) -> PoolByteArray:
-		var result = PoolByteArray()
+	func filtered_pixels(width: int, height: int, pixels: PackedByteArray) -> PackedByteArray:
+		var result = PackedByteArray()
 		for row in range(height):
 			result.append(0x0)
 			for column in range(width * 4):
@@ -231,14 +231,14 @@ class IconCreator:
 		return result
 
 
-	func crc(bytes: PoolByteArray) -> int:
+	func crc(bytes: PackedByteArray) -> int:
 		var c := 0xffffffff
 		for i in range(bytes.size()):
 			c = crc_table[(c ^ bytes[i]) & 0xff] ^ (c >> 8)
 		return c ^ 0xffffffff
 
 
-	func adler(bytes: PoolByteArray) -> int:
+	func adler(bytes: PackedByteArray) -> int:
 		var a := 1
 		var b := 0
 		for byte in bytes:
@@ -247,8 +247,8 @@ class IconCreator:
 		return b << 16 | a
 
 
-	func msb_first(i: int) -> PoolByteArray:
-		var result := PoolByteArray()
+	func msb_first(i: int) -> PackedByteArray:
+		var result := PackedByteArray()
 		result.append((i >> 24) & 0xff)
 		result.append((i >> 16) & 0xff)
 		result.append((i >> 8) & 0xff)
@@ -256,16 +256,16 @@ class IconCreator:
 		return result
 
 
-	func lsb_first(i: int, size = 4) -> PoolByteArray:
-		var result := PoolByteArray()
+	func lsb_first(i: int, size = 4) -> PackedByteArray:
+		var result := PackedByteArray()
 		for _s in range(size):
 			result.append(i & 0xff)
 			i = i >> 8
 		return result
 
 
-	func block_size(i: int) -> PoolByteArray:
-		var result := PoolByteArray()
+	func block_size(i: int) -> PackedByteArray:
+		var result := PackedByteArray()
 		result.append(i & 0xff)
 		result.append((i >> 8) & 0xff)
 		result.append((i & 0xff) ^ 0xff)

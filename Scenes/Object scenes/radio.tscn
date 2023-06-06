@@ -3,29 +3,29 @@
 [ext_resource path="res://Scripts/radio.gd" type="Script" id=1]
 [ext_resource path="res://Temp Fold For object import/Kass/_face.material" type="Material" id=2]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="BoxShape3D" id=1]
 
-[sub_resource type="BoxShape" id=2]
+[sub_resource type="BoxShape3D" id=2]
 
-[sub_resource type="CubeMesh" id=3]
+[sub_resource type="BoxMesh" id=3]
 material = ExtResource( 2 )
 
-[sub_resource type="ParticlesMaterial" id=4]
+[sub_resource type="ParticleProcessMaterial" id=4]
 
-[node name="radio" type="KinematicBody"]
-transform = Transform( 0.304897, 0, 0, 0, 0.429478, 0, 0, 0, 1, 0, 0, 0 )
+[node name="radio" type="CharacterBody3D"]
+transform = Transform3D( 0.304897, 0, 0, 0, 0.429478, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="Area" type="Area" parent="." groups=["radio"]]
-transform = Transform( 1.54976, 0, 0, 0, 1.37348, 0, 0, 0, 1.31583, 0, 0, 0 )
+[node name="Area3D" type="Area3D" parent="." groups=["radio"]]
+transform = Transform3D( 1.54976, 0, 0, 0, 1.37348, 0, 0, 0, 1.31583, 0, 0, 0 )
 collision_layer = 8
 
-[node name="areashape" type="CollisionShape" parent="Area"]
+[node name="areashape" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource( 1 )
 
-[node name="collshape" type="CollisionShape" parent="."]
+[node name="collshape" type="CollisionShape3D" parent="."]
 shape = SubResource( 2 )
 
-[node name="mesh" type="MeshInstance" parent="."]
+[node name="mesh" type="MeshInstance3D" parent="."]
 mesh = SubResource( 3 )
 
 [node name="song" type="AudioStreamPlayer3D" parent="."]

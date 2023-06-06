@@ -1,15 +1,15 @@
-extends KinematicBody
+extends CharacterBody3D
 
-export var navNodePath:NodePath
-onready var navNode:Navigation = get_node(navNodePath)
+@export var navNodePath:NodePath
+@onready var navNode:Navigation = get_node(navNodePath)
 
-export var targetPath:NodePath
-onready var targetNode:Spatial = get_node(targetPath)
+@export var targetPath:NodePath
+@onready var targetNode:Node3D = get_node(targetPath)
 
-onready var area:Area = $Area
-onready var forwardRayCast:RayCast = $ForwardRayCast
-onready var floorRayCast:RayCast = $FloorRayCast
-onready var areaShape:CylinderShape = $Area/CollisionShape.shape
+@onready var area:Area3D = $Area3D
+@onready var forwardRayCast:RayCast3D = $ForwardRayCast
+@onready var floorRayCast:RayCast3D = $FloorRayCast
+@onready var areaShape:CylinderShape3D = $Area3D/CollisionShape3D.shape
 
 
 var gravity = 9.8
@@ -26,20 +26,20 @@ func rotate_random():
 	vector = Vector3.ZERO	
 	self.rotation.x = 0
 	self.rotation.z = 0
-	self.rotation.y = lerp(self.rotation.y, rand_range(-180, 180), 0.1)
+	self.rotation.y = lerp(self.rotation.y, randf_range(-180, 180), 0.1)
 
 func normal_state():
 	areaShape.radius = 10
-	forwardRayCast.cast_to = Vector3.FORWARD * 10 
+	forwardRayCast.target_position = Vector3.FORWARD * 10 
 	speed = 1	
 	
 	
 func alert_state():
 	areaShape.radius = 20
-	forwardRayCast.cast_to = Vector3.FORWARD * 20 
+	forwardRayCast.target_position = Vector3.FORWARD * 20 
 	speed = 3
 
-func navigate_to_target(target:Spatial):
+func navigate_to_target(target:Node3D):
 	targetNode = target
 	navPath = navNode.get_simple_path(self.global_transform.origin, target.global_transform.origin)	
 
@@ -83,8 +83,8 @@ func _process(delta):
 
 			
 		else:
-			vector = forwardRayCast.cast_to * speed
-			vector = self.global_transform.basis.xform(vector)
+			vector = forwardRayCast.target_position * speed
+			vector = self.global_transform.basis * (vector)
 			
 			if !floorRayCast.is_colliding():
 				rotate_random()
@@ -93,17 +93,19 @@ func _process(delta):
 				rotate_random()
 	
 											
-	move_and_slide(vector, Vector3.UP)
+	set_velocity(vector)
+	set_up_direction(Vector3.UP)
+	move_and_slide()
 
 	
 func _on_InteractRay_hurtvanamees():
 	health = health - 10
-	$Hbar3d/Viewport/Hbar2d.value = health
+	$Hbar3d/SubViewport/Hbar2d.value = health
 	if health == 0:
 		$Particles.emitting = true
 		$Pants.hide()
 		$Hbar3d.hide()
 		$Hbar3d.hide()
 		set_process(false)
-		yield(get_tree().create_timer(2), "timeout")
+		await get_tree().create_timer(2).timeout
 		call_deferred("free")

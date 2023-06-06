@@ -1,23 +1,23 @@
-tool
+@tool
 extends ConfirmationDialog
 
 const CreateIconScript := preload("res://addons/godot_icon/CreateIcon.gd")
 const HELP := "Please choose single file for your icon or six images with sizes:\n16x16, 32x32, 48x48, 64x64, 128x128 and 256x256."
 
 var create_icon := CreateIconScript.new()
-var image_paths := PoolStringArray()
+var image_paths := PackedStringArray()
 var images: Array
 
 
 func _ready() -> void:
 	create_icon.error_handler = self
 	create_icon.error_callback = "print_error"
-	$Buttons/ChooseImages.connect("pressed", $ChooseImagesDialog, "popup_centered")
-	$ChooseImagesDialog.connect("files_selected", self, "on_images_selected")
-	$Buttons/ChooseIcon.connect("pressed", $ChooseIconDialog, "popup_centered")
-	$ChooseIconDialog.connect("file_selected", self, "on_icon_path_selected")
+	$Buttons/ChooseImages.connect("pressed", Callable($ChooseImagesDialog, "popup_centered"))
+	$ChooseImagesDialog.connect("files_selected", Callable(self, "on_images_selected"))
+	$Buttons/ChooseIcon.connect("pressed", Callable($ChooseIconDialog, "popup_centered"))
+	$ChooseIconDialog.connect("file_selected", Callable(self, "on_icon_path_selected"))
 	$Buttons/Errors.text = HELP
-	connect("confirmed", self, "on_confirmed")
+	connect("confirmed", Callable(self, "on_confirmed"))
 	disable_ok()
 
 
@@ -30,7 +30,7 @@ func on_icon_path_selected(icon_path: String) -> void:
 	disable_ok()
 
 
-func on_images_selected(paths: PoolStringArray) -> void:
+func on_images_selected(paths: PackedStringArray) -> void:
 	$Buttons/ChooseImages.text = "Choose image(s)"
 	$Buttons/Errors.text = ""
 	remove_all_children($Buttons/Images)
@@ -57,7 +57,7 @@ func create_texture_rect(image: Image) -> TextureRect:
 
 
 func disable_ok() -> void:
-	get_ok().disabled = $ChooseIconDialog.current_file == "" or images.size() != 1 and images.size() != 6
+	get_ok_button().disabled = $ChooseIconDialog.current_file == "" or images.size() != 1 and images.size() != 6
 
 
 func print_error(error_message) -> void:

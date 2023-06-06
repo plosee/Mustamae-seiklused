@@ -1,6 +1,6 @@
 extends Control
 
-var is_paused = false setget set_is_paused
+var is_paused = false: set = set_is_paused
 
 func _unhandled_input(event):
 	if event.is_action_pressed("menu"):	
@@ -21,7 +21,7 @@ func _on_Resume_pressed():
 
 func _on_Exit_To_Main_Menu_pressed():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Scenes/Main.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Main.tscn")
 	self.is_paused = false
 
 func _on_Feedback_pressed():

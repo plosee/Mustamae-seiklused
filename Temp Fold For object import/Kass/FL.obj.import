@@ -1,20 +1,21 @@
 [remap]
 
 importer="wavefront_obj"
+importer_version=1
 type="Mesh"
-path="res://.import/FL.obj-b803f73b94ab4e0f80cbce88f7dd0749.mesh"
+uid="uid://dw2augs8ig86m"
+path="res://.godot/imported/FL.obj-b803f73b94ab4e0f80cbce88f7dd0749.mesh"
 
 [deps]
 
-files=[ "res://.import/FL.obj-b803f73b94ab4e0f80cbce88f7dd0749.mesh" ]
+files=["res://.godot/imported/FL.obj-b803f73b94ab4e0f80cbce88f7dd0749.mesh"]
 
 source_file="res://Temp Fold For object import/Kass/FL.obj"
-dest_files=[ "res://.import/FL.obj-b803f73b94ab4e0f80cbce88f7dd0749.mesh", "res://.import/FL.obj-b803f73b94ab4e0f80cbce88f7dd0749.mesh" ]
+dest_files=["res://.godot/imported/FL.obj-b803f73b94ab4e0f80cbce88f7dd0749.mesh", "res://.godot/imported/FL.obj-b803f73b94ab4e0f80cbce88f7dd0749.mesh"]
 
 [params]
 
 generate_tangents=true
-scale_mesh=Vector3( 1, 1, 1 )
-offset_mesh=Vector3( 0, 0, 0 )
-octahedral_compression=true
-optimize_mesh_flags=4286
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

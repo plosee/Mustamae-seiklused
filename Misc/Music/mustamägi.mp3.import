@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/mustamägi.mp3-e2100b7668860fc43f592298a276eb13.mp3str"
+uid="uid://ddlabu8824xks"
+path="res://.godot/imported/mustamägi.mp3-e2100b7668860fc43f592298a276eb13.mp3str"
 
 [deps]
 
 source_file="res://Misc/Music/mustamägi.mp3"
-dest_files=[ "res://.import/mustamägi.mp3-e2100b7668860fc43f592298a276eb13.mp3str" ]
+dest_files=["res://.godot/imported/mustamägi.mp3-e2100b7668860fc43f592298a276eb13.mp3str"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

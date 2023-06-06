@@ -1,4 +1,4 @@
-extends KinematicBody
+extends CharacterBody3D
 
 func _on_InteractRay_KubikInteract():
 	print("kubik kapoof")

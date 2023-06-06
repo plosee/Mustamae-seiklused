@@ -1,4 +1,4 @@
-extends RayCast
+extends RayCast3D
 
 var time_in_seconds = 5 #timer
 var collider = null
@@ -69,14 +69,14 @@ func _physics_process(delta):
 			emit_signal("Kubik2Interact")
 			
 			$Achievemtn.text = "Kubik refill"
-			yield(get_tree().create_timer(2), "timeout")
+			await get_tree().create_timer(2).timeout
 			$Achievemtn.text = " "
 			
 		elif collider.is_in_group("Kubik") and Input.is_action_just_pressed("interact"):
 			emit_signal("KubikInteract")
 			
 			$Achievemtn.text = "Korjasid ules kubiku"
-			yield(get_tree().create_timer(2), "timeout")
+			await get_tree().create_timer(2).timeout
 			$Achievemtn.text = " "
 			kubikinventory = true
 			
@@ -85,7 +85,7 @@ func _physics_process(delta):
 			emit_signal("Kubik2Interact")
 			
 			$Achievemtn.text = "Korjasid ules kubiku"
-			yield(get_tree().create_timer(2), "timeout")
+			await get_tree().create_timer(2).timeout
 			$Achievemtn.text = " "
 			kubikinventory = true
 		
@@ -93,15 +93,15 @@ func _physics_process(delta):
 			emit_signal("KnifeInteract")
 			
 			$Achievemtn.text = "Korjasid ules noa"
-			yield(get_tree().create_timer(2), "timeout")
+			await get_tree().create_timer(2).timeout
 			$Achievemtn.text = " "
 			
 		elif collider.is_in_group("Syringe") and Input.is_action_just_pressed("interact"):
 			emit_signal("SyringeInteract")
 			$Achievemtn.text = "Korjasid ules mingi suvalise sustla maast"
-			yield(get_tree().create_timer(2), "timeout")
+			await get_tree().create_timer(2).timeout
 			$Achievemtn.text = "See on vist juba kasutatud"
-			yield(get_tree().create_timer(0.75), "timeout")
+			await get_tree().create_timer(0.75).timeout
 			$Achievemtn.text = " "
 		
 		elif collider.is_in_group("Syringe2") and Input.is_action_just_pressed("interact"):

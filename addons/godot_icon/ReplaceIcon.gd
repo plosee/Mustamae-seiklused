@@ -55,7 +55,7 @@ func replace_icon(executable_path: String, icon_path: String) -> void:
 	var resources := file.get_buffer(resources_section_entry.size_of_raw_data)
 
 	resources = icon_replacer.replace_icons(resources, resources_section_entry.virtual_address, images)
-	if not resources.empty():
+	if not resources.is_empty():
 		file.seek(resources_section_entry.pointer_to_raw_data)
 		file.store_buffer(resources)
 	file.close()
@@ -84,13 +84,13 @@ class IconReplacer:
 	var error_callback: String
 
 
-	func replace_icons(resources: PoolByteArray, rva_offset: int, images: Dictionary) -> PoolByteArray:
+	func replace_icons(resources: PackedByteArray, rva_offset: int, images: Dictionary) -> PackedByteArray:
 		var data_entries := find_data_entries(resources)
 		for data_size in images.keys():
 			var icon_offset := find_icon_offset(data_entries, data_size, rva_offset)
 			if resources.subarray(icon_offset + 1, icon_offset + 3).get_string_from_ascii() != "PNG":
 				print_error("Wrong icon type, PNG signature missing")
-				return PoolByteArray()
+				return PackedByteArray()
 			resources = replace(resources, images[data_size], icon_offset)
 		return resources
 
@@ -102,7 +102,7 @@ class IconReplacer:
 		return -1
 
 
-	func find_resources_section_entry(headers: PoolByteArray) -> SectionEntry:
+	func find_resources_section_entry(headers: PackedByteArray) -> SectionEntry:
 		var header_offset := lsb_first(headers, PE_HEADER_ADDRESS_OFFSET, 2)
 		var image_type := lsb_first(headers, header_offset + MAGIC_OFFSET, 2)
 		if not image_type == ImageType.PE32_PLUS:
@@ -119,13 +119,13 @@ class IconReplacer:
 		return null
 
 
-	func find_data_entries(resources: PoolByteArray) -> Array:
+	func find_data_entries(resources: PackedByteArray) -> Array:
 		var result := []
 		parse_table(resources, 0, result)
 		return result
 
 
-	func parse_table(resources: PoolByteArray, offset: int, data_entries: Array) -> void:
+	func parse_table(resources: PackedByteArray, offset: int, data_entries: Array) -> void:
 		var entry_count := lsb_first(resources, offset + 14, 2)
 		offset += 16
 		for _i in range(entry_count):
@@ -133,7 +133,7 @@ class IconReplacer:
 			offset += 8
 
 
-	func parse_entry(resources: PoolByteArray, offset: int, data_entries: Array) -> void:
+	func parse_entry(resources: PackedByteArray, offset: int, data_entries: Array) -> void:
 		var entry_offset := lsb_first(resources, offset + 4)
 		if entry_offset & 0x80000000:
 			parse_table(resources, entry_offset & 0x7fffffff, data_entries)
@@ -141,7 +141,7 @@ class IconReplacer:
 			parse_data_entry(resources, entry_offset, data_entries)
 
 
-	func parse_data_entry(resources: PoolByteArray, offset: int, data_entries: Array) -> void:
+	func parse_data_entry(resources: PackedByteArray, offset: int, data_entries: Array) -> void:
 		data_entries.append(DataEntry.new(resources.subarray(offset, offset + DATA_ENTRY_SIZE - 1)))
 
 
@@ -150,14 +150,14 @@ class IconReplacer:
 		if error_handler and error_callback:
 			error_handler.call(error_callback, error_message)
 
-	static func lsb_first(bytes: PoolByteArray, offset: int, byte_count = 4) -> int:
+	static func lsb_first(bytes: PackedByteArray, offset: int, byte_count = 4) -> int:
 		var result := 0
 		for i in range(byte_count, 0, -1):
 			result = (result << 8) + bytes[offset + i - 1]
 		return result
 
 
-	static func replace(bytes: PoolByteArray, replacement: PoolByteArray, index: int) -> PoolByteArray:
+	static func replace(bytes: PackedByteArray, replacement: PackedByteArray, index: int) -> PackedByteArray:
 		for i in range(replacement.size()):
 			bytes.set(index + i, replacement[i])
 		return bytes
@@ -173,7 +173,7 @@ class SectionEntry:
 	var size_of_raw_data: int
 
 
-	func _init(bytes: PoolByteArray) -> void:
+	func _init(bytes: PackedByteArray) -> void:
 		virtual_address = IconReplacer.lsb_first(bytes, VIRTUAL_ADDRESS_OFFSET)
 		size_of_raw_data = IconReplacer.lsb_first(bytes, SIZE_OF_RAW_DATA_OFFSET)
 		pointer_to_raw_data = IconReplacer.lsb_first(bytes, POINTER_TO_RAW_DATA_OFFSET)
@@ -187,7 +187,7 @@ class DataEntry:
 	var size: int
 
 
-	func _init(bytes: PoolByteArray) -> void:
+	func _init(bytes: PackedByteArray) -> void:
 		rva = IconReplacer.lsb_first(bytes, RVA_OFFSET)
 		size = IconReplacer.lsb_first(bytes, SIZE_OFFSET)
 
@@ -202,7 +202,7 @@ class Icon:
 	var images := {}
 
 
-	func _init(bytes: PoolByteArray) -> void:
+	func _init(bytes: PackedByteArray) -> void:
 		var image_count := IconReplacer.lsb_first(bytes, IMAGE_COUNT_OFFSET, 2)
 		var offset := IMAGES_OFFSET
 		for i in image_count:

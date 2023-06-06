@@ -1,13 +1,13 @@
 extends Button
 
-var fs: Texture = preload("res://Images/fullscreen.png")
-var ufs: Texture = preload("res://Images/unfullscreen.png")
+var fs: Texture2D = preload("res://Images/fullscreen.png")
+var ufs: Texture2D = preload("res://Images/unfullscreen.png")
 
 func _ready():
-	OS.window_fullscreen = Global.fullscreen
+	get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (Global.fullscreen) else Window.MODE_WINDOWED
 
 func _on_fullscreen_toggled(button_pressed):
-	OS.window_fullscreen = !OS.window_fullscreen
+	get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (!((get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN) or (get_window().mode == Window.MODE_FULLSCREEN))) else Window.MODE_WINDOWED
 	
 	if Global.fullscreen:
 		self.icon = fs

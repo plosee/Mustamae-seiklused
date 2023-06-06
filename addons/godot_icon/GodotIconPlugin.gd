@@ -1,4 +1,4 @@
-tool
+@tool
 extends EditorPlugin
 
 const CREATE_ICON_FILENAME := "user://CreateIcon.gd"
@@ -25,13 +25,13 @@ func _exit_tree() -> void:
 
 func show_icon_creator(_ignore) -> void:
 	if not icon_creator:
-		icon_creator = IconCreatorScene.instance()
+		icon_creator = IconCreatorScene.instantiate()
 		get_editor_interface().add_child(icon_creator)
 	icon_creator.popup_centered()
 
 
 func show_icon_replacer(_ignore) -> void:
 	if not icon_replacer:
-		icon_replacer = IconReplacerScene.instance()
+		icon_replacer = IconReplacerScene.instantiate()
 		get_editor_interface().add_child(icon_replacer)
 	icon_replacer.popup_centered()
