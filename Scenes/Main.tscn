@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5fvnobt6ewbk"]
+[gd_scene load_steps=4 format=3 uid="uid://1oai05h2jp62"]
 
-[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_um0w7"]
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_dxews"]
+[ext_resource type="FontFile" uid="uid://d3ukvs1jnedk8" path="res://Fonts/ComicSans.ttf" id="2_kv5l7"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_tygis"]
+file = "res://Misc/Mustamägi.ogv"
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -9,9 +13,142 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_um0w7")
+script = ExtResource("1_dxews")
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+[node name="BG" type="VideoStreamPlayer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+stream = SubResource("VideoStreamTheora_tygis")
+autoplay = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BG"]
+layout_mode = 0
+offset_right = 1437.0
+offset_bottom = 212.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 49
+theme_override_fonts/normal_font = ExtResource("2_kv5l7")
+theme_override_font_sizes/normal_font_size = 140
+bbcode_enabled = true
+text = "[wave] Mustamäe Seiklused [/wave]"
+fit_content = true
+
+[node name="Buttons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ButtonVbox" type="VBoxContainer" parent="Buttons"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 205.0
+offset_right = 677.0
+offset_bottom = 787.0
+
+[node name="Start" type="Button" parent="Buttons/ButtonVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 44
+theme_override_fonts/font = ExtResource("2_kv5l7")
+theme_override_font_sizes/font_size = 120
+text = "Start"
+flat = true
+alignment = 0
+
+[node name="Settings" type="Button" parent="Buttons/ButtonVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 44
+theme_override_fonts/font = ExtResource("2_kv5l7")
+theme_override_font_sizes/font_size = 120
+text = "Settings"
+flat = true
+alignment = 0
+
+[node name="Quit" type="Button" parent="Buttons/ButtonVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 44
+theme_override_fonts/font = ExtResource("2_kv5l7")
+theme_override_font_sizes/font_size = 120
+text = "Quit"
+flat = true
+alignment = 0
+
+[node name="Update" type="Button" parent="Buttons"]
+offset_left = 21.0
+offset_top = 940.0
+offset_right = 954.0
+offset_bottom = 1086.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.227451, 0.227451, 0.227451, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 44
+theme_override_fonts/font = ExtResource("2_kv5l7")
+theme_override_font_sizes/font_size = 120
+text = "Check For Update"
+flat = true
+alignment = 0
+
+[node name="UpdateRequest" type="HTTPRequest" parent="Buttons/Update"]
+
+[node name="UpdateBG" type="ColorRect" parent="Buttons/Update"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.5
+offset_top = -848.0
+offset_right = 1097.5
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons/Update/UpdateBG"]
+layout_mode = 0
+offset_right = 1250.0
+offset_bottom = 750.0
+theme_override_constants/separation = 46
+
+[node name="UpdateNotice" type="RichTextLabel" parent="Buttons/Update/UpdateBG/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("2_kv5l7")
+theme_override_font_sizes/normal_font_size = 88
+bbcode_enabled = true
+text = "
+[center]A [wave] New Version [/wave]is available!
+Would you like to update? [/center]"
+fit_content = true
+
+[node name="Yeah" type="Button" parent="Buttons/Update/UpdateBG/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 44
+theme_override_fonts/font = ExtResource("2_kv5l7")
+theme_override_font_sizes/font_size = 120
+text = "Yes"
+flat = true
+
+[node name="Nah" type="Button" parent="Buttons/Update/UpdateBG/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 44
+theme_override_fonts/font = ExtResource("2_kv5l7")
+theme_override_font_sizes/font_size = 120
+text = "No"
+flat = true
+
+[connection signal="finished" from="BG" to="." method="_on_bg_finished"]
+[connection signal="pressed" from="Buttons/ButtonVbox/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Buttons/ButtonVbox/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Buttons/ButtonVbox/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Buttons/Update" to="." method="_on_update_pressed"]
+[connection signal="pressed" from="Buttons/Update/UpdateBG/VBoxContainer/Yeah" to="." method="_on_yeah_pressed"]
+[connection signal="pressed" from="Buttons/Update/UpdateBG/VBoxContainer/Nah" to="." method="_on_nah_pressed"]

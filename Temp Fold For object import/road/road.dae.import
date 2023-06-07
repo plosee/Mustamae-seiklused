@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://k1hwh5w7b0wf"
+uid="uid://dyqb5syway0rx"
 path="res://.godot/imported/road.dae-12ada67dac7bd32368bdaa86f3667f0c.scn"
 
 [deps]
@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/road.dae-12ada67dac7bd32368bdaa86f3667f0c.scn
 
 [params]
 
-nodes/root_type="Node3D"
+nodes/root_type="Spatial"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

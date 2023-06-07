@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dkvl0h8n8l6ln"
+uid="uid://m11nnfscvgry"
 path="res://.godot/imported/saltykubik.dae-668e027c9074c8339dcadba9516a1a86.scn"
 
 [deps]
@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/saltykubik.dae-668e027c9074c8339dcadba9516a1a
 
 [params]
 
-nodes/root_type="Node3D"
+nodes/root_type="Spatial"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

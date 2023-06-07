@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c8tu4i1xkq7wp"
+uid="uid://ce1gtw3kk7xm3"
 path="res://.godot/imported/kubik.dae-2861b76de6e36848ce601f20d049b170.scn"
 
 [deps]
@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/kubik.dae-2861b76de6e36848ce601f20d049b170.sc
 
 [params]
 
-nodes/root_type="Node3D"
+nodes/root_type="Spatial"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

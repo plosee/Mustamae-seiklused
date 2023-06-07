@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://4oy5jw2tjimy"
+uid="uid://bmtq48ln40273"
 path="res://.godot/imported/truck.dae-8ae2501bea49479cc4983ec019cb5236.scn"
 
 [deps]
@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/truck.dae-8ae2501bea49479cc4983ec019cb5236.sc
 
 [params]
 
-nodes/root_type="Node3D"
+nodes/root_type="Spatial"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

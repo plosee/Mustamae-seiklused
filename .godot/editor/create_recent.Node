@@ -1,1 +1,13 @@
+HSlider
+RichTextLabel
+Button
+VBoxContainer
 VideoStreamPlayer
+CSGBox3D
+CollisionShape3D
+CollisionPolygon3D
+StaticBody3D
+ColorRect
+Popup
+HTTPRequest
+Control

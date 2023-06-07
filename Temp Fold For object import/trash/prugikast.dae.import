@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://quc203pxfse1"
+uid="uid://dkva1hipf2ojj"
 path="res://.godot/imported/prugikast.dae-9ad6a2342b7f1a336aff21072dd19bfc.scn"
 
 [deps]
@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/prugikast.dae-9ad6a2342b7f1a336aff21072dd19bf
 
 [params]
 
-nodes/root_type="Node3D"
+nodes/root_type="Spatial"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

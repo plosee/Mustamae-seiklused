@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgtkfuxkso3ob"]
+
+[ext_resource type="Texture2D" uid="uid://d11drbd1j06ec" path="res://Images/grass.jpg" id="1_rbpj1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3drt7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yty0u"]
+albedo_texture = ExtResource("1_rbpj1")
+
+[node name="World" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 0.1, 0, 0, 0, 100, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.00454, 0, 0, 0, 1.0079, 0, 0, 0, 1.00454, 0, 0, 0)
+visible = false
+shape = SubResource("BoxShape3D_3drt7")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
+material = SubResource("StandardMaterial3D_yty0u")

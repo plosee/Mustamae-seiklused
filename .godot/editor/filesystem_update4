@@ -1,2 +1,8 @@
-res://Misc/Sang/default_env.tres
+res://Scripts/Main.gd
 res://Scenes/Main.tscn
+res://Scenes/world.tscn
+res://Scenes/Player.tscn
+res://Model.noimport/jauk/JakeAnimated.tscn
+res://Scenes/Settings.tscn
+res://Scripts/Settings.gd
+res://default_bus_layout.tres

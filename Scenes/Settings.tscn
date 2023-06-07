@@ -1,0 +1,154 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5rnwvqy4hngy"]
+
+[ext_resource type="FontFile" uid="uid://d3ukvs1jnedk8" path="res://Fonts/ComicSans.ttf" id="1_70w8g"]
+[ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_ijlta"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_p3kuu"]
+file = "res://Misc/static.ogv"
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8uyww"]
+thickness = 30
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_y6mws"]
+color = Color(1, 1, 1, 1)
+thickness = 30
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_2vhxl"]
+color = Color(0, 1, 1, 1)
+thickness = 30
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ijlta")
+
+[node name="static" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+stream = SubResource("VideoStreamTheora_p3kuu")
+autoplay = true
+
+[node name="SettingsVbox" type="VBoxContainer" parent="static"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -750.0
+offset_top = -415.5
+offset_right = 750.0
+offset_bottom = 415.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 19
+
+[node name="Show FPS" type="Button" parent="static/SettingsVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_70w8g")
+theme_override_font_sizes/font_size = 80
+text = "Show FPS"
+flat = true
+
+[node name="Limit FPS" type="Button" parent="static/SettingsVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_70w8g")
+theme_override_font_sizes/font_size = 80
+text = "Limit FPS"
+flat = true
+
+[node name="Fullscreen" type="Button" parent="static/SettingsVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_70w8g")
+theme_override_font_sizes/font_size = 80
+text = "Toggle Fullscreen"
+flat = true
+
+[node name="Master Volume" type="RichTextLabel" parent="static/SettingsVbox"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("1_70w8g")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "[center]Master Volume[/center]"
+fit_content = true
+
+[node name="MasterSlider" type="HSlider" parent="static/SettingsVbox"]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_8uyww")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_y6mws")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_2vhxl")
+min_value = -30.0
+max_value = 0.0
+
+[node name="Music Volume" type="RichTextLabel" parent="static/SettingsVbox"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("1_70w8g")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "[center]Music Volume[/center]"
+fit_content = true
+
+[node name="MusicSlider" type="HSlider" parent="static/SettingsVbox"]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_8uyww")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_y6mws")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_2vhxl")
+min_value = -30.0
+max_value = 0.0
+
+[node name="SFX Volume" type="RichTextLabel" parent="static/SettingsVbox"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/normal_font = ExtResource("1_70w8g")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "[center]SFX Volume[/center]"
+fit_content = true
+
+[node name="SFXSlider" type="HSlider" parent="static/SettingsVbox"]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_8uyww")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_y6mws")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_2vhxl")
+min_value = -30.0
+max_value = 0.0
+
+[connection signal="finished" from="static" to="." method="_on_static_finished"]
+[connection signal="value_changed" from="static/SettingsVbox/MasterSlider" to="." method="_on_master_slider_value_changed"]
