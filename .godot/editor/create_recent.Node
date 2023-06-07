@@ -1,9 +1,13 @@
+CSGPolygon3D
+CSGBox3D
+Path3D
+Path2D
+Sprite3D
 HSlider
 RichTextLabel
 Button
 VBoxContainer
 VideoStreamPlayer
-CSGBox3D
 CollisionShape3D
 CollisionPolygon3D
 StaticBody3D

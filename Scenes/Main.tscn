@@ -77,6 +77,7 @@ flat = true
 alignment = 0
 
 [node name="Update" type="Button" parent="Buttons"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 940.0
 offset_right = 954.0
@@ -96,6 +97,7 @@ alignment = 0
 [node name="UpdateRequest" type="HTTPRequest" parent="Buttons/Update"]
 
 [node name="UpdateBG" type="ColorRect" parent="Buttons/Update"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

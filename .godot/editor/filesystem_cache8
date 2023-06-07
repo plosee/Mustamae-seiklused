@@ -1,9 +1,10 @@
 2a60927148abd1d33b818b535e306557
-::res://::1686151928
+::res://::1686156929
+default_bus_layout.tres::AudioBusLayout::6719528829311501445::1686155758::0::1::::<><>::
 icon.svg::CompressedTexture2D::294432280258095356::1686151753::1686151759::1::::<><>::
 ::res://Fonts/::1686151759
 ComicSans.ttf::FontFile::9166482885636742545::1684125931::1686151759::1::::<><>::
-::res://Images/::1686151761
+::res://Images/::1686156990
 640px-Mustamae_Sopruse_pst_Busstop.jpeg::CompressedTexture2D::9107815699667159452::1684125931::1686151759::1::::<><>::
 800px-MustamC3A4e_linnaosa_vapp.png::CompressedTexture2D::8711962720060390988::1685945896::1686151759::1::::<><>::
 278910201023211.png::CompressedTexture2D::5407496534509341217::1684125931::1686151759::1::::<><>::
@@ -25,6 +26,7 @@ kojukohilasse.png::CompressedTexture2D::3203816248985094159::1684125932::1686151
 lubikprod.png::CompressedTexture2D::7160765939976241212::1684125932::1686151759::1::::<><>::
 Map v1.png::CompressedTexture2D::763915872376981046::1685945954::1686151759::1::::<><>::
 mustamagivapp.png::CompressedTexture2D::1557917152879861540::1685945897::1686151759::1::::<><>::
+mustamäe kaart.png::CompressedTexture2D::2364015426147484607::1685942145::1686157001::1::::<><>::
 Mustamägi.ogv::VideoStreamTheora::-1::1685945897::0::1::::<><>::
 PlayerHbar.png::CompressedTexture2D::2588042458697278128::1685945897::1686151759::1::::<><>::
 PlayerHealth.png::CompressedTexture2D::2655063940277979460::1685945897::1686151759::1::::<><>::
@@ -69,10 +71,10 @@ SKIN_002.material::StandardMaterial3D::-1::1685945898::0::1::::<><>::
 truckgrillie.jpg::CompressedTexture2D::9175003044292209095::1684125933::1686151759::1::::<><>::
 trucktire.png::CompressedTexture2D::3401659035725574491::1684125933::1686151759::1::::<><>::
 Untitled.png::CompressedTexture2D::3804907334073215168::1684125933::1686151759::1::::<><>::
-::res://Model.noimport/jauk/::1686151769
+::res://Model.noimport/jauk/::1686154513
 ENTR_UIRE.material::StandardMaterial3D::-1::1685945898::0::1::::<><>::
-JakeAnimated.tscn::PackedScene::-1::1686151521::0::1::::<><>::res://Model.noimport/jauk/Material_009.material<>res://Model.noimport/jauk/Material_006.material<>res://Model.noimport/jauk/SKIN.material<>res://Model.noimport/jauk/ENTR_UIRE.material<>res://Model.noimport/jauk/SKIN_002.material<>res://Model.noimport/jauk/Material_001.material<>res://Model.noimport/jauk/Material_011.material<>res://Model.noimport/jauk/Material_012.material
-JAKEPAUL.glb::PackedScene::872855737393551241::1685945898::1686151763::1::::<><>::uid://cavyb0rohr88q<>uid://ddd05hy1nnbw7
+JakeAnimated.tscn::PackedScene::4400478822740880748::1686154513::0::1::::<><>::res://Model.noimport/jauk/Material_009.material<>res://Model.noimport/jauk/Material_006.material<>res://Model.noimport/jauk/SKIN.material<>res://Model.noimport/jauk/ENTR_UIRE.material<>res://Model.noimport/jauk/Material_001.material<>res://Model.noimport/jauk/Material_011.material<>res://Model.noimport/jauk/Material_012.material
+JAKEPAUL.glb::PackedScene::872855737393551241::1685945898::1686154306::1::::<><>::
 JAKEPAUL_Jake_Paul1.png::CompressedTexture2D::7377593619829851400::1686151763::1686151769::1::::<><>::
 JAKEPAUL_nike-air-force-1-gs-valge-arpq.png::CompressedTexture2D::4817653633833343854::1686151763::1686151769::1::::<><>::
 Material_001.material::StandardMaterial3D::-1::1685945898::0::1::::<><>::
@@ -82,11 +84,16 @@ Material_011.material::StandardMaterial3D::-1::1685945898::0::1::::<><>::
 Material_012.material::StandardMaterial3D::-1::1685945898::0::1::::<><>::
 SKIN.material::StandardMaterial3D::-1::1685945898::0::1::::<><>::
 SKIN_002.material::StandardMaterial3D::-1::1685945898::0::1::::<><>::
-::res://Scenes/::1686153912
-Main.tscn::PackedScene::1853826869279305293::1686153898::0::1::::<><>::res://Scripts/Main.gd<>uid://d3ukvs1jnedk8
-world.tscn::PackedScene::2847394108222116061::1686153912::0::1::::<><>::
-::res://Scripts/::1686153897
-Main.gd::GDScript::-1::1686153897::0::1::::<>Control<>::
+::res://Scenes/::1686156961
+Main.tscn::PackedScene::1853826869279305293::1686156940::0::1::::<><>::res://Scripts/Main.gd<>uid://d3ukvs1jnedk8
+Player.tscn::PackedScene::6440988864754201034::1686155957::0::1::::<><>::res://Model.noimport/jauk/Material_011.material<>res://Model.noimport/jauk/Material_012.material<>res://Model.noimport/jauk/ENTR_UIRE.material<>res://Model.noimport/jauk/Material_006.material<>res://Model.noimport/jauk/SKIN.material<>res://Model.noimport/jauk/Material_009.material<>res://Model.noimport/jauk/Material_001.material
+Road.tscn::PackedScene::5789174153059073267::1686156961::0::1::::<><>::
+Settings.tscn::PackedScene::4528010151861678496::1686155954::0::1::::<><>::uid://d3ukvs1jnedk8<>res://Scripts/Settings.gd
+world.tscn::PackedScene::2847394108222116061::1686155958::0::1::::<><>::uid://d11drbd1j06ec
+::res://Scripts/::1686155897
+Global.gd::GDScript::-1::1686155083::0::1::::<>Node<>::
+Main.gd::GDScript::-1::1686154743::0::1::::<>Control<>::
+Settings.gd::GDScript::-1::1686155897::0::1::::<>Control<>::
 ::res://Temp Fold For object import/::1686151769
 download (2).jpg.001.jpg::CompressedTexture2D::6414654552972290622::1684125933::1686151769::1::::<><>::
 knife.obj::Mesh::5252176510991425558::1684125933::1686151762::1::::<><>::
@@ -115,7 +122,7 @@ kubik.png::CompressedTexture2D::4460400960158616247::1684125933::1686151769::1::
 Material.material::StandardMaterial3D::-1::1685945899::0::1::::<><>::res://Temp Fold For object import/kubik/kubik.png
 salty.png::CompressedTexture2D::1843718623789668244::1684125933::1686151769::1::::<><>::
 saltykubik.dae::PackedScene::897542493743551674::1684125933::1686151768::1::::<><>::uid://1jd1nqgbckam
-::res://Temp Fold For object import/paul/::1686151769
+::res://Temp Fold For object import/paul/::1686154283
 ENTR_UIRE.material::StandardMaterial3D::-1::1684125933::0::1::::<><>::
 Jake_Paul1.webp::CompressedTexture2D::9075989265825019678::1684125933::1686151769::1::::<><>::
 Material_001.material::StandardMaterial3D::-1::1684125933::0::1::::<><>::
@@ -124,7 +131,7 @@ Material_009.material::StandardMaterial3D::-1::1684125933::0::1::::<><>::res://T
 Material_011.material::StandardMaterial3D::-1::1684125933::0::1::::<><>::
 Material_012.material::StandardMaterial3D::-1::1684125933::0::1::::<><>::res://Temp Fold For object import/paul/nike-air-force-1-gs-valge-arpq.webp
 nike-air-force-1-gs-valge-arpq.webp::CompressedTexture2D::6676985575043185258::1684125933::1686151769::1::::<><>::
-paulbod.dae::PackedScene::6916985496878095316::1684125933::1686151768::1::::<><>::uid://d2kqhncofsa1k<>uid://c2em8hkegoew5
+paulbod.dae::PackedScene::6916985496878095316::1684125933::1686154283::1::::<><>::
 SKIN.material::StandardMaterial3D::-1::1684125933::0::1::::<><>::
 SKIN_002.material::StandardMaterial3D::-1::1684125933::0::1::::<><>::
 ::res://Temp Fold For object import/road/::1686151769
