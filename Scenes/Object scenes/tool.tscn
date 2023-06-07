@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Temp Fold For object import/tool.dae" type="PackedScene" id=1]
-
-[node name="tool" instance=ExtResource( 1 )]
