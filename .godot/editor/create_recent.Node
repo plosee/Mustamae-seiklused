@@ -1,5 +1,9 @@
 CollisionShape3D
+StaticBody3D
+RayCast3D
 Node3D
+Node
+WorldEnvironment
 CharacterBody3D
 Camera3D
 MeshInstance3D
@@ -14,7 +18,6 @@ Button
 VBoxContainer
 VideoStreamPlayer
 CollisionPolygon3D
-StaticBody3D
 ColorRect
 Popup
 HTTPRequest
