@@ -1,3 +1,8 @@
+CollisionShape3D
+Node3D
+CharacterBody3D
+Camera3D
+MeshInstance3D
 CSGPolygon3D
 CSGBox3D
 Path3D
@@ -8,7 +13,6 @@ RichTextLabel
 Button
 VBoxContainer
 VideoStreamPlayer
-CollisionShape3D
 CollisionPolygon3D
 StaticBody3D
 ColorRect

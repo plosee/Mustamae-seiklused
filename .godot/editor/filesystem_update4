@@ -1,2 +1,5 @@
+res://Scenes/Player.tscn
 res://Scenes/Main.tscn
 res://Scenes/Road.tscn
+res://Scenes/world.tscn
+res://Scripts/CharacterBody3D.gd
