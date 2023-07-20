@@ -1,3 +1,5 @@
+Area3D
+RichTextLabel
 CollisionShape3D
 StaticBody3D
 RayCast3D
@@ -13,7 +15,6 @@ Path3D
 Path2D
 Sprite3D
 HSlider
-RichTextLabel
 Button
 VBoxContainer
 VideoStreamPlayer

@@ -1,9 +1,10 @@
 res://Scenes/Player.tscn
+res://Scripts/InteractRay.gd
+res://Scenes/Models/kubik.tscn
 res://Scenes/Main.tscn
 res://Scenes/Road.tscn
+res://Scenes/DebugWorld.tscn
+res://Scenes/Models/syringe.tscn
 res://Scenes/world.tscn
-res://Scripts/CharacterBody3D.gd
-res://Scripts/Settings.gd
+res://Scenes/Settings.tscn
 res://KubikInteract.gd
-res://Scenes/InteractRay.gd
-res://Scenes/kubik.tscn

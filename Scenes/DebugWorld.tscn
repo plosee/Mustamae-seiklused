@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d11drbd1j06ec" path="res://Images/grass.jpg" id="1_xk5u4"]
 [ext_resource type="PackedScene" uid="uid://cx1ce7jgcu2p7" path="res://Scenes/Player.tscn" id="2_nffhn"]
-[ext_resource type="PackedScene" uid="uid://ce1gtw3kk7xm3" path="res://Temp Fold For object import/kubik/kubik.dae" id="3_3jfq5"]
+[ext_resource type="PackedScene" uid="uid://cm3hmpodt6rqa" path="res://Scenes/Models/kubik.tscn" id="3_ev8i3"]
 
 [sub_resource type="Environment" id="Environment_1s8ko"]
 
@@ -16,15 +16,15 @@ albedo_texture = ExtResource("1_xk5u4")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1s8ko")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="ground" type="StaticBody3D" parent="."]
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, -0.517428, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
 visible = false
 shape = SubResource("BoxShape3D_3drt7")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
+[node name="CSGBox3D" type="CSGBox3D" parent="ground"]
 material = SubResource("StandardMaterial3D_yty0u")
 
 [node name="Character" parent="." instance=ExtResource("2_nffhn")]
@@ -32,5 +32,10 @@ material = SubResource("StandardMaterial3D_yty0u")
 [node name="Interactables" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0461006, 9.53674e-07, -0.107237)
 
-[node name="kubik" parent="Interactables" instance=ExtResource("3_3jfq5")]
-transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 1.66537, -6.6594)
+[node name="kubik" parent="Interactables" instance=ExtResource("3_ev8i3")]
+transform = Transform3D(0.108393, 0, 0, 0, 0.162887, 0, 0, 0, 0.116701, 6.74229, 1.76947, 0.127717)
+
+[connection signal="kubikinteract" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/kubik" method="_on_interact_ray_kubikinteract"]
+
+[editable path="Character"]
+[editable path="Interactables/kubik"]
