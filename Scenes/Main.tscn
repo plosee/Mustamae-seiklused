@@ -49,6 +49,7 @@ offset_bottom = 787.0
 [node name="Start" type="Button" parent="Buttons/ButtonVbox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
 theme_override_constants/outline_size = 44
 theme_override_fonts/font = ExtResource("2_kv5l7")
 theme_override_font_sizes/font_size = 120
@@ -59,6 +60,7 @@ alignment = 0
 [node name="Settings" type="Button" parent="Buttons/ButtonVbox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
 theme_override_constants/outline_size = 44
 theme_override_fonts/font = ExtResource("2_kv5l7")
 theme_override_font_sizes/font_size = 120
@@ -69,6 +71,7 @@ alignment = 0
 [node name="Quit" type="Button" parent="Buttons/ButtonVbox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
 theme_override_constants/outline_size = 44
 theme_override_fonts/font = ExtResource("2_kv5l7")
 theme_override_font_sizes/font_size = 120
@@ -84,7 +87,7 @@ offset_right = 954.0
 offset_bottom = 1086.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.227451, 0.227451, 0.227451, 1)
+theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 44

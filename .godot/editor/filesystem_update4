@@ -6,7 +6,4 @@ res://Scenes/Models/kubik.tscn
 res://Scenes/Models/syringe.tscn
 res://Scenes/world.tscn
 res://Scenes/Settings.tscn
-res://Scripts/Global.gd
-res://Scripts/InteractRay.gd
-res://KubikInteract.gd
-res://Scripts/syringe.gd
+res://Scenes/Models/knife.tscn
