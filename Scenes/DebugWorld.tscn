@@ -1,10 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://bp3r1u4dc3qm"]
+[gd_scene load_steps=12 format=3 uid="uid://bp3r1u4dc3qm"]
 
+[ext_resource type="Texture2D" uid="uid://f78f8sof67ig" path="res://Images/hdri.jpg" id="1_a377d"]
 [ext_resource type="Texture2D" uid="uid://d11drbd1j06ec" path="res://Images/grass.jpg" id="1_xk5u4"]
 [ext_resource type="PackedScene" uid="uid://cx1ce7jgcu2p7" path="res://Scenes/Player.tscn" id="2_nffhn"]
 [ext_resource type="PackedScene" uid="uid://cm3hmpodt6rqa" path="res://Scenes/Models/kubik.tscn" id="3_ev8i3"]
+[ext_resource type="PackedScene" uid="uid://c73wlf43av6jg" path="res://Scenes/Models/syringe.tscn" id="4_xsx6c"]
+[ext_resource type="Script" path="res://Scripts/syringe.gd" id="5_mblc2"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_elx7x"]
+panorama = ExtResource("1_a377d")
+
+[sub_resource type="Sky" id="Sky_2k6ws"]
+sky_material = SubResource("PanoramaSkyMaterial_elx7x")
 
 [sub_resource type="Environment" id="Environment_1s8ko"]
+background_mode = 2
+sky = SubResource("Sky_2k6ws")
+fog_light_color = Color(0.517647, 0.552941, 0.607843, 1)
+fog_density = 0.0
+fog_sky_affect = 0.77
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3drt7"]
 
@@ -12,6 +26,18 @@
 albedo_texture = ExtResource("1_xk5u4")
 
 [node name="World" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.883316, -0.154426, -0.442612, -0.468221, 0.244594, 0.849084, -0.0228607, 0.957249, -0.288359, 6.0052, 4.38704, -7.20322)
+light_color = Color(0.666667, 0.537255, 0, 1)
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 2.833
+shadow_blur = 0.583
+directional_shadow_mode = 0
+directional_shadow_fade_start = 0.744
+directional_shadow_max_distance = 11.9
+directional_shadow_pancake_size = 1.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1s8ko")
@@ -32,10 +58,17 @@ material = SubResource("StandardMaterial3D_yty0u")
 [node name="Interactables" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0461006, 9.53674e-07, -0.107237)
 
+[node name="syringe" parent="Interactables" instance=ExtResource("4_xsx6c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.27814, -7.48561)
+script = ExtResource("5_mblc2")
+
 [node name="kubik" parent="Interactables" instance=ExtResource("3_ev8i3")]
 transform = Transform3D(0.108393, 0, 0, 0, 0.162887, 0, 0, 0, 0.116701, 6.74229, 1.76947, 0.127717)
 
 [connection signal="kubikinteract" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/kubik" method="_on_interact_ray_kubikinteract"]
+[connection signal="syringe" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/syringe" method="_on_interact_ray_syringe"]
+[connection signal="syringe" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/kubik" method="_on_interact_ray_syringe"]
 
 [editable path="Character"]
+[editable path="Interactables/syringe"]
 [editable path="Interactables/kubik"]

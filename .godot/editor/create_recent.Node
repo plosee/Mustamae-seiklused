@@ -1,6 +1,7 @@
+MeshInstance3D
+CollisionShape3D
 Area3D
 RichTextLabel
-CollisionShape3D
 StaticBody3D
 RayCast3D
 Node3D
@@ -8,7 +9,6 @@ Node
 WorldEnvironment
 CharacterBody3D
 Camera3D
-MeshInstance3D
 CSGPolygon3D
 CSGBox3D
 Path3D
