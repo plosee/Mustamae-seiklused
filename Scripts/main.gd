@@ -5,10 +5,10 @@ var versnr = RandomNumberGenerator.new()
 var versdate = "31.05.23"
 var updateurl = "https://liivakast.hkhk.edu.ee/~mlaane/download/update.txt"
 
-
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$Buttons/Update/UpdateBG.hide()
+	
 
 func _process(delta):
 	pass
@@ -20,11 +20,10 @@ func _on_start_pressed():
 	get_tree().change_scene_to_file("res://Scenes/world.tscn")
 
 func _on_settings_pressed():
-	pass # Replace with function body.
-
+	pass
 
 func _on_quit_pressed():
-	pass # Replace with function body.
+	get_tree().quit()
 
 #update function currently broken
 func _on_update_pressed():

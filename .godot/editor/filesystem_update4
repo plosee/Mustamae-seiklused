@@ -7,3 +7,5 @@ res://Scenes/Models/syringe.tscn
 res://Scenes/world.tscn
 res://Scenes/Settings.tscn
 res://Scenes/Models/knife.tscn
+res://Scripts/Settings.gd
+res://Scripts/Main.gd

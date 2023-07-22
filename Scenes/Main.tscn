@@ -22,7 +22,7 @@ offset_bottom = 40.0
 stream = SubResource("VideoStreamTheora_tygis")
 autoplay = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="BG"]
+[node name="Title" type="RichTextLabel" parent="BG"]
 layout_mode = 0
 offset_right = 1437.0
 offset_bottom = 212.0
@@ -31,8 +31,23 @@ theme_override_constants/outline_size = 49
 theme_override_fonts/normal_font = ExtResource("2_kv5l7")
 theme_override_font_sizes/normal_font_size = 140
 bbcode_enabled = true
-text = "[wave] Mustamäe Seiklused [/wave]"
+text = "[wave freq=10 amp=100] Mustamäe Seiklused [/wave]"
 fit_content = true
+
+[node name="Version" type="Button" parent="BG"]
+layout_mode = 2
+offset_left = 1280.0
+offset_top = 989.0
+offset_right = 1921.0
+offset_bottom = 1073.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
+theme_override_constants/outline_size = 29
+theme_override_fonts/font = ExtResource("2_kv5l7")
+theme_override_font_sizes/font_size = 55
+text = "Version:  Alpha  0.1"
+flat = true
+alignment = 2
 
 [node name="Buttons" type="Control" parent="."]
 anchors_preset = 0
@@ -82,9 +97,9 @@ alignment = 0
 [node name="Update" type="Button" parent="Buttons"]
 layout_mode = 0
 offset_left = 21.0
-offset_top = 940.0
+offset_top = 932.0
 offset_right = 954.0
-offset_bottom = 1086.0
+offset_bottom = 1078.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
@@ -151,6 +166,7 @@ text = "No"
 flat = true
 
 [connection signal="finished" from="BG" to="." method="_on_bg_finished"]
+[connection signal="pressed" from="BG/Version" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Buttons/ButtonVbox/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Buttons/ButtonVbox/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Buttons/ButtonVbox/Quit" to="." method="_on_quit_pressed"]
