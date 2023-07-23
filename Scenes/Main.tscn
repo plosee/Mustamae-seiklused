@@ -25,14 +25,17 @@ autoplay = true
 
 [node name="Title" type="RichTextLabel" parent="BG"]
 layout_mode = 0
-offset_right = 1437.0
-offset_bottom = 212.0
+offset_left = 12.0
+offset_top = -165.0
+offset_right = 1513.0
+offset_bottom = 215.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 49
 theme_override_fonts/normal_font = ExtResource("2_kv5l7")
-theme_override_font_sizes/normal_font_size = 140
+theme_override_font_sizes/normal_font_size = 190
 bbcode_enabled = true
-text = "[wave freq=10 amp=100] Mustamäe Seiklused [/wave]"
+text = "[wave freq=10 amp=100] 
+ Mustamäe Seiklused [/wave]"
 fit_content = true
 
 [node name="Version" type="Button" parent="BG"]
@@ -66,7 +69,7 @@ offset_bottom = 787.0
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
-theme_override_constants/outline_size = 44
+theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("2_kv5l7")
 theme_override_font_sizes/font_size = 120
 text = "Start"
@@ -77,7 +80,7 @@ alignment = 0
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
-theme_override_constants/outline_size = 44
+theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("2_kv5l7")
 theme_override_font_sizes/font_size = 120
 text = "Settings"
@@ -88,7 +91,7 @@ alignment = 0
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
-theme_override_constants/outline_size = 44
+theme_override_constants/outline_size = 30
 theme_override_fonts/font = ExtResource("2_kv5l7")
 theme_override_font_sizes/font_size = 120
 text = "Quit"
@@ -151,6 +154,7 @@ fit_content = true
 [node name="Yeah" type="Button" parent="Buttons/Update/UpdateBG/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
 theme_override_constants/outline_size = 44
 theme_override_fonts/font = ExtResource("2_kv5l7")
 theme_override_font_sizes/font_size = 120
@@ -160,6 +164,7 @@ flat = true
 [node name="Nah" type="Button" parent="Buttons/Update/UpdateBG/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
 theme_override_constants/outline_size = 44
 theme_override_fonts/font = ExtResource("2_kv5l7")
 theme_override_font_sizes/font_size = 120

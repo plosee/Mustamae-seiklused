@@ -2,7 +2,7 @@ extends Control
 
 var versnr = RandomNumberGenerator.new()
 #IF YOU PUSH AN UPDATE TO LIVE CHANGE THIS TO TODAY'S DATE (DD.MM.YY) ALONG WITH update.txt
-var versdate = "31.05.23"
+var versdate = "Godot4"
 var updateurl = "https://liivakast.hkhk.edu.ee/~mlaane/download/update.txt"
 
 func _ready():
@@ -14,7 +14,8 @@ func _process(delta):
 	pass
 	
 func _on_bg_finished():
-	$BG.play()
+	if !$Settings.visible:
+		$BG.play()
 	
 func _on_start_pressed():
 	get_tree().change_scene_to_file("res://Scenes/world.tscn")
