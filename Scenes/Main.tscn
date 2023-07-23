@@ -175,5 +175,6 @@ visible = false
 [connection signal="pressed" from="Buttons/ButtonVbox/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Buttons/ButtonVbox/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Buttons/Update" to="." method="_on_update_pressed"]
+[connection signal="request_completed" from="Buttons/Update/UpdateRequest" to="." method="_on_update_request_request_completed"]
 [connection signal="pressed" from="Buttons/Update/UpdateBG/VBoxContainer/Yeah" to="." method="_on_yeah_pressed"]
 [connection signal="pressed" from="Buttons/Update/UpdateBG/VBoxContainer/Nah" to="." method="_on_nah_pressed"]

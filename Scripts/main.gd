@@ -25,12 +25,16 @@ func _on_settings_pressed():
 func _on_quit_pressed():
 	get_tree().quit()
 
+
 #update function currently broken
 func _on_update_pressed():
 	$Buttons/Update/UpdateRequest.request(updateurl)
-func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+	print("requesting")
+func _on_update_request_request_completed(result, response_code, headers, body):
+	print(result, response_code,body)
 	var output = body.get_string_from_utf8()
-	if output == versdate:
+	print(output)
+	if output != versdate:
 		$Buttons/Update/UpdateBG.show()
 	else:
 		$Buttons/Update.text = "Latest Version"
