@@ -1,6 +1,6 @@
-MeshInstance3D
 CollisionShape3D
 Area3D
+MeshInstance3D
 RichTextLabel
 StaticBody3D
 RayCast3D

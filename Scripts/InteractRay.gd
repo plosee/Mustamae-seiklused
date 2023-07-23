@@ -3,6 +3,7 @@ extends RayCast3D
 var collider = null
 signal kubikinteract
 signal syringe
+signal knife
 
 func _ready():
 	pass # Replace with function body.
@@ -15,7 +16,7 @@ func _process(delta):
 	
 	if collider != null:
 		
-		if collider.is_in_group("kubik1") || collider.is_in_group("syringe"):
+		if collider.is_in_group("kubik1") || collider.is_in_group("syringe") || collider.is_in_group("knife"):
 			$RichTextLabel.bbcode_text = "Interact [E]" #ui prompt
 			
 			if Input.is_action_just_pressed("interactE") && collider.is_in_group("kubik1"):
@@ -23,3 +24,6 @@ func _process(delta):
 				
 			elif Input.is_action_just_pressed("interactE") && collider.is_in_group("syringe"):
 				syringe.emit()
+				
+			elif Input.is_action_just_pressed("interactE") && collider.is_in_group("knife"):
+				knife.emit()
