@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://1oai05h2jp62"]
+[gd_scene load_steps=5 format=3 uid="uid://1oai05h2jp62"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_dxews"]
 [ext_resource type="FontFile" uid="uid://d3ukvs1jnedk8" path="res://Fonts/ComicSans.ttf" id="2_kv5l7"]
+[ext_resource type="PackedScene" uid="uid://b5rnwvqy4hngy" path="res://Scenes/Settings.tscn" id="3_5urbd"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_tygis"]
 file = "res://Misc/Mustamägi.ogv"
@@ -164,6 +165,9 @@ theme_override_fonts/font = ExtResource("2_kv5l7")
 theme_override_font_sizes/font_size = 120
 text = "No"
 flat = true
+
+[node name="Settings" parent="." instance=ExtResource("3_5urbd")]
+visible = false
 
 [connection signal="finished" from="BG" to="." method="_on_bg_finished"]
 [connection signal="pressed" from="BG/Version" to="." method="_on_start_pressed"]

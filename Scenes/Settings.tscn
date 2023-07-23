@@ -19,17 +19,14 @@ thickness = 30
 
 [node name="Settings" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("1_ijlta")
 
 [node name="static" type="VideoStreamPlayer" parent="."]
-layout_mode = 0
 offset_right = 1920.0
-offset_bottom = 1080.0
+offset_bottom = 1088.0
 stream = SubResource("VideoStreamTheora_p3kuu")
 autoplay = true
 
@@ -149,6 +146,3 @@ theme_override_styles/grabber_area = SubResource("StyleBoxLine_y6mws")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_2vhxl")
 min_value = -30.0
 max_value = 0.0
-
-[connection signal="finished" from="static" to="." method="_on_static_finished"]
-[connection signal="value_changed" from="static/SettingsVbox/MasterSlider" to="." method="_on_master_slider_value_changed"]

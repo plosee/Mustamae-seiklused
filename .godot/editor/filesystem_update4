@@ -9,4 +9,12 @@ res://Scenes/Player.tscn
 res://Scenes/Models/kubik.tscn
 res://Scenes/world.tscn
 res://Scenes/Settings.tscn
+<<<<<<< Updated upstream
 res://Scripts/CharacterBody3D.gd
+=======
+res://Scenes/Models/knife.tscn
+res://Scenes/credits.tscn
+res://Scripts/credits.gd
+res://Scripts/Settings.gd
+res://Scripts/Main.gd
+>>>>>>> Stashed changes

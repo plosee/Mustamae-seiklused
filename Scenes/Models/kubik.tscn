@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cm3hmpodt6rqa"]
 
-[ext_resource type="Script" path="res://KubikInteract.gd" id="1_ya0ni"]
+[ext_resource type="Script" path="res://Scripts/KubikInteract.gd" id="1_5ssnl"]
 [ext_resource type="Texture2D" uid="uid://b4swff40uk0kp" path="res://Temp Fold For object import/kubik/kubik.png" id="2_kpl2l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n32g8"]
@@ -43,7 +43,7 @@ shadow_mesh = SubResource("ArrayMesh_yiwpr")
 size = Vector3(2.61765, 13.9184, 2.77019)
 
 [node name="kubik" type="Node3D"]
-script = ExtResource("1_ya0ni")
+script = ExtResource("1_5ssnl")
 
 [node name="kubik" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.34, 0, 0, 0, 6.1, 0, 0, 0, 1.34, 0, 0, 0)
