@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bp3r1u4dc3qm"]
 
 [ext_resource type="Texture2D" uid="uid://f78f8sof67ig" path="res://Images/hdri.jpg" id="1_a377d"]
-[ext_resource type="Texture2D" uid="uid://d11drbd1j06ec" path="res://Images/grass.jpg" id="1_xk5u4"]
+[ext_resource type="Texture2D" uid="uid://chpi73wnvokhj" path="res://Images/dead-grass.jpg" id="2_m8qti"]
 [ext_resource type="PackedScene" uid="uid://cx1ce7jgcu2p7" path="res://Scenes/Player.tscn" id="2_nffhn"]
 [ext_resource type="PackedScene" uid="uid://cm3hmpodt6rqa" path="res://Scenes/Models/kubik.tscn" id="3_ev8i3"]
 [ext_resource type="PackedScene" uid="uid://c73wlf43av6jg" path="res://Scenes/Models/syringe.tscn" id="4_xsx6c"]
@@ -25,7 +25,7 @@ fog_sky_affect = 0.77
 [sub_resource type="BoxShape3D" id="BoxShape3D_3drt7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yty0u"]
-albedo_texture = ExtResource("1_xk5u4")
+albedo_texture = ExtResource("2_m8qti")
 
 [node name="World" type="Node3D"]
 
@@ -56,6 +56,15 @@ shape = SubResource("BoxShape3D_3drt7")
 material = SubResource("StandardMaterial3D_yty0u")
 
 [node name="Character" parent="." instance=ExtResource("2_nffhn")]
+
+[node name="inv1" parent="Character/CharacterBody3D/Head/hands/inventory" index="0"]
+layout_mode = 0
+
+[node name="inv2" parent="Character/CharacterBody3D/Head/hands/inventory" index="1"]
+layout_mode = 0
+
+[node name="inv3" parent="Character/CharacterBody3D/Head/hands/inventory" index="2"]
+layout_mode = 0
 
 [node name="Interactables" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0461006, 9.53674e-07, -0.107237)

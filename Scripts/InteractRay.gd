@@ -7,13 +7,12 @@ signal knife
 signal kubikrefill
 
 func _process(delta):
-	$RichTextLabel.text = "."
 	collider = get_collider()
 	
 	if collider != null:
 		
 		if collider.is_in_group("kubik1") || collider.is_in_group("syringe") || collider.is_in_group("knife"):
-			$RichTextLabel.bbcode_text = "Interact [E]" #ui prompt
+			$crosshair.text ="[center]Interact[e][/center]" #ui prompt
 			
 			if Input.is_action_just_pressed("interactE") && collider.is_in_group("kubik1"):
 				kubikinteract.emit()
@@ -29,3 +28,5 @@ func _process(delta):
 			elif Input.is_action_just_pressed("interactE") && collider.is_in_group("knife"):
 				knife.emit()
 				Global.KnifePickup = true
+	else:
+		$crosshair.text = "[center]·[/center]"

@@ -1,16 +1,14 @@
-<<<<<<< Updated upstream
+Control
+ColorRect
 CollisionShape3D
 Area3D
 MeshInstance3D
 RichTextLabel
-=======
-Control
 Popup
 RichTextLabel
 MeshInstance3D
 CollisionShape3D
 Area3D
->>>>>>> Stashed changes
 StaticBody3D
 RayCast3D
 Node3D
@@ -28,5 +26,4 @@ Button
 VBoxContainer
 VideoStreamPlayer
 CollisionPolygon3D
-ColorRect
 HTTPRequest

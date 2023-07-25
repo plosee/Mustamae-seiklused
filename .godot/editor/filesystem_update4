@@ -1,3 +1,8 @@
+res://Scenes/Player.tscn
+res://Scenes/Main.tscn
 res://Scenes/DebugWorld.tscn
-res://Scripts/Global.gd
 res://Scripts/InteractRay.gd
+res://Scripts/Main.gd
+res://Scripts/CharacterMovement.gd
+res://Scripts/inventory.gd
+res://Scripts/Global.gd

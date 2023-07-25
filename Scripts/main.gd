@@ -18,7 +18,7 @@ func _on_bg_finished():
 		$BG.play()
 	
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://Scenes/world.tscn")
+	get_tree().change_scene_to_file("res://Scenes/debugworld.tscn")
 
 func _on_settings_pressed():
 	$Settings.show()
@@ -43,3 +43,4 @@ func _on_yeah_pressed():
 	OS.shell_open("https://plose.itch.io/mustamagi")
 func _on_nah_pressed():
 	$Buttons/Update/UpdateBG.hide()
+	$Buttons/Update.text = "Update Recommended"
