@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://cx1ce7jgcu2p7"]
 
-[ext_resource type="Script" path="res://Scripts/CharacterBody3D.gd" id="1_1ajbp"]
+[ext_resource type="Script" path="res://Scripts/CharacterMovement.gd" id="1_1ajbp"]
 [ext_resource type="Script" path="res://Scripts/InteractRay.gd" id="2_dbs4o"]
 [ext_resource type="Material" path="res://Model.noimport/jauk/ENTR_UIRE.material" id="3_tt46o"]
 [ext_resource type="Material" path="res://Model.noimport/jauk/Material_006.material" id="4_788dk"]

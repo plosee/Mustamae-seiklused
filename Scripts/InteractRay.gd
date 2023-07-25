@@ -4,12 +4,8 @@ var collider = null
 signal kubikinteract
 signal syringe
 signal knife
+signal kubikrefill
 
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$RichTextLabel.text = "."
 	collider = get_collider()
@@ -21,9 +17,15 @@ func _process(delta):
 			
 			if Input.is_action_just_pressed("interactE") && collider.is_in_group("kubik1"):
 				kubikinteract.emit()
+				if Global.KubikPickup == true:
+						emit_signal("kubikrefill")
+				else:
+					Global.KubikPickup = true
 				
 			elif Input.is_action_just_pressed("interactE") && collider.is_in_group("syringe"):
 				syringe.emit()
+				Global.SyringePickup = true
 				
 			elif Input.is_action_just_pressed("interactE") && collider.is_in_group("knife"):
 				knife.emit()
+				Global.KnifePickup = true

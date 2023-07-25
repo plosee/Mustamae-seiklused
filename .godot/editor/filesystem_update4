@@ -1,2 +1,3 @@
-res://Scenes/Main.tscn
-res://Scripts/Main.gd
+res://Scenes/DebugWorld.tscn
+res://Scripts/Global.gd
+res://Scripts/InteractRay.gd
