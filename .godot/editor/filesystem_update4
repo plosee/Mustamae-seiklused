@@ -1,4 +1,1 @@
-res://Scenes/Main.tscn
-res://Scenes/DebugWorld.tscn
 res://Scenes/Player.tscn
-res://Scripts/inventory.gd

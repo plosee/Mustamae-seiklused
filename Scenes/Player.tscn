@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cx1ce7jgcu2p7"]
+[gd_scene load_steps=31 format=3 uid="uid://cx1ce7jgcu2p7"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterMovement.gd" id="1_1ajbp"]
 [ext_resource type="Script" path="res://Scripts/InteractRay.gd" id="2_dbs4o"]
@@ -8,6 +8,9 @@
 [ext_resource type="Material" path="res://Model.noimport/jauk/SKIN.material" id="5_5vbcs"]
 [ext_resource type="Texture2D" uid="uid://b4swff40uk0kp" path="res://Temp Fold For object import/kubik/kubik.png" id="6_gnuvm"]
 [ext_resource type="Script" path="res://Scripts/inventory.gd" id="8_jv40k"]
+[ext_resource type="Texture2D" uid="uid://blagkpk3qucpi" path="res://Images/file.png" id="9_d0grp"]
+[ext_resource type="Texture2D" uid="uid://clji58xnkfhnc" path="res://Images/knife.png" id="10_q5xid"]
+[ext_resource type="Texture2D" uid="uid://6u8dtv01iexy" path="res://Images/syringe-145002__340.webp" id="11_p0neb"]
 
 [sub_resource type="Animation" id="8"]
 resource_name = "Cube001Action"
@@ -240,6 +243,11 @@ layout_mode = 0
 offset_right = 145.0
 offset_bottom = 145.0
 
+[node name="kubik" type="Sprite2D" parent="CharacterBody3D/Head/hands/inventory/inv1"]
+position = Vector2(72.75, 71.75)
+scale = Vector2(0.289, 0.289)
+texture = ExtResource("9_d0grp")
+
 [node name="inv2" type="ColorRect" parent="CharacterBody3D/Head/hands/inventory"]
 layout_mode = 0
 offset_left = 155.0
@@ -247,9 +255,19 @@ offset_right = 300.0
 offset_bottom = 145.0
 color = Color(1, 1, 1, 0.286275)
 
+[node name="nuga" type="Sprite2D" parent="CharacterBody3D/Head/hands/inventory/inv2"]
+position = Vector2(72.625, 72.625)
+scale = Vector2(0.219985, 0.219985)
+texture = ExtResource("10_q5xid")
+
 [node name="inv3" type="ColorRect" parent="CharacterBody3D/Head/hands/inventory"]
 layout_mode = 0
 offset_left = 310.0
 offset_right = 455.0
 offset_bottom = 145.0
 color = Color(1, 1, 1, 0.286275)
+
+[node name="syringe" type="Sprite2D" parent="CharacterBody3D/Head/hands/inventory/inv3"]
+position = Vector2(73, 73)
+scale = Vector2(0.42407, 0.42407)
+texture = ExtResource("11_p0neb")
