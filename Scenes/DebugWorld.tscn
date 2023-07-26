@@ -65,17 +65,14 @@ mouse_filter = 2
 mouse_force_pass_scroll_events = false
 
 [node name="inv1" parent="Character/CharacterBody3D/Head/hands/inventory" index="0"]
-layout_mode = 0
 mouse_filter = 2
 
 [node name="inv2" parent="Character/CharacterBody3D/Head/hands/inventory" index="1"]
-layout_mode = 0
 offset_left = 0.0
 offset_right = 145.0
 mouse_filter = 2
 
 [node name="inv3" parent="Character/CharacterBody3D/Head/hands/inventory" index="2"]
-layout_mode = 0
 offset_left = 0.0
 offset_right = 145.0
 mouse_filter = 2

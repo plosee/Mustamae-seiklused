@@ -1,12 +1,12 @@
+MeshInstance3D
+GPUParticles3D
 Control
 ColorRect
 CollisionShape3D
 Area3D
-MeshInstance3D
 RichTextLabel
 Popup
 RichTextLabel
-MeshInstance3D
 CollisionShape3D
 Area3D
 StaticBody3D
