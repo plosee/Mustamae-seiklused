@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8p17wce755dp"]
+[gd_scene load_steps=4 format=3 uid="uid://c8p17wce755dp"]
 
 [ext_resource type="PackedScene" uid="uid://cg3gtyh2qj7ug" path="res://Temp Fold For object import/knife.obj" id="1_478fy"]
+[ext_resource type="Material" uid="uid://b2o00c7jpurt7" path="res://Temp Fold For object import/tool.material" id="2_tk2o0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ituet"]
 size = Vector3(4.9181, 1, 1)
 
 [node name="knife" instance=ExtResource("1_478fy")]
+
+[node name="knife" parent="." index="0"]
+material_override = ExtResource("2_tk2o0")
 
 [node name="Area3D" type="Area3D" parent="." index="1" groups=["knife"]]
 collision_layer = 8

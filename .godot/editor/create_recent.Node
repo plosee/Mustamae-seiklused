@@ -1,3 +1,5 @@
+AnimationPlayer
+Node3D
 Sprite2D
 MeshInstance3D
 GPUParticles3D
@@ -12,7 +14,6 @@ CollisionShape3D
 Area3D
 StaticBody3D
 RayCast3D
-Node3D
 Node
 WorldEnvironment
 CharacterBody3D
