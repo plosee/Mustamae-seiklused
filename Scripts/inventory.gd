@@ -11,14 +11,20 @@ func _ready():
 func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.keycode==49:
+			if Global.KubikPickup:
+				$inv1/kubik.show()
 			$inv1.color = selected
 			$inv2.color = unselected
 			$inv3.color = unselected
 		elif event.keycode==50:
+			if Global.KnifePickup:
+				$inv2/nuga.show()
 			$inv2.color = selected
 			$inv1.color = unselected
 			$inv3.color = unselected
 		elif event.keycode==51:
+			if Global.SyringePickup:
+				$inv3/syringe.show()
 			$inv3.color = selected
 			$inv1.color = unselected
 			$inv2.color = unselected
