@@ -1,8 +1,10 @@
-res://Scenes/Models/knife.tscn
-res://Temp Fold For object import/tool.material
 res://Scenes/DebugWorld.tscn
+res://Scripts/inventory.gd
+res://Scenes/Interacting.gd
 res://Scenes/Main.tscn
 res://Scenes/Player.tscn
-res://Scripts/KubikPickup.gd
+res://Scenes/Models/knife.tscn
+res://Scripts/Global.gd
 res://Scripts/KubikInteract.gd
-res://Scripts/inventory.gd
+res://Scripts/CharacterMovement.gd
+res://Scenes/KubikHand.gd

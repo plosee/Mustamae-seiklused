@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
 var speed
-const WALK_SPEED = 5.0
-const SPRINT_SPEED = 8.0
+var WALK_SPEED = 5.0
+var SPRINT_SPEED = 8.0
 const JUMP_VELOCITY = 4.8
 const SENSITIVITY = 0.004
 
@@ -32,6 +32,14 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(80))
 
 func _physics_process(delta):
+	# Syringe Buff
+	if Global.SyringeEffect == true:
+		WALK_SPEED = 10.0
+		SPRINT_SPEED = 16.0
+	else:
+		WALK_SPEED = 5.0
+		SPRINT_SPEED = 8.0
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta

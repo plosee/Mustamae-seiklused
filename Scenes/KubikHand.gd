@@ -1,7 +1,8 @@
 extends Node3D
 
 func _on_character_kimu():
-	pass
+	Global.KimuPuffs -= 1
+
+func _on_interact_ray_kubikrefill():
+	Global.KimuPuffs = 100
 	
-func kimu():
-	pass
