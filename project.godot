@@ -14,7 +14,7 @@ config/name="Mustamägi Godot 4"
 run/main_scene="res://Scenes/Main.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 boot_splash/image="res://Images/bettertitle.png"
-config/icon="res://Images/800px-MustamC3A4e_linnaosa_vapp.png"
+config/icon="res://Images/mustamagivapp.png"
 
 [autoload]
 

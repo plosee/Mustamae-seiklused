@@ -27,6 +27,7 @@ fog_sky_affect = 0.77
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yty0u"]
 albedo_texture = ExtResource("2_m8qti")
+uv1_scale = Vector3(-100, -100, -100)
 
 [node name="World" type="Node3D"]
 
@@ -54,6 +55,8 @@ visible = false
 shape = SubResource("BoxShape3D_3drt7")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+size = Vector3(100, 2, 100)
 material = SubResource("StandardMaterial3D_yty0u")
 
 [node name="Character" parent="." instance=ExtResource("2_nffhn")]
