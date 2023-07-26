@@ -244,6 +244,7 @@ offset_right = 145.0
 offset_bottom = 145.0
 
 [node name="kubik" type="Sprite2D" parent="CharacterBody3D/Head/hands/inventory/inv1"]
+visible = false
 position = Vector2(72.75, 71.75)
 scale = Vector2(0.289, 0.289)
 texture = ExtResource("9_d0grp")
@@ -256,6 +257,7 @@ offset_bottom = 145.0
 color = Color(1, 1, 1, 0.286275)
 
 [node name="nuga" type="Sprite2D" parent="CharacterBody3D/Head/hands/inventory/inv2"]
+visible = false
 position = Vector2(72.625, 72.625)
 scale = Vector2(0.219985, 0.219985)
 texture = ExtResource("10_q5xid")
@@ -268,6 +270,11 @@ offset_bottom = 145.0
 color = Color(1, 1, 1, 0.286275)
 
 [node name="syringe" type="Sprite2D" parent="CharacterBody3D/Head/hands/inventory/inv3"]
+visible = false
 position = Vector2(73, 73)
 scale = Vector2(0.42407, 0.42407)
 texture = ExtResource("11_p0neb")
+
+[connection signal="knife" from="CharacterBody3D/Head/Camera3D/InteractRay" to="CharacterBody3D/Head/hands/inventory" method="_on_interact_ray_knife"]
+[connection signal="kubikinteract" from="CharacterBody3D/Head/Camera3D/InteractRay" to="CharacterBody3D/Head/hands/inventory" method="_on_interact_ray_kubikinteract"]
+[connection signal="syringe" from="CharacterBody3D/Head/Camera3D/InteractRay" to="CharacterBody3D/Head/hands/inventory" method="_on_interact_ray_syringe"]

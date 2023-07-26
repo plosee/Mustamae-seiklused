@@ -24,3 +24,15 @@ func _unhandled_input(event):
 			$inv2.color = unselected
 	else:
 		pass
+
+
+func _on_interact_ray_kubikinteract():
+	$inv1/kubik.visible = true
+	
+func _on_interact_ray_knife():
+	$inv2/nuga.visible = true
+	
+func _on_interact_ray_syringe():
+	$inv3/syringe.visible = true
+
+
