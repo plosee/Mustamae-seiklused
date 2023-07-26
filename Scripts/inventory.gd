@@ -9,7 +9,6 @@ func _ready():
 	$inv3.color = unselected
 
 func _unhandled_input(event):
-	print(event)
 	if event.keycode==49:
 		$Global.currentslot = 1
 		$inv1.color = selected
