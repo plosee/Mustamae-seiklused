@@ -1,10 +1,7 @@
-res://Scenes/DebugWorld.tscn
-res://Scripts/inventory.gd
-res://Scenes/Interacting.gd
 res://Scenes/Main.tscn
+res://Scenes/DebugWorld.tscn
 res://Scenes/Player.tscn
 res://Scenes/Models/knife.tscn
 res://Scripts/Global.gd
-res://Scripts/KubikInteract.gd
-res://Scripts/CharacterMovement.gd
+res://Scenes/Interacting.gd
 res://Scenes/KubikHand.gd

@@ -1,6 +1,7 @@
 extends RayCast3D
 
 var collider = null
+
 signal kubikinteract
 signal syringe
 signal knife

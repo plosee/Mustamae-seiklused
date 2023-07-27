@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bp3r1u4dc3qm"]
+[gd_scene load_steps=18 format=3 uid="uid://bp3r1u4dc3qm"]
 
 [ext_resource type="Texture2D" uid="uid://f78f8sof67ig" path="res://Images/hdri.jpg" id="1_a377d"]
 [ext_resource type="Texture2D" uid="uid://chpi73wnvokhj" path="res://Images/dead-grass.jpg" id="2_m8qti"]
@@ -28,6 +28,12 @@ fog_sky_affect = 0.77
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yty0u"]
 albedo_texture = ExtResource("2_m8qti")
 uv1_scale = Vector3(-100, -100, -100)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mvgn7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5gu4a"]
+
+[sub_resource type="Skin" id="Skin_6aw4o"]
 
 [node name="World" type="Node3D"]
 
@@ -71,6 +77,13 @@ mouse_filter = 2
 [node name="equphand" parent="Character/CharacterBody3D/Head/hands" index="2"]
 visible = false
 
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Character/CharacterBody3D/Head/hands/equphand/kubik" index="1"]
+transform = Transform3D(1, 2.98023e-08, 2.23517e-08, 1.78814e-07, 1, -4.28408e-08, -1.11759e-08, 9.31323e-09, 1, -22.9169, 22.7968, 9.67603)
+amount = 100
+process_material = SubResource("ShaderMaterial_mvgn7")
+draw_pass_1 = SubResource("BoxMesh_5gu4a")
+draw_skin = SubResource("Skin_6aw4o")
+
 [node name="inventory" parent="Character/CharacterBody3D/Head/hands" index="3"]
 mouse_filter = 2
 mouse_force_pass_scroll_events = false
@@ -98,6 +111,8 @@ transform = Transform3D(0.108393, 0, 0, 0, 0.162887, 0, 0, 0, 0.116701, 6.74229,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.72221, 9.31348)
 script = ExtResource("8_1kl28")
 
+[connection signal="kimu" from="Character" to="Character/CharacterBody3D/Head/hands/equphand/kubik" method="_on_character_kimu"]
+[connection signal="kimusmoke" from="Character" to="Character/CharacterBody3D/Head/hands/equphand/kubik" method="_on_character_kimusmoke"]
 [connection signal="knife" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/knife" method="_on_interact_ray_knife"]
 [connection signal="kubikinteract" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/kubik" method="_on_interact_ray_kubikinteract"]
 [connection signal="kubikrefill" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Character/CharacterBody3D/Head/hands/equphand/kubik" method="_on_interact_ray_kubikrefill"]
