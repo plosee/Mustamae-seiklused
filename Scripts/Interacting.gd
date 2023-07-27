@@ -20,7 +20,7 @@ func _process(delta):
 		kimu.emit()
 		Global.KimuSmoke = false
 		
-	if Global.currentslot == 1 && Global.KubikPickup == true && Input.is_action_just_released("interactM1"):
+	if Global.KimuPuffs > 1 && Global.KubikPickup == true && Input.is_action_just_released("interactM1"):
 		Global.KimuSmoke = true
 		$CharacterBody3D/Head/GPUParticles3D.emitting = true
 		
