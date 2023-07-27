@@ -1,7 +1,8 @@
-res://Scenes/Main.tscn
-res://Scenes/DebugWorld.tscn
 res://Scenes/Player.tscn
-res://Scenes/Models/knife.tscn
-res://Scripts/Global.gd
+res://Scenes/DebugWorld.tscn
 res://Scenes/Interacting.gd
+res://Scenes/Main.tscn
+res://Scenes/Models/knife.tscn
 res://Scenes/KubikHand.gd
+res://Scripts/Global.gd
+res://Scripts/InteractRay.gd

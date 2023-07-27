@@ -15,6 +15,7 @@ func _process(delta):
 		if collider.is_in_group("kubik1") || collider.is_in_group("syringe") || collider.is_in_group("knife"):
 			$crosshair.text ="[center]Interact[e][/center]" #ui prompt
 			
+			# kubiku pickup kood, barebones refill mechanic
 			if Input.is_action_just_pressed("interactE") && collider.is_in_group("kubik1"):
 				kubikinteract.emit()
 				if Global.KubikPickup == true:
@@ -22,10 +23,11 @@ func _process(delta):
 				else:
 					Global.KubikPickup = true
 				
+			# syringe pickup
 			elif Input.is_action_just_pressed("interactE") && collider.is_in_group("syringe"):
 				syringe.emit()
 				Global.SyringePickup = true
-				
+			# nuga pickup
 			elif Input.is_action_just_pressed("interactE") && collider.is_in_group("knife"):
 				knife.emit()
 				Global.KnifePickup = true
