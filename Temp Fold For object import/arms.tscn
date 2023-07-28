@@ -512,7 +512,7 @@ near = 10.0
 far = 100000.0
 
 [node name="parem" type="MeshInstance3D" parent="RootNode"]
-transform = Transform3D(-1.25929, -1.18405e-06, 8.07072e-07, 1.87474e-07, 1.46441, 4.03912, -2.78105e-07, 6.34867, -0.931683, -0.411036, 2.86214, -0.540205)
+transform = Transform3D(1.25476, 0.403409, 0.239767, -0.0884018, 1.43964, 4.03224, 0.0597515, -6.34152, 0.930642, 0.400043, 2.86076, -0.540205)
 mesh = SubResource("ArrayMesh_d3t0e")
 skeleton = NodePath("")
 

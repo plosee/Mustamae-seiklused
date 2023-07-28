@@ -1,8 +1,8 @@
+GPUParticles3D
 AnimationPlayer
 Node3D
 CollisionShape3D
 Area3D
-GPUParticles3D
 MeshInstance3D
 Sprite2D
 Control
