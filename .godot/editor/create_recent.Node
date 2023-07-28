@@ -1,9 +1,9 @@
+AnimationPlayer
 Node3D
 CollisionShape3D
 Area3D
 GPUParticles3D
 MeshInstance3D
-AnimationPlayer
 Sprite2D
 Control
 ColorRect

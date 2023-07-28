@@ -10,7 +10,7 @@ func _process(delta):
 	if Global.currentslot == 1 && Global.KubikPickup == true:
 		$CharacterBody3D/Head/hands/equphand.visible = true
 	else:
-		$CharacterBody3D/Head/hands/equphand.visible = false
+		$CharacterBody3D/Head/hands/vasak/kubik.visible = false
 	
 	# Kimu kood
 	if Global.KimuSmoke == false:
