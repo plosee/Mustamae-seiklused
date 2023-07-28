@@ -1,3 +1,4 @@
-res://Temp Fold For object import/tool.material
-res://Scenes/Player.tscn
 res://Temp Fold For object import/arms.tscn
+res://Scripts/Global.gd
+res://Scripts/Interacting.gd
+res://Scripts/KubikHand.gd

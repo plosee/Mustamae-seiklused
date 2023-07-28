@@ -14,18 +14,21 @@ func _process(delta):
 	
 	# Kimu kood
 	if Global.KimuSmoke == false:
+		# lopeta kimu particle
 		$CharacterBody3D/Head/GPUParticles3D.emitting = false
 		
 	if Global.currentslot == 1 && Global.KubikPickup == true && Input.is_action_pressed('interactM1'):
 		kimu.emit()
 		Global.KimuSmoke = false
-		
+		# lopeta particled kui samal ajal kimud
 	if Global.KimuPuffs > 1 && Global.KubikPickup == true && Input.is_action_just_released("interactM1"):
 		Global.KimuSmoke = true
 		$CharacterBody3D/Head/GPUParticles3D.emitting = true
+		# naita particle kuna hingab valja
 		
 	# Syringe kood
 	if Global.currentslot == 3 && Global.SyringePickup == true && Input.is_action_just_pressed('interactM1'):
+		# Speed boost 5 sekundit
 		Global.SyringeEffect = true
 		await get_tree().create_timer(5).timeout
 		Global.SyringeEffect = false 

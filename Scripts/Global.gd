@@ -21,4 +21,5 @@ var KimuPuffDemo = 1
 var KimuPuffs
 
 func _process(delta):
+	# setib kopsumahu
 	KimuPuffs = clamp(KimuPuffDemo, 1, 600)
