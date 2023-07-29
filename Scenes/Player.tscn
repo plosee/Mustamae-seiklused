@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bu6ql3rpnuvic"]
+[gd_scene load_steps=42 format=3 uid="uid://bu6ql3rpnuvic"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterMovement.gd" id="1_1ajbp"]
 [ext_resource type="Script" path="res://Scripts/Interacting.gd" id="1_56wxd"]
@@ -6,10 +6,16 @@
 [ext_resource type="FontFile" uid="uid://d3ukvs1jnedk8" path="res://Fonts/ComicSans.ttf" id="3_pynnh"]
 [ext_resource type="Script" path="res://Scripts/arms.gd" id="4_kf3xv"]
 [ext_resource type="Script" path="res://Scripts/KubikHand.gd" id="6_e8133"]
+[ext_resource type="Animation" uid="uid://bjpi5r8ip4tut" path="res://Model.noimport/jauk/Animations/vasak-HandDequip.res" id="6_mi6ef"]
 [ext_resource type="Texture2D" uid="uid://b4swff40uk0kp" path="res://Temp Fold For object import/kubik/kubik.png" id="7_osp51"]
+[ext_resource type="Animation" uid="uid://b7wkmj1kf3jug" path="res://Model.noimport/jauk/Animations/vasak-HandEquip.res" id="7_pdu5l"]
 [ext_resource type="Script" path="res://Scripts/inventory.gd" id="8_jv40k"]
+[ext_resource type="Animation" uid="uid://x1ysje4pxvd0" path="res://Model.noimport/jauk/Animations/vasak-Idle.res" id="8_y8626"]
+[ext_resource type="Animation" uid="uid://dso01668idp3s" path="res://Model.noimport/jauk/Animations/vasak-Puff.res" id="9_6gh34"]
 [ext_resource type="Texture2D" uid="uid://blagkpk3qucpi" path="res://Images/file.png" id="9_d0grp"]
+[ext_resource type="Animation" uid="uid://caw5vibt3gpg7" path="res://Model.noimport/jauk/Animations/vasak-PuffIdle.res" id="10_hg5dl"]
 [ext_resource type="Texture2D" uid="uid://clji58xnkfhnc" path="res://Images/knife.png" id="10_q5xid"]
+[ext_resource type="Animation" uid="uid://dj4buvubh1umo" path="res://Model.noimport/jauk/Animations/vasak-PuffStop.res" id="11_3b0s0"]
 [ext_resource type="Texture2D" uid="uid://6u8dtv01iexy" path="res://Images/syringe-145002__340.webp" id="11_p0neb"]
 
 [sub_resource type="Animation" id="8"]
@@ -225,337 +231,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8c737")
 
-[sub_resource type="Animation" id="Animation_70ja0"]
-resource_name = "parem|HandDequip"
-length = 0.966667
-tracks/0/type = "position_3d"
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/parem")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.400043, 2.86076, -0.540205, 0.0333333, 1, 0.400043, 2.86076, -0.538398, 0.0666667, 1, 0.400043, 2.86076, -0.533146, 0.1, 1, 0.400043, 2.86076, -0.524698, 0.133333, 1, 0.400043, 2.86076, -0.513306, 0.166667, 1, 0.400043, 2.86076, -0.499219, 0.2, 1, 0.400043, 2.86076, -0.482689, 0.233333, 1, 0.400043, 2.86076, -0.463966, 0.266667, 1, 0.400043, 2.86076, -0.443301, 0.3, 1, 0.400043, 2.86076, -0.420944, 0.333333, 1, 0.400043, 2.86076, -0.397147, 0.366667, 1, 0.400043, 2.86076, -0.372158, 0.4, 1, 0.400043, 2.86076, -0.34623, 0.433333, 1, 0.400043, 2.86076, -0.319613, 0.533333, 1, 0.400043, 2.86076, -0.238133, 0.566667, 1, 0.400043, 2.86076, -0.211265, 0.6, 1, 0.400043, 2.86076, -0.184961, 0.633333, 1, 0.400043, 2.86076, -0.159471, 0.666667, 1, 0.400043, 2.86076, -0.135047, 0.7, 1, 0.400043, 2.86076, -0.111938, 0.733333, 1, 0.400043, 2.86076, -0.090396, 0.766667, 1, 0.400043, 2.86076, -0.0706707, 0.8, 1, 0.400043, 2.86076, -0.0530129, 0.833333, 1, 0.400043, 2.86076, -0.0376732, 0.866667, 1, 0.400043, 2.86076, -0.0249023, 0.9, 1, 0.400043, 2.86076, -0.0149509, 0.933333, 1, 0.400043, 2.86076, -0.00806952, 0.966667, 1, 0.400043, 2.86076, -0.00450873)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = true
-tracks/1/enabled = true
-tracks/1/path = NodePath("RootNode/parem")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, -0.622682, 0.00332568, -0.0422731, 0.781325, 0.0333333, 1, -0.621041, 0.00323693, -0.04228, 0.78263, 0.0444444, 1, -0.619443, 0.00315066, -0.0422865, 0.783896, 0.0666667, 1, -0.616239, 0.00297808, -0.042299, 0.786417, 0.1, 1, -0.608425, 0.00255925, -0.0423264, 0.792478, 0.133333, 1, -0.59771, 0.00198969, -0.042357, 0.80059, 0.166667, 1, -0.584184, 0.00127826, -0.0423845, 0.810513, 0.2, 1, -0.567926, 0.00043389, -0.0424015, 0.821986, 0.233333, 1, -0.549019, -0.000533924, -0.0424004, 0.834734, 0.266667, 1, -0.52756, -0.00161472, -0.042373, 0.848459, 0.3, 1, -0.503674, -0.00279671, -0.0423114, 0.862853, 0.333333, 1, -0.477524, -0.0040666, -0.0422083, 0.877595, 0.366667, 1, -0.449318, -0.00540944, -0.0420573, 0.892365, 0.4, 1, -0.419314, -0.00680873, -0.0418535, 0.90685, 0.433333, 1, -0.387822, -0.00824664, -0.0415941, 0.920758, 0.533333, 1, -0.288179, -0.0126032, -0.0404875, 0.956637, 0.566667, 1, -0.254654, -0.014007, -0.0400235, 0.966102, 0.6, 1, -0.221713, -0.0153575, -0.039525, 0.97419, 0.633333, 1, -0.189789, -0.0166397, -0.0390025, 0.980909, 0.666667, 1, -0.159296, -0.0178405, -0.0384681, 0.98632, 0.7, 1, -0.130612, -0.0189491, -0.0379343, 0.990526, 0.733333, 1, -0.104083, -0.0199566, -0.0374141, 0.993664, 0.766667, 1, -0.0800174, -0.0208557, -0.0369204, 0.995891, 0.8, 1, -0.0586897, -0.0216409, -0.0364657, 0.997375, 0.833333, 1, -0.0403485, -0.0223075, -0.0360618, 0.998285, 0.866667, 1, -0.0252233, -0.0228512, -0.0357198, 0.998782, 0.9, 1, -0.0135342, -0.0232676, -0.0354499, 0.999009, 0.933333, 1, -0.00550306, -0.0235518, -0.0352617, 0.999085, 0.944444, 1, -0.00412356, -0.0236005, -0.0352292, 0.999092, 0.966667, 1, -0.00136452, -0.0236976, -0.0351639, 0.9991)
-tracks/2/type = "position_3d"
-tracks/2/imported = true
-tracks/2/enabled = true
-tracks/2/path = NodePath("RootNode/vasak")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, -0.411036, 2.86214, -0.00405192)
-tracks/3/type = "rotation_3d"
-tracks/3/imported = true
-tracks/3/enabled = true
-tracks/3/path = NodePath("RootNode/vasak")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, 6.12323e-17, 1, 6.12323e-17, 7.54979e-08)
-
-[sub_resource type="Animation" id="Animation_uigib"]
-resource_name = "parem|HandEquip"
-tracks/0/type = "position_3d"
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/parem")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.400043, 2.86076, -0.00405192, 0.0333333, 1, 0.400043, 2.86076, -0.00579939, 0.0666667, 1, 0.400043, 2.86076, -0.0108829, 0.1, 1, 0.400043, 2.86076, -0.0190642, 0.133333, 1, 0.400043, 2.86076, -0.030105, 0.166667, 1, 0.400043, 2.86076, -0.043767, 0.2, 1, 0.400043, 2.86076, -0.0598118, 0.233333, 1, 0.400043, 2.86076, -0.0780013, 0.266667, 1, 0.400043, 2.86076, -0.0980971, 0.3, 1, 0.400043, 2.86076, -0.119861, 0.333333, 1, 0.400043, 2.86076, -0.143055, 0.366667, 1, 0.400043, 2.86076, -0.16744, 0.4, 1, 0.400043, 2.86076, -0.192778, 0.433333, 1, 0.400043, 2.86076, -0.218831, 0.566667, 1, 0.400043, 2.86076, -0.325426, 0.6, 1, 0.400043, 2.86076, -0.351479, 0.633333, 1, 0.400043, 2.86076, -0.376817, 0.666667, 1, 0.400043, 2.86076, -0.401202, 0.7, 1, 0.400043, 2.86076, -0.424396, 0.733333, 1, 0.400043, 2.86076, -0.44616, 0.766667, 1, 0.400043, 2.86076, -0.466256, 0.8, 1, 0.400043, 2.86076, -0.484445, 0.833333, 1, 0.400043, 2.86076, -0.50049, 0.866667, 1, 0.400043, 2.86076, -0.514152, 0.9, 1, 0.400043, 2.86076, -0.525193, 0.933333, 1, 0.400043, 2.86076, -0.533374, 0.966667, 1, 0.400043, 2.86076, -0.538458, 1, 1, 0.400043, 2.86076, -0.540205)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = true
-tracks/1/enabled = true
-tracks/1/path = NodePath("RootNode/parem")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, -0.00083441, -0.0237163, -0.0351513, 0.9991, 0.0222222, 1, -0.00218695, -0.0236687, -0.0351834, 0.999098, 0.0333333, 1, -0.00286322, -0.0236449, -0.0351994, 0.999096, 0.0666667, 1, -0.00878122, -0.023436, -0.0353388, 0.999062, 0.0777778, 1, -0.0119726, -0.023323, -0.0354135, 0.999029, 0.1, 1, -0.0183551, -0.0230962, -0.0355618, 0.998932, 0.133333, 1, -0.0313686, -0.0226309, -0.0358597, 0.998608, 0.166667, 1, -0.0476127, -0.0220445, -0.0362232, 0.997965, 0.2, 1, -0.0668757, -0.0213408, -0.0366421, 0.99686, 0.233333, 1, -0.0889334, -0.0205242, -0.0371057, 0.995135, 0.266667, 1, -0.11354, -0.0195994, -0.0376024, 0.992628, 0.3, 1, -0.140423, -0.0185722, -0.0381202, 0.989183, 0.333333, 1, -0.169277, -0.01745, -0.0386468, 0.984656, 0.366667, 1, -0.199763, -0.0162419, -0.0391699, 0.978926, 0.4, 1, -0.231508, -0.0149589, -0.0396776, 0.971909, 0.433333, 1, -0.264113, -0.0136139, -0.0401589, 0.963559, 0.466667, 1, -0.297161, -0.0122219, -0.0406042, 0.953885, 0.533333, 1, -0.362892, -0.00936351, -0.041357, 0.930866, 0.566667, 1, -0.394755, -0.00793276, -0.0416551, 0.917808, 0.6, 1, -0.425445, -0.0065252, -0.0418987, 0.90399, 0.633333, 1, -0.454632, -0.00515852, -0.0420888, 0.889669, 0.666667, 1, -0.482031, -0.00384946, -0.0422287, 0.875127, 0.7, 1, -0.507405, -0.00261346, -0.0423231, 0.860664, 0.733333, 1, -0.530564, -0.0014645, -0.0423784, 0.846584, 0.766667, 1, -0.551358, -0.000414984, -0.0424017, 0.83319, 0.8, 1, -0.569673, 0.000524046, -0.0424005, 0.820777, 0.833333, 1, -0.585417, 0.00134275, -0.0423825, 0.809623, 0.866667, 1, -0.598513, 0.00203218, -0.042355, 0.79999, 0.9, 1, -0.608885, 0.00258384, -0.0423249, 0.792125, 0.933333, 1, -0.616448, 0.00298934, -0.0422982, 0.786253, 0.944444, 1, -0.617999, 0.00307285, -0.0422923, 0.785034, 0.966667, 1, -0.621094, 0.00323983, -0.0422798, 0.782588, 0.988889, 1, -0.622153, 0.00329707, -0.0422754, 0.781746, 1, 1, -0.622682, 0.00332568, -0.0422731, 0.781325)
-tracks/2/type = "position_3d"
-tracks/2/imported = true
-tracks/2/enabled = true
-tracks/2/path = NodePath("RootNode/vasak")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, -0.411036, 2.86214, -0.00405192)
-tracks/3/type = "rotation_3d"
-tracks/3/imported = true
-tracks/3/enabled = true
-tracks/3/path = NodePath("RootNode/vasak")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, 6.12323e-17, 1, 6.12323e-17, 7.54979e-08)
-
-[sub_resource type="Animation" id="Animation_6g83u"]
-resource_name = "parem|Idle"
-length = 0.966667
-tracks/0/type = "position_3d"
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/parem")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -0.411036, 2.86214, -0.00405192)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = true
-tracks/1/enabled = true
-tracks/1/path = NodePath("RootNode/parem")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 6.12323e-17, 1, 6.12323e-17, 1.33158e-07)
-tracks/2/type = "position_3d"
-tracks/2/imported = true
-tracks/2/enabled = true
-tracks/2/path = NodePath("RootNode/vasak")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, -0.411036, 2.86214, -0.00405192)
-tracks/3/type = "rotation_3d"
-tracks/3/imported = true
-tracks/3/enabled = true
-tracks/3/path = NodePath("RootNode/vasak")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, 6.12323e-17, 1, 6.12323e-17, 7.54979e-08)
-
-[sub_resource type="Animation" id="Animation_qtte0"]
-resource_name = "parem|Puff"
-length = 0.966667
-tracks/0/type = "position_3d"
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/parem")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -0.411036, 2.86214, -0.540205, 0.0333333, 1, -0.414606, 2.85806, -0.537267, 0.0666667, 1, -0.424986, 2.85399, -0.528724, 0.1, 1, -0.44168, 2.84424, -0.514985, 0.133333, 1, -0.464192, 2.83109, -0.496456, 0.166667, 1, -0.492029, 2.81483, -0.473546, 0.2, 1, -0.524695, 2.79575, -0.446662, 0.233333, 1, -0.561694, 2.77415, -0.416211, 0.266667, 1, -0.602531, 2.7503, -0.382602, 0.3, 1, -0.646711, 2.72449, -0.346241, 0.333333, 1, -0.693738, 2.69703, -0.307536, 0.366667, 1, -0.743118, 2.66819, -0.266896, 0.4, 1, -0.794355, 2.63826, -0.224727, 0.433333, 1, -0.846954, 2.60754, -0.181437, 0.533333, 1, -1.00797, 2.5135, -0.0489177, 0.566667, 1, -1.06106, 2.48249, -0.00522017, 0.6, 1, -1.11304, 2.45214, 0.0375603, 0.633333, 1, -1.16342, 2.42272, 0.0790161, 0.666667, 1, -1.21168, 2.39453, 0.118739, 0.7, 1, -1.25735, 2.36786, 0.156323, 0.733333, 1, -1.29992, 2.343, 0.191359, 0.766667, 1, -1.3389, 2.32023, 0.22344, 0.8, 1, -1.37379, 2.29985, 0.252159, 0.833333, 1, -1.4041, 2.28215, 0.277107, 0.866667, 1, -1.42934, 2.26741, 0.297877, 0.9, 1, -1.44901, 2.25592, 0.314062, 0.933333, 1, -1.46261, 2.24798, 0.325254, 0.966667, 1, -1.46876, 2.24489, 0.331045)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = true
-tracks/1/enabled = true
-tracks/1/path = NodePath("RootNode/parem")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, -2.46526e-08, 0.782548, 0.62259, 1.50546e-07, 0.0333333, 1, -0.00171755, 0.781794, 0.623531, 0.00211938, 0.0444444, 1, -0.00230064, 0.781061, 0.624444, 0.00281724, 0.0555556, 1, -0.00288374, 0.780327, 0.625356, 0.00351509, 0.0666667, 1, -0.00346682, 0.77959, 0.626266, 0.00421293, 0.1, 1, -0.00763457, 0.77598, 0.630643, 0.00927748, 0.133333, 1, -0.0132864, 0.77099, 0.636504, 0.0161454, 0.166667, 1, -0.0203214, 0.764628, 0.643678, 0.0246943, 0.2, 1, -0.0286376, 0.75689, 0.651987, 0.0347999, 0.233333, 1, -0.0381281, 0.747771, 0.66124, 0.0463325, 0.266667, 1, -0.0486787, 0.737272, 0.671238, 0.0591534, 0.3, 1, -0.0601658, 0.725406, 0.681778, 0.0731123, 0.333333, 1, -0.0724553, 0.712203, 0.69265, 0.0880462, 0.366667, 1, -0.085402, 0.697722, 0.703648, 0.103779, 0.4, 1, -0.0988507, 0.682048, 0.71457, 0.120121, 0.433333, 1, -0.112638, 0.6653, 0.725227, 0.136876, 0.533333, 1, -0.154348, 0.610295, 0.754014, 0.187561, 0.566667, 1, -0.167814, 0.591083, 0.762151, 0.203924, 0.6, 1, -0.180802, 0.571845, 0.769437, 0.219707, 0.633333, 1, -0.193175, 0.55285, 0.775846, 0.234742, 0.666667, 1, -0.204811, 0.53437, 0.781383, 0.248882, 0.7, 1, -0.215603, 0.516678, 0.786078, 0.261996, 0.733333, 1, -0.225458, 0.500038, 0.789981, 0.273972, 0.766667, 1, -0.234299, 0.484705, 0.79316, 0.284715, 0.8, 1, -0.242058, 0.470921, 0.795689, 0.294143, 0.833333, 1, -0.248499, 0.458918, 0.797728, 0.302113, 0.866667, 1, -0.253923, 0.448908, 0.799191, 0.308705, 0.9, 1, -0.258092, 0.441103, 0.800228, 0.313771, 0.911111, 1, -0.258931, 0.439303, 0.800507, 0.314889, 0.933333, 1, -0.260605, 0.435697, 0.801054, 0.31712, 0.966667, 1, -0.261883, 0.43336, 0.801138, 0.319052)
-tracks/2/type = "position_3d"
-tracks/2/imported = true
-tracks/2/enabled = true
-tracks/2/path = NodePath("RootNode/vasak")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, -0.411036, 2.86214, -0.00405192)
-tracks/3/type = "rotation_3d"
-tracks/3/imported = true
-tracks/3/enabled = true
-tracks/3/path = NodePath("RootNode/vasak")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, 6.12323e-17, 1, 6.12323e-17, 7.54979e-08)
-
-[sub_resource type="Animation" id="Animation_25mns"]
-resource_name = "parem|PuffIdle"
-length = 0.966667
-tracks/0/type = "position_3d"
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/parem")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -1.47054, 2.24334, 0.331788)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = true
-tracks/1/enabled = true
-tracks/1/path = NodePath("RootNode/parem")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, -0.262763, 0.432559, 0.801183, 0.319304)
-tracks/2/type = "position_3d"
-tracks/2/imported = true
-tracks/2/enabled = true
-tracks/2/path = NodePath("RootNode/vasak")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, -0.411036, 2.86214, -0.00405192)
-tracks/3/type = "rotation_3d"
-tracks/3/imported = true
-tracks/3/enabled = true
-tracks/3/path = NodePath("RootNode/vasak")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, 6.12323e-17, 1, 6.12323e-17, 7.54979e-08)
-
-[sub_resource type="Animation" id="Animation_clbme"]
-resource_name = "parem|PuffStop"
-length = 0.966667
-tracks/0/type = "position_3d"
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/parem")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -1.47054, 2.24334, 0.331788, 0.0333333, 1, -1.46697, 2.24643, 0.32885, 0.0666667, 1, -1.45659, 2.25195, 0.320308, 0.1, 1, -1.4399, 2.26124, 0.306569, 0.133333, 1, -1.41739, 2.27439, 0.28804, 0.166667, 1, -1.38955, 2.29065, 0.26513, 0.2, 1, -1.35689, 2.30972, 0.238245, 0.233333, 1, -1.31989, 2.33133, 0.207795, 0.266667, 1, -1.27905, 2.35518, 0.174185, 0.3, 1, -1.23487, 2.38099, 0.137824, 0.333333, 1, -1.18784, 2.40845, 0.0991199, 0.366667, 1, -1.13846, 2.43729, 0.0584793, 0.4, 1, -1.08723, 2.46722, 0.0163103, 0.433333, 1, -1.03463, 2.49794, -0.0269797, 0.533333, 1, -0.87361, 2.59197, -0.159499, 0.566667, 1, -0.820516, 2.62298, -0.203196, 0.6, 1, -0.768536, 2.65334, -0.245977, 0.633333, 1, -0.718165, 2.68276, -0.287433, 0.666667, 1, -0.6699, 2.71095, -0.327156, 0.7, 1, -0.624234, 2.73762, -0.36474, 0.733333, 1, -0.581663, 2.76248, -0.399776, 0.766667, 1, -0.542684, 2.78525, -0.431857, 0.8, 1, -0.507789, 2.80563, -0.460575, 0.833333, 1, -0.477476, 2.82333, -0.485523, 0.866667, 1, -0.45224, 2.83807, -0.506294, 0.9, 1, -0.432574, 2.84911, -0.522479, 0.933333, 1, -0.418975, 2.85702, -0.533671, 0.966667, 1, -0.411939, 2.86109, -0.539462)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = true
-tracks/1/enabled = true
-tracks/1/path = NodePath("RootNode/parem")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, -0.262763, 0.432559, 0.801183, 0.319304, 0.0222222, 1, -0.262488, 0.433371, 0.801235, 0.318296, 0.0333333, 1, -0.262351, 0.433776, 0.801261, 0.317792, 0.0444444, 1, -0.261519, 0.435217, 0.801018, 0.317118, 0.0555556, 1, -0.260686, 0.436656, 0.800773, 0.316444, 0.0666667, 1, -0.259853, 0.438094, 0.800525, 0.315768, 0.1, 1, -0.256337, 0.444718, 0.79968, 0.311495, 0.111111, 1, -0.254741, 0.447702, 0.799278, 0.309556, 0.133333, 1, -0.251538, 0.453649, 0.798437, 0.305663, 0.166667, 1, -0.245512, 0.464682, 0.796735, 0.298342, 0.2, 1, -0.238317, 0.477605, 0.794501, 0.289598, 0.233333, 1, -0.23001, 0.492192, 0.791657, 0.279503, 0.266667, 1, -0.220652, 0.50821, 0.788125, 0.268132, 0.3, 1, -0.210318, 0.525409, 0.783833, 0.255574, 0.333333, 1, -0.199092, 0.543528, 0.778722, 0.241933, 0.366667, 1, -0.187073, 0.5623, 0.772751, 0.227327, 0.4, 1, -0.174376, 0.581451, 0.765903, 0.211898, 0.433333, 1, -0.161131, 0.600709, 0.758187, 0.195804, 0.533333, 1, -0.119607, 0.656569, 0.730402, 0.145344, 0.566667, 1, -0.105713, 0.673799, 0.719943, 0.12846, 0.6, 1, -0.0919745, 0.69004, 0.709115, 0.111988, 0.633333, 1, -0.0787638, 0.705128, 0.698134, 0.0959155, 0.666667, 1, -0.0661357, 0.718976, 0.687176, 0.0805478, 0.7, 1, -0.0541712, 0.731519, 0.676441, 0.0661318, 0.733333, 1, -0.0432783, 0.742694, 0.666158, 0.0525909, 0.766667, 1, -0.0324783, 0.752537, 0.656466, 0.0410632, 0.8, 1, -0.0231826, 0.760967, 0.647658, 0.0305334, 0.833333, 1, -0.015416, 0.768006, 0.639905, 0.021235, 0.866667, 1, -0.0091961, 0.77367, 0.63338, 0.0133821, 0.9, 1, -0.00454159, 0.777964, 0.628252, 0.00717213, 0.911111, 1, -0.00352176, 0.778938, 0.627066, 0.00571047, 0.922222, 1, -0.00250191, 0.779907, 0.625876, 0.00424879, 0.933333, 1, -0.00148204, 0.780872, 0.624683, 0.00278707, 0.944444, 1, -0.00101041, 0.781369, 0.624065, 0.00199036, 0.966667, 1, -6.71617e-05, 0.782359, 0.622828, 0.000396934)
-tracks/2/type = "position_3d"
-tracks/2/imported = true
-tracks/2/enabled = true
-tracks/2/path = NodePath("RootNode/vasak")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, -0.411036, 2.86214, -0.00405192)
-tracks/3/type = "rotation_3d"
-tracks/3/imported = true
-tracks/3/enabled = true
-tracks/3/path = NodePath("RootNode/vasak")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, 6.12323e-17, 1, 6.12323e-17, 7.54979e-08)
-
-[sub_resource type="Animation" id="Animation_258br"]
-resource_name = "parem|napp2_001Action_napp2_001"
-length = 1.3
-tracks/0/type = "position_3d"
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/parem")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.43067, 1.43486, -0.0498651)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = true
-tracks/1/enabled = true
-tracks/1/path = NodePath("RootNode/parem")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 1.51473e-07, 0, 0, 1)
-tracks/2/type = "position_3d"
-tracks/2/imported = true
-tracks/2/enabled = true
-tracks/2/path = NodePath("RootNode/vasak")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, -0.411036, 2.86214, -0.00405192)
-tracks/3/type = "rotation_3d"
-tracks/3/imported = true
-tracks/3/enabled = true
-tracks/3/path = NodePath("RootNode/vasak")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, 6.12323e-17, 1, 6.12323e-17, 7.54979e-08)
-
-[sub_resource type="Animation" id="Animation_66hms"]
-resource_name = "parem|napp2_003Action_napp2_003"
-length = 1.3
-tracks/0/type = "position_3d"
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/parem")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -0.422891, 1.42975, -0.0546456)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = true
-tracks/1/enabled = true
-tracks/1/path = NodePath("RootNode/parem")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, -0.0352252, 0.999093, 0.00395443, 0.0236064)
-tracks/2/type = "position_3d"
-tracks/2/imported = true
-tracks/2/enabled = true
-tracks/2/path = NodePath("RootNode/vasak")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, -0.411036, 2.86214, -0.00405192)
-tracks/3/type = "rotation_3d"
-tracks/3/imported = true
-tracks/3/enabled = true
-tracks/3/path = NodePath("RootNode/vasak")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, 6.12323e-17, 1, 6.12323e-17, 7.54979e-08)
-
-[sub_resource type="Animation" id="Animation_8nqw5"]
-resource_name = "vasak|napp2_001Action_napp2_001"
-length = 1.3
-tracks/0/type = "position_3d"
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/vasak")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.43067, 1.43486, -0.0498651)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = true
-tracks/1/enabled = true
-tracks/1/path = NodePath("RootNode/vasak")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 1.51473e-07, 0, 0, 1)
-tracks/2/type = "position_3d"
-tracks/2/imported = true
-tracks/2/enabled = true
-tracks/2/path = NodePath("RootNode/parem")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0.400043, 2.86076, -0.00380632)
-tracks/3/type = "rotation_3d"
-tracks/3/imported = true
-tracks/3/enabled = true
-tracks/3/path = NodePath("RootNode/parem")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, -0.00395447, -0.0236064, -0.0352252, 0.999093)
-
-[sub_resource type="Animation" id="Animation_wsug7"]
-resource_name = "vasak|napp2_003Action_napp2_003"
-length = 1.3
-tracks/0/type = "position_3d"
-tracks/0/imported = true
-tracks/0/enabled = true
-tracks/0/path = NodePath("RootNode/vasak")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -0.422891, 1.42975, -0.0546456)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = true
-tracks/1/enabled = true
-tracks/1/path = NodePath("RootNode/vasak")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, -0.0352252, 0.999093, 0.00395443, 0.0236064)
-tracks/2/type = "position_3d"
-tracks/2/imported = true
-tracks/2/enabled = true
-tracks/2/path = NodePath("RootNode/parem")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, 0.400043, 2.86076, -0.00380632)
-tracks/3/type = "rotation_3d"
-tracks/3/imported = true
-tracks/3/enabled = true
-tracks/3/path = NodePath("RootNode/parem")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, -0.00395447, -0.0236064, -0.0352252, 0.999093)
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n0kwv"]
 _data = {
-"parem|HandDequip": SubResource("Animation_70ja0"),
-"parem|HandEquip": SubResource("Animation_uigib"),
-"parem|Idle": SubResource("Animation_6g83u"),
-"parem|Puff": SubResource("Animation_qtte0"),
-"parem|PuffIdle": SubResource("Animation_25mns"),
-"parem|PuffStop": SubResource("Animation_clbme"),
-"parem|napp2_001Action_napp2_001": SubResource("Animation_258br"),
-"parem|napp2_003Action_napp2_003": SubResource("Animation_66hms"),
-"vasak|napp2_001Action_napp2_001": SubResource("Animation_8nqw5"),
-"vasak|napp2_003Action_napp2_003": SubResource("Animation_wsug7")
+"vasak-HandDequip": ExtResource("6_mi6ef"),
+"vasak-HandEquip": ExtResource("7_pdu5l"),
+"vasak-Idle": ExtResource("8_y8626"),
+"vasak-Puff": ExtResource("9_6gh34"),
+"vasak-PuffIdle": ExtResource("10_hg5dl"),
+"vasak-PuffStop": ExtResource("11_3b0s0")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n32g8"]
@@ -660,18 +343,19 @@ text = "[center]·[/center]"
 scroll_active = false
 
 [node name="arms" type="Node3D" parent="CharacterBody3D/Head"]
-transform = Transform3D(0.115291, 0, 0, 0, 0.0198587, 0, 0, 0, 0.0413652, 2.77626e-08, -3.13822, -0.317568)
+transform = Transform3D(0.115291, 0, 0, 0, 0.0198587, 0, 0, 0, 0.0413652, 0, -3.2, -0.6)
 script = ExtResource("4_kf3xv")
 
 [node name="RootNode" type="Node3D" parent="CharacterBody3D/Head/arms"]
+transform = Transform3D(-15, 0, 2.18557e-06, 0, 50, 0, -1.31134e-06, 0, -25, 0, -15.35, 0)
 
 [node name="parem" type="MeshInstance3D" parent="CharacterBody3D/Head/arms/RootNode"]
-transform = Transform3D(1.25476, 0.403409, 0.239767, -0.0884018, 1.43964, 4.03224, 0.0597515, -6.34152, 0.930642, 0.400043, 2.86076, -0.540205)
+transform = Transform3D(1.25476, 0.459811, -0.194373, -0.0884017, 6.49901, 0.039648, 0.0597514, -0.0406474, 4.14043, 0.400043, 2.86076, -0.00380632)
 mesh = SubResource("ArrayMesh_d3t0e")
 skeleton = NodePath("")
 
 [node name="vasak" type="MeshInstance3D" parent="CharacterBody3D/Head/arms/RootNode"]
-transform = Transform3D(-1.25929, 7.97903e-16, 6.25906e-07, 1.54218e-16, 6.51538, 5.07639e-16, -1.90148e-07, 7.97903e-16, -4.14519, -0.411036, 2.86214, -0.00405192)
+transform = Transform3D(-1.25929, 7.97904e-16, 6.25906e-07, 1.54219e-16, 6.51538, 5.07639e-16, -1.90148e-07, 7.97904e-16, -4.14519, -0.411036, 2.86214, -0.00405192)
 mesh = SubResource("ArrayMesh_pdrtg")
 skeleton = NodePath("")
 
@@ -681,10 +365,12 @@ libraries = {
 "": SubResource("AnimationLibrary_n0kwv")
 }
 
-[node name="kubik" type="Node3D" parent="CharacterBody3D/Head/arms/RootNode/vasak"]
+[node name="kubikhand" type="Node3D" parent="CharacterBody3D/Head/arms/RootNode/vasak"]
+transform = Transform3D(-0.02, -1.1567e-09, 9.70574e-10, 0, 0.00642788, 0.00766044, -3.01992e-09, 0.00766044, -0.00642788, 0.0621001, -0.329942, -0.130586)
+visible = false
 script = ExtResource("6_e8133")
 
-[node name="kubik" type="MeshInstance3D" parent="CharacterBody3D/Head/arms/RootNode/vasak/kubik"]
+[node name="kubik" type="MeshInstance3D" parent="CharacterBody3D/Head/arms/RootNode/vasak/kubikhand"]
 transform = Transform3D(1.34, -1.56432e-06, -1.27235e-07, 3.43638e-07, 4.62913, 0.872659, -1.27235e-07, -3.97255, 1.01689, 3.94082, 11.9781, -6.12927)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_wmyyo")
@@ -743,7 +429,7 @@ visibility_aabb = AABB(-0.486538, 0.637192, -0.435304, 0.990655, 0.81961, 0.8706
 process_material = SubResource("ParticleProcessMaterial_c70ag")
 draw_pass_1 = SubResource("BoxMesh_3hkrd")
 
-[connection signal="kimu" from="." to="CharacterBody3D/Head/arms/RootNode/vasak/kubik" method="_on_character_kimu"]
+[connection signal="kimu" from="." to="CharacterBody3D/Head/arms/RootNode/vasak/kubikhand" method="_on_character_kimu"]
 [connection signal="knife" from="CharacterBody3D/Head/Camera3D/InteractRay" to="CharacterBody3D/Head/arms/RootNode/inventory" method="_on_interact_ray_knife"]
 [connection signal="kubikinteract" from="CharacterBody3D/Head/Camera3D/InteractRay" to="CharacterBody3D/Head/arms/RootNode/inventory" method="_on_interact_ray_kubikinteract"]
 [connection signal="syringe" from="CharacterBody3D/Head/Camera3D/InteractRay" to="CharacterBody3D/Head/arms/RootNode/inventory" method="_on_interact_ray_syringe"]
