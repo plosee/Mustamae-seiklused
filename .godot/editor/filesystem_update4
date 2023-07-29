@@ -1,6 +1,6 @@
 res://Scenes/Player.tscn
 res://Scripts/arms.gd
-res://Scripts/Interacting.gd
+res://Scripts/inventory.gd
 res://Scenes/Main.tscn
 res://Scenes/DebugWorld.tscn
 res://Scenes/Models/knife.tscn

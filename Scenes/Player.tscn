@@ -425,7 +425,7 @@ transform = Transform3D(0.658676, 0, -0.752426, 0, 1, 0, 0.752426, 0, 0.658676, 
 emitting = false
 amount = 200
 lifetime = 2.0
-visibility_aabb = AABB(-0.486538, 0.637192, -0.435304, 0.990655, 0.81961, 0.870609)
+visibility_aabb = AABB(-0.486538, -2.65065, -0.435304, 0.990655, 4.81693, 0.870609)
 process_material = SubResource("ParticleProcessMaterial_c70ag")
 draw_pass_1 = SubResource("BoxMesh_3hkrd")
 
