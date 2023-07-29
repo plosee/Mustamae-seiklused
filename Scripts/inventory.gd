@@ -3,6 +3,8 @@ extends Control
 var selected = Color(1, 1, 1)
 var unselected = Color(1, 1, 1, 0.25)
 
+var health = 100
+
 signal pause
 
 func _ready():
@@ -10,9 +12,12 @@ func _ready():
 	$inv2.color = unselected
 	$inv3.color = unselected
 
+func _process(delta):
+	$Bars/Health/Bar.size.x = health*4.5
+	$Bars/Vedla/Bar.size.y = Global.KimuCapacity
+
 func _unhandled_input(event):
 	if event is InputEventKey && event.pressed:
-		print(event)
 		if event.keycode==49:
 			Global.currentslot = 1
 			$inv1.color = selected

@@ -1,21 +1,9 @@
-res://Scenes/Settings.tscn
-res://Scripts/Settings.gd
-res://Scenes/Main.tscn
-res://Scenes/DebugWorld.tscn
 res://Scenes/Player.tscn
+res://Scenes/Main.tscn
+res://Scripts/inventory.gd
+res://Scenes/DebugWorld.tscn
 res://Scenes/Models/knife.tscn
 res://Scenes/Models/JakeAnimated.tscn
 res://Temp Fold For object import/arms.tscn
-res://Scripts/Main.gd
-res://Scripts/arms.gd
-res://Scripts/CharacterMovement.gd
+res://Scenes/Settings.tscn
 res://Scripts/Global.gd
-res://Scripts/Interacting.gd
-res://Scripts/InteractRay.gd
-res://Scripts/inventory.gd
-res://Scripts/knife.gd
-res://Scripts/KubikHand.gd
-res://Scripts/KubikInteract.gd
-res://Scripts/NPC_Jaak.gd
-res://Scripts/syringe.gd
-res://Scripts/main.gd

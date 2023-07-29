@@ -393,6 +393,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 script = ExtResource("8_jv40k")
 
 [node name="inv1" type="ColorRect" parent="CharacterBody3D/Head/arms/RootNode/inventory"]
@@ -445,6 +446,45 @@ theme_override_font_sizes/normal_font_size = 86
 bbcode_enabled = true
 text = "60"
 text_direction = 2
+
+[node name="Bars" type="Control" parent="CharacterBody3D/Head/arms/RootNode/inventory"]
+layout_mode = 1
+anchor_right = 48.0
+anchor_bottom = 27.0
+offset_right = -0.00012207
+offset_bottom = -0.00012207
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Health" type="ColorRect" parent="CharacterBody3D/Head/arms/RootNode/inventory/Bars"]
+layout_mode = 0
+offset_top = 155.0
+offset_right = 455.0
+offset_bottom = 195.0
+mouse_filter = 2
+
+[node name="Bar" type="ColorRect" parent="CharacterBody3D/Head/arms/RootNode/inventory/Bars/Health"]
+layout_mode = 0
+offset_top = 3.0
+offset_right = 450.0
+offset_bottom = 37.0
+mouse_filter = 2
+color = Color(1, 0, 0, 1)
+
+[node name="Vedla" type="ColorRect" parent="CharacterBody3D/Head/arms/RootNode/inventory/Bars"]
+layout_mode = 0
+offset_top = 1080.0
+offset_right = 100.0
+offset_bottom = 1280.0
+rotation = 3.14159
+scale = Vector2(-0.385609, 2.45487)
+
+[node name="Bar" type="ColorRect" parent="CharacterBody3D/Head/arms/RootNode/inventory/Bars/Vedla"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 200.0
+color = Color(0, 1, 1, 1)
 
 [node name="KimuParticles" type="GPUParticles3D" parent="CharacterBody3D/Head"]
 transform = Transform3D(0.658676, 0, -0.752426, 0, 1, 0, 0.752426, 0, 0.658676, -0.0445948, 0, 0)

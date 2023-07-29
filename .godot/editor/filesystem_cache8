@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1690663923
+::res://::1690667089
 default_bus_layout.tres::AudioBusLayout::6719528829311501445::1690646614::0::1::::<><>::
 icon.svg::CompressedTexture2D::294432280258095356::1690646614::1690652777::1::::<><>::
 ::res://FBXtoGLFTf/::1690646614
@@ -92,35 +92,35 @@ vasak-Idle.res::Animation::1669507057624951963::1690646614::0::1::::<><>::
 vasak-Puff.res::Animation::8453128558204399102::1690646614::0::1::::<><>::
 vasak-PuffIdle.res::Animation::4820117112063063352::1690646614::0::1::::<><>::
 vasak-PuffStop.res::Animation::7850926165502469078::1690646614::0::1::::<><>::
-::res://Scenes/::1690663910
-DebugWorld.tscn::PackedScene::5848725296584418191::1690663910::0::1::::<><>::uid://f78f8sof67ig::::res://Images/hdri.jpg<>uid://chpi73wnvokhj::::res://Images/dead-grass.jpg<>uid://bu6ql3rpnuvic::::res://Scenes/Player.tscn<>uid://cm3hmpodt6rqa::::res://Scenes/Models/kubik.tscn<>uid://c73wlf43av6jg::::res://Scenes/Models/syringe.tscn<>res://Scripts/syringe.gd<>uid://c8p17wce755dp::::res://Scenes/Models/knife.tscn<>res://Scripts/knife.gd
-Main.tscn::PackedScene::1853826869279305293::1690663910::0::1::::<><>::res://Scripts/Main.gd<>uid://d3ukvs1jnedk8::::res://Fonts/ComicSans.ttf<>uid://b5rnwvqy4hngy::::res://Scenes/Settings.tscn
-Player.tscn::PackedScene::3855185880062012534::1690663910::0::1::::<><>::res://Scripts/CharacterMovement.gd<>res://Scripts/Interacting.gd<>res://Scripts/InteractRay.gd<>uid://d3ukvs1jnedk8::::res://Fonts/ComicSans.ttf<>res://Scripts/arms.gd<>res://Scripts/KubikHand.gd<>uid://bjpi5r8ip4tut::::res://Model.noimport/jauk/Animations/vasak-HandDequip.res<>uid://b4swff40uk0kp::::res://Temp Fold For object import/kubik/kubik.png<>uid://b7wkmj1kf3jug::::res://Model.noimport/jauk/Animations/vasak-HandEquip.res<>res://Scripts/inventory.gd<>uid://x1ysje4pxvd0::::res://Model.noimport/jauk/Animations/vasak-Idle.res<>uid://dso01668idp3s::::res://Model.noimport/jauk/Animations/vasak-Puff.res<>uid://blagkpk3qucpi::::res://Images/file.png<>uid://caw5vibt3gpg7::::res://Model.noimport/jauk/Animations/vasak-PuffIdle.res<>uid://clji58xnkfhnc::::res://Images/knife.png<>uid://dj4buvubh1umo::::res://Model.noimport/jauk/Animations/vasak-PuffStop.res<>uid://6u8dtv01iexy::::res://Images/syringe-145002__340.webp
+::res://Scenes/::1690667074
+DebugWorld.tscn::PackedScene::5848725296584418191::1690666985::0::1::::<><>::uid://f78f8sof67ig::::res://Images/hdri.jpg<>uid://chpi73wnvokhj::::res://Images/dead-grass.jpg<>uid://bu6ql3rpnuvic::::res://Scenes/Player.tscn<>uid://cm3hmpodt6rqa::::res://Scenes/Models/kubik.tscn<>uid://c73wlf43av6jg::::res://Scenes/Models/syringe.tscn<>res://Scripts/syringe.gd<>uid://c8p17wce755dp::::res://Scenes/Models/knife.tscn<>res://Scripts/knife.gd<>uid://b5rnwvqy4hngy::::res://Scenes/Settings.tscn
+Main.tscn::PackedScene::1853826869279305293::1690666984::0::1::::<><>::res://Scripts/Main.gd<>uid://d3ukvs1jnedk8::::res://Fonts/ComicSans.ttf<>uid://b5rnwvqy4hngy::::res://Scenes/Settings.tscn
+Player.tscn::PackedScene::3855185880062012534::1690666985::0::1::::<><>::res://Scripts/CharacterMovement.gd<>res://Scripts/Interacting.gd<>res://Scripts/InteractRay.gd<>uid://d3ukvs1jnedk8::::res://Fonts/ComicSans.ttf<>res://Scripts/arms.gd<>res://Scripts/KubikHand.gd<>uid://bjpi5r8ip4tut::::res://Model.noimport/jauk/Animations/vasak-HandDequip.res<>uid://b4swff40uk0kp::::res://Temp Fold For object import/kubik/kubik.png<>uid://b7wkmj1kf3jug::::res://Model.noimport/jauk/Animations/vasak-HandEquip.res<>res://Scripts/inventory.gd<>uid://x1ysje4pxvd0::::res://Model.noimport/jauk/Animations/vasak-Idle.res<>uid://dso01668idp3s::::res://Model.noimport/jauk/Animations/vasak-Puff.res<>uid://blagkpk3qucpi::::res://Images/file.png<>uid://caw5vibt3gpg7::::res://Model.noimport/jauk/Animations/vasak-PuffIdle.res<>uid://clji58xnkfhnc::::res://Images/knife.png<>uid://dj4buvubh1umo::::res://Model.noimport/jauk/Animations/vasak-PuffStop.res<>uid://6u8dtv01iexy::::res://Images/syringe-145002__340.webp
 Road.tscn::PackedScene::5789174153059073267::1690646614::0::1::::<><>::uid://8xe8u6e6ae84
-Settings.tscn::PackedScene::4528010151861678496::1690663910::0::1::::<><>::uid://d3ukvs1jnedk8::::res://Fonts/ComicSans.ttf<>res://Scripts/Settings.gd
+Settings.tscn::PackedScene::4528010151861678496::1690667074::0::1::::<><>::uid://d3ukvs1jnedk8::::res://Fonts/ComicSans.ttf<>res://Scripts/Settings.gd
 world.tscn::PackedScene::2847394108222116061::1690646614::0::1::::<><>::uid://d11drbd1j06ec
-::res://Scenes/Models/::1690663910
-JakeAnimated.tscn::PackedScene::4400478822740880748::1690663910::0::1::::<><>::res://Model.noimport/jauk/Material_009.material<>res://Model.noimport/jauk/Material_006.material<>res://Model.noimport/jauk/SKIN.material<>res://Model.noimport/jauk/ENTR_UIRE.material<>res://Model.noimport/jauk/Material_001.material<>res://Model.noimport/jauk/Material_011.material<>res://Model.noimport/jauk/Material_012.material
-knife.tscn::PackedScene::7121675819798082525::1690663910::0::1::::<><>::uid://cg3gtyh2qj7ug::::res://Temp Fold For object import/knife.obj<>uid://b2o00c7jpurt7::::res://Temp Fold For object import/tool.material
+::res://Scenes/Models/::1690666985
+JakeAnimated.tscn::PackedScene::4400478822740880748::1690666985::0::1::::<><>::res://Model.noimport/jauk/Material_009.material<>res://Model.noimport/jauk/Material_006.material<>res://Model.noimport/jauk/SKIN.material<>res://Model.noimport/jauk/ENTR_UIRE.material<>res://Model.noimport/jauk/Material_001.material<>res://Model.noimport/jauk/Material_011.material<>res://Model.noimport/jauk/Material_012.material
+knife.tscn::PackedScene::7121675819798082525::1690666985::0::1::::<><>::uid://cg3gtyh2qj7ug::::res://Temp Fold For object import/knife.obj<>uid://b2o00c7jpurt7::::res://Temp Fold For object import/tool.material
 kubik.tscn::PackedScene::5673357326272937708::1690646614::0::1::::<><>::res://Scripts/KubikInteract.gd<>uid://b4swff40uk0kp
 syringe.tscn::PackedScene::7078042667179860380::1690646614::0::1::::<><>::
-::res://Scripts/::1690663910
-arms.gd::GDScript::-1::1690662500::0::1::::<>Node3D<>::
-CharacterMovement.gd::GDScript::-1::1690663603::0::1::::<>CharacterBody3D<>::
-Global.gd::GDScript::-1::1690646614::0::1::::<>Node<>::
-Interacting.gd::GDScript::-1::1690662874::0::1::::<>Node3D<>::
-InteractRay.gd::GDScript::-1::1690646614::0::1::::<>RayCast3D<>::
-inventory.gd::GDScript::-1::1690662500::0::1::::<>Control<>::
-knife.gd::GDScript::-1::1690646614::0::1::::<>Node3D<>::
-KubikHand.gd::GDScript::-1::1690646614::0::1::::<>Node3D<>::
-KubikInteract.gd::GDScript::-1::1690646614::0::1::::<>Node3D<>::
+::res://Scripts/::1690667032
+arms.gd::GDScript::-1::1690664450::0::1::::<>Node3D<>::
+CharacterMovement.gd::GDScript::-1::1690665087::0::1::::<>CharacterBody3D<>::
+Global.gd::GDScript::-1::1690664450::0::1::::<>Node<>::
+Interacting.gd::GDScript::-1::1690664450::0::1::::<>Node3D<>::
+InteractRay.gd::GDScript::-1::1690664450::0::1::::<>RayCast3D<>::
+inventory.gd::GDScript::-1::1690667032::0::1::::<>Control<>::
+knife.gd::GDScript::-1::1690664450::0::1::::<>Node3D<>::
+KubikHand.gd::GDScript::-1::1690664450::0::1::::<>Node3D<>::
+KubikInteract.gd::GDScript::-1::1690664450::0::1::::<>Node3D<>::
 KubikPickup.gd::GDScript::-1::1690646614::0::1::::<>Node3D<>::
-main.gd::GDScript::-1::1690646614::0::1::::<>Control<>::
-NPC_Jaak.gd::GDScript::-1::1690646614::0::1::::<>Node3D<>::
-Settings.gd::GDScript::-1::1690663910::0::1::::<>Control<>::
-syringe.gd::GDScript::-1::1690646614::0::1::::<>Node3D<>::
-::res://Temp Fold For object import/::1690663910
-arms.tscn::PackedScene::8001338713282540325::1690663910::0::1::::<><>::
+Main.gd::GDScript::-1::1690665139::0::1::::<>Control<>::
+NPC_Jaak.gd::GDScript::-1::1690664450::0::1::::<>Node3D<>::
+Settings.gd::GDScript::-1::1690667032::0::1::::<>Popup<>::
+syringe.gd::GDScript::-1::1690664450::0::1::::<>Node3D<>::
+::res://Temp Fold For object import/::1690666985
+arms.tscn::PackedScene::8001338713282540325::1690666985::0::1::::<><>::
 download (2).jpg.001.jpg::CompressedTexture2D::6414654552972290622::1690628820::1690646614::1::::<><>::
 knife.obj::PackedScene::5252176510991425558::1690628820::1690662516::1::::<><>::
 tool.dae::PackedScene::5528759330888242017::1690628820::1690662515::1::::<><>::uid://cxnkonlf66jrq

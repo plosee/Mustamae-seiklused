@@ -1,3 +1,5 @@
+ColorRect
+Control
 Button
 Popup
 RichTextLabel
@@ -8,8 +10,6 @@ CollisionShape3D
 Area3D
 MeshInstance3D
 Sprite2D
-Control
-ColorRect
 StaticBody3D
 RayCast3D
 Node
