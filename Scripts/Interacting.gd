@@ -15,7 +15,7 @@ func _process(delta):
 	# Kimu kood
 	if Global.KimuSmoke == false:
 		# lopeta kimu particle
-		$CharacterBody3D/Head/GPUParticles3D.emitting = false
+		$CharacterBody3D/Head/KimuParticles.emitting = false
 		
 	if Global.currentslot == 1 && Global.KubikPickup == true && Input.is_action_just_pressed('interactM1'):
 		# mangi puff animatsiooni kui m1 vajutatakse
@@ -29,8 +29,8 @@ func _process(delta):
 
 	if Global.KimuPuffs > 1 && Global.KubikPickup == true && Input.is_action_just_released("interactM1"):
 		Global.KimuSmoke = true
-		$CharacterBody3D/Head/GPUParticles3D.emitting = true
-		$CharacterBody3D/Head/arms/RootNode/vasak/AnimationPlayer.play("vasak-PuffStop")
+		$CharacterBody3D/Head/KimuParticles.emitting = true
+		$CharacterBody3D/Head/arms/RootNode/vasak/AnimationPlayer.play("vasak-PuffStop",)
 		# naita particle kuna hingab valja
 		
 	# Syringe kood

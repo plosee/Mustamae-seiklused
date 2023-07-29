@@ -24,6 +24,7 @@ var gravity = 9.8
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	$Head/arms/RootNode/inventory/FPS.visible = Settings.showfps
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -32,6 +33,7 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(80))
 
 func _physics_process(delta):
+	$Head/arms/RootNode/inventory/FPS.text = str(int(Engine.get_frames_per_second()))
 	# Syringe Buff
 	if Global.SyringeEffect == true:
 		WALK_SPEED = 10.0

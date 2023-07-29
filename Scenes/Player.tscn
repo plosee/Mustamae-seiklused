@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bu6ql3rpnuvic"]
+[gd_scene load_steps=43 format=3 uid="uid://bu6ql3rpnuvic"]
 
 [ext_resource type="Script" path="res://Scripts/CharacterMovement.gd" id="1_1ajbp"]
 [ext_resource type="Script" path="res://Scripts/Interacting.gd" id="1_56wxd"]
@@ -286,7 +286,20 @@ tangential_accel_max = 3.0
 scale_min = 0.2
 scale_max = 0.2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tg5qd"]
+transparency = 4
+blend_mode = 1
+shading_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.403922)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
 [sub_resource type="BoxMesh" id="BoxMesh_3hkrd"]
+material = SubResource("StandardMaterial3D_tg5qd")
+size = Vector3(0.5, 0.5, 0.5)
 
 [node name="Character" type="Node3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -355,7 +368,7 @@ mesh = SubResource("ArrayMesh_d3t0e")
 skeleton = NodePath("")
 
 [node name="vasak" type="MeshInstance3D" parent="CharacterBody3D/Head/arms/RootNode"]
-transform = Transform3D(-1.25929, 7.97904e-16, 6.25906e-07, 1.54219e-16, 6.51538, 5.07639e-16, -1.90148e-07, 7.97904e-16, -4.14519, -0.411036, 2.86214, -0.00405192)
+transform = Transform3D(-1.25929, -9.58623e-07, 1.40681e-07, 0, 1.46443, 4.03913, -1.90148e-07, 6.34867, -0.931691, -0.411036, 2.86214, -0.540205)
 mesh = SubResource("ArrayMesh_pdrtg")
 skeleton = NodePath("")
 
@@ -367,11 +380,10 @@ libraries = {
 
 [node name="kubikhand" type="Node3D" parent="CharacterBody3D/Head/arms/RootNode/vasak"]
 transform = Transform3D(-0.02, -1.1567e-09, 9.70574e-10, 0, 0.00642788, 0.00766044, -3.01992e-09, 0.00766044, -0.00642788, 0.0621001, -0.329942, -0.130586)
-visible = false
 script = ExtResource("6_e8133")
 
 [node name="kubik" type="MeshInstance3D" parent="CharacterBody3D/Head/arms/RootNode/vasak/kubikhand"]
-transform = Transform3D(1.34, -1.56432e-06, -1.27235e-07, 3.43638e-07, 4.62913, 0.872659, -1.27235e-07, -3.97255, 1.01689, 3.94082, 11.9781, -6.12927)
+transform = Transform3D(1.34, -1.75591e-06, -5.96153e-08, 3.43638e-07, 5.19609, 0.408879, -1.27235e-07, -4.45909, 0.476457, 3.94083, 11.9781, -6.12926)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_wmyyo")
 skeleton = NodePath("")
@@ -420,10 +432,24 @@ position = Vector2(73, 73)
 scale = Vector2(0.42407, 0.42407)
 texture = ExtResource("11_p0neb")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="CharacterBody3D/Head"]
+[node name="FPS" type="RichTextLabel" parent="CharacterBody3D/Head/arms/RootNode/inventory"]
+layout_direction = 3
+layout_mode = 0
+offset_left = -1879.0
+offset_top = -2.0
+offset_right = -1729.0
+offset_bottom = 85.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_pynnh")
+theme_override_font_sizes/normal_font_size = 86
+bbcode_enabled = true
+text = "60"
+text_direction = 2
+
+[node name="KimuParticles" type="GPUParticles3D" parent="CharacterBody3D/Head"]
 transform = Transform3D(0.658676, 0, -0.752426, 0, 1, 0, 0.752426, 0, 0.658676, -0.0445948, 0, 0)
 emitting = false
-amount = 200
+amount = 250
 lifetime = 2.0
 visibility_aabb = AABB(-0.486538, -2.65065, -0.435304, 0.990655, 4.81693, 0.870609)
 process_material = SubResource("ParticleProcessMaterial_c70ag")

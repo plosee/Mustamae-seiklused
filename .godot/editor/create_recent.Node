@@ -1,3 +1,6 @@
+Button
+Popup
+RichTextLabel
 GPUParticles3D
 AnimationPlayer
 Node3D
@@ -7,9 +10,6 @@ MeshInstance3D
 Sprite2D
 Control
 ColorRect
-RichTextLabel
-Popup
-RichTextLabel
 StaticBody3D
 RayCast3D
 Node
@@ -22,7 +22,6 @@ Path3D
 Path2D
 Sprite3D
 HSlider
-Button
 VBoxContainer
 VideoStreamPlayer
 CollisionPolygon3D

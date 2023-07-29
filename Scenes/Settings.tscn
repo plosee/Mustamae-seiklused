@@ -17,11 +17,10 @@ thickness = 30
 color = Color(0, 1, 1, 1)
 thickness = 30
 
-[node name="Settings" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="SettingsNode" type="Popup"]
+process_mode = 3
+size = Vector2i(1920, 1088)
+visible = true
 script = ExtResource("1_ijlta")
 
 [node name="static" type="VideoStreamPlayer" parent="."]
@@ -44,6 +43,18 @@ offset_bottom = 415.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 19
+
+[node name="Back" type="Button" parent="static/SettingsVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_70w8g")
+theme_override_font_sizes/font_size = 80
+text = "Back"
+flat = true
 
 [node name="Show FPS" type="Button" parent="static/SettingsVbox"]
 layout_mode = 2
@@ -146,3 +157,22 @@ theme_override_styles/grabber_area = SubResource("StyleBoxLine_y6mws")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_2vhxl")
 min_value = -30.0
 max_value = 0.0
+
+[node name="Quit" type="Button" parent="static/SettingsVbox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_70w8g")
+theme_override_font_sizes/font_size = 80
+text = "Quit to Menu"
+flat = true
+
+[connection signal="pressed" from="static/SettingsVbox/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="static/SettingsVbox/Show FPS" to="." method="_on_show_fps_pressed"]
+[connection signal="pressed" from="static/SettingsVbox/Limit FPS" to="." method="_on_limit_fps_pressed"]
+[connection signal="pressed" from="static/SettingsVbox/Fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="value_changed" from="static/SettingsVbox/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="pressed" from="static/SettingsVbox/Quit" to="." method="_on_quit_pressed"]

@@ -171,8 +171,7 @@ theme_override_font_sizes/font_size = 120
 text = "No"
 flat = true
 
-[node name="Settings" parent="." instance=ExtResource("3_5urbd")]
-visible = false
+[node name="SettingsNode" parent="." instance=ExtResource("3_5urbd")]
 
 [connection signal="finished" from="BG" to="." method="_on_bg_finished"]
 [connection signal="pressed" from="BG/Version" to="." method="_on_start_pressed"]
@@ -183,3 +182,5 @@ visible = false
 [connection signal="request_completed" from="Buttons/Update/UpdateRequest" to="." method="_on_update_request_request_completed"]
 [connection signal="pressed" from="Buttons/Update/UpdateBG/VBoxContainer/Yeah" to="." method="_on_yeah_pressed"]
 [connection signal="pressed" from="Buttons/Update/UpdateBG/VBoxContainer/Nah" to="." method="_on_nah_pressed"]
+
+[editable path="SettingsNode"]

@@ -3,14 +3,16 @@ extends Control
 var selected = Color(1, 1, 1)
 var unselected = Color(1, 1, 1, 0.25)
 
+signal pause
+
 func _ready():
 	$inv1.color = unselected
 	$inv2.color = unselected
 	$inv3.color = unselected
 
 func _unhandled_input(event):
-	if event is InputEventKey:
-		
+	if event is InputEventKey && event.pressed:
+		print(event)
 		if event.keycode==49:
 			Global.currentslot = 1
 			$inv1.color = selected
@@ -34,6 +36,8 @@ func _unhandled_input(event):
 			$inv1.color = unselected
 			$inv2.color = unselected
 			$inv3.color = unselected
+		elif event.keycode==4194305 && event.pressed:
+			emit_signal("pause")
 	else:
 		pass
 

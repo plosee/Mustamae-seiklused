@@ -8,20 +8,20 @@ var updateurl = "https://liivakast.hkhk.edu.ee/~mlaane/download/update.txt"
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$Buttons/Update/UpdateBG.hide()
-	$Settings.hide()
+	$SettingsNode.hide()
 
 func _process(delta):
 	pass
 	
 func _on_bg_finished():
-	if !$Settings.visible:
+	if !$SettingsNode.visible:
 		$BG.play()
 	
 func _on_start_pressed():
 	get_tree().change_scene_to_file("res://Scenes/debugworld.tscn")
 
 func _on_settings_pressed():
-	$Settings.show()
+	$SettingsNode.show()
 
 func _on_quit_pressed():
 	get_tree().quit()
