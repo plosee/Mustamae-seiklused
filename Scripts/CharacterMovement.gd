@@ -24,7 +24,7 @@ var gravity = 9.8
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	$Head/arms/RootNode/inventory/FPS.visible = Settings.showfps
+	$Head/arms/RootNode/inventory/FPS.visible = Settingsglobal.showfps
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:

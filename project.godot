@@ -19,7 +19,7 @@ config/icon="res://Images/mustamagivapp.png"
 [autoload]
 
 Global="*res://Scripts/Global.gd"
-Settings="*res://Scripts/Settings.gd"
+Settingsglobal="*res://Scripts/settingsglobal.gd"
 
 [display]
 

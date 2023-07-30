@@ -7,50 +7,53 @@ var master_bus = AudioServer.get_bus_index("Master")
 var music_bus = AudioServer.get_bus_index("Music")
 var sfx_bus = AudioServer.get_bus_index("SFX")
 
-var fullscreen = true
-var fpscap = false
-var showfps = false
-
 func _ready():
-	self.hide()
-	
+	# hide settings menu upon start
+	self.hide()	
 	
 func _process(delta):
+	# if settings menu is visible pause game and video
 	if self.visible:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().paused = true
+		$static.paused = false
 	else:
 		get_tree().paused = false
+		$static.paused = true
 		
-	
-#to loop bgv
+# loop bgv
 func _on_static_finished():
 	$static.play()
 
-
 func _on_limit_fps_pressed():
-	fpscap = !fpscap
-	if fpscap:
+	# change fpscap 
+	Settingsglobal.fpscap = !Settingsglobal.fpscap
+	# change corresponding button text /1
+	if Settingsglobal.fpscap == true:
 		$"static/SettingsVbox/Limit FPS".text = "Uncap FPS"
 	else: 
 		$"static/SettingsVbox/Limit FPS".text = "Cap FPS"
 
 func _on_show_fps_pressed():
-	showfps = !showfps
-	if showfps:
+	# fps counter
+	Settingsglobal.showfps = !Settingsglobal.showfps
+	# /2
+	if Settingsglobal.showfps == true:
 		$"static/SettingsVbox/Show FPS".text = "Hide FPS"
 	else:
 		$"static/SettingsVbox/Show FPS".text = "Show FPS"
 
 
 func _on_fullscreen_pressed():
-	fullscreen = !fullscreen
-	if fullscreen:
+	# fullscreen
+	Settingsglobal.fullscreen = !Settingsglobal.fullscreen
+	# /3
+	if Settingsglobal.fullscreen == false:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
-#Audio Buses
+# Audio Buses
 func _on_master_slider_value_changed(value):
 	AudioServer.set_bus_volume_db(master_bus, value)
 	if value == -30:
@@ -74,12 +77,17 @@ func _on_sfx_slider_value_changed(value):
 
 
 func _on_inventory_pause():
+	# on pause show settings menu
 	self.show()
+	$static.paused = false
 
 func _on_back_pressed():
+	# upon exiting settings menu make shit work
 	self.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	$static.paused = true
 	
 func _on_quit_pressed():
+	# go back to main scene when exit pressed
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
