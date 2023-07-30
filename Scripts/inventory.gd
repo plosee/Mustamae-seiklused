@@ -3,7 +3,7 @@ extends Control
 var selected = Color(1, 1, 1)
 var unselected = Color(1, 1, 1, 0.25)
 
-var health = 100
+var health = clamp(80, 0,100)
 
 signal pause
 

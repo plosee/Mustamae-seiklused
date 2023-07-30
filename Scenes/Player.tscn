@@ -278,12 +278,13 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yiwpr")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c70ag"]
-gravity = Vector3(1, 0, 1)
-initial_velocity_max = 2.0
-linear_accel_max = 5.0
-radial_accel_max = 5.0
+spread = 106.5
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 1.0
+linear_accel_max = 1.0
+radial_accel_max = 1.0
 tangential_accel_max = 3.0
-scale_min = 0.2
+scale_min = 0.0
 scale_max = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tg5qd"]
@@ -291,14 +292,13 @@ transparency = 1
 blend_mode = 1
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 1, 1, 0.403922)
-billboard_mode = 3
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
+metallic_specular = 0.0
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 2.3
 
 [sub_resource type="BoxMesh" id="BoxMesh_3hkrd"]
 material = SubResource("StandardMaterial3D_tg5qd")
-size = Vector3(0.5, 0.5, 0.5)
+size = Vector3(2.5, 2.5, 2.5)
 
 [node name="Character" type="Node3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -488,7 +488,7 @@ color = Color(0, 1, 1, 1)
 [node name="KimuParticles" type="GPUParticles3D" parent="CharacterBody3D/Head"]
 transform = Transform3D(0.658676, 0, -0.752426, 0, 1, 0, 0.752426, 0, 0.658676, -0.0445948, 0, 0)
 emitting = false
-amount = 250
+amount = 200
 lifetime = 2.0
 fixed_fps = 60
 visibility_aabb = AABB(-0.486538, -2.65065, -0.435304, 0.990655, 4.81693, 0.870609)
