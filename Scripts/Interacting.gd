@@ -6,32 +6,33 @@ signal syringe
 signal stab
 
 func _process(delta):
-	# Kui kubik/item on olemas, naita kasi
-#	if Global.currentslot == 1 && Global.KubikPickup == true:
-#		$CharacterBody3D/Head/hands/equphand.visible = true
-#	else:
-#		$CharacterBody3D/Head/hands/vasak/kubik.visible = false
-	
 	# Kimu kood
 	if Global.KimuSmoke == false:
 		# lopeta kimu particle
 		$CharacterBody3D/Head/KimuParticles.emitting = false
 		
-	if Global.currentslot == 1 && Global.KubikPickup == true && Input.is_action_just_pressed('interactM1'):
+	if Global.currentslot == 1 && Global.KubikPickup == true && Input.is_action_just_pressed('interactM1'): # animation 1
 		# mangi puff animatsiooni kui m1 vajutatakse
 		$CharacterBody3D/Head/arms/RootNode/vasak/AnimationPlayer.play("vasak-Puff")
 		
-	if Global.currentslot == 1 && Global.KubikPickup == true && Input.is_action_pressed('interactM1'):
+	if Global.currentslot == 1 && Global.KubikPickup == true && Input.is_action_pressed('interactM1'): # animation 2
 		# lopeta puffimine kui samal ajal kimub
-		# kimu signal addib kui kaua puffida saab // hard limit
+		# kimu signal addib kui kaua puffida saab/kui kaua particled valja tulevad
 		kimu.emit()
 		Global.KimuSmoke = false
 
-	if Global.KimuPuffs > 1 && Global.KubikPickup == true && Input.is_action_just_released("interactM1"):
+	if Global.KimuPuffs > 1 && Global.KubikPickup == true && Input.is_action_just_released("interactM1") || Global.KimuCapacity <= 1.0: # animation 3
 		Global.KimuSmoke = true
 		$CharacterBody3D/Head/KimuParticles.emitting = true
-		$CharacterBody3D/Head/arms/RootNode/vasak/AnimationPlayer.play("vasak-PuffStop",)
+		$CharacterBody3D/Head/arms/RootNode/vasak/AnimationPlayer.play("vasak-PuffStop")
+		await get_tree().create_timer(1).timeout
 		# naita particle kuna hingab valja
+		if Global.KimuCapacity <= 1.0:
+			$CharacterBody3D/Head/arms/RootNode/vasak/kubikhand.visible = false
+			$CharacterBody3D/Head/arms/RootNode/vasak/AnimationPlayer.play("vasak-HandDequip")
+			await get_tree().create_timer(1).timeout
+			$CharacterBody3D/Head/arms/RootNode/vasak/AnimationPlayer.play("vasak-Idle")
+			Global.currentslot = 0
 		
 	# Syringe kood
 	if Global.currentslot == 3 && Global.SyringePickup == true && Input.is_action_just_pressed('interactM1'):

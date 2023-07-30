@@ -14,10 +14,14 @@ func _ready():
 
 func _process(delta):
 	$Bars/Health/Bar.size.x = health*4.5
-	$Bars/Vedla/Bar.size.y = Global.KimuCapacity
+	$Bars/Vedla/Bar.size.y = Global.KimuCapacity*2
 
 func _unhandled_input(event):
+	if event is InputEventKey && Global.KubikPickup == false:
+		$inv1/kubik.visible = false
+		
 	if event is InputEventKey && event.pressed:
+		
 		if event.keycode==49:
 			Global.currentslot = 1
 			$inv1.color = selected
@@ -41,6 +45,7 @@ func _unhandled_input(event):
 			$inv1.color = unselected
 			$inv2.color = unselected
 			$inv3.color = unselected
+			
 		elif event.keycode==4194305 && event.pressed:
 			emit_signal("pause")
 	else:

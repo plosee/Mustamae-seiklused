@@ -14,7 +14,7 @@ var SyringeEffect : bool = false
 # Kimusmoke on et naha, kas player higab valja. todo: rework
 var KimuSmoke : bool = false
 # kimu capacity on lis palju vedla veel on
-var KimuCapacity = 0
+var KimuCapacity : float = 100.0
 # KimupuffDemo on tehtud selleks, et seda saaks clampida (min max value)
 var KimuPuffDemo = 1
 # Kimu puffs idee on naha kaua player on kimu sisse hinganud

@@ -93,20 +93,20 @@ vasak-Puff.res::Animation::8453128558204399102::1690546385::0::1::::<><>::
 vasak-PuffIdle.res::Animation::4820117112063063352::1690546385::0::1::::<><>::
 vasak-PuffStop.res::Animation::7850926165502469078::1690546385::0::1::::<><>::
 ::res://Scenes/::1690730166
-DebugWorld.tscn::PackedScene::5848725296584418191::1690730710::0::1::::<><>::uid://f78f8sof67ig::::res://Images/hdri.jpg<>uid://chpi73wnvokhj::::res://Images/dead-grass.jpg<>uid://bu6ql3rpnuvic::::res://Scenes/Player.tscn<>uid://cm3hmpodt6rqa::::res://Scenes/Models/kubik.tscn<>uid://c73wlf43av6jg::::res://Scenes/Models/syringe.tscn<>res://Scripts/syringe.gd<>uid://c8p17wce755dp::::res://Scenes/Models/knife.tscn<>res://Scripts/knife.gd<>uid://b5rnwvqy4hngy::::res://Scenes/Settings.tscn
-Main.tscn::PackedScene::1853826869279305293::1690730552::0::1::::<><>::res://Scripts/Main.gd<>uid://d3ukvs1jnedk8::::res://Fonts/ComicSans.ttf<>uid://b5rnwvqy4hngy::::res://Scenes/Settings.tscn
-Player.tscn::PackedScene::3855185880062012534::1690730555::0::1::::<><>::res://Scripts/CharacterMovement.gd<>res://Scripts/Interacting.gd<>res://Scripts/InteractRay.gd<>uid://d3ukvs1jnedk8::::res://Fonts/ComicSans.ttf<>res://Scripts/arms.gd<>res://Scripts/KubikHand.gd<>uid://bjpi5r8ip4tut::::res://Model.noimport/jauk/Animations/vasak-HandDequip.res<>uid://b4swff40uk0kp::::res://Temp Fold For object import/kubik/kubik.png<>uid://b7wkmj1kf3jug::::res://Model.noimport/jauk/Animations/vasak-HandEquip.res<>res://Scripts/inventory.gd<>uid://x1ysje4pxvd0::::res://Model.noimport/jauk/Animations/vasak-Idle.res<>uid://dso01668idp3s::::res://Model.noimport/jauk/Animations/vasak-Puff.res<>uid://blagkpk3qucpi::::res://Images/file.png<>uid://caw5vibt3gpg7::::res://Model.noimport/jauk/Animations/vasak-PuffIdle.res<>uid://clji58xnkfhnc::::res://Images/knife.png<>uid://dj4buvubh1umo::::res://Model.noimport/jauk/Animations/vasak-PuffStop.res<>uid://6u8dtv01iexy::::res://Images/syringe-145002__340.webp
-Road.tscn::PackedScene::5789174153059073267::1690149005::0::1::::<><>::uid://8xe8u6e6ae84::::res://Images/mustamäe kaart.png<>uid://c8er6gumri4d2::::res://Temp Fold For object import/road/road.jpg
-Settings.tscn::PackedScene::4528010151861678496::1690730555::0::1::::<><>::uid://d3ukvs1jnedk8::::res://Fonts/ComicSans.ttf<>res://Scripts/Settings.gd
-world.tscn::PackedScene::2847394108222116061::1690093019::0::1::::<><>::uid://d11drbd1j06ec::::res://Images/grass.jpg<>uid://cx1ce7jgcu2p7::::res://Scenes/Player.tscn<>uid://ce1gtw3kk7xm3::::res://Temp Fold For object import/kubik/kubik.dae
+DebugWorld.tscn::PackedScene::5848725296584418191::1690737410::0::1::::<><>::uid://f78f8sof67ig::::res://Images/hdri.jpg<>uid://chpi73wnvokhj::::res://Images/dead-grass.jpg<>uid://bu6ql3rpnuvic::::res://Scenes/Player.tscn<>uid://cm3hmpodt6rqa::::res://Scenes/Models/kubik.tscn<>uid://c73wlf43av6jg::::res://Scenes/Models/syringe.tscn<>res://Scripts/syringe.gd<>uid://c8p17wce755dp::::res://Scenes/Models/knife.tscn<>res://Scripts/knife.gd<>uid://b5rnwvqy4hngy::::res://Scenes/Settings.tscn
+Main.tscn::PackedScene::1853826869279305293::1690737077::0::1::::<><>::res://Scripts/Main.gd<>uid://d3ukvs1jnedk8::::res://Fonts/ComicSans.ttf<>uid://b5rnwvqy4hngy::::res://Scenes/Settings.tscn
+Player.tscn::PackedScene::3855185880062012534::1690737464::0::1::::<><>::res://Scripts/CharacterMovement.gd<>res://Scripts/Interacting.gd<>res://Scripts/InteractRay.gd<>uid://d3ukvs1jnedk8::::res://Fonts/ComicSans.ttf<>res://Scripts/arms.gd<>res://Scripts/KubikHand.gd<>uid://bjpi5r8ip4tut::::res://Model.noimport/jauk/Animations/vasak-HandDequip.res<>uid://b4swff40uk0kp::::res://Temp Fold For object import/kubik/kubik.png<>uid://b7wkmj1kf3jug::::res://Model.noimport/jauk/Animations/vasak-HandEquip.res<>res://Scripts/inventory.gd<>uid://x1ysje4pxvd0::::res://Model.noimport/jauk/Animations/vasak-Idle.res<>uid://dso01668idp3s::::res://Model.noimport/jauk/Animations/vasak-Puff.res<>uid://blagkpk3qucpi::::res://Images/file.png<>uid://caw5vibt3gpg7::::res://Model.noimport/jauk/Animations/vasak-PuffIdle.res<>uid://clji58xnkfhnc::::res://Images/knife.png<>uid://dj4buvubh1umo::::res://Model.noimport/jauk/Animations/vasak-PuffStop.res<>uid://6u8dtv01iexy::::res://Images/syringe-145002__340.webp
+Road.tscn::PackedScene::5789174153059073267::1690149005::0::1::::<><>::uid://8xe8u6e6ae84
+Settings.tscn::PackedScene::4528010151861678496::1690737079::0::1::::<><>::uid://d3ukvs1jnedk8::::res://Fonts/ComicSans.ttf<>res://Scripts/Settings.gd
+world.tscn::PackedScene::2847394108222116061::1690093019::0::1::::<><>::uid://d11drbd1j06ec
 ::res://Scenes/Models/::1690495992
-JakeAnimated.tscn::PackedScene::4400478822740880748::1690730555::0::1::::<><>::res://Model.noimport/jauk/Material_009.material<>res://Model.noimport/jauk/Material_006.material<>res://Model.noimport/jauk/SKIN.material<>res://Model.noimport/jauk/ENTR_UIRE.material<>res://Model.noimport/jauk/Material_001.material<>res://Model.noimport/jauk/Material_011.material<>res://Model.noimport/jauk/Material_012.material
-knife.tscn::PackedScene::7121675819798082525::1690730555::0::1::::<><>::uid://cg3gtyh2qj7ug::::res://Temp Fold For object import/knife.obj<>uid://b2o00c7jpurt7::::res://Temp Fold For object import/tool.material
-kubik.tscn::PackedScene::5673357326272937708::1690142009::0::1::::<><>::res://Scripts/KubikInteract.gd<>uid://b4swff40uk0kp::::res://Temp Fold For object import/kubik/kubik.png
+JakeAnimated.tscn::PackedScene::4400478822740880748::1690737079::0::1::::<><>::res://Model.noimport/jauk/Material_009.material<>res://Model.noimport/jauk/Material_006.material<>res://Model.noimport/jauk/SKIN.material<>res://Model.noimport/jauk/ENTR_UIRE.material<>res://Model.noimport/jauk/Material_001.material<>res://Model.noimport/jauk/Material_011.material<>res://Model.noimport/jauk/Material_012.material
+knife.tscn::PackedScene::7121675819798082525::1690737079::0::1::::<><>::uid://cg3gtyh2qj7ug::::res://Temp Fold For object import/knife.obj<>uid://b2o00c7jpurt7::::res://Temp Fold For object import/tool.material
+kubik.tscn::PackedScene::5673357326272937708::1690142009::0::1::::<><>::res://Scripts/KubikInteract.gd<>uid://b4swff40uk0kp
 syringe.tscn::PackedScene::7078042667179860380::1690093019::0::1::::<><>::
-::res://Scripts/::1690731814
+::res://Scripts/::1690736548
 arms.gd::GDScript::-1::1690653813::0::1::::<>Node3D<>::
-CharacterMovement.gd::GDScript::-1::1690730166::0::1::::<>CharacterBody3D<>::
+CharacterMovement.gd::GDScript::-1::1690737073::0::1::::<>CharacterBody3D<>::
 Global.gd::GDScript::-1::1690730166::0::1::::<>Node<>::
 Interacting.gd::GDScript::-1::1690700292::0::1::::<>Node3D<>::
 InteractRay.gd::GDScript::-1::1690546174::0::1::::<>RayCast3D<>::
@@ -117,20 +117,21 @@ KubikInteract.gd::GDScript::-1::1690401982::0::1::::<>Node3D<>::
 KubikPickup.gd::GDScript::-1::1690400164::0::1::::<>Node3D<>::
 main.gd::GDScript::-1::1690700292::0::1::::<>Control<>::
 NPC_Jaak.gd::GDScript::-1::1690546174::0::1::::<>Node3D<>::
-Settings.gd::GDScript::-1::1690731814::0::1::::<>Popup<>::
+Settings.gd::GDScript::-1::1690737410::0::1::::<>Popup<>::
+settingsglobal.gd::GDScript::-1::1690736693::0::1::::<>Node<>::
 syringe.gd::GDScript::-1::1689969800::0::1::::<>Node3D<>::
 ::res://Temp Fold For object import/::1690546177
-arms.tscn::PackedScene::8001338713282540325::1690730555::0::1::::<><>::
+arms.tscn::PackedScene::8001338713282540325::1690737079::0::1::::<><>::
 download (2).jpg.001.jpg::CompressedTexture2D::6414654552972290622::1689782071::1689782312::1::::<><>::
 knife.obj::PackedScene::5252176510991425558::1689782071::1690736412::1::::<><>::
-tool.dae::PackedScene::5528759330888242017::1689782071::1690736412::1::::<><>::uid://cxnkonlf66jrq::::res://Temp Fold For object import/download (2).jpg.001.jpg
-tool.material::StandardMaterial3D::4311983475053808154::1690400164::0::1::::<><>::uid://cxnkonlf66jrq::::res://Temp Fold For object import/download (2).jpg.001.jpg
+tool.dae::PackedScene::5528759330888242017::1689782071::1690736412::1::::<><>::uid://cxnkonlf66jrq
+tool.material::StandardMaterial3D::4311983475053808154::1690400164::0::1::::<><>::uid://cxnkonlf66jrq
 ::res://Temp Fold For object import/Kass/::1690353419
 47805660-ginger-cat-fur-for-texture-or-backgrounds.webp::CompressedTexture2D::7413461149849124638::1689782071::1689782312::1::::<><>::
 catfase.png::CompressedTexture2D::1961470334682206873::1689782071::1689782312::1::::<><>::
 FL.obj::Mesh::6187581068926554411::1689782071::1690736411::1::::<><>::
 FR.obj::Mesh::2801280751693833263::1689782071::1690736411::1::::<><>::
-kiisu.dae::PackedScene::2189672636655345060::1689782071::1690736412::1::::<><>::uid://ddvevfb103nhm::::res://Temp Fold For object import/Kass/47805660-ginger-cat-fur-for-texture-or-backgrounds.webp<>uid://27feode7d1cv::::res://Temp Fold For object import/Kass/catfase.png
+kiisu.dae::PackedScene::2189672636655345060::1689782071::1690736412::1::::<><>::uid://ddvevfb103nhm
 Material_001.material::StandardMaterial3D::-1::1689782071::0::1::::<><>::
 RL.obj::Mesh::235270471090629585::1689782071::1690736411::1::::<><>::
 RR.obj::Mesh::5568464164477492889::1689782071::1690736411::1::::<><>::
@@ -142,12 +143,12 @@ Material.material::StandardMaterial3D::-1::1689782071::0::1::::<><>::
 Material_002.material::StandardMaterial3D::-1::1689782071::0::1::::<><>::
 Realistic Procedural Wood Texture Light.material::StandardMaterial3D::-1::1689782071::0::1::::<><>::
 ::res://Temp Fold For object import/kubik/::1690353421
-kubik.dae::PackedScene::5107669994821906800::1689782071::1690736414::1::::<><>::uid://b4swff40uk0kp::::res://Temp Fold For object import/kubik/kubik.png
+kubik.dae::PackedScene::5107669994821906800::1689782071::1690736414::1::::<><>::uid://b4swff40uk0kp
 kubik.obj::Mesh::4563049361988702682::1689782071::1690736411::1::::<><>::
 kubik.png::CompressedTexture2D::4460400960158616247::1689782071::1689782312::1::::<><>::
 Material.material::StandardMaterial3D::-1::1689782071::0::1::::<><>::res://Temp Fold For object import/kubik/kubik.png
 salty.png::CompressedTexture2D::1843718623789668244::1689782071::1689782312::1::::<><>::
-saltykubik.dae::PackedScene::897542493743551674::1689782071::1690736413::1::::<><>::uid://1jd1nqgbckam::::res://Temp Fold For object import/kubik/salty.png
+saltykubik.dae::PackedScene::897542493743551674::1689782071::1690736413::1::::<><>::uid://1jd1nqgbckam
 ::res://Temp Fold For object import/paul/::1690353420
 ENTR_UIRE.material::StandardMaterial3D::-1::1689782071::0::1::::<><>::
 Jake_Paul1.webp::CompressedTexture2D::9075989265825019678::1689782071::1689782312::1::::<><>::
@@ -157,12 +158,12 @@ Material_009.material::StandardMaterial3D::-1::1689782071::0::1::::<><>::res://T
 Material_011.material::StandardMaterial3D::-1::1689782071::0::1::::<><>::
 Material_012.material::StandardMaterial3D::-1::1689782071::0::1::::<><>::res://Temp Fold For object import/paul/nike-air-force-1-gs-valge-arpq.webp
 nike-air-force-1-gs-valge-arpq.webp::CompressedTexture2D::6676985575043185258::1689782071::1689782312::1::::<><>::
-paulbod.dae::PackedScene::6916985496878095316::1689782071::1690736413::1::::<><>::uid://d2kqhncofsa1k::::res://Temp Fold For object import/paul/Jake_Paul1.webp<>uid://c2em8hkegoew5::::res://Temp Fold For object import/paul/nike-air-force-1-gs-valge-arpq.webp
+paulbod.dae::PackedScene::6916985496878095316::1689782071::1690736413::1::::<><>::uid://d2kqhncofsa1k
 SKIN.material::StandardMaterial3D::-1::1689782071::0::1::::<><>::
 SKIN_002.material::StandardMaterial3D::-1::1689782071::0::1::::<><>::
 ::res://Temp Fold For object import/road/::1690353420
 Material.material::StandardMaterial3D::-1::1689782071::0::1::::<><>::res://Temp Fold For object import/road/road.jpg
-road.dae::PackedScene::8876939616763110845::1689782071::1690736413::1::::<><>::uid://c8er6gumri4d2::::res://Temp Fold For object import/road/road.jpg
+road.dae::PackedScene::8876939616763110845::1689782071::1690736413::1::::<><>::uid://c8er6gumri4d2
 road.jpg::CompressedTexture2D::7098418613550071621::1689782071::1689782312::1::::<><>::
 ::res://Temp Fold For object import/syringe/::1690353420
 Material.material::StandardMaterial3D::-1::1689782071::0::1::::<><>::
@@ -190,7 +191,7 @@ lights_002.material::StandardMaterial3D::-1::1689782071::0::1::::<><>::
 lights_006.material::StandardMaterial3D::-1::1689782071::0::1::::<><>::
 lights_010.material::StandardMaterial3D::-1::1689782071::0::1::::<><>::
 tire.material::StandardMaterial3D::-1::1689782071::0::1::::<><>::res://Temp Fold For object import/truck/trucktire.png
-truck.dae::PackedScene::3268934995477963328::1689782071::1690736412::1::::<><>::uid://bdaghv4sq3th3::::res://Temp Fold For object import/truck/trucktire.png<>uid://b6xn836unue7g::::res://Temp Fold For object import/truck/truckgrillie.jpg<>uid://bd3qhwrist6s6::::res://Temp Fold For object import/truck/Untitled.png
+truck.dae::PackedScene::3268934995477963328::1689782071::1690736412::1::::<><>::uid://bdaghv4sq3th3
 truckgrillie.jpg::CompressedTexture2D::4610605296389918982::1689782071::1689782312::1::::<><>::
 trucktire.png::CompressedTexture2D::2597365165751154102::1689782071::1689782312::1::::<><>::
 trucktrailer.material::StandardMaterial3D::-1::1689782071::0::1::::<><>::res://Temp Fold For object import/truck/Untitled.png
