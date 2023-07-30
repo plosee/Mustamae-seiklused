@@ -287,9 +287,8 @@ scale_min = 0.2
 scale_max = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tg5qd"]
-transparency = 4
+transparency = 1
 blend_mode = 1
-shading_mode = 2
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 1, 1, 0.403922)
 billboard_mode = 3
@@ -491,6 +490,7 @@ transform = Transform3D(0.658676, 0, -0.752426, 0, 1, 0, 0.752426, 0, 0.658676, 
 emitting = false
 amount = 250
 lifetime = 2.0
+fixed_fps = 60
 visibility_aabb = AABB(-0.486538, -2.65065, -0.435304, 0.990655, 4.81693, 0.870609)
 process_material = SubResource("ParticleProcessMaterial_c70ag")
 draw_pass_1 = SubResource("BoxMesh_3hkrd")

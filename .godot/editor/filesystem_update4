@@ -1,12 +1,7 @@
-res://Scenes/DebugWorld.tscn
-res://Scripts/Global.gd
-res://Scripts/Interacting.gd
-res://Scripts/inventory.gd
-res://Scripts/KubikHand.gd
 res://Scenes/Main.tscn
+res://Scenes/DebugWorld.tscn
 res://Scenes/Player.tscn
 res://Scenes/Models/knife.tscn
 res://Scenes/Models/JakeAnimated.tscn
 res://Temp Fold For object import/arms.tscn
 res://Scenes/Settings.tscn
-res://Scripts/arms.gd
