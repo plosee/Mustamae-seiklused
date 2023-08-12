@@ -11,11 +11,11 @@ func _process(delta):
 		# lopeta kimu particle
 		$CharacterBody3D/Head/KimuParticles.emitting = false
 		
-	if Global.currentslot == 1 && Global.KubikPickup == true && Input.is_action_just_pressed('interactM1'): # animation 1
+	if Global.currentslot == 1 && Global.KubikPickup == true && Input.is_action_just_pressed('interactM1') && Global.KimuPuffs < 500: # animation 1
 		# mangi puff animatsiooni kui m1 vajutatakse
 		$CharacterBody3D/Head/arms/RootNode/vasak/AnimationPlayer.play("vasak-Puff")
 		
-	if Global.currentslot == 1 && Global.KubikPickup == true && Input.is_action_pressed('interactM1'): # animation 2
+	if Global.currentslot == 1 && Global.KubikPickup == true && Input.is_action_pressed('interactM1') && Global.KimuPuffs < 500: # animation 2
 		# lopeta puffimine kui samal ajal kimub
 		# kimu signal addib kui kaua puffida saab/kui kaua particled valja tulevad
 		kimu.emit()
@@ -24,11 +24,12 @@ func _process(delta):
 	if $CharacterBody3D/Head/KimuParticles.emitting:
 		$CharacterBody3D/Head/arms/RootNode/inventory.health += 0.1
 		
-	if Global.KimuPuffs > 1 && Global.KubikPickup == true && Input.is_action_just_released("interactM1") || Global.KimuCapacity <= 1.0: # animation 3
+	if Global.KimuPuffs > 1 && Global.KubikPickup == true && Input.is_action_just_released("interactM1") || Global.KimuCapacity <= 1.0 || Global.KimuPuffs == 500: # animation 3
 		Global.KimuSmoke = true
 		$CharacterBody3D/Head/KimuParticles.emitting = true
 		$CharacterBody3D/Head/arms/RootNode/vasak/AnimationPlayer.play("vasak-PuffStop")
 		await get_tree().create_timer(1).timeout
+		print("phase 3")
 		# naita particle kuna hingab valja
 		if Global.KimuCapacity <= 1.0:
 			$CharacterBody3D/Head/arms/RootNode/vasak/kubikhand.visible = false
@@ -36,6 +37,9 @@ func _process(delta):
 			await get_tree().create_timer(1).timeout
 			$CharacterBody3D/Head/arms/RootNode/vasak/AnimationPlayer.play("vasak-Idle")
 			Global.currentslot = 0
+			Global.KimuCapacity = 100.0
+			Global.KubikPickup = false
+			print("unequipped")
 		
 	# Syringe kood
 	if Global.currentslot == 3 && Global.SyringePickup == true && Input.is_action_just_pressed('interactM1'):
