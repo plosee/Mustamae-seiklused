@@ -3,7 +3,7 @@ extends Control
 var selected = Color(1, 1, 1)
 var unselected = Color(1, 1, 1, 0.25)
 
-var health = clamp(80, 0,100)
+
 
 signal pause
 
@@ -13,7 +13,7 @@ func _ready():
 	$inv3.color = unselected
 
 func _process(delta):
-	$Bars/Health/Bar.size.x = health*4.5
+	$Bars/Health/Bar.size.x = Global.health*4.5
 	$Bars/Vedla/Bar.size.y = Global.KimuCapacity*2
 
 func _unhandled_input(event):

@@ -17,3 +17,5 @@ var KimuSmoke : bool = false
 var KimuCapacity : float = 5.0
 # KimupuffDemo on tehtud selleks, et seda saaks clampida (min max value)
 var KimuPuffs = 1
+
+var health = 80

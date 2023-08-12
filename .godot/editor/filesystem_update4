@@ -1,5 +1,4 @@
 res://Scenes/Main.tscn
-res://Scripts/Global.gd
 res://Scenes/DebugWorld.tscn
 res://Scenes/Player.tscn
 res://Scenes/Models/knife.tscn

@@ -22,14 +22,15 @@ func _process(delta):
 		Global.KimuSmoke = false
 
 	if $CharacterBody3D/Head/KimuParticles.emitting:
-		$CharacterBody3D/Head/arms/RootNode/inventory.health += 0.1
+		if Global.health < 101:
+			$CharacterBody3D/Head/arms/RootNode/inventory.health += 0.1
 		
 	if Global.KimuPuffs > 1 && Global.KubikPickup == true && Input.is_action_just_released("interactM1") || Global.KimuCapacity <= 1.0 || Global.KimuPuffs == 500: # animation 3
 		Global.KimuSmoke = true
 		$CharacterBody3D/Head/KimuParticles.emitting = true
 		$CharacterBody3D/Head/arms/RootNode/vasak/AnimationPlayer.play("vasak-PuffStop")
 		await get_tree().create_timer(1).timeout
-		print("phase 3")
+		
 		# naita particle kuna hingab valja
 		if Global.KimuCapacity <= 1.0:
 			$CharacterBody3D/Head/arms/RootNode/vasak/kubikhand.visible = false
@@ -39,7 +40,6 @@ func _process(delta):
 			Global.currentslot = 0
 			Global.KimuCapacity = 100.0
 			Global.KubikPickup = false
-			print("unequipped")
 		
 	# Syringe kood
 	if Global.currentslot == 3 && Global.SyringePickup == true && Input.is_action_just_pressed('interactM1'):
