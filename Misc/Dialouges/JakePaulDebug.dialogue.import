@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_8"
+type="Resource"
+uid="uid://dgybq2jyri6s5"
+path="res://.godot/imported/JakePaulDebug.dialogue-258bdb738e14dd170e197d9bcc377664.tres"
+
+[deps]
+
+source_file="res://Misc/Dialouges/JakePaulDebug.dialogue"
+dest_files=["res://.godot/imported/JakePaulDebug.dialogue-258bdb738e14dd170e197d9bcc377664.tres"]
+
+[params]
+
+defaults=true

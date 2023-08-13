@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b3xvijimtypng"]
+[gd_scene load_steps=15 format=3 uid="uid://b3xvijimtypng"]
 
 [ext_resource type="Material" path="res://Model.noimport/jauk/Material_009.material" id="1"]
 [ext_resource type="Material" path="res://Model.noimport/jauk/Material_006.material" id="2"]
@@ -152,52 +152,6 @@ _surfaces = [{
 "vertex_data": PackedByteArray(39, 87, 224, 61, 180, 237, 180, 190, 88, 2, 114, 63, 2, 1, 252, 126, 2, 1, 126, 191, 39, 87, 224, 61, 180, 237, 180, 190, 88, 2, 114, 63, 252, 126, 4, 129, 255, 127, 252, 254, 39, 87, 224, 61, 180, 237, 180, 190, 88, 2, 114, 63, 4, 129, 2, 1, 255, 127, 252, 254, 67, 170, 224, 61, 47, 54, 31, 190, 74, 227, 113, 63, 252, 126, 4, 129, 255, 127, 252, 254, 67, 170, 224, 61, 47, 54, 31, 190, 74, 227, 113, 63, 4, 129, 2, 1, 255, 127, 252, 254, 67, 170, 224, 61, 47, 54, 31, 190, 74, 227, 113, 63, 0, 0, 6, 130, 252, 254, 126, 191, 123, 42, 251, 61, 92, 42, 186, 190, 136, 100, 62, 190, 2, 1, 252, 126, 2, 1, 126, 191, 123, 42, 251, 61, 92, 42, 186, 190, 136, 100, 62, 190, 4, 129, 2, 1, 255, 127, 252, 254, 123, 42, 251, 61, 92, 42, 186, 190, 136, 100, 62, 190, 0, 0, 0, 0, 255, 127, 252, 254, 151, 125, 251, 61, 127, 175, 41, 190, 192, 224, 62, 190, 4, 129, 2, 1, 255, 127, 252, 254, 151, 125, 251, 61, 127, 175, 41, 190, 192, 224, 62, 190, 0, 0, 0, 0, 255, 127, 252, 254, 151, 125, 251, 61, 127, 175, 41, 190, 192, 224, 62, 190, 0, 0, 6, 130, 252, 254, 126, 191, 72, 67, 17, 190, 122, 197, 180, 190, 100, 178, 113, 63, 2, 1, 252, 126, 2, 1, 126, 191, 72, 67, 17, 190, 122, 197, 180, 190, 100, 178, 113, 63, 252, 126, 4, 129, 255, 127, 252, 254, 72, 67, 17, 190, 122, 197, 180, 190, 100, 178, 113, 63, 250, 125, 0, 0, 255, 127, 252, 254, 186, 25, 17, 190, 185, 229, 30, 190, 86, 147, 113, 63, 0, 0, 6, 130, 252, 254, 126, 191, 186, 25, 17, 190, 185, 229, 30, 190, 86, 147, 113, 63, 252, 126, 4, 129, 255, 127, 252, 254, 186, 25, 17, 190, 185, 229, 30, 190, 86, 147, 113, 63, 250, 125, 0, 0, 255, 127, 252, 254, 158, 217, 3, 190, 34, 2, 186, 190, 88, 164, 63, 190, 0, 0, 0, 0, 255, 127, 252, 254, 158, 217, 3, 190, 34, 2, 186, 190, 88, 164, 63, 190, 2, 1, 252, 126, 2, 1, 126, 191, 158, 217, 3, 190, 34, 2, 186, 190, 88, 164, 63, 190, 250, 125, 0, 0, 255, 127, 252, 254, 16, 176, 3, 190, 9, 95, 41, 190, 144, 32, 64, 190, 0, 0, 0, 0, 255, 127, 252, 254, 16, 176, 3, 190, 9, 95, 41, 190, 144, 32, 64, 190, 0, 0, 6, 130, 252, 254, 126, 191, 16, 176, 3, 190, 9, 95, 41, 190, 144, 32, 64, 190, 250, 125, 0, 0, 255, 127, 252, 254)
 }]
 
-[sub_resource type="Animation" id="8"]
-resource_name = "Cube001Action"
-length = 3.33333
-
-[sub_resource type="Animation" id="9"]
-resource_name = "bundaAction"
-length = 3.33333
-
-[sub_resource type="Animation" id="10"]
-resource_name = "kehaAction"
-length = 3.33333
-
-[sub_resource type="Animation" id="11"]
-resource_name = "legAction"
-length = 3.33333
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("reg")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array()
-
-[sub_resource type="Animation" id="12"]
-resource_name = "napp2001Action"
-length = 3.33333
-
-[sub_resource type="Animation" id="13"]
-resource_name = "napp2003Action"
-length = 3.33333
-
-[sub_resource type="Animation" id="14"]
-resource_name = "regAction"
-length = 3.33333
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5fh1y"]
-_data = {
-"Cube001Action": SubResource("8"),
-"bundaAction": SubResource("9"),
-"kehaAction": SubResource("10"),
-"legAction": SubResource("11"),
-"napp2001Action": SubResource("12"),
-"napp2003Action": SubResource("13"),
-"regAction": SubResource("14")
-}
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_pdobg"]
 size = Vector3(1, 3.40467, 1)
 
@@ -232,13 +186,9 @@ mesh = SubResource("5")
 transform = Transform3D(0.2152, -0.000166407, 0.00249318, 0.00161257, -0.000797555, -0.33251, 0.0002166, 0.17127, -0.00154599, -0.010725, 3.17222, -0.00627828)
 mesh = SubResource("6")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_5fh1y")
-}
-
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." groups=["NPC"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93529, 0)
+collision_layer = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_pdobg")

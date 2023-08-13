@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cplfwex3fof48"]
+[gd_scene load_steps=17 format=3 uid="uid://cplfwex3fof48"]
 
 [ext_resource type="Texture2D" uid="uid://f78f8sof67ig" path="res://Images/hdri.jpg" id="1_a377d"]
 [ext_resource type="Texture2D" uid="uid://chpi73wnvokhj" path="res://Images/dead-grass.jpg" id="2_m8qti"]
@@ -8,7 +8,9 @@
 [ext_resource type="Script" path="res://Scripts/syringe.gd" id="5_mblc2"]
 [ext_resource type="PackedScene" uid="uid://c8p17wce755dp" path="res://Scenes/Models/knife.tscn" id="7_mesgh"]
 [ext_resource type="Script" path="res://Scripts/knife.gd" id="8_1kl28"]
+[ext_resource type="PackedScene" uid="uid://b3xvijimtypng" path="res://Scenes/Models/JakeAnimated.tscn" id="9_i81fm"]
 [ext_resource type="PackedScene" uid="uid://b5rnwvqy4hngy" path="res://Scenes/Settings.tscn" id="9_js3a7"]
+[ext_resource type="Script" path="res://Scenes/Models/JakeAnimated.gd" id="10_vykvs"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_elx7x"]
 panorama = ExtResource("1_a377d")
@@ -32,7 +34,7 @@ uv1_scale = Vector3(-100, -100, -100)
 [node name="World" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.883316, -0.154426, -0.442612, -0.468221, 0.244594, 0.849084, -0.0228607, 0.957249, -0.288359, 6.0052, 4.38704, -7.20322)
+transform = Transform3D(-0.970393, -0.222925, -0.0929574, 0.086185, -0.679125, 0.728945, -0.22563, 0.699352, 0.678232, 6.0052, 4.38704, -7.20322)
 light_color = Color(0.666667, 0.537255, 0, 1)
 shadow_enabled = true
 shadow_bias = 0.0
@@ -87,8 +89,16 @@ transform = Transform3D(0.108393, 0, 0, 0, 0.162887, 0, 0, 0, 0.116701, 6.74229,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.72221, 9.31348)
 script = ExtResource("8_1kl28")
 
-[node name="SettingsNode" parent="." instance=ExtResource("9_js3a7")]
+[node name="NPC" type="Node3D" parent="Interactables"]
 
+[node name="JakePaul" parent="Interactables/NPC" instance=ExtResource("9_i81fm")]
+transform = Transform3D(0.997733, 0, -0.0673012, 0, 1, 0, 0.0673012, 0, 0.997733, 4.2641, 0.578739, -6.17024)
+script = ExtResource("10_vykvs")
+
+[node name="SettingsNode" parent="." instance=ExtResource("9_js3a7")]
+visible = false
+
+[connection signal="NPC" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/NPC/JakePaul" method="_on_interact_ray_npc"]
 [connection signal="knife" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/knife" method="_on_interact_ray_knife"]
 [connection signal="kubikinteract" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/kubik" method="_on_interact_ray_kubikinteract"]
 [connection signal="syringe" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/syringe" method="_on_interact_ray_syringe"]

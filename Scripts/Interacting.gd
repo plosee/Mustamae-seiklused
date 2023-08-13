@@ -45,6 +45,7 @@ func _process(delta):
 	if Global.currentslot == 3 && Global.SyringePickup == true && Input.is_action_just_pressed('interactM1'):
 		# Speed boost 5 sekundit
 		Global.SyringeEffect = true
+		Global.SyringePickup = false
 		await get_tree().create_timer(5).timeout
 		Global.SyringeEffect = false 
 		

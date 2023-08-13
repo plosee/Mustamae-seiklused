@@ -1,0 +1,13 @@
+~ start
+
+Jaak Paulus: [[Munand|Tere|Tsau]], kuidas sul tiksub?
+- Esimene valik
+	Jaak Paulus: You picked the first one.
+	=> start
+- Teine Valik
+	Jaak Paulus: You picked the second one.
+	=> start
+- Proovime uuesti => start
+- Mine minema pedo! => END
+
+=> END

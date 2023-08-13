@@ -1,11 +1,11 @@
 ColorRect
 Control
+Node3D
 Button
 Popup
 RichTextLabel
 GPUParticles3D
 AnimationPlayer
-Node3D
 CollisionShape3D
 Area3D
 MeshInstance3D
