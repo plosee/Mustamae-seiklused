@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://cplfwex3fof48"]
 
-[ext_resource type="Texture2D" uid="uid://f78f8sof67ig" path="res://Images/hdri.jpg" id="1_a377d"]
+[ext_resource type="Texture2D" uid="uid://d0kam32aaify" path="res://Images/hdri.png" id="1_4a62p"]
 [ext_resource type="Texture2D" uid="uid://chpi73wnvokhj" path="res://Images/dead-grass.jpg" id="2_m8qti"]
 [ext_resource type="PackedScene" uid="uid://bu6ql3rpnuvic" path="res://Scenes/Player.tscn" id="2_nffhn"]
 [ext_resource type="PackedScene" uid="uid://cm3hmpodt6rqa" path="res://Scenes/Models/kubik.tscn" id="3_ev8i3"]
@@ -12,15 +12,15 @@
 [ext_resource type="PackedScene" uid="uid://b5rnwvqy4hngy" path="res://Scenes/Settings.tscn" id="9_js3a7"]
 [ext_resource type="Script" path="res://Scenes/Models/JakeAnimated.gd" id="10_vykvs"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_elx7x"]
-panorama = ExtResource("1_a377d")
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bokw3"]
+panorama = ExtResource("1_4a62p")
 
-[sub_resource type="Sky" id="Sky_2k6ws"]
-sky_material = SubResource("PanoramaSkyMaterial_elx7x")
+[sub_resource type="Sky" id="Sky_lr7tk"]
+sky_material = SubResource("PanoramaSkyMaterial_bokw3")
 
 [sub_resource type="Environment" id="Environment_1s8ko"]
 background_mode = 2
-sky = SubResource("Sky_2k6ws")
+sky = SubResource("Sky_lr7tk")
 fog_light_color = Color(0.517647, 0.552941, 0.607843, 1)
 fog_density = 0.0
 fog_sky_affect = 0.77
