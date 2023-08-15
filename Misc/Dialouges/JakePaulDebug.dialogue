@@ -1,5 +1,5 @@
 ~ start
-
+do Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 Jaak Paulus: [[Munand|Tere|Tsau]], kuidas sul tiksub?
 - Esimene valik
 	Jaak Paulus: You picked the first one.
@@ -8,6 +8,8 @@ Jaak Paulus: [[Munand|Tere|Tsau]], kuidas sul tiksub?
 	Jaak Paulus: You picked the second one.
 	=> start
 - Proovime uuesti => start
-- Mine minema pedo! => END
+- Mine minema pedo!
+	do Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	=> END
 
 => END

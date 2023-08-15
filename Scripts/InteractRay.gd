@@ -37,7 +37,7 @@ func _process(delta):
 				NPC.emit()
 				# using the dialogue addon to get textbox n shit
 				DialogueManager.show_example_dialogue_balloon(load("res://Misc/Dialouges/JakePaulDebug.dialogue"), "start")
-				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+				
 				
 	else:
 		$crosshair.text = "[center]·[/center]"

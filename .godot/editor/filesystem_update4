@@ -1,10 +1,9 @@
-res://Scenes/Models/JakeAnimated.gd
-res://Scenes/Player.tscn
-res://Scripts/Interacting.gd
+res://Scenes/DebugWorld.tscn
 res://Scripts/InteractRay.gd
 res://Scenes/Main.tscn
-res://Scenes/DebugWorld.tscn
+res://Scenes/Player.tscn
 res://Scenes/Models/knife.tscn
 res://Scenes/Models/JakeAnimated.tscn
 res://Temp Fold For object import/arms.tscn
 res://Scenes/Settings.tscn
+res://Scripts/Interacting.gd
