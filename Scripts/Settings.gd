@@ -14,12 +14,18 @@ func _ready():
 func _process(delta):
 	# if settings menu is visible pause game and video
 	if self.visible:
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().paused = true
 		$static.paused = false
 	else:
 		get_tree().paused = false
 		$static.paused = true
+
+func _unhandled_input(event):
+		if event.keycode == 27:
+			if self.visible:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			else:
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
 # loop bgv
 func _on_static_finished():
