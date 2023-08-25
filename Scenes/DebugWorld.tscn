@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cplfwex3fof48"]
+[gd_scene load_steps=18 format=3 uid="uid://cplfwex3fof48"]
 
 [ext_resource type="Texture2D" uid="uid://d0kam32aaify" path="res://Images/hdri.png" id="1_4a62p"]
 [ext_resource type="Texture2D" uid="uid://chpi73wnvokhj" path="res://Images/dead-grass.jpg" id="2_m8qti"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b3xvijimtypng" path="res://Scenes/Models/JakeAnimated.tscn" id="9_i81fm"]
 [ext_resource type="PackedScene" uid="uid://b5rnwvqy4hngy" path="res://Scenes/Settings.tscn" id="9_js3a7"]
 [ext_resource type="Script" path="res://Scenes/Models/JakeAnimated.gd" id="10_vykvs"]
+[ext_resource type="PackedScene" uid="uid://078hmwvxjwvn" path="res://Scenes/Models/viin.tscn" id="11_ysmsv"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bokw3"]
 panorama = ExtResource("1_4a62p")
@@ -94,6 +95,9 @@ script = ExtResource("8_1kl28")
 [node name="JakePaul" parent="Interactables/NPC" instance=ExtResource("9_i81fm")]
 transform = Transform3D(0.997733, 0, -0.0673012, 0, 1, 0, 0.0673012, 0, 0.997733, 4.2641, 0.578739, -6.17024)
 script = ExtResource("10_vykvs")
+
+[node name="viin test" parent="Interactables" instance=ExtResource("11_ysmsv")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1.6427, -6.07436)
 
 [node name="SettingsNode" parent="." instance=ExtResource("9_js3a7")]
 visible = false
