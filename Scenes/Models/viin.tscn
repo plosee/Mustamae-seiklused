@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://078hmwvxjwvn"]
+[gd_scene load_steps=15 format=3 uid="uid://078hmwvxjwvn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ouis"]
 transparency = 1
@@ -179,10 +179,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_a4y0w")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_lb1k4"]
+
 [node name="viin test" type="Node3D" groups=["Viin"]]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.363968, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="viin" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.920252, 0, 0, 0, 2.38082, 0, 0, 0, 0.920252, 0, -1.02231, 0)
@@ -208,3 +208,10 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 4.09631, 0, 0, 0, 1, 0, 0.555626, 0)
 mesh = SubResource("ArrayMesh_0kpo4")
 skeleton = NodePath("")
+
+[node name="Area3D" type="Area3D" parent="." groups=["Viin"]]
+collision_layer = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(3.38027, 0, 0, 0, 10.6094, 0, 0, 0, 3.54311, 0, 0, 0)
+shape = SubResource("BoxShape3D_lb1k4")

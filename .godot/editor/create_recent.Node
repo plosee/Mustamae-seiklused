@@ -1,4 +1,5 @@
 CollisionShape3D
+Area3D
 RigidBody3D
 BaseDialogueTestScene
 ColorRect
@@ -9,7 +10,6 @@ Popup
 RichTextLabel
 GPUParticles3D
 AnimationPlayer
-Area3D
 MeshInstance3D
 Sprite2D
 StaticBody3D

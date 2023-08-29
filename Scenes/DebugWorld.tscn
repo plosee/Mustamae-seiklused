@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cplfwex3fof48"]
+[gd_scene load_steps=19 format=3 uid="uid://cplfwex3fof48"]
 
 [ext_resource type="Texture2D" uid="uid://d0kam32aaify" path="res://Images/hdri.png" id="1_4a62p"]
 [ext_resource type="Texture2D" uid="uid://chpi73wnvokhj" path="res://Images/dead-grass.jpg" id="2_m8qti"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b5rnwvqy4hngy" path="res://Scenes/Settings.tscn" id="9_js3a7"]
 [ext_resource type="Script" path="res://Scenes/Models/JakeAnimated.gd" id="10_vykvs"]
 [ext_resource type="PackedScene" uid="uid://078hmwvxjwvn" path="res://Scenes/Models/viin.tscn" id="11_ysmsv"]
+[ext_resource type="Script" path="res://Scripts/Viin.gd" id="12_xnl2j"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bokw3"]
 panorama = ExtResource("1_4a62p")
@@ -98,11 +99,13 @@ script = ExtResource("10_vykvs")
 
 [node name="viin test" parent="Interactables" instance=ExtResource("11_ysmsv")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1.6427, -6.07436)
+script = ExtResource("12_xnl2j")
 
 [node name="SettingsNode" parent="." instance=ExtResource("9_js3a7")]
 visible = false
 
 [connection signal="NPC" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/NPC/JakePaul" method="_on_interact_ray_npc"]
+[connection signal="Viin" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/viin test" method="_on_interact_ray_viin"]
 [connection signal="knife" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/knife" method="_on_interact_ray_knife"]
 [connection signal="kubikinteract" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/kubik" method="_on_interact_ray_kubikinteract"]
 [connection signal="syringe" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/syringe" method="_on_interact_ray_syringe"]

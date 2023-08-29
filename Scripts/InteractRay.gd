@@ -7,13 +7,14 @@ signal syringe
 signal knife
 signal kubikrefill
 signal NPC
+signal Viin
 
 func _process(delta):
 	collider = get_collider()
 	
 	if collider != null:
 		
-		if collider.is_in_group("kubik1") || collider.is_in_group("syringe") || collider.is_in_group("knife") || collider.is_in_group("NPC"):
+		if collider.is_in_group("kubik1") || collider.is_in_group("syringe") || collider.is_in_group("knife") || collider.is_in_group("NPC") || collider.is_in_group("Viin"):
 			$crosshair.text ="[center]Interact[e][/center]" #ui prompt
 			
 			# kubiku pickup kood, barebones refill mechanic
@@ -37,6 +38,10 @@ func _process(delta):
 				NPC.emit()
 				# using the dialogue addon to get textbox n shit
 				DialogueManager.show_example_dialogue_balloon(load("res://Misc/Dialouges/JakePaulDebug.dialogue"), "start")
+			# viin pickup
+			elif Input.is_action_just_pressed("interactE") && collider.is_in_group("Viin"):
+				Viin.emit()
+				Global.ViinPickup = 1
 				
 				
 	else:
