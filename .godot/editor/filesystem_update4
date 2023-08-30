@@ -7,3 +7,7 @@ res://Scenes/Settings.tscn
 res://Scenes/Models/viin.tscn
 res://Scripts/arms.gd
 res://Scripts/Settings.gd
+res://Scripts/KubikHand.gd
+res://Scripts/InteractRay.gd
+res://Scripts/KubikInteract.gd
+res://Scripts/syringe.gd

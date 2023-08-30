@@ -84,6 +84,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0461006, 9.53674e-07, -0.1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.27814, -7.48561)
 script = ExtResource("5_mblc2")
 
+[node name="kubik2" parent="Interactables" instance=ExtResource("3_ev8i3")]
+transform = Transform3D(0.0259876, 0, 0, 0, 0.369867, 0, 0, 0, 0.507515, 9.00319, 2.05769, -4.64443)
+
 [node name="kubik" parent="Interactables" instance=ExtResource("3_ev8i3")]
 transform = Transform3D(0.108393, 0, 0, 0, 0.162887, 0, 0, 0, 0.116701, 6.74229, 1.76947, 0.127717)
 
@@ -108,11 +111,13 @@ visible = false
 [connection signal="Viin" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/viin test" method="_on_interact_ray_viin"]
 [connection signal="knife" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/knife" method="_on_interact_ray_knife"]
 [connection signal="kubikinteract" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/kubik" method="_on_interact_ray_kubikinteract"]
+[connection signal="kubikrefill" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Character/CharacterBody3D/Head/arms/RootNode/vasak/kubikhand" method="_on_interact_ray_kubikrefill"]
 [connection signal="syringe" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/syringe" method="_on_interact_ray_syringe"]
 [connection signal="animation_finished" from="Character/CharacterBody3D/Head/arms/RootNode/vasak/AnimationPlayer" to="Character" method="_on_animation_player_animation_finished"]
 [connection signal="pause" from="Character/CharacterBody3D/Head/arms/RootNode/inventory" to="SettingsNode" method="_on_inventory_pause"]
 
 [editable path="Character"]
 [editable path="Interactables/syringe"]
+[editable path="Interactables/kubik2"]
 [editable path="Interactables/kubik"]
 [editable path="Interactables/knife"]

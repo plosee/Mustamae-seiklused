@@ -20,10 +20,8 @@ func _process(delta):
 			# kubiku pickup kood, barebones refill mechanic
 			if Input.is_action_just_pressed("interactE") && collider.is_in_group("kubik1"):
 				kubikinteract.emit()
-				if Global.KubikPickup == true:
-						emit_signal("kubikrefill")
-				else:
-					Global.KubikPickup = true
+				Global.KubikPickup = true
+				Global.KimuCapacity = 100.0
 				
 			# syringe pickup
 			elif Input.is_action_just_pressed("interactE") && collider.is_in_group("syringe"):
