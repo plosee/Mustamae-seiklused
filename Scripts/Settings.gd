@@ -21,11 +21,8 @@ func _process(delta):
 		$static.paused = true
 
 func _unhandled_input(event):
-		if event.keycode == 27:
-			if self.visible:
-				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			else:
-				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		if event.keycode == 4194305:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
 # loop bgv
 func _on_static_finished():
@@ -90,8 +87,10 @@ func _on_inventory_pause():
 func _on_back_pressed():
 	# upon exiting settings menu make shit work
 	self.hide()
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$static.paused = true
+	if Global.in_main == false:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 	
 func _on_quit_pressed():
 	# go back to main scene when exit pressed

@@ -6,3 +6,4 @@ res://Scenes/Models/knife.tscn
 res://Scenes/Settings.tscn
 res://Scenes/Models/viin.tscn
 res://Scripts/arms.gd
+res://Scripts/Settings.gd
