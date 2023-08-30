@@ -17,6 +17,18 @@ func _unhandled_input(event):
 		if Global.currentslot == 1 && Global.KubikPickup == true:
 			# kubik visible kui kubik inventorys ja kubiku slot
 			$RootNode/vasak/kubikhand.visible = true
+			$RootNode/vasak/knife.visible = false
+			$RootNode/vasak/syringe.visible = false
+		elif Global.currentslot == 2 && Global.KnifePickup == true:
+			$RootNode/vasak/knife.visible = true
+			$RootNode/vasak/kubikhand.visible = false
+			$RootNode/vasak/syringe.visible = false
+		elif Global.SyringePickup == true && Global.currentslot == 3:
+			$RootNode/vasak/syringe.visible = true
+			$RootNode/vasak/kubikhand.visible = false
+			$RootNode/vasak/knife.visible = false
 			
 		else:
 			$RootNode/vasak/kubikhand.visible = false
+			$RootNode/vasak/knife.visible = false
+			$RootNode/vasak/syringe.visible = false
