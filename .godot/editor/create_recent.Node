@@ -1,3 +1,4 @@
+RichTextLabel
 CollisionShape3D
 Area3D
 RigidBody3D
@@ -7,7 +8,6 @@ Control
 Node3D
 Button
 Popup
-RichTextLabel
 GPUParticles3D
 AnimationPlayer
 MeshInstance3D
