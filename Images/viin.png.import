@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cn1qq65efdjq4"
-path.s3tc="res://.godot/imported/viin.png-33b0a8468c5a2b801ebdd133af4e666d.s3tc.ctex"
+path="res://.godot/imported/viin.png-33b0a8468c5a2b801ebdd133af4e666d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Images/viin.png"
-dest_files=["res://.godot/imported/viin.png-33b0a8468c5a2b801ebdd133af4e666d.s3tc.ctex"]
+dest_files=["res://.godot/imported/viin.png-33b0a8468c5a2b801ebdd133af4e666d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

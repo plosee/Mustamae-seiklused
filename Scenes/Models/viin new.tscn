@@ -115,7 +115,6 @@ shadow_mesh = SubResource("ArrayMesh_epjvr")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_boiw7"]
 resource_name = "viin"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 metallic = 0.4
 roughness = 0.140028
 
@@ -153,7 +152,7 @@ shadow_mesh = SubResource("ArrayMesh_qcm7p")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oar5j"]
 cull_mode = 2
-albedo_color = Color(1, 0.803922, 0.854902, 1)
+albedo_color = Color(1, 1, 1, 0)
 albedo_texture = ExtResource("1_asq8l")
 normal_enabled = true
 normal_texture = ExtResource("1_asq8l")
