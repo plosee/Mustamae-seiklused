@@ -1,6 +1,7 @@
-RichTextLabel
 CollisionShape3D
 Area3D
+MeshInstance3D
+RichTextLabel
 RigidBody3D
 BaseDialogueTestScene
 ColorRect
@@ -10,7 +11,6 @@ Button
 Popup
 GPUParticles3D
 AnimationPlayer
-MeshInstance3D
 Sprite2D
 StaticBody3D
 RayCast3D

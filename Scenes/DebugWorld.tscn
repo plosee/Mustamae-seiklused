@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cplfwex3fof48"]
+[gd_scene load_steps=20 format=3 uid="uid://cplfwex3fof48"]
 
 [ext_resource type="Texture2D" uid="uid://d0kam32aaify" path="res://Images/hdri.png" id="1_4a62p"]
 [ext_resource type="Texture2D" uid="uid://chpi73wnvokhj" path="res://Images/dead-grass.jpg" id="2_m8qti"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Scenes/Models/JakeAnimated.gd" id="10_vykvs"]
 [ext_resource type="PackedScene" uid="uid://078hmwvxjwvn" path="res://Scenes/Models/viin.tscn" id="11_ysmsv"]
 [ext_resource type="Script" path="res://Scripts/Viin.gd" id="12_xnl2j"]
+[ext_resource type="PackedScene" uid="uid://dxpucvx2ykihp" path="res://Scenes/Models/viin new.tscn" id="13_32j2u"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_bokw3"]
 panorama = ExtResource("1_4a62p")
@@ -77,6 +78,10 @@ transform = Transform3D(-1.25929, -8.55838e-07, 3.08676e-07, 0, 3.21316, 3.60605
 [node name="AnimationPlayer" parent="Character/CharacterBody3D/Head/arms/RootNode/vasak" index="0"]
 speed_scale = 2.0
 
+[node name="Itempickup" parent="Character/CharacterBody3D/Head/arms/RootNode/inventory" index="5"]
+visible = false
+offset_bottom = 126.0
+
 [node name="Interactables" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0461006, 9.53674e-07, -0.107237)
 
@@ -101,8 +106,11 @@ transform = Transform3D(0.997733, 0, -0.0673012, 0, 1, 0, 0.0673012, 0, 0.997733
 script = ExtResource("10_vykvs")
 
 [node name="viin test" parent="Interactables" instance=ExtResource("11_ysmsv")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 1.6427, -6.07436)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -2.48382, 1.62137, -6.69888)
 script = ExtResource("12_xnl2j")
+
+[node name="viin" parent="Interactables" instance=ExtResource("13_32j2u")]
+transform = Transform3D(0.335932, 0, 0.497141, 0, 0.4, 0, -0.497141, 0, 0.335932, -4.09992, 3, -6.09717)
 
 [node name="SettingsNode" parent="." instance=ExtResource("9_js3a7")]
 visible = false
