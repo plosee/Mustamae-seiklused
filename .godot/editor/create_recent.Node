@@ -1,8 +1,9 @@
+MeshInstance3D
+GridMap
 RichTextLabel
 CollisionShape3D
 RigidBody3D
 Area3D
-MeshInstance3D
 BaseDialogueTestScene
 ColorRect
 Control
