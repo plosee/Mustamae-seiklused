@@ -3,8 +3,6 @@ extends Control
 var selected = Color(1, 1, 1)
 var unselected = Color(1, 1, 1, 0.25)
 
-
-
 signal pause
 
 func _ready():
@@ -15,6 +13,7 @@ func _ready():
 func _process(delta):
 	$Bars/Health/Bar.size.x = Global.health*4.5
 	$Bars/Vedla/Bar.size.y = Global.KimuCapacity*2
+	$Viin/ViinCount.text = "[center]" + str(Global.ViinPickup) + "[/center]"
 
 func _unhandled_input(event):
 	if event is InputEventKey && Global.KubikPickup == false:
