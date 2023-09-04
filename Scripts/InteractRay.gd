@@ -22,25 +22,38 @@ func _process(delta):
 				kubikinteract.emit()
 				Global.KubikPickup = true
 				Global.KimuCapacity = 100.0
+				$Itempickup.text = "[center]Picked up Kubik[/center]"
+				await get_tree().create_timer(3).timeout
+				$Itempickup.text = ""
 				
 			# syringe pickup
 			elif Input.is_action_just_pressed("interactE") && collider.is_in_group("syringe"):
 				syringe.emit()
 				Global.SyringePickup = true
+				$Itempickup.text = "[center]Picked up Syringe[/center]"
+				await get_tree().create_timer(3).timeout
+				$Itempickup.text = ""
 			# nuga pickup
 			elif Input.is_action_just_pressed("interactE") && collider.is_in_group("knife"):
 				knife.emit()
 				Global.KnifePickup = true
+				$Itempickup.text = "[center]Picked up Knife[/center]"
+				await get_tree().create_timer(3).timeout
+				$Itempickup.text = ""
+			# viin pickup
+			elif Input.is_action_just_pressed("interactE") && collider.is_in_group("Viin"):
+				Viin.emit()
+				Global.ViinPickup = 1
+				$Itempickup.text = "[center]Picked up Vodka[/center]"
+				await get_tree().create_timer(3).timeout
+				$Itempickup.text = ""
 			# NPC interaction
 			elif Input.is_action_just_pressed("interactE") && collider.is_in_group("NPC"):
 				NPC.emit()
 				# using the dialogue addon to get textbox n shit
 				DialogueManager.show_example_dialogue_balloon(load("res://Misc/Dialouges/JakePaulDebug.dialogue"), "start")
-			# viin pickup
-			elif Input.is_action_just_pressed("interactE") && collider.is_in_group("Viin"):
-				Viin.emit()
-				Global.ViinPickup = 1
-				
+
 				
 	else:
 		$crosshair.text = "[center]·[/center]"
+		
