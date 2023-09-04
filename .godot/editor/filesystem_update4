@@ -1,8 +1,6 @@
-res://Scenes/Models/viin new.tscn
+res://Scenes/Models/viin.tscn
 res://Scenes/Main.tscn
 res://Scenes/DebugWorld.tscn
 res://Scenes/Player.tscn
 res://Scenes/Models/knife.tscn
 res://Scenes/Settings.tscn
-res://Scenes/Models/viin.tscn
-res://Scripts/InteractRay.gd

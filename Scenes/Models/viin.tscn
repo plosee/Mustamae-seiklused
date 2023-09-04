@@ -1,13 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://078hmwvxjwvn"]
+[gd_scene load_steps=19 format=3 uid="uid://078hmwvxjwvn"]
 
+[ext_resource type="Script" path="res://Scripts/Viin.gd" id="1_6gt22"]
 [ext_resource type="Texture2D" uid="uid://cn1qq65efdjq4" path="res://Images/viin.png" id="1_mpnp7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gs58p"]
 resource_name = "glass"
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.906332, 0.906332, 0.906332, 0.533858)
-metallic = 0.4
-roughness = 0.140028
+albedo_color = Color(0.905882, 0.905882, 0.905882, 0.192157)
+metallic = 0.92
+roughness = 0.0
+refraction_enabled = true
+refraction_scale = 0.3
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_byj0y"]
 _surfaces = [{
@@ -115,8 +118,12 @@ shadow_mesh = SubResource("ArrayMesh_epjvr")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_boiw7"]
 resource_name = "viin"
 vertex_color_use_as_albedo = true
-metallic = 0.4
-roughness = 0.140028
+albedo_color = Color(1, 1, 1, 0.368627)
+metallic = 1.0
+metallic_specular = 0.6
+roughness = 0.0
+refraction_enabled = true
+refraction_scale = -0.76
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qcm7p"]
 _surfaces = [{
@@ -201,6 +208,7 @@ shadow_mesh = SubResource("ArrayMesh_et5c5")
 
 [node name="viin" type="Node3D" groups=["Viin"]]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.363968, 0)
+script = ExtResource("1_6gt22")
 
 [node name="bottl" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 409.631, 0, -100, -4.88318e-05, 0, 0.555626, 0)
@@ -208,22 +216,22 @@ mesh = SubResource("ArrayMesh_c2k8g")
 skeleton = NodePath("")
 
 [node name="neck" type="MeshInstance3D" parent="."]
-transform = Transform3D(50.3431, 0, 0, 0, -6.00136e-06, 84.5448, 0, -50.3431, -1.00785e-05, 0.00328804, 3.24011, 0)
+transform = Transform3D(52, 0, 0, 0, -2.27299e-06, 87.327, 0, -52, -3.81718e-06, 0.00328804, 3.24011, 0)
 mesh = SubResource("ArrayMesh_5icbk")
 skeleton = NodePath("")
 
 [node name="cap" type="MeshInstance3D" parent="."]
-transform = Transform3D(55.0794, 0, 0, 0, -6.56598e-06, 28.649, 0, -55.0794, -3.41523e-06, 0.00328804, 4.3975, 0)
+transform = Transform3D(57, 0, 0, 0, -2.49155e-06, 29.648, 0, -57, -1.29596e-06, 0.00328804, 4.3975, 0)
 mesh = SubResource("ArrayMesh_eqnp8")
 skeleton = NodePath("")
 
-[node name="Cylinder" type="MeshInstance3D" parent="."]
+[node name="liquid" type="MeshInstance3D" parent="."]
 transform = Transform3D(92.0252, 0, 0, 0, -1.09703e-05, 238.082, 0, -92.0252, -2.83816e-05, 0, -1.02231, 0)
 mesh = SubResource("ArrayMesh_lg0or")
 skeleton = NodePath("")
 
 [node name="label" type="MeshInstance3D" parent="."]
-transform = Transform3D(135.763, 0, 0, 0, 173.69, 1.02498e-05, 0, -1.31132e-05, 135.763, 0, -0.821312, -0.0341462)
+transform = Transform3D(135.763, 0, 0, 0, 173.69, 1.02498e-05, 0, -1.31132e-05, 135.763, 0, -0.821312, 0.0740592)
 material_override = SubResource("StandardMaterial3D_oar5j")
 mesh = SubResource("ArrayMesh_pd3po")
 skeleton = NodePath("")

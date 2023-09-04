@@ -1,8 +1,8 @@
 CollisionShape3D
+RigidBody3D
 Area3D
 MeshInstance3D
 RichTextLabel
-RigidBody3D
 BaseDialogueTestScene
 ColorRect
 Control
