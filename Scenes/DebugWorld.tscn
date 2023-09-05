@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cplfwex3fof48"]
+[gd_scene load_steps=25 format=3 uid="uid://cplfwex3fof48"]
 
 [ext_resource type="Texture2D" uid="uid://d0kam32aaify" path="res://Images/hdri.png" id="1_4a62p"]
 [ext_resource type="Script" path="res://Scripts/InteractableCulling.gd" id="1_rld20"]
@@ -6,10 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bu6ql3rpnuvic" path="res://Scenes/Player.tscn" id="2_nffhn"]
 [ext_resource type="PackedScene" uid="uid://cm3hmpodt6rqa" path="res://Scenes/Models/kubik.tscn" id="3_ev8i3"]
 [ext_resource type="PackedScene" uid="uid://c73wlf43av6jg" path="res://Scenes/Models/syringe.tscn" id="4_xsx6c"]
-[ext_resource type="Script" path="res://Scripts/syringe.gd" id="5_mblc2"]
-[ext_resource type="Script" path="res://Scripts/kubik2.gd" id="7_dss7n"]
 [ext_resource type="PackedScene" uid="uid://c8p17wce755dp" path="res://Scenes/Models/knife.tscn" id="7_mesgh"]
-[ext_resource type="Script" path="res://Scripts/knife.gd" id="8_1kl28"]
 [ext_resource type="Texture2D" uid="uid://b4swff40uk0kp" path="res://Temp Fold For object import/kubik/kubik.png" id="8_2ribj"]
 [ext_resource type="PackedScene" uid="uid://b3xvijimtypng" path="res://Scenes/Models/JakeAnimated.tscn" id="9_i81fm"]
 [ext_resource type="PackedScene" uid="uid://b5rnwvqy4hngy" path="res://Scenes/Settings.tscn" id="9_js3a7"]
@@ -152,16 +149,20 @@ transform = Transform3D(-1.25929, -8.55838e-07, 3.08676e-07, 0, 3.21316, 3.60605
 [node name="AnimationPlayer" parent="Character/CharacterBody3D/Head/arms/RootNode/vasak" index="0"]
 speed_scale = 2.0
 
+[node name="knife" parent="Character/CharacterBody3D/Head/arms/RootNode/vasak" index="2"]
+script = null
+
+[node name="syringe" parent="Character/CharacterBody3D/Head/arms/RootNode/vasak" index="3"]
+script = null
+
 [node name="Interactables" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0461006, 9.53674e-07, -0.107237)
 
 [node name="syringe" parent="Interactables" instance=ExtResource("4_xsx6c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.27814, -7.48561)
-script = ExtResource("5_mblc2")
 
 [node name="kubik2" type="Node3D" parent="Interactables"]
 transform = Transform3D(0.0259876, 0, 0, 0, 0.369867, 0, 0, 0, 0.507515, 9.00319, 2.05769, -4.64443)
-script = ExtResource("7_dss7n")
 
 [node name="kubik" type="MeshInstance3D" parent="Interactables/kubik2"]
 transform = Transform3D(1.34, 0, 0, 0, 6.1, 0, 0, 0, 1.34, 0, 0, 0)
@@ -181,10 +182,10 @@ shape = SubResource("BoxShape3D_pefse")
 
 [node name="kubik" parent="Interactables" instance=ExtResource("3_ev8i3")]
 transform = Transform3D(0.108393, 0, 0, 0, 0.162887, 0, 0, 0, 0.116701, 6.74229, 1.76947, 0.127717)
+script = null
 
 [node name="knife" parent="Interactables" instance=ExtResource("7_mesgh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.72221, 9.31348)
-script = ExtResource("8_1kl28")
 
 [node name="NPC" type="Node3D" parent="Interactables"]
 
