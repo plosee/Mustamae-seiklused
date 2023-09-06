@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxf0f3ky52e7k"]
+[gd_scene load_steps=4 format=3 uid="uid://cv5jfs41gvwpy"]
 
 [ext_resource type="Script" path="res://Scripts/loadingscreen.gd" id="1_i2fj4"]
+[ext_resource type="VideoStream" path="res://Misc/0001-0100.ogv" id="2_1rk33"]
+[ext_resource type="FontFile" uid="uid://d3ukvs1jnedk8" path="res://Fonts/ComicSans.ttf" id="3_y7geb"]
 
 [node name="loadingscreen" type="Control"]
 layout_mode = 3
@@ -11,10 +13,31 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i2fj4")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 280.0
-offset_top = 360.0
-offset_right = 1664.0
-offset_bottom = 976.0
-theme_override_font_sizes/font_size = 361
+offset_right = 1943.0
+offset_bottom = 1098.0
+color = Color(0, 0, 0, 1)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 3.0
+offset_right = 1591.0
+offset_bottom = 1091.0
+stream = ExtResource("2_1rk33")
+autoplay = true
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 1016.0
+offset_right = 1932.0
+offset_bottom = 1319.0
+theme_override_fonts/normal_font = ExtResource("3_y7geb")
+theme_override_font_sizes/normal_font_size = 51
+bbcode_enabled = true
+text = "[center]Loading...[center]"
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

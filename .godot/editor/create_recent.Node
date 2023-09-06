@@ -1,12 +1,13 @@
+RichTextLabel
+VideoStreamPlayer
+ColorRect
 ProgressBar
 MeshInstance3D
 GridMap
-RichTextLabel
 CollisionShape3D
 RigidBody3D
 Area3D
 BaseDialogueTestScene
-ColorRect
 Control
 Node3D
 Button
@@ -27,6 +28,5 @@ Path2D
 Sprite3D
 HSlider
 VBoxContainer
-VideoStreamPlayer
 CollisionPolygon3D
 HTTPRequest

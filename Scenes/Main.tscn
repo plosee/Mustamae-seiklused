@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://1oai05h2jp62"]
 
-[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_dxews"]
-[ext_resource type="FontFile" uid="uid://d3ukvs1jnedk8" path="res://Fonts/ComicSans.ttf" id="2_kv5l7"]
-[ext_resource type="PackedScene" uid="uid://b5rnwvqy4hngy" path="res://Scenes/Settings.tscn" id="3_5urbd"]
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_n2so4"]
+[ext_resource type="FontFile" uid="uid://d3ukvs1jnedk8" path="res://Fonts/ComicSans.ttf" id="2_l43lu"]
+[ext_resource type="PackedScene" uid="uid://b5rnwvqy4hngy" path="res://Scenes/Settings.tscn" id="3_ww6pp"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_tygis"]
 file = "res://Misc/Mustamägi.ogv"
@@ -14,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_dxews")
+script = ExtResource("1_n2so4")
 
 [node name="BG" type="VideoStreamPlayer" parent="."]
 layout_mode = 0
@@ -31,7 +31,7 @@ offset_right = 1513.0
 offset_bottom = 215.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 49
-theme_override_fonts/normal_font = ExtResource("2_kv5l7")
+theme_override_fonts/normal_font = ExtResource("2_l43lu")
 theme_override_font_sizes/normal_font_size = 190
 bbcode_enabled = true
 text = "[wave freq=10 amp=100] 
@@ -47,7 +47,7 @@ offset_bottom = 1073.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
 theme_override_constants/outline_size = 29
-theme_override_fonts/font = ExtResource("2_kv5l7")
+theme_override_fonts/font = ExtResource("2_l43lu")
 theme_override_font_sizes/font_size = 55
 text = "Version:  Alpha  0.1"
 flat = true
@@ -70,7 +70,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
 theme_override_constants/outline_size = 30
-theme_override_fonts/font = ExtResource("2_kv5l7")
+theme_override_fonts/font = ExtResource("2_l43lu")
 theme_override_font_sizes/font_size = 120
 text = "Start"
 flat = true
@@ -81,7 +81,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
 theme_override_constants/outline_size = 30
-theme_override_fonts/font = ExtResource("2_kv5l7")
+theme_override_fonts/font = ExtResource("2_l43lu")
 theme_override_font_sizes/font_size = 120
 text = "Settings"
 flat = true
@@ -92,7 +92,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
 theme_override_constants/outline_size = 30
-theme_override_fonts/font = ExtResource("2_kv5l7")
+theme_override_fonts/font = ExtResource("2_l43lu")
 theme_override_font_sizes/font_size = 120
 text = "Quit"
 flat = true
@@ -110,7 +110,7 @@ theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 44
-theme_override_fonts/font = ExtResource("2_kv5l7")
+theme_override_fonts/font = ExtResource("2_l43lu")
 theme_override_font_sizes/font_size = 120
 text = "Check For Update"
 flat = true
@@ -143,7 +143,7 @@ theme_override_constants/separation = 46
 [node name="UpdateNotice" type="RichTextLabel" parent="Buttons/Update/UpdateBG/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 4
-theme_override_fonts/normal_font = ExtResource("2_kv5l7")
+theme_override_fonts/normal_font = ExtResource("2_l43lu")
 theme_override_font_sizes/normal_font_size = 88
 bbcode_enabled = true
 text = "
@@ -156,7 +156,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
 theme_override_constants/outline_size = 44
-theme_override_fonts/font = ExtResource("2_kv5l7")
+theme_override_fonts/font = ExtResource("2_l43lu")
 theme_override_font_sizes/font_size = 120
 text = "Yes"
 flat = true
@@ -166,12 +166,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.27451, 0.27451, 0.27451, 1)
 theme_override_constants/outline_size = 44
-theme_override_fonts/font = ExtResource("2_kv5l7")
+theme_override_fonts/font = ExtResource("2_l43lu")
 theme_override_font_sizes/font_size = 120
 text = "No"
 flat = true
 
-[node name="SettingsNode" parent="." instance=ExtResource("3_5urbd")]
+[node name="SettingsNode" parent="." instance=ExtResource("3_ww6pp")]
 
 [connection signal="finished" from="BG" to="." method="_on_bg_finished"]
 [connection signal="pressed" from="BG/Version" to="." method="_on_start_pressed"]

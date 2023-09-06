@@ -1,11 +1,1 @@
 res://Scenes/CityGridMap.tres
-res://Scenes/loadingscreen.tscn
-res://Scenes/loadingscreen.gd
-res://Scenes/Main.tscn
-res://Scenes/Player.tscn
-res://Scenes/Models/knife.tscn
-res://Scenes/Settings.tscn
-res://Scenes/Models/viin.tscn
-res://Scenes/Road.tscn
-res://Scenes/Models/city_assets.tscn
-res://Scenes/DebugWorld.tscn

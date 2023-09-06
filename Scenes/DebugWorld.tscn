@@ -98,7 +98,7 @@ size = Vector3(2.61765, 13.9184, 2.77019)
 script = ExtResource("1_rld20")
 
 [node name="KimuParticles" type="GPUParticles3D" parent="."]
-transform = Transform3D(0.658676, 0, -0.752426, 0, 1, 0, 0.752426, 0, 0.658676, -0.0445948, 0, 0)
+transform = Transform3D(0.658676, 0, -0.752426, 0, 1, 0, 0.752426, 0, 0.658676, -0.0445948, -11.0392, 0)
 emitting = false
 lifetime = 2.0
 one_shot = true
