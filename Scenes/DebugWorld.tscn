@@ -149,12 +149,6 @@ transform = Transform3D(-1.25929, -8.55838e-07, 3.08676e-07, 0, 3.21316, 3.60605
 [node name="AnimationPlayer" parent="Character/CharacterBody3D/Head/arms/RootNode/vasak" index="0"]
 speed_scale = 2.0
 
-[node name="knife" parent="Character/CharacterBody3D/Head/arms/RootNode/vasak" index="2"]
-script = null
-
-[node name="syringe" parent="Character/CharacterBody3D/Head/arms/RootNode/vasak" index="3"]
-script = null
-
 [node name="Interactables" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0461006, 9.53674e-07, -0.107237)
 
@@ -182,7 +176,6 @@ shape = SubResource("BoxShape3D_pefse")
 
 [node name="kubik" parent="Interactables" instance=ExtResource("3_ev8i3")]
 transform = Transform3D(0.108393, 0, 0, 0, 0.162887, 0, 0, 0, 0.116701, 6.74229, 1.76947, 0.127717)
-script = null
 
 [node name="knife" parent="Interactables" instance=ExtResource("7_mesgh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.72221, 9.31348)
