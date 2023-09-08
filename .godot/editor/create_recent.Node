@@ -1,11 +1,11 @@
+CollisionShape3D
+Area3D
 NavigationRegion3D
 CSGCombiner3D
 NavigationAgent3D
 CharacterBody3D
-CollisionShape3D
 WorldEnvironment
 Camera3D
-Area3D
 MeshInstance3D
 RichTextLabel
 VideoStreamPlayer

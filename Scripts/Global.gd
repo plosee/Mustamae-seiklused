@@ -20,7 +20,7 @@ var KimuCapacity : float = 5.0
 var KimuPuffs = 1
 
 var health : float = 100
-
+var enemy_health : float = 100
 var in_main : bool = true
 
 func _process(delta):

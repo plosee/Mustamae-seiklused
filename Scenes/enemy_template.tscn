@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnuclohj2vqco"]
+[gd_scene load_steps=6 format=3 uid="uid://bnuclohj2vqco"]
 
 [ext_resource type="Script" path="res://Scripts/enemytemplate.gd" id="1_tmjnu"]
 
@@ -7,7 +7,13 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hwv2j"]
 height = 1.92095
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_p8p3w"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hn0w4"]
+
 [node name="CharacterBody3D" type="CharacterBody3D" groups=["enemy"]]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.952358, 0, 0.881854, 0)
 script = ExtResource("1_tmjnu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -18,3 +24,20 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_hwv2j")
+
+[node name="Hitbox" type="Area3D" parent="."]
+
+[node name="DetectArea" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1.98173, 0, 0, 0, 3.53598, 0, 0, 0, 2.00699, 0, 0, 0)
+shape = SubResource("BoxShape3D_p8p3w")
+
+[node name="AreaEyes" type="Area3D" parent="."]
+
+[node name="Eyesight" type="CollisionShape3D" parent="AreaEyes"]
+transform = Transform3D(12.8457, 0, 0, 0, 0.443949, 0, 0, 0, 14.4443, 0, 0, 0)
+shape = SubResource("CylinderShape3D_hn0w4")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_area_detect_area_entered"]
+[connection signal="area_exited" from="Hitbox" to="." method="_on_area_detect_area_exited"]
+[connection signal="area_entered" from="AreaEyes" to="." method="_on_area_eyes_area_entered"]
+[connection signal="area_exited" from="AreaEyes" to="." method="_on_area_eyes_area_exited"]
