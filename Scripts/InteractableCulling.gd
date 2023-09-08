@@ -1,6 +1,12 @@
 extends Node
 
+@onready var player = $Character/CharacterBody3D
 
+# tapa end ma tean mida ma teen ning ma ei kahetse seda
+# kuni ma kahetsen seda
+func _physics_process(delta):
+	get_tree().call_group("enemy","update_target_location", player.global_transform.origin)
+	
 # stop looking at this bitch
 func _ready():
 	$KimuParticles.emitting = true
