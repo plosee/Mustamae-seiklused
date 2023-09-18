@@ -40,7 +40,6 @@ func _unhandled_input(event):
 			$inv2.color = unselected
 			
 		elif event.keycode==32:
-			Global.currentslot = 0
 			$inv1.color = unselected
 			$inv2.color = unselected
 			$inv3.color = unselected

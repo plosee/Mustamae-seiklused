@@ -10,8 +10,9 @@ func _unhandled_input(event):
 			$RootNode/vasak/AnimationPlayer.play("vasak-HandEquip")
 			# equip animatsioon kui inv slotte vajutatakse
 			
-		elif event.keycode==32:
+		elif event.keycode==32 && Global.currentslot != 0:
 			$RootNode/vasak/AnimationPlayer.play("vasak-HandDequip")
+			Global.currentslot = 0
 			# stowing animation kui 'spacebar' vajutatakse
 			
 		if Global.currentslot == 1 && Global.KubikPickup == true:
