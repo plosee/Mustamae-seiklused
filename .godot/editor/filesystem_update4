@@ -1,6 +1,11 @@
+res://Scenes/Main.tscn
+res://Scenes/CityGridMap.tres
 res://Scripts/enemytemplate.gd
 res://Scenes/Player.tscn
-res://Scenes/CityGridMap.tres
-res://Scripts/Global.gd
-res://Scenes/enemy_template.tscn
+res://Scenes/Models/knife.tscn
+res://Scenes/Settings.tscn
+res://Scenes/Models/viin.tscn
+res://Scenes/Road.tscn
+res://Scenes/Models/city_assets.tscn
+res://Scenes/loadingscreen.tscn
 res://Scenes/DebugWorld.tscn

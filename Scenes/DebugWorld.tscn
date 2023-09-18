@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b3xvijimtypng" path="res://Scenes/Models/JakeAnimated.tscn" id="9_i81fm"]
 [ext_resource type="PackedScene" uid="uid://b5rnwvqy4hngy" path="res://Scenes/Settings.tscn" id="9_js3a7"]
 [ext_resource type="Script" path="res://Scenes/Models/JakeAnimated.gd" id="10_vykvs"]
-[ext_resource type="PackedScene" uid="uid://bnuclohj2vqco" path="res://Scenes/enemy_template.tscn" id="11_8jdut"]
+[ext_resource type="PackedScene" path="res://Scenes/enemy_template.tscn" id="11_8jdut"]
 [ext_resource type="PackedScene" uid="uid://078hmwvxjwvn" path="res://Scenes/Models/viin.tscn" id="11_ysmsv"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_vp72u"]

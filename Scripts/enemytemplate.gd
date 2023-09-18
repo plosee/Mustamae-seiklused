@@ -23,28 +23,31 @@ func update_target_location(target_location):
 	nav_agent.target_position = target_location
 
 
-func _on_area_detect_area_entered(area):
-	# while player is in enemy hitbox, -5 hp every secon and todo animaton
-	x = true
-	while x == true:
-		if area.is_in_group("player"):
-			Global.health -= 5
-			print("hurt")
-			enemy_speed = 0
-			await get_tree().create_timer(1).timeout
-			enemy_speed = 5
+# thi9s does not work
+# fix some day
 
-func _on_area_detect_area_exited(area):
-	x = false
-
-func _on_area_eyes_area_entered(area):
-	# while player is in eyesight, yhe runs at you like a rabid dog
-	y = true
-	while y == true:
-		if area.is_in_group("player"):
-			enemy_speed = 7
-		else:
-			enemy_speed = 0
-
-func _on_area_eyes_area_exited(area):
-	y = false
+#func _on_area_detect_area_entered(area):
+#	# while player is in enemy hitbox, -5 hp every secon and todo animaton
+#	x = true
+#	while x == true:
+#		if area.is_in_group("player"):
+#			Global.health -= 5
+#			print("hurt")
+#			enemy_speed = 0
+#			await get_tree().create_timer(1).timeout
+#			enemy_speed = 5
+#
+#func _on_area_detect_area_exited(area):
+#	x = false
+#
+#func _on_area_eyes_area_entered(area):
+#	# while player is in eyesight, yhe runs at you like a rabid dog
+#	y = true
+#	while y == true:
+#		if area.is_in_group("player"):
+#			enemy_speed = 7
+#		else:
+#			enemy_speed = 0
+#
+#func _on_area_eyes_area_exited(area):
+#	y = false
