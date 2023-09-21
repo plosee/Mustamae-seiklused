@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bu6ql3rpnuvic" path="res://Scenes/Player.tscn" id="2_nffhn"]
 [ext_resource type="PackedScene" uid="uid://cm3hmpodt6rqa" path="res://Scenes/Models/kubik.tscn" id="3_ev8i3"]
 [ext_resource type="PackedScene" uid="uid://c73wlf43av6jg" path="res://Scenes/Models/syringe.tscn" id="4_xsx6c"]
+[ext_resource type="Texture2D" uid="uid://b4swff40uk0kp" path="res://Maybe not temp folder actually/kubik/kubik.png" id="6_j5ngd"]
 [ext_resource type="PackedScene" uid="uid://c8p17wce755dp" path="res://Scenes/Models/knife.tscn" id="7_mesgh"]
-[ext_resource type="Texture2D" uid="uid://b4swff40uk0kp" path="res://Temp Fold For object import/kubik/kubik.png" id="8_2ribj"]
 [ext_resource type="PackedScene" uid="uid://b3xvijimtypng" path="res://Scenes/Models/JakeAnimated.tscn" id="9_i81fm"]
 [ext_resource type="PackedScene" uid="uid://b5rnwvqy4hngy" path="res://Scenes/Settings.tscn" id="9_js3a7"]
 [ext_resource type="Script" path="res://Scenes/Models/JakeAnimated.gd" id="10_vykvs"]
@@ -66,7 +66,7 @@ fog_sky_affect = 0.77
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n32g8"]
 resource_name = "Material"
 cull_mode = 2
-albedo_texture = ExtResource("8_2ribj")
+albedo_texture = ExtResource("6_j5ngd")
 roughness = 0.0764706
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yiwpr"]

@@ -1,33 +1,32 @@
-[gd_scene load_steps=72 format=3 uid="uid://dwfbhs3sshn0c"]
+[gd_scene load_steps=73 format=3 uid="uid://dwfbhs3sshn0c"]
 
-[ext_resource type="Texture2D" uid="uid://dk3dvr05q2kgt" path="res://Temp Fold For object import/majad/katus2.JPG" id="1_dkmua"]
-[ext_resource type="Texture2D" uid="uid://cwwo3hj60wdlw" path="res://Temp Fold For object import/majad/külg.JPG" id="2_7d0k7"]
-[ext_resource type="Texture2D" uid="uid://c31sxheofcasj" path="res://Temp Fold For object import/majad/tagune.JPG" id="3_xwvbx"]
-[ext_resource type="Texture2D" uid="uid://crev2cat3ertc" path="res://Temp Fold For object import/majad/3.JPG" id="4_dq8pt"]
-[ext_resource type="Texture2D" uid="uid://se401pqed5ws" path="res://Temp Fold For object import/majad/ees.JPG.001.jpg" id="5_bvs36"]
-[ext_resource type="Texture2D" uid="uid://magq2osh0nr4" path="res://Temp Fold For object import/majad/taga.JPG" id="6_niatb"]
-[ext_resource type="Texture2D" uid="uid://d38vq5qyqd2s5" path="res://Temp Fold For object import/majad/08.jpg" id="7_qinpo"]
-[ext_resource type="Texture2D" uid="uid://cja4w3eei0k63" path="res://Temp Fold For object import/majad/03.jpg" id="8_ggddm"]
-[ext_resource type="Texture2D" uid="uid://dgdubr4atkiip" path="res://Temp Fold For object import/majad/07.jpg" id="9_obon8"]
-[ext_resource type="Texture2D" uid="uid://b1kuod3104gji" path="res://Temp Fold For object import/majad/05.jpg" id="10_3f6mb"]
-[ext_resource type="Texture2D" uid="uid://bnpu4jn3ayvvl" path="res://Temp Fold For object import/majad/06.jpg" id="11_c2r4v"]
-[ext_resource type="Texture2D" uid="uid://risr5q3tfi1r" path="res://Temp Fold For object import/majad/04.jpg" id="12_fejuu"]
-[ext_resource type="Texture2D" uid="uid://bwo7ftv1l6dyn" path="res://Temp Fold For object import/majad/01.jpg" id="13_6svdc"]
-[ext_resource type="Texture2D" uid="uid://df43p8fpvmng0" path="res://Temp Fold For object import/majad/02.jpg" id="14_8ol53"]
-[ext_resource type="Texture2D" uid="uid://cghgt0pretosp" path="res://Temp Fold For object import/majad/ees.JPG" id="15_gpspr"]
-[ext_resource type="Texture2D" uid="uid://b3y3yvblvkaom" path="res://Temp Fold For object import/majad/Photo Texture(1).jpg" id="16_pulm0"]
-[ext_resource type="Texture2D" uid="uid://c14fw0kf1tclf" path="res://Temp Fold For object import/majad/külg parem.JPG" id="17_6uleh"]
-[ext_resource type="Texture2D" uid="uid://bf076r4n2jy8" path="res://Temp Fold For object import/majad/aaa.png" id="18_in1yg"]
-[ext_resource type="Texture2D" uid="uid://bagnxqovb8wqh" path="res://Temp Fold For object import/majad/Capture.PNG" id="19_3lqv8"]
-[ext_resource type="Texture2D" uid="uid://b3kpwcv6ebc6y" path="res://Temp Fold For object import/majad/taga.JPG.001.jpg" id="20_f3c7s"]
-[ext_resource type="Texture2D" uid="uid://dy22dmtbmkh3n" path="res://Temp Fold For object import/majad/parem.JPG" id="21_0xtbn"]
-[ext_resource type="Texture2D" uid="uid://dvbyejwola6iw" path="res://Temp Fold For object import/majad/taga-2.JPG" id="22_hj0qn"]
-[ext_resource type="Texture2D" uid="uid://yu5r2ed8ojgy" path="res://Temp Fold For object import/majad/rõdu 1.JPG" id="23_wr3x3"]
-[ext_resource type="Texture2D" uid="uid://bps3a2la4yj4f" path="res://Temp Fold For object import/majad/taga s.JPG" id="24_ew0i6"]
-[ext_resource type="Texture2D" uid="uid://bkj3siv63qn7a" path="res://Temp Fold For object import/majad/taga v.JPG" id="25_swdik"]
-[ext_resource type="Texture2D" uid="uid://iddavdvs2wf3" path="res://Temp Fold For object import/majad/p.JPG" id="26_jhonk"]
-[ext_resource type="Texture2D" uid="uid://betpb0eyo0b70" path="res://Temp Fold For object import/majad/katus.png" id="27_tyhlh"]
-[ext_resource type="Material" path="res://Temp Fold For object import/road/Material.material" id="28_qix86"]
+[ext_resource type="Texture2D" uid="uid://dk3dvr05q2kgt" path="res://Maybe not temp folder actually/majad/katus2.JPG" id="1_m1qj4"]
+[ext_resource type="Texture2D" uid="uid://cwwo3hj60wdlw" path="res://Maybe not temp folder actually/majad/külg.JPG" id="2_qjf7x"]
+[ext_resource type="Texture2D" uid="uid://c31sxheofcasj" path="res://Maybe not temp folder actually/majad/tagune.JPG" id="3_b7l8i"]
+[ext_resource type="Texture2D" uid="uid://crev2cat3ertc" path="res://Maybe not temp folder actually/majad/3.JPG" id="4_obuiu"]
+[ext_resource type="Texture2D" uid="uid://se401pqed5ws" path="res://Maybe not temp folder actually/majad/ees.JPG.001.jpg" id="5_lu764"]
+[ext_resource type="Texture2D" uid="uid://magq2osh0nr4" path="res://Maybe not temp folder actually/majad/taga.JPG" id="6_7xch5"]
+[ext_resource type="Texture2D" uid="uid://d38vq5qyqd2s5" path="res://Maybe not temp folder actually/majad/08.jpg" id="7_y1abx"]
+[ext_resource type="Texture2D" uid="uid://cja4w3eei0k63" path="res://Maybe not temp folder actually/majad/03.jpg" id="8_e5y54"]
+[ext_resource type="Texture2D" uid="uid://dgdubr4atkiip" path="res://Maybe not temp folder actually/majad/07.jpg" id="9_is1yg"]
+[ext_resource type="Texture2D" uid="uid://b1kuod3104gji" path="res://Maybe not temp folder actually/majad/05.jpg" id="10_q3s4u"]
+[ext_resource type="Texture2D" uid="uid://bnpu4jn3ayvvl" path="res://Maybe not temp folder actually/majad/06.jpg" id="11_ujvha"]
+[ext_resource type="Texture2D" uid="uid://risr5q3tfi1r" path="res://Maybe not temp folder actually/majad/04.jpg" id="12_b1mkw"]
+[ext_resource type="Texture2D" uid="uid://bwo7ftv1l6dyn" path="res://Maybe not temp folder actually/majad/01.jpg" id="13_p6ddt"]
+[ext_resource type="Texture2D" uid="uid://df43p8fpvmng0" path="res://Maybe not temp folder actually/majad/02.jpg" id="14_obhxk"]
+[ext_resource type="Texture2D" uid="uid://cghgt0pretosp" path="res://Maybe not temp folder actually/majad/ees.JPG" id="15_mkv23"]
+[ext_resource type="Texture2D" uid="uid://b3y3yvblvkaom" path="res://Maybe not temp folder actually/majad/Photo Texture(1).jpg" id="16_sunjl"]
+[ext_resource type="Texture2D" uid="uid://c14fw0kf1tclf" path="res://Maybe not temp folder actually/majad/külg parem.JPG" id="17_qp6kf"]
+[ext_resource type="Texture2D" uid="uid://bf076r4n2jy8" path="res://Maybe not temp folder actually/majad/aaa.png" id="18_2fr18"]
+[ext_resource type="Texture2D" uid="uid://bagnxqovb8wqh" path="res://Maybe not temp folder actually/majad/Capture.PNG" id="19_matdk"]
+[ext_resource type="Texture2D" uid="uid://b3kpwcv6ebc6y" path="res://Maybe not temp folder actually/majad/taga.JPG.001.jpg" id="20_l7i8d"]
+[ext_resource type="Texture2D" uid="uid://dy22dmtbmkh3n" path="res://Maybe not temp folder actually/majad/parem.JPG" id="21_o1phs"]
+[ext_resource type="Texture2D" uid="uid://dvbyejwola6iw" path="res://Maybe not temp folder actually/majad/taga-2.JPG" id="22_f6ds0"]
+[ext_resource type="Texture2D" uid="uid://yu5r2ed8ojgy" path="res://Maybe not temp folder actually/majad/rõdu 1.JPG" id="23_ng7sv"]
+[ext_resource type="Texture2D" uid="uid://bps3a2la4yj4f" path="res://Maybe not temp folder actually/majad/taga s.JPG" id="24_o6cx7"]
+[ext_resource type="Texture2D" uid="uid://bkj3siv63qn7a" path="res://Maybe not temp folder actually/majad/taga v.JPG" id="25_motvt"]
+[ext_resource type="Texture2D" uid="uid://iddavdvs2wf3" path="res://Maybe not temp folder actually/majad/p.JPG" id="26_hfk5t"]
+[ext_resource type="Texture2D" uid="uid://betpb0eyo0b70" path="res://Maybe not temp folder actually/majad/katus.png" id="27_qc4vu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjgeq"]
 resource_name = "Material"
@@ -38,25 +37,25 @@ roughness = 0.0764706
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16ywi"]
 resource_name = "katus2"
 cull_mode = 2
-albedo_texture = ExtResource("1_dkmua")
+albedo_texture = ExtResource("1_m1qj4")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjp1w"]
 resource_name = "külg"
 cull_mode = 2
-albedo_texture = ExtResource("2_7d0k7")
+albedo_texture = ExtResource("2_qjf7x")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dkbwn"]
 resource_name = "tagune"
 cull_mode = 2
-albedo_texture = ExtResource("3_xwvbx")
+albedo_texture = ExtResource("3_b7l8i")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7kso1"]
 resource_name = "3"
 cull_mode = 2
-albedo_texture = ExtResource("4_dq8pt")
+albedo_texture = ExtResource("4_obuiu")
 roughness = 0.0764706
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mg517"]
@@ -172,13 +171,13 @@ shadow_mesh = SubResource("ArrayMesh_mg517")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_202di"]
 resource_name = "ees1"
 cull_mode = 2
-albedo_texture = ExtResource("5_bvs36")
+albedo_texture = ExtResource("5_lu764")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3317h"]
 resource_name = "taga"
 cull_mode = 2
-albedo_texture = ExtResource("6_niatb")
+albedo_texture = ExtResource("6_7xch5")
 roughness = 0.0764706
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3ecxq"]
@@ -294,49 +293,49 @@ shadow_mesh = SubResource("ArrayMesh_3ecxq")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbofo"]
 resource_name = "08"
 cull_mode = 2
-albedo_texture = ExtResource("7_qinpo")
+albedo_texture = ExtResource("7_y1abx")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prpkf"]
 resource_name = "03"
 cull_mode = 2
-albedo_texture = ExtResource("8_ggddm")
+albedo_texture = ExtResource("8_e5y54")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jmie"]
 resource_name = "07"
 cull_mode = 2
-albedo_texture = ExtResource("9_obon8")
+albedo_texture = ExtResource("9_is1yg")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ord7a"]
 resource_name = "05"
 cull_mode = 2
-albedo_texture = ExtResource("10_3f6mb")
+albedo_texture = ExtResource("10_q3s4u")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmmaa"]
 resource_name = "06"
 cull_mode = 2
-albedo_texture = ExtResource("11_c2r4v")
+albedo_texture = ExtResource("11_ujvha")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4q8n"]
 resource_name = "04"
 cull_mode = 2
-albedo_texture = ExtResource("12_fejuu")
+albedo_texture = ExtResource("12_b1mkw")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nncv4"]
 resource_name = "01"
 cull_mode = 2
-albedo_texture = ExtResource("13_6svdc")
+albedo_texture = ExtResource("13_p6ddt")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_snuiy"]
 resource_name = "02"
 cull_mode = 2
-albedo_texture = ExtResource("14_8ol53")
+albedo_texture = ExtResource("14_obhxk")
 roughness = 0.0764706
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yarjq"]
@@ -512,31 +511,31 @@ shadow_mesh = SubResource("ArrayMesh_yarjq")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k2aru"]
 resource_name = "ees"
 cull_mode = 2
-albedo_texture = ExtResource("15_gpspr")
+albedo_texture = ExtResource("15_mkv23")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0kpj0"]
 resource_name = "Photo Texture(1)"
 cull_mode = 2
-albedo_texture = ExtResource("16_pulm0")
+albedo_texture = ExtResource("16_sunjl")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qgdov"]
 resource_name = "külg parem1"
 cull_mode = 2
-albedo_texture = ExtResource("17_6uleh")
+albedo_texture = ExtResource("17_qp6kf")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hme3y"]
 resource_name = "aaa"
 cull_mode = 2
-albedo_texture = ExtResource("18_in1yg")
+albedo_texture = ExtResource("18_2fr18")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_quwqw"]
 resource_name = "Capture1"
 cull_mode = 2
-albedo_texture = ExtResource("19_3lqv8")
+albedo_texture = ExtResource("19_matdk")
 roughness = 0.0764706
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mw7cc"]
@@ -692,13 +691,13 @@ shadow_mesh = SubResource("ArrayMesh_mw7cc")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_80ue4"]
 resource_name = "taga1"
 cull_mode = 2
-albedo_texture = ExtResource("20_f3c7s")
+albedo_texture = ExtResource("20_l7i8d")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dicor"]
 resource_name = "parem"
 cull_mode = 2
-albedo_texture = ExtResource("21_0xtbn")
+albedo_texture = ExtResource("21_o1phs")
 roughness = 0.0764706
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ycco5"]
@@ -814,7 +813,7 @@ shadow_mesh = SubResource("ArrayMesh_ycco5")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i0r2d"]
 resource_name = "taga-2"
 cull_mode = 2
-albedo_texture = ExtResource("22_hj0qn")
+albedo_texture = ExtResource("22_f6ds0")
 roughness = 0.0764706
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_k05mb"]
@@ -930,31 +929,31 @@ shadow_mesh = SubResource("ArrayMesh_k05mb")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_axy4b"]
 resource_name = "rõdu 2"
 cull_mode = 2
-albedo_texture = ExtResource("23_wr3x3")
+albedo_texture = ExtResource("23_ng7sv")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1euee"]
 resource_name = "taga s1"
 cull_mode = 2
-albedo_texture = ExtResource("24_ew0i6")
+albedo_texture = ExtResource("24_o6cx7")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgrxq"]
 resource_name = "taga v1"
 cull_mode = 2
-albedo_texture = ExtResource("25_swdik")
+albedo_texture = ExtResource("25_motvt")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ixc0f"]
 resource_name = "p"
 cull_mode = 2
-albedo_texture = ExtResource("26_jhonk")
+albedo_texture = ExtResource("26_hfk5t")
 roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vkio4"]
 resource_name = "katus"
 cull_mode = 2
-albedo_texture = ExtResource("27_tyhlh")
+albedo_texture = ExtResource("27_qc4vu")
 roughness = 0.0764706
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_pvo6d"]
@@ -1107,8 +1106,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_pvo6d")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8g2q6"]
+load_path = "res://.godot/imported/road.jpg-0b05c9900607e6ccca9617fd95365a8b.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2dr5"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = SubResource("CompressedTexture2D_8g2q6")
+roughness = 0.0764706
+
 [sub_resource type="BoxMesh" id="BoxMesh_y4em6"]
-material = ExtResource("28_qix86")
+material = SubResource("StandardMaterial3D_h2dr5")
 
 [node name="CityAssets" type="Node3D"]
 

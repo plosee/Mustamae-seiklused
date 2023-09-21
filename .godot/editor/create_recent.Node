@@ -1,3 +1,5 @@
+MeshInstance3D
+GridMap
 CollisionShape3D
 Area3D
 NavigationRegion3D
@@ -6,12 +8,10 @@ NavigationAgent3D
 CharacterBody3D
 WorldEnvironment
 Camera3D
-MeshInstance3D
 RichTextLabel
 VideoStreamPlayer
 ColorRect
 ProgressBar
-GridMap
 RigidBody3D
 BaseDialogueTestScene
 Control
