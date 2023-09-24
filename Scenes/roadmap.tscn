@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bilgchc5qig7a"]
-
-[ext_resource type="PackedScene" uid="uid://dyqb5syway0rx" path="res://Maybe not temp folder actually/road/road.dae" id="1_qn3uv"]
-
-[node name="road" instance=ExtResource("1_qn3uv")]

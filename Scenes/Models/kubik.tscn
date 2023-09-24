@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cm3hmpodt6rqa"]
 
-[ext_resource type="Texture2D" uid="uid://b4swff40uk0kp" path="res://Maybe not temp folder actually/kubik/kubik.png" id="2_kpl2l"]
+[ext_resource type="Texture2D" uid="uid://b4swff40uk0kp" path="res://Temp Fold For object import/kubik/kubik.png" id="2_kpl2l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n32g8"]
 resource_name = "Material"
