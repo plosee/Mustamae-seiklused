@@ -1,4 +1,8 @@
+Sprite3D
+StaticBody3D
 CollisionShape3D
+MeshInstance3D
+GridMap
 Area3D
 NavigationRegion3D
 CSGCombiner3D
@@ -6,12 +10,10 @@ NavigationAgent3D
 CharacterBody3D
 WorldEnvironment
 Camera3D
-MeshInstance3D
 RichTextLabel
 VideoStreamPlayer
 ColorRect
 ProgressBar
-GridMap
 RigidBody3D
 BaseDialogueTestScene
 Control
@@ -21,12 +23,10 @@ Popup
 GPUParticles3D
 AnimationPlayer
 Sprite2D
-StaticBody3D
 RayCast3D
 Node
 CSGPolygon3D
 CSGBox3D
 Path3D
 Path2D
-Sprite3D
 HSlider

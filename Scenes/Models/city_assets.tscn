@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://dwfbhs3sshn0c"]
+[gd_scene load_steps=70 format=3 uid="uid://dwfbhs3sshn0c"]
 
 [ext_resource type="Texture2D" uid="uid://dk3dvr05q2kgt" path="res://Temp Fold For object import/majad/katus2.JPG" id="1_dkmua"]
 [ext_resource type="Texture2D" uid="uid://cwwo3hj60wdlw" path="res://Temp Fold For object import/majad/külg.JPG" id="2_7d0k7"]
@@ -27,37 +27,31 @@
 [ext_resource type="Texture2D" uid="uid://bkj3siv63qn7a" path="res://Temp Fold For object import/majad/taga v.JPG" id="25_swdik"]
 [ext_resource type="Texture2D" uid="uid://iddavdvs2wf3" path="res://Temp Fold For object import/majad/p.JPG" id="26_jhonk"]
 [ext_resource type="Texture2D" uid="uid://betpb0eyo0b70" path="res://Temp Fold For object import/majad/katus.png" id="27_tyhlh"]
-[ext_resource type="Material" path="res://Temp Fold For object import/road/Material.material" id="28_qix86"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjgeq"]
 resource_name = "Material"
 cull_mode = 2
 albedo_color = Color(0.8, 0.8, 0.8, 1)
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16ywi"]
 resource_name = "katus2"
 cull_mode = 2
 albedo_texture = ExtResource("1_dkmua")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjp1w"]
 resource_name = "külg"
 cull_mode = 2
 albedo_texture = ExtResource("2_7d0k7")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dkbwn"]
 resource_name = "tagune"
 cull_mode = 2
 albedo_texture = ExtResource("3_xwvbx")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7kso1"]
 resource_name = "3"
 cull_mode = 2
 albedo_texture = ExtResource("4_dq8pt")
-roughness = 0.0764706
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mg517"]
 _surfaces = [{
@@ -173,13 +167,11 @@ shadow_mesh = SubResource("ArrayMesh_mg517")
 resource_name = "ees1"
 cull_mode = 2
 albedo_texture = ExtResource("5_bvs36")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3317h"]
 resource_name = "taga"
 cull_mode = 2
 albedo_texture = ExtResource("6_niatb")
-roughness = 0.0764706
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3ecxq"]
 _surfaces = [{
@@ -295,49 +287,41 @@ shadow_mesh = SubResource("ArrayMesh_3ecxq")
 resource_name = "08"
 cull_mode = 2
 albedo_texture = ExtResource("7_qinpo")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prpkf"]
 resource_name = "03"
 cull_mode = 2
 albedo_texture = ExtResource("8_ggddm")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jmie"]
 resource_name = "07"
 cull_mode = 2
 albedo_texture = ExtResource("9_obon8")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ord7a"]
 resource_name = "05"
 cull_mode = 2
 albedo_texture = ExtResource("10_3f6mb")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmmaa"]
 resource_name = "06"
 cull_mode = 2
 albedo_texture = ExtResource("11_c2r4v")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4q8n"]
 resource_name = "04"
 cull_mode = 2
 albedo_texture = ExtResource("12_fejuu")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nncv4"]
 resource_name = "01"
 cull_mode = 2
 albedo_texture = ExtResource("13_6svdc")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_snuiy"]
 resource_name = "02"
 cull_mode = 2
 albedo_texture = ExtResource("14_8ol53")
-roughness = 0.0764706
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yarjq"]
 _surfaces = [{
@@ -513,31 +497,26 @@ shadow_mesh = SubResource("ArrayMesh_yarjq")
 resource_name = "ees"
 cull_mode = 2
 albedo_texture = ExtResource("15_gpspr")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0kpj0"]
 resource_name = "Photo Texture(1)"
 cull_mode = 2
 albedo_texture = ExtResource("16_pulm0")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qgdov"]
 resource_name = "külg parem1"
 cull_mode = 2
 albedo_texture = ExtResource("17_6uleh")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hme3y"]
 resource_name = "aaa"
 cull_mode = 2
 albedo_texture = ExtResource("18_in1yg")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_quwqw"]
 resource_name = "Capture1"
 cull_mode = 2
 albedo_texture = ExtResource("19_3lqv8")
-roughness = 0.0764706
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mw7cc"]
 _surfaces = [{
@@ -693,13 +672,11 @@ shadow_mesh = SubResource("ArrayMesh_mw7cc")
 resource_name = "taga1"
 cull_mode = 2
 albedo_texture = ExtResource("20_f3c7s")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dicor"]
 resource_name = "parem"
 cull_mode = 2
 albedo_texture = ExtResource("21_0xtbn")
-roughness = 0.0764706
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ycco5"]
 _surfaces = [{
@@ -815,7 +792,6 @@ shadow_mesh = SubResource("ArrayMesh_ycco5")
 resource_name = "taga-2"
 cull_mode = 2
 albedo_texture = ExtResource("22_hj0qn")
-roughness = 0.0764706
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_k05mb"]
 _surfaces = [{
@@ -931,31 +907,26 @@ shadow_mesh = SubResource("ArrayMesh_k05mb")
 resource_name = "rõdu 2"
 cull_mode = 2
 albedo_texture = ExtResource("23_wr3x3")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1euee"]
 resource_name = "taga s1"
 cull_mode = 2
 albedo_texture = ExtResource("24_ew0i6")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgrxq"]
 resource_name = "taga v1"
 cull_mode = 2
 albedo_texture = ExtResource("25_swdik")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ixc0f"]
 resource_name = "p"
 cull_mode = 2
 albedo_texture = ExtResource("26_jhonk")
-roughness = 0.0764706
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vkio4"]
 resource_name = "katus"
 cull_mode = 2
 albedo_texture = ExtResource("27_tyhlh")
-roughness = 0.0764706
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_pvo6d"]
 _surfaces = [{
@@ -1107,9 +1078,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_pvo6d")
 
-[sub_resource type="BoxMesh" id="BoxMesh_y4em6"]
-material = ExtResource("28_qix86")
-
 [node name="CityAssets" type="Node3D"]
 
 [node name="maja7" type="MeshInstance3D" parent="."]
@@ -1146,7 +1114,3 @@ skeleton = NodePath("")
 transform = Transform3D(0.999999, 0, 0.00109729, 0, 1, 0, -0.00109729, 0, 0.999999, -1.4716e-05, 7, -62.4746)
 mesh = SubResource("ArrayMesh_4lwdl")
 skeleton = NodePath("")
-
-[node name="road" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 73.8926, 0, 0)
-mesh = SubResource("BoxMesh_y4em6")
