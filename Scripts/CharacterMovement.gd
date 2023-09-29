@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 var speed
 var WALK_SPEED = 5.0
-var SPRINT_SPEED = 8.0
+var SPRINT_SPEED = 8
 const JUMP_VELOCITY = 4.8
 const SENSITIVITY = 0.004
 
@@ -34,13 +34,15 @@ func _unhandled_input(event):
 
 func _physics_process(delta):
 	$Head/arms/RootNode/inventory/FPS.text = str(int(Engine.get_frames_per_second()))
+	Global.PlayerLoc = Vector2(self.global_position.x,self.global_position.z)
+	print(Global.PlayerLoc)
 	# Syringe Buff
 	if Global.SyringeEffect == true:
 		WALK_SPEED = 10.0
 		SPRINT_SPEED = 16.0
 	else:
 		WALK_SPEED = 5.0
-		SPRINT_SPEED = 8.0
+		SPRINT_SPEED = 100.0
 		
 	# Add the gravity.
 	if not is_on_floor():

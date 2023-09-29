@@ -14,7 +14,8 @@ func _process(_delta : float):
 	#check loading
 	match loading_status:
 		ResourceLoader.THREAD_LOAD_IN_PROGRESS:
-			print(progress[0] * 100)
+			#print(progress[0] * 100)
+			pass
 		ResourceLoader.THREAD_LOAD_LOADED:
 			get_tree().change_scene_to_packed(ResourceLoader.load_threaded_get(target_scene_path))
 		ResourceLoader.THREAD_LOAD_FAILED:

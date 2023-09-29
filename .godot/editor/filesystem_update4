@@ -1,2 +1,14 @@
 res://Scenes/WorldMap.tscn
 res://Scenes/CityGridMap.tres
+res://Scenes/Player.tscn
+res://Scripts/Map.gd
+res://Scenes/Main.tscn
+res://Scenes/Models/knife.tscn
+res://Scenes/Settings.tscn
+res://Scenes/Models/viin.tscn
+res://Scenes/loadingscreen.tscn
+res://Scenes/DebugWorld.tscn
+res://Scenes/World.tscn
+res://Scripts/Global.gd
+res://Scripts/CharacterMovement.gd
+res://Scripts/loadingscreen.gd

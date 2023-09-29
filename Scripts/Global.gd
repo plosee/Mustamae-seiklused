@@ -5,7 +5,7 @@ var KubikPickup : bool = false
 var SyringePickup : bool = false
 var KnifePickup : bool = false
 var ViinPickup : int = 0
-
+var PlayerLoc = Vector2()
 # Current inventory slot equipped
 var currentslot = 0
 
