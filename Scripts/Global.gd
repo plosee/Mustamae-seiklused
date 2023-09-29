@@ -19,7 +19,7 @@ var KimuCapacity : float = 5.0
 # KimupuffDemo on tehtud selleks, et seda saaks clampida (min max value)
 var KimuPuffs = 1
 
-var health : float = 100
+var health : float = clamp(100, 0, 100)
 var enemy_health : float = 100
 var in_main : bool = true
 
