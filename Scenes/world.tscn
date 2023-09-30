@@ -111,9 +111,6 @@ size = Vector3(2.61765, 13.9184, 2.77019)
 [node name="World" type="Node3D"]
 script = ExtResource("1_d6x3x")
 
-[node name="Ground" parent="." instance=ExtResource("14_rfw25")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1804, 0, 0)
-
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72529e-09, 0, 0)
 visible = false
@@ -216,6 +213,8 @@ script = null
 
 [node name="SettingsNode" parent="." instance=ExtResource("13_1eab5")]
 visible = false
+
+[node name="WorldMap" parent="." instance=ExtResource("14_rfw25")]
 
 [connection signal="NPC" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="Interactables/NPC/JakePaul" method="_on_interact_ray_npc"]
 [connection signal="Viin" from="Character/CharacterBody3D/Head/Camera3D/InteractRay" to="." method="_on_interact_ray_viin"]

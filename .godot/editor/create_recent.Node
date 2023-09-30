@@ -1,3 +1,5 @@
+CollisionShape3D
+RigidBody3D
 RichTextLabel
 Sprite2D
 Container
@@ -6,7 +8,6 @@ Control
 MeshInstance3D
 Sprite3D
 StaticBody3D
-CollisionShape3D
 GridMap
 Area3D
 NavigationRegion3D
@@ -18,7 +19,6 @@ Camera3D
 VideoStreamPlayer
 ColorRect
 ProgressBar
-RigidBody3D
 BaseDialogueTestScene
 Node3D
 Button
