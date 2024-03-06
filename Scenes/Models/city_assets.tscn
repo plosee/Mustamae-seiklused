@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://dwfbhs3sshn0c"]
+[gd_scene load_steps=87 format=3 uid="uid://dwfbhs3sshn0c"]
 
 [ext_resource type="Texture2D" uid="uid://dk3dvr05q2kgt" path="res://Temp Fold For object import/majad/katus2.JPG" id="1_dkmua"]
 [ext_resource type="Texture2D" uid="uid://cwwo3hj60wdlw" path="res://Temp Fold For object import/majad/külg.JPG" id="2_7d0k7"]
@@ -1140,7 +1140,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_4bw1b")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w0jgv"]
-size = Vector3(1, 9.50712, 1)
+size = Vector3(2.01266, 19.6633, 1.99895)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v257h"]
 resource_name = "Material.001"
@@ -1180,6 +1180,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hwbiy")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_v23m8"]
+size = Vector3(20.0795, 107.84, 20.275)
+
 [node name="CityAssets" type="Node3D"]
 
 [node name="maja7" type="RigidBody3D" parent="."]
@@ -1194,7 +1197,7 @@ transform = Transform3D(7.87779, 0, 0, 0, 0.99814, 0, 0, 0, 0.99814, -0.780411, 
 shape = SubResource("BoxShape3D_bk20x")
 
 [node name="Maja6" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.113, 0, -90.1053)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.2019, 0, -120.877)
 
 [node name="maja6" type="MeshInstance3D" parent="Maja6"]
 transform = Transform3D(-0.999988, 0, -0.00490469, 0, 1, 0, 0.00490469, 0, -0.999988, 0, 7.77846, 45.3161)
@@ -1265,27 +1268,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25797, 15.8788, 0.559092)
 shape = SubResource("BoxShape3D_c48xt")
 
 [node name="Sour Cap" type="RigidBody3D" parent="."]
-transform = Transform3D(27.0567, 0, 0, 0, 27.0567, 0, 0, 0, 27.0567, 84.3114, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.3114, 0, 0)
 
 [node name="SourCap" type="MeshInstance3D" parent="Sour Cap"]
-transform = Transform3D(-0.559509, 0, 8.44835e-08, 0, 0.559509, 0, -8.44835e-08, 0, -0.559509, 1.63123, 0, 0)
+transform = Transform3D(-10, 0, 1.50996e-06, 0, 10, 0, -1.50996e-06, 0, -10, 1.63123, 0, 0)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_fujl6")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Sour Cap"]
-transform = Transform3D(1.12455, 0, 0, 0, 0.633216, 0, 0, 0, 1.12455, 1.65728, 2.88234, -0.0594022)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sour Cap"]
+transform = Transform3D(10, 0, 0, 0, 5.627, 0, 0, 0, 10, 2.17682, 52.8522, 0)
 shape = SubResource("BoxShape3D_w0jgv")
 
 [node name="Salty Lib" type="RigidBody3D" parent="."]
-transform = Transform3D(27.0567, 0, 0, 0, 27.0567, 0, 0, 0, 27.0567, 84.3114, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.119, 0, 0)
 
 [node name="SaltyLib" type="MeshInstance3D" parent="Salty Lib"]
-transform = Transform3D(-0.559509, 0, 8.44835e-08, 0, 0.559509, 0, -8.44835e-08, 0, -0.559509, 0, 0, 0)
+transform = Transform3D(-10, 0, 1.50996e-06, 0, 10, 0, -1.50996e-06, 0, -10, 0.020401, 0, 3.08025e-09)
 gi_mode = 0
 mesh = SubResource("ArrayMesh_sttks")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Salty Lib"]
-transform = Transform3D(1.12455, 0, 0, 0, 0.633216, 0, 0, 0, 1.12455, 0, 2.88234, 0)
-shape = SubResource("BoxShape3D_w0jgv")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 54.1267, 0)
+shape = SubResource("BoxShape3D_v23m8")

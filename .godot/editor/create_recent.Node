@@ -1,4 +1,5 @@
 CollisionShape3D
+GridMap
 RigidBody3D
 RichTextLabel
 Sprite2D
@@ -8,7 +9,6 @@ Control
 MeshInstance3D
 Sprite3D
 StaticBody3D
-GridMap
 Area3D
 NavigationRegion3D
 CSGCombiner3D
